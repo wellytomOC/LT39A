@@ -1,0 +1,81 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ss[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ss[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ss[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ss[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ss[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ss[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ss[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DataOutOut",
+					"strict" : false
+				},
+				{
+					"name" : "En",
+					"strict" : false
+				},
+				{
+					"name" : "DataInput[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DataInput[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DataInput[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DataInput[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DataInput[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DataInput[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DataInput[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DataInput[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Clock",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

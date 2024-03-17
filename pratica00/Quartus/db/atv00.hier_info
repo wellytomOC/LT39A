@@ -1,0 +1,234 @@
+|arquitetura
+Clock => entrada:ent.Clock
+DataInput[0] => entrada:ent.DataInput[0]
+DataInput[1] => entrada:ent.DataInput[1]
+DataInput[2] => entrada:ent.DataInput[2]
+DataInput[3] => entrada:ent.DataInput[3]
+DataInput[4] => entrada:ent.DataInput[4]
+DataInput[5] => entrada:ent.DataInput[5]
+DataInput[6] => entrada:ent.DataInput[6]
+DataInput[7] => entrada:ent.DataInput[7]
+En => sistema:sis.En
+ss[0] << saida:sai.ss[0]
+ss[1] << saida:sai.ss[1]
+ss[2] << saida:sai.ss[2]
+ss[3] << saida:sai.ss[3]
+ss[4] << saida:sai.ss[4]
+ss[5] << saida:sai.ss[5]
+ss[6] << saida:sai.ss[6]
+DataOutOut << saida:sai.DataOut
+
+
+|arquitetura|entrada:ent
+Clock => ClockDivider:CD01.clk
+DataInput[0] => DataOutput[0].DATAIN
+DataInput[1] => DataOutput[1].DATAIN
+DataInput[2] => DataOutput[2].DATAIN
+DataInput[3] => DataOutput[3].DATAIN
+DataInput[4] => DataOutput[4].DATAIN
+DataInput[5] => DataOutput[5].DATAIN
+DataInput[6] => DataOutput[6].DATAIN
+DataInput[7] => DataOutput[7].DATAIN
+DataOutput[0] <= DataInput[0].DB_MAX_OUTPUT_PORT_TYPE
+DataOutput[1] <= DataInput[1].DB_MAX_OUTPUT_PORT_TYPE
+DataOutput[2] <= DataInput[2].DB_MAX_OUTPUT_PORT_TYPE
+DataOutput[3] <= DataInput[3].DB_MAX_OUTPUT_PORT_TYPE
+DataOutput[4] <= DataInput[4].DB_MAX_OUTPUT_PORT_TYPE
+DataOutput[5] <= DataInput[5].DB_MAX_OUTPUT_PORT_TYPE
+DataOutput[6] <= DataInput[6].DB_MAX_OUTPUT_PORT_TYPE
+DataOutput[7] <= DataInput[7].DB_MAX_OUTPUT_PORT_TYPE
+ClockDivided <= ClockDivider:CD01.clock_out
+
+
+|arquitetura|entrada:ent|ClockDivider:CD01
+clk => tmp.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+clk => count[16].CLK
+clk => count[17].CLK
+clk => count[18].CLK
+clk => count[19].CLK
+clk => count[20].CLK
+clk => count[21].CLK
+clk => count[22].CLK
+clk => count[23].CLK
+clk => count[24].CLK
+clk => count[25].CLK
+clk => count[26].CLK
+clk => count[27].CLK
+clk => count[28].CLK
+clk => count[29].CLK
+clk => count[30].CLK
+clk => count[31].CLK
+clock_out <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|sistema:sis
+CLK => Mod8Counter:M8C1.CLK
+D[0] => DataRegister:DR1.D[0]
+D[1] => DataRegister:DR1.D[1]
+D[2] => DataRegister:DR1.D[2]
+D[3] => DataRegister:DR1.D[3]
+D[4] => DataRegister:DR1.D[4]
+D[5] => DataRegister:DR1.D[5]
+D[6] => DataRegister:DR1.D[6]
+D[7] => DataRegister:DR1.D[7]
+En => Mux:MX1.En
+DataOut <= Mux:MX1.DataOut
+Counter[0] <= Mod8Counter:M8C1.SelOut[0]
+Counter[1] <= Mod8Counter:M8C1.SelOut[1]
+Counter[2] <= Mod8Counter:M8C1.SelOut[2]
+
+
+|arquitetura|sistema:sis|DataRegister:DR1
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => Q[7]~reg0.CLK
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+D[4] => Q[4]~reg0.DATAIN
+D[5] => Q[5]~reg0.DATAIN
+D[6] => Q[6]~reg0.DATAIN
+D[7] => Q[7]~reg0.DATAIN
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|sistema:sis|Mux:MX1
+DataIn[0] => Mux0.IN7
+DataIn[1] => Mux0.IN6
+DataIn[2] => Mux0.IN5
+DataIn[3] => Mux0.IN4
+DataIn[4] => Mux0.IN3
+DataIn[5] => Mux0.IN2
+DataIn[6] => Mux0.IN1
+DataIn[7] => Mux0.IN0
+Sel[0] => Mux0.IN10
+Sel[1] => Mux0.IN9
+Sel[2] => Mux0.IN8
+En => DataOut.OUTPUTSELECT
+DataOut <= DataOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|sistema:sis|Mod8Counter:M8C1
+CLK => CountBuffer[0].CLK
+CLK => CountBuffer[1].CLK
+CLK => CountBuffer[2].CLK
+RegisterClock <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+SelOut[0] <= CountBuffer[0].DB_MAX_OUTPUT_PORT_TYPE
+SelOut[1] <= CountBuffer[1].DB_MAX_OUTPUT_PORT_TYPE
+SelOut[2] <= CountBuffer[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|saida:sai
+Data => DataOut.DATAIN
+Counter[0] => sevenSegDecoder:ssd1.data[0]
+Counter[1] => sevenSegDecoder:ssd1.data[1]
+Counter[2] => sevenSegDecoder:ssd1.data[2]
+ss[0] <= sevenSegDecoder:ssd1.ss[0]
+ss[1] <= sevenSegDecoder:ssd1.ss[1]
+ss[2] <= sevenSegDecoder:ssd1.ss[2]
+ss[3] <= sevenSegDecoder:ssd1.ss[3]
+ss[4] <= sevenSegDecoder:ssd1.ss[4]
+ss[5] <= sevenSegDecoder:ssd1.ss[5]
+ss[6] <= sevenSegDecoder:ssd1.ss[6]
+DataOut <= Data.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|saida:sai|sevenSegDecoder:ssd1
+data[0] => Equal0.IN0
+data[0] => Equal1.IN3
+data[0] => Equal2.IN1
+data[0] => Equal3.IN3
+data[0] => Equal4.IN1
+data[0] => Equal5.IN3
+data[0] => Equal6.IN2
+data[0] => Equal7.IN3
+data[0] => Equal8.IN1
+data[0] => Equal9.IN3
+data[0] => Equal10.IN2
+data[0] => Equal11.IN3
+data[0] => Equal12.IN2
+data[0] => Equal13.IN3
+data[0] => Equal14.IN3
+data[1] => Equal0.IN3
+data[1] => Equal1.IN0
+data[1] => Equal2.IN0
+data[1] => Equal3.IN2
+data[1] => Equal4.IN3
+data[1] => Equal5.IN1
+data[1] => Equal6.IN1
+data[1] => Equal7.IN2
+data[1] => Equal8.IN3
+data[1] => Equal9.IN1
+data[1] => Equal10.IN1
+data[1] => Equal11.IN2
+data[1] => Equal12.IN3
+data[1] => Equal13.IN2
+data[1] => Equal14.IN2
+data[2] => Equal0.IN2
+data[2] => Equal1.IN2
+data[2] => Equal2.IN3
+data[2] => Equal3.IN0
+data[2] => Equal4.IN0
+data[2] => Equal5.IN0
+data[2] => Equal6.IN0
+data[2] => Equal7.IN1
+data[2] => Equal8.IN2
+data[2] => Equal9.IN2
+data[2] => Equal10.IN3
+data[2] => Equal11.IN1
+data[2] => Equal12.IN1
+data[2] => Equal13.IN1
+data[2] => Equal14.IN1
+data[3] => Equal0.IN1
+data[3] => Equal1.IN1
+data[3] => Equal2.IN2
+data[3] => Equal3.IN1
+data[3] => Equal4.IN2
+data[3] => Equal5.IN2
+data[3] => Equal6.IN3
+data[3] => Equal7.IN0
+data[3] => Equal8.IN0
+data[3] => Equal9.IN0
+data[3] => Equal10.IN0
+data[3] => Equal11.IN0
+data[3] => Equal12.IN0
+data[3] => Equal13.IN0
+data[3] => Equal14.IN0
+ss[0] <= ss.DB_MAX_OUTPUT_PORT_TYPE
+ss[1] <= ss.DB_MAX_OUTPUT_PORT_TYPE
+ss[2] <= ss.DB_MAX_OUTPUT_PORT_TYPE
+ss[3] <= ss.DB_MAX_OUTPUT_PORT_TYPE
+ss[4] <= ss.DB_MAX_OUTPUT_PORT_TYPE
+ss[5] <= ss.DB_MAX_OUTPUT_PORT_TYPE
+ss[6] <= ss.DB_MAX_OUTPUT_PORT_TYPE
+
+
