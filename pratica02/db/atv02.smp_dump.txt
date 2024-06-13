@@ -1,0 +1,6 @@
+
+State Machine - |arquitetura|Sistema:sis|StateMachine_ControlUnit:FSM01|PresentState
+Name PresentState.store PresentState.load PresentState.idle 
+PresentState.idle 0 0 0 
+PresentState.load 0 1 1 
+PresentState.store 1 0 1 

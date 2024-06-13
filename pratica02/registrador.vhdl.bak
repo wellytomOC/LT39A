@@ -1,0 +1,26 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+entity registrador is
+    port
+    (
+        DataIn: in unsigned(3 downto 0);
+        clock: in std_logic;
+
+        DataOut: out unsigned(3 downto 0)
+    );
+end entity;
+
+architecture behavior of registrador is
+
+begin
+
+    process(clock)
+    begin
+        if rising_edge(clock) then
+            DataOut <= DataIn;
+        end if;
+    end process;
+
+
+end architecture;

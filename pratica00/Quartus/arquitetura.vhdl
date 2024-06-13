@@ -12,7 +12,9 @@ entity arquitetura is
         En: in std_logic;
 
         ss: out std_logic_vector(6 downto 0);
-        DataOutOut: out std_logic
+        DataOutOut: out std_logic;
+		  
+		  testClockOut: out std_logic
     );
 end entity;
 
@@ -61,5 +63,7 @@ begin
 ent: entrada    port map(Clock,DataInput,DataOutput,ClockDivided);
 sis: sistema    port map(ClockDivided,DataOutput,En,DataOut,Counter);
 sai: saida      port map(DataOut,Counter,ss,DataOutOut);
+
+TestClockOut <= ClockDivided;
 
 end architecture;

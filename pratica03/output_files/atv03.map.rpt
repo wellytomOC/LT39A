@@ -1,0 +1,977 @@
+Analysis & Synthesis report for atv03
+Wed Apr 24 16:05:56 2024
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Parameter Settings for Inferred Entity Instance: Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|lpm_divide:Div0
+ 11. Parameter Settings for Inferred Entity Instance: Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|lpm_divide:Mod0
+ 12. Parameter Settings for Inferred Entity Instance: Saida:sai1|DecoderSsd_4bits_Dec:ssdR|lpm_divide:Div0
+ 13. Parameter Settings for Inferred Entity Instance: Saida:sai1|DecoderSsd_4bits_Dec:ssdR|lpm_divide:Mod0
+ 14. Parameter Settings for Inferred Entity Instance: Saida:sai1|DecoderSsd_4bits_Dec:ssdA|lpm_divide:Div0
+ 15. Parameter Settings for Inferred Entity Instance: Saida:sai1|DecoderSsd_4bits_Dec:ssdA|lpm_divide:Mod0
+ 16. Parameter Settings for Inferred Entity Instance: Saida:sai1|DecoderSsd_4bits_Dec:ssdB|lpm_divide:Div0
+ 17. Parameter Settings for Inferred Entity Instance: Saida:sai1|DecoderSsd_4bits_Dec:ssdB|lpm_divide:Mod0
+ 18. Port Connectivity Checks: "Divisor:div1|Subtractor:s4"
+ 19. Port Connectivity Checks: "Divisor:div1|Subtractor:s3"
+ 20. Port Connectivity Checks: "Divisor:div1|Subtractor:s2"
+ 21. Port Connectivity Checks: "Divisor:div1|Multiplexer:m1"
+ 22. Port Connectivity Checks: "Divisor:div1|Subtractor:s1"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
+ 26. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Apr 24 16:05:56 2024       ;
+; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name                      ; atv03                                       ;
+; Top-level Entity Name              ; Arquitetura                                 ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 115                                         ;
+;     Total combinational functions  ; 115                                         ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 82                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; Arquitetura        ; atv03              ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; Subtractor.v                     ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica03/Subtractor.v               ;         ;
+; Multiplexer.v                    ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica03/Multiplexer.v              ;         ;
+; Divisor.v                        ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica03/Divisor.v                  ;         ;
+; Multiplexer4x.v                  ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica03/Multiplexer4x.v            ;         ;
+; Entrada.v                        ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica03/Entrada.v                  ;         ;
+; DecoderSsd_4bits_Dec.v           ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v     ;         ;
+; Saida.v                          ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica03/Saida.v                    ;         ;
+; Arquitetura.v                    ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica03/Arquitetura.v              ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal170.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/aglobal170.inc      ;         ;
+; db/lpm_divide_fhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica03/db/lpm_divide_fhm.tdf      ;         ;
+; db/sign_div_unsign_7kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica03/db/sign_div_unsign_7kh.tdf ;         ;
+; db/alt_u_div_24f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica03/db/alt_u_div_24f.tdf       ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica03/db/add_sub_7pc.tdf         ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica03/db/add_sub_8pc.tdf         ;         ;
+; db/lpm_divide_i9m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica03/db/lpm_divide_i9m.tdf      ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 115          ;
+;                                             ;              ;
+; Total combinational functions               ; 115          ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 39           ;
+;     -- 3 input functions                    ; 25           ;
+;     -- <=2 input functions                  ; 51           ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 75           ;
+;     -- arithmetic mode                      ; 40           ;
+;                                             ;              ;
+; Total registers                             ; 0            ;
+;     -- Dedicated logic registers            ; 0            ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 82           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; Strobe~input ;
+; Maximum fan-out                             ; 56           ;
+; Total fan-out                               ; 514          ;
+; Average fan-out                             ; 1.84         ;
++---------------------------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                               ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                               ; Entity Name          ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+; |Arquitetura                                 ; 115 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 82   ; 0            ; |Arquitetura                                                                                                                                      ; Arquitetura          ; work         ;
+;    |Divisor:div1|                            ; 33 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Divisor:div1                                                                                                                         ; Divisor              ; work         ;
+;       |Multiplexer4x:m4|                     ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Divisor:div1|Multiplexer4x:m4                                                                                                        ; Multiplexer4x        ; work         ;
+;       |Multiplexer:m1|                       ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Divisor:div1|Multiplexer:m1                                                                                                          ; Multiplexer          ; work         ;
+;       |Multiplexer:m2|                       ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Divisor:div1|Multiplexer:m2                                                                                                          ; Multiplexer          ; work         ;
+;       |Multiplexer:m3|                       ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Divisor:div1|Multiplexer:m3                                                                                                          ; Multiplexer          ; work         ;
+;       |Subtractor:s1|                        ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Divisor:div1|Subtractor:s1                                                                                                           ; Subtractor           ; work         ;
+;       |Subtractor:s2|                        ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Divisor:div1|Subtractor:s2                                                                                                           ; Subtractor           ; work         ;
+;       |Subtractor:s3|                        ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Divisor:div1|Subtractor:s3                                                                                                           ; Subtractor           ; work         ;
+;       |Subtractor:s4|                        ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Divisor:div1|Subtractor:s4                                                                                                           ; Subtractor           ; work         ;
+;    |Entrada:ent1|                            ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:ent1                                                                                                                         ; Entrada              ; work         ;
+;    |Saida:sai1|                              ; 74 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1                                                                                                                           ; Saida                ; work         ;
+;       |DecoderSsd_4bits_Dec:ssdA|            ; 18 (7)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdA                                                                                                 ; DecoderSsd_4bits_Dec ; work         ;
+;          |lpm_divide:Div0|                   ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdA|lpm_divide:Div0                                                                                 ; lpm_divide           ; work         ;
+;             |lpm_divide_fhm:auto_generated|  ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdA|lpm_divide:Div0|lpm_divide_fhm:auto_generated                                                   ; lpm_divide_fhm       ; work         ;
+;                |sign_div_unsign_7kh:divider| ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdA|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh  ; work         ;
+;                   |alt_u_div_24f:divider|    ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdA|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f        ; work         ;
+;          |lpm_divide:Mod0|                   ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdA|lpm_divide:Mod0                                                                                 ; lpm_divide           ; work         ;
+;             |lpm_divide_i9m:auto_generated|  ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdA|lpm_divide:Mod0|lpm_divide_i9m:auto_generated                                                   ; lpm_divide_i9m       ; work         ;
+;                |sign_div_unsign_7kh:divider| ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdA|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh  ; work         ;
+;                   |alt_u_div_24f:divider|    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdA|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f        ; work         ;
+;       |DecoderSsd_4bits_Dec:ssdB|            ; 18 (7)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdB                                                                                                 ; DecoderSsd_4bits_Dec ; work         ;
+;          |lpm_divide:Div0|                   ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdB|lpm_divide:Div0                                                                                 ; lpm_divide           ; work         ;
+;             |lpm_divide_fhm:auto_generated|  ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdB|lpm_divide:Div0|lpm_divide_fhm:auto_generated                                                   ; lpm_divide_fhm       ; work         ;
+;                |sign_div_unsign_7kh:divider| ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdB|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh  ; work         ;
+;                   |alt_u_div_24f:divider|    ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdB|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f        ; work         ;
+;          |lpm_divide:Mod0|                   ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdB|lpm_divide:Mod0                                                                                 ; lpm_divide           ; work         ;
+;             |lpm_divide_i9m:auto_generated|  ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdB|lpm_divide:Mod0|lpm_divide_i9m:auto_generated                                                   ; lpm_divide_i9m       ; work         ;
+;                |sign_div_unsign_7kh:divider| ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdB|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh  ; work         ;
+;                   |alt_u_div_24f:divider|    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdB|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f        ; work         ;
+;       |DecoderSsd_4bits_Dec:ssdQ|            ; 20 (7)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdQ                                                                                                 ; DecoderSsd_4bits_Dec ; work         ;
+;          |lpm_divide:Div0|                   ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|lpm_divide:Div0                                                                                 ; lpm_divide           ; work         ;
+;             |lpm_divide_fhm:auto_generated|  ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|lpm_divide:Div0|lpm_divide_fhm:auto_generated                                                   ; lpm_divide_fhm       ; work         ;
+;                |sign_div_unsign_7kh:divider| ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh  ; work         ;
+;                   |alt_u_div_24f:divider|    ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f        ; work         ;
+;          |lpm_divide:Mod0|                   ; 9 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|lpm_divide:Mod0                                                                                 ; lpm_divide           ; work         ;
+;             |lpm_divide_i9m:auto_generated|  ; 9 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|lpm_divide:Mod0|lpm_divide_i9m:auto_generated                                                   ; lpm_divide_i9m       ; work         ;
+;                |sign_div_unsign_7kh:divider| ; 9 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh  ; work         ;
+;                   |alt_u_div_24f:divider|    ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f        ; work         ;
+;       |DecoderSsd_4bits_Dec:ssdR|            ; 18 (7)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdR                                                                                                 ; DecoderSsd_4bits_Dec ; work         ;
+;          |lpm_divide:Div0|                   ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdR|lpm_divide:Div0                                                                                 ; lpm_divide           ; work         ;
+;             |lpm_divide_fhm:auto_generated|  ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdR|lpm_divide:Div0|lpm_divide_fhm:auto_generated                                                   ; lpm_divide_fhm       ; work         ;
+;                |sign_div_unsign_7kh:divider| ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdR|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh  ; work         ;
+;                   |alt_u_div_24f:divider|    ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdR|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f        ; work         ;
+;          |lpm_divide:Mod0|                   ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdR|lpm_divide:Mod0                                                                                 ; lpm_divide           ; work         ;
+;             |lpm_divide_i9m:auto_generated|  ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdR|lpm_divide:Mod0|lpm_divide_i9m:auto_generated                                                   ; lpm_divide_i9m       ; work         ;
+;                |sign_div_unsign_7kh:divider| ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdR|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh  ; work         ;
+;                   |alt_u_div_24f:divider|    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdR|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f        ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                       ;
++---------------------------------------------------+--------------------------------------+
+; Register name                                     ; Reason for Removal                   ;
++---------------------------------------------------+--------------------------------------+
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~0  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~1  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~2  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~3  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~4  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~5  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~6  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~7  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~8  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~9  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~10 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~11 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~12 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~13 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~14 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~15 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~16 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~17 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~18 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~19 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~20 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~21 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~22 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~23 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~24 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~25 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~26 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~27 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~28 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~29 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~30 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~31 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~32 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~33 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~34 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~35 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~36 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~37 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~38 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~39 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~40 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~41 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~42 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~43 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~44 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~45 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~46 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~47 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~48 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~49 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~50 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~51 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~52 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~53 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~54 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~55 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~56 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~57 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~58 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~59 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~60 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~61 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~62 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~63 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~64 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~65 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~66 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~67 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~68 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg~69 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~0  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~1  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~2  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~3  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~4  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~5  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~6  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~7  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~8  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~9  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~10 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~11 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~12 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~13 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~14 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~15 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~16 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~17 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~18 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~19 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~20 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~21 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~22 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~23 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~24 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~25 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~26 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~27 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~28 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~29 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~30 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~31 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~32 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~33 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~34 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~35 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~36 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~37 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~38 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~39 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~40 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~41 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~42 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~43 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~44 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~45 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~46 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~47 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~48 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~49 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~50 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~51 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~52 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~53 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~54 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~55 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~56 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~57 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~58 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~59 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~60 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~61 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~62 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~63 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~64 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~65 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~66 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~67 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~68 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg~69 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~0  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~1  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~2  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~3  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~4  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~5  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~6  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~7  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~8  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~9  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~10 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~11 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~12 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~13 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~14 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~15 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~16 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~17 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~18 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~19 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~20 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~21 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~22 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~23 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~24 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~25 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~26 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~27 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~28 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~29 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~30 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~31 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~32 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~33 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~34 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~35 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~36 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~37 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~38 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~39 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~40 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~41 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~42 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~43 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~44 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~45 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~46 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~47 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~48 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~49 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~50 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~51 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~52 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~53 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~54 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~55 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~56 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~57 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~58 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~59 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~60 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~61 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~62 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~63 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~64 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~65 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~66 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~67 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~68 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg~69 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~0  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~1  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~2  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~3  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~4  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~5  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~6  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~7  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~8  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~9  ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~10 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~11 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~12 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~13 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~14 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~15 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~16 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~17 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~18 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~19 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~20 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~21 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~22 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~23 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~24 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~25 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~26 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~27 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~28 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~29 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~30 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~31 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~32 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~33 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~34 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~35 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~36 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~37 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~38 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~39 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~40 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~41 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~42 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~43 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~44 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~45 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~46 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~47 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~48 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~49 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~50 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~51 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~52 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~53 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~54 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~55 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~56 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~57 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~58 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~59 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~60 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~61 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~62 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~63 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~64 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~65 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~66 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~67 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~68 ; Stuck at GND due to stuck port clock ;
+; Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg~69 ; Stuck at GND due to stuck port clock ;
+; Total Number of Removed Registers = 280           ;                                      ;
++---------------------------------------------------+--------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|lpm_divide:Div0 ;
++------------------------+----------------+-------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                        ;
++------------------------+----------------+-------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                     ;
+; CBXI_PARAMETER         ; lpm_divide_fhm ; Untyped                                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                              ;
++------------------------+----------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                        ;
++------------------------+----------------+-------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                     ;
+; CBXI_PARAMETER         ; lpm_divide_i9m ; Untyped                                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                              ;
++------------------------+----------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Saida:sai1|DecoderSsd_4bits_Dec:ssdR|lpm_divide:Div0 ;
++------------------------+----------------+-------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                        ;
++------------------------+----------------+-------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                     ;
+; CBXI_PARAMETER         ; lpm_divide_fhm ; Untyped                                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                              ;
++------------------------+----------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Saida:sai1|DecoderSsd_4bits_Dec:ssdR|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                        ;
++------------------------+----------------+-------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                     ;
+; CBXI_PARAMETER         ; lpm_divide_i9m ; Untyped                                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                              ;
++------------------------+----------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Saida:sai1|DecoderSsd_4bits_Dec:ssdA|lpm_divide:Div0 ;
++------------------------+----------------+-------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                        ;
++------------------------+----------------+-------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                     ;
+; CBXI_PARAMETER         ; lpm_divide_fhm ; Untyped                                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                              ;
++------------------------+----------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Saida:sai1|DecoderSsd_4bits_Dec:ssdA|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                        ;
++------------------------+----------------+-------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                     ;
+; CBXI_PARAMETER         ; lpm_divide_i9m ; Untyped                                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                              ;
++------------------------+----------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Saida:sai1|DecoderSsd_4bits_Dec:ssdB|lpm_divide:Div0 ;
++------------------------+----------------+-------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                        ;
++------------------------+----------------+-------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                     ;
+; CBXI_PARAMETER         ; lpm_divide_fhm ; Untyped                                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                              ;
++------------------------+----------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Saida:sai1|DecoderSsd_4bits_Dec:ssdB|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                        ;
++------------------------+----------------+-------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                     ;
+; CBXI_PARAMETER         ; lpm_divide_i9m ; Untyped                                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                              ;
++------------------------+----------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "Divisor:div1|Subtractor:s4" ;
++------+-------+----------+------------------------------+
+; Port ; Type  ; Severity ; Details                      ;
++------+-------+----------+------------------------------+
+; Bin  ; Input ; Info     ; Stuck at GND                 ;
++------+-------+----------+------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Divisor:div1|Subtractor:s3"                                                         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; S[3] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Bin  ; Input  ; Info     ; Stuck at GND                                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Divisor:div1|Subtractor:s2"                                                         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; S[3] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Bin  ; Input  ; Info     ; Stuck at GND                                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "Divisor:div1|Multiplexer:m1" ;
++------------+-------+----------+-------------------------+
+; Port       ; Type  ; Severity ; Details                 ;
++------------+-------+----------+-------------------------+
+; Inp1[2..1] ; Input ; Info     ; Stuck at GND            ;
++------------+-------+----------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Divisor:div1|Subtractor:s1"                                                            ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; S[3]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; A[3..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Bin     ; Input  ; Info     ; Stuck at GND                                                                        ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 82                          ;
+; cycloneiii_io_obuf    ; 64                          ;
+; cycloneiii_lcell_comb ; 119                         ;
+;     arith             ; 40                          ;
+;         2 data inputs ; 27                          ;
+;         3 data inputs ; 13                          ;
+;     normal            ; 79                          ;
+;         0 data inputs ; 12                          ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 12                          ;
+;         4 data inputs ; 39                          ;
+;                       ;                             ;
+; Max LUT depth         ; 13.60                       ;
+; Average LUT depth     ; 6.88                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Processing started: Wed Apr 24 16:05:48 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off atv03 -c atv03
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file subtractor.v
+    Info (12023): Found entity 1: Subtractor File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Subtractor.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file multiplexer.v
+    Info (12023): Found entity 1: Multiplexer File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Multiplexer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file divisor.v
+    Info (12023): Found entity 1: Divisor File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Divisor.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file multiplexer4x.v
+    Info (12023): Found entity 1: Multiplexer4x File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Multiplexer4x.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file entrada.v
+    Info (12023): Found entity 1: Entrada File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Entrada.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decoderssd_4bits_dec.v
+    Info (12023): Found entity 1: DecoderSsd_4bits_Dec File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file saida.v
+    Info (12023): Found entity 1: Saida File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Saida.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file arquitetura.v
+    Info (12023): Found entity 1: Arquitetura File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Arquitetura.v Line: 1
+Info (12127): Elaborating entity "Arquitetura" for the top level hierarchy
+Info (12128): Elaborating entity "Entrada" for hierarchy "Entrada:ent1" File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Arquitetura.v Line: 9
+Info (12128): Elaborating entity "Divisor" for hierarchy "Divisor:div1" File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Arquitetura.v Line: 10
+Info (12128): Elaborating entity "Subtractor" for hierarchy "Divisor:div1|Subtractor:s1" File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Divisor.v Line: 7
+Info (12128): Elaborating entity "Multiplexer" for hierarchy "Divisor:div1|Multiplexer:m1" File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Divisor.v Line: 9
+Warning (10235): Verilog HDL Always Construct warning at Multiplexer.v(6): variable "Inp0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Multiplexer.v Line: 6
+Warning (10235): Verilog HDL Always Construct warning at Multiplexer.v(7): variable "Inp1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Multiplexer.v Line: 7
+Info (12128): Elaborating entity "Multiplexer4x" for hierarchy "Divisor:div1|Multiplexer4x:m4" File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Divisor.v Line: 32
+Warning (10235): Verilog HDL Always Construct warning at Multiplexer4x.v(6): variable "Inp0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Multiplexer4x.v Line: 6
+Warning (10235): Verilog HDL Always Construct warning at Multiplexer4x.v(7): variable "Inp1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Multiplexer4x.v Line: 7
+Info (12128): Elaborating entity "Saida" for hierarchy "Saida:sai1" File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Arquitetura.v Line: 11
+Info (12128): Elaborating entity "DecoderSsd_4bits_Dec" for hierarchy "Saida:sai1|DecoderSsd_4bits_Dec:ssdA" File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Saida.v Line: 5
+Warning (10230): Verilog HDL assignment warning at DecoderSsd_4bits_Dec.v(24): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 24
+Warning (10230): Verilog HDL assignment warning at DecoderSsd_4bits_Dec.v(25): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 25
+Warning (10030): Net "seven_seg.data_a" at DecoderSsd_4bits_Dec.v(3) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 3
+Warning (10030): Net "seven_seg.waddr_a" at DecoderSsd_4bits_Dec.v(3) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 3
+Warning (10030): Net "seven_seg.we_a" at DecoderSsd_4bits_Dec.v(3) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 3
+Info (276014): Found 4 instances of uninferred RAM logic
+    Info (276004): RAM logic "Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|seven_seg" is uninferred due to inappropriate RAM size File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 3
+    Info (276004): RAM logic "Saida:sai1|DecoderSsd_4bits_Dec:ssdR|seven_seg" is uninferred due to inappropriate RAM size File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 3
+    Info (276004): RAM logic "Saida:sai1|DecoderSsd_4bits_Dec:ssdA|seven_seg" is uninferred due to inappropriate RAM size File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 3
+    Info (276004): RAM logic "Saida:sai1|DecoderSsd_4bits_Dec:ssdB|seven_seg" is uninferred due to inappropriate RAM size File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 3
+Critical Warning (127005): Memory depth (16) in the design file differs from memory depth (10) in the Memory Initialization File "C:/Users/welly/Documents/GitHub/LT39A/pratica03/db/atv03.ram0_DecoderSsd_4bits_Dec_c69e66dc.hdl.mif" -- setting initial value for remaining addresses to 0
+Info (278001): Inferred 8 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|Div0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 24
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|Mod0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 25
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Saida:sai1|DecoderSsd_4bits_Dec:ssdR|Div0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 24
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Saida:sai1|DecoderSsd_4bits_Dec:ssdR|Mod0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 25
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Saida:sai1|DecoderSsd_4bits_Dec:ssdA|Div0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 24
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Saida:sai1|DecoderSsd_4bits_Dec:ssdA|Mod0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 25
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Saida:sai1|DecoderSsd_4bits_Dec:ssdB|Div0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 24
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Saida:sai1|DecoderSsd_4bits_Dec:ssdB|Mod0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 25
+Info (12130): Elaborated megafunction instantiation "Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|lpm_divide:Div0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 24
+Info (12133): Instantiated megafunction "Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|lpm_divide:Div0" with the following parameter: File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 24
+    Info (12134): Parameter "LPM_WIDTHN" = "4"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_fhm.tdf
+    Info (12023): Found entity 1: lpm_divide_fhm File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/db/lpm_divide_fhm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_7kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_7kh File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/db/sign_div_unsign_7kh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_24f.tdf
+    Info (12023): Found entity 1: alt_u_div_24f File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/db/alt_u_div_24f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/db/add_sub_7pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/db/add_sub_8pc.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|lpm_divide:Mod0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 25
+Info (12133): Instantiated megafunction "Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|lpm_divide:Mod0" with the following parameter: File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/DecoderSsd_4bits_Dec.v Line: 25
+    Info (12134): Parameter "LPM_WIDTHN" = "4"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_i9m.tdf
+    Info (12023): Found entity 1: lpm_divide_i9m File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/db/lpm_divide_i9m.tdf Line: 25
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "Entrada:ent1|Ao[0]" to the node "Divisor:div1|Multiplexer4x:m4|out[0]" into an OR gate File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Entrada.v Line: 1
+    Warning (13047): Converted the fan-out from the tri-state buffer "Entrada:ent1|Ao[1]" to the node "Divisor:div1|Multiplexer:m3|out[0]" into an OR gate File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Entrada.v Line: 1
+    Warning (13047): Converted the fan-out from the tri-state buffer "Entrada:ent1|Ao[2]" to the node "Divisor:div1|Multiplexer:m2|out[0]" into an OR gate File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Entrada.v Line: 1
+    Warning (13047): Converted the fan-out from the tri-state buffer "Entrada:ent1|Ao[3]" to the node "Divisor:div1|Multiplexer:m1|out[0]" into an OR gate File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Entrada.v Line: 1
+    Warning (13047): Converted the fan-out from the tri-state buffer "Entrada:ent1|Bo[0]" to the node "Divisor:div1|Subtractor:s4|Add0" into an OR gate File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Entrada.v Line: 1
+    Warning (13047): Converted the fan-out from the tri-state buffer "Entrada:ent1|Bo[1]" to the node "Divisor:div1|Subtractor:s4|Add0" into an OR gate File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Entrada.v Line: 1
+    Warning (13047): Converted the fan-out from the tri-state buffer "Entrada:ent1|Bo[2]" to the node "Divisor:div1|Subtractor:s4|Add0" into an OR gate File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Entrada.v Line: 1
+    Warning (13047): Converted the fan-out from the tri-state buffer "Entrada:ent1|Bo[3]" to the node "Divisor:div1|Subtractor:s4|Add0" into an OR gate File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/Entrada.v Line: 1
+Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "Saida:sai1|DecoderSsd_4bits_Dec:ssdQ|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider|add_sub_3_result_int[0]~0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica03/db/alt_u_div_24f.tdf Line: 42
+Info (144001): Generated suppressed messages file C:/Users/welly/Documents/GitHub/LT39A/pratica03/output_files/atv03.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 197 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 72 output pins
+    Info (21061): Implemented 115 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 4777 megabytes
+    Info: Processing ended: Wed Apr 24 16:05:56 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:06
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/welly/Documents/GitHub/LT39A/pratica03/output_files/atv03.map.smsg.
+
+

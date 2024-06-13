@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY arquitetura
+set_global_assignment -name TOP_LEVEL_ENTITY final
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.0.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "19:48:22  MARCH 10, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.0.0 Lite Edition"
@@ -63,8 +63,52 @@ set_global_assignment -name VHDL_FILE entrada.vhdl
 set_global_assignment -name VHDL_FILE DataRegister.vhdl
 set_global_assignment -name VHDL_FILE clockdivider.vhdl
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
+set_location_assignment PIN_Y2 -to Clock
+set_location_assignment PIN_AB26 -to DataInput[7]
+set_location_assignment PIN_AD26 -to DataInput[6]
+set_location_assignment PIN_AB28 -to DataInput[0]
+set_location_assignment PIN_AC28 -to DataInput[1]
+set_location_assignment PIN_AC27 -to DataInput[2]
+set_location_assignment PIN_AD27 -to DataInput[3]
+set_location_assignment PIN_AB27 -to DataInput[4]
+set_location_assignment PIN_AC26 -to DataInput[5]
+set_location_assignment PIN_AE23 -to DataOutOut
+set_location_assignment PIN_Y23 -to En
+set_location_assignment PIN_G18 -to ss[0]
+set_location_assignment PIN_F22 -to ss[1]
+set_location_assignment PIN_E17 -to ss[2]
+set_location_assignment PIN_L26 -to ss[3]
+set_location_assignment PIN_L25 -to ss[4]
+set_location_assignment PIN_J22 -to ss[5]
+set_location_assignment PIN_H22 -to ss[6]
+set_location_assignment PIN_E21 -to testClockOut
+set_global_assignment -name BDF_FILE final.bdf
+set_instance_assignment -name IO_STANDARD "2.5 V" -to Clock
+set_instance_assignment -name IO_STANDARD "2.5 V" -to DataInput[7]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to DataInput[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to DataInput[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to DataInput[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to DataInput[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to DataInput[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to DataInput[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to DataInput[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to DataOutOut
+set_instance_assignment -name IO_STANDARD "2.5 V" -to En
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ss[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ss[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ss[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ss[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ss[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ss[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to ss[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to testClockOut
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform3.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform4.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform5.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform6.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf

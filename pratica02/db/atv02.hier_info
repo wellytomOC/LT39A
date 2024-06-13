@@ -1,0 +1,485 @@
+|arquitetura
+Clock50MHz => entrada:ent.Clock50MHz
+reset => Sistema:sis.reset
+InpA[0] => entrada:ent.InpA[0]
+InpA[0] => saida:sai.InpA[0]
+InpA[1] => entrada:ent.InpA[1]
+InpA[1] => saida:sai.InpA[1]
+InpA[2] => entrada:ent.InpA[2]
+InpA[2] => saida:sai.InpA[2]
+InpA[3] => entrada:ent.InpA[3]
+InpA[3] => saida:sai.InpA[3]
+InpB[0] => entrada:ent.InpB[0]
+InpB[0] => saida:sai.InpB[0]
+InpB[1] => entrada:ent.InpB[1]
+InpB[1] => saida:sai.InpB[1]
+InpB[2] => entrada:ent.InpB[2]
+InpB[2] => saida:sai.InpB[2]
+InpB[3] => entrada:ent.InpB[3]
+InpB[3] => saida:sai.InpB[3]
+InpA_ssU[0] << saida:sai.InpA_ssU[0]
+InpA_ssU[1] << saida:sai.InpA_ssU[1]
+InpA_ssU[2] << saida:sai.InpA_ssU[2]
+InpA_ssU[3] << saida:sai.InpA_ssU[3]
+InpA_ssU[4] << saida:sai.InpA_ssU[4]
+InpA_ssU[5] << saida:sai.InpA_ssU[5]
+InpA_ssU[6] << saida:sai.InpA_ssU[6]
+InpA_ssD[0] << saida:sai.InpA_ssD[0]
+InpA_ssD[1] << saida:sai.InpA_ssD[1]
+InpA_ssD[2] << saida:sai.InpA_ssD[2]
+InpA_ssD[3] << saida:sai.InpA_ssD[3]
+InpA_ssD[4] << saida:sai.InpA_ssD[4]
+InpA_ssD[5] << saida:sai.InpA_ssD[5]
+InpA_ssD[6] << saida:sai.InpA_ssD[6]
+InpB_ssU[0] << saida:sai.InpB_ssU[0]
+InpB_ssU[1] << saida:sai.InpB_ssU[1]
+InpB_ssU[2] << saida:sai.InpB_ssU[2]
+InpB_ssU[3] << saida:sai.InpB_ssU[3]
+InpB_ssU[4] << saida:sai.InpB_ssU[4]
+InpB_ssU[5] << saida:sai.InpB_ssU[5]
+InpB_ssU[6] << saida:sai.InpB_ssU[6]
+InpB_ssD[0] << saida:sai.InpB_ssD[0]
+InpB_ssD[1] << saida:sai.InpB_ssD[1]
+InpB_ssD[2] << saida:sai.InpB_ssD[2]
+InpB_ssD[3] << saida:sai.InpB_ssD[3]
+InpB_ssD[4] << saida:sai.InpB_ssD[4]
+InpB_ssD[5] << saida:sai.InpB_ssD[5]
+InpB_ssD[6] << saida:sai.InpB_ssD[6]
+ALUOut_ssU[0] << saida:sai.ALUOut_ssU[0]
+ALUOut_ssU[1] << saida:sai.ALUOut_ssU[1]
+ALUOut_ssU[2] << saida:sai.ALUOut_ssU[2]
+ALUOut_ssU[3] << saida:sai.ALUOut_ssU[3]
+ALUOut_ssU[4] << saida:sai.ALUOut_ssU[4]
+ALUOut_ssU[5] << saida:sai.ALUOut_ssU[5]
+ALUOut_ssU[6] << saida:sai.ALUOut_ssU[6]
+ALUOut_ssD[0] << saida:sai.ALUOut_ssD[0]
+ALUOut_ssD[1] << saida:sai.ALUOut_ssD[1]
+ALUOut_ssD[2] << saida:sai.ALUOut_ssD[2]
+ALUOut_ssD[3] << saida:sai.ALUOut_ssD[3]
+ALUOut_ssD[4] << saida:sai.ALUOut_ssD[4]
+ALUOut_ssD[5] << saida:sai.ALUOut_ssD[5]
+ALUOut_ssD[6] << saida:sai.ALUOut_ssD[6]
+RegPrState[0] << Sistema:sis.RegPrState[0]
+RegPrState[1] << Sistema:sis.RegPrState[1]
+RegNxState[0] << Sistema:sis.RegNxState[0]
+RegNxState[1] << Sistema:sis.RegNxState[1]
+
+
+|arquitetura|entrada:ent
+Clock50MHz => ClockDivider:CD01.clk
+InpA[0] => OutA[0].DATAIN
+InpA[1] => OutA[1].DATAIN
+InpA[2] => OutA[2].DATAIN
+InpA[3] => OutA[3].DATAIN
+InpB[0] => OutB[0].DATAIN
+InpB[1] => OutB[1].DATAIN
+InpB[2] => OutB[2].DATAIN
+InpB[3] => OutB[3].DATAIN
+OutA[0] <= InpA[0].DB_MAX_OUTPUT_PORT_TYPE
+OutA[1] <= InpA[1].DB_MAX_OUTPUT_PORT_TYPE
+OutA[2] <= InpA[2].DB_MAX_OUTPUT_PORT_TYPE
+OutA[3] <= InpA[3].DB_MAX_OUTPUT_PORT_TYPE
+OutB[0] <= InpB[0].DB_MAX_OUTPUT_PORT_TYPE
+OutB[1] <= InpB[1].DB_MAX_OUTPUT_PORT_TYPE
+OutB[2] <= InpB[2].DB_MAX_OUTPUT_PORT_TYPE
+OutB[3] <= InpB[3].DB_MAX_OUTPUT_PORT_TYPE
+Clock1Hz <= ClockDivider:CD01.clock_out
+
+
+|arquitetura|entrada:ent|ClockDivider:CD01
+clk => tmp.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+clk => count[16].CLK
+clk => count[17].CLK
+clk => count[18].CLK
+clk => count[19].CLK
+clk => count[20].CLK
+clk => count[21].CLK
+clk => count[22].CLK
+clk => count[23].CLK
+clk => count[24].CLK
+clk => count[25].CLK
+clk => count[26].CLK
+clk => count[27].CLK
+clk => count[28].CLK
+clk => count[29].CLK
+clk => count[30].CLK
+clk => count[31].CLK
+clock_out <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|Sistema:sis
+clock => StateMachine_ControlUnit:FSM01.clock
+clock => Mod8Counter:m8c.CLK
+reset => StateMachine_ControlUnit:FSM01.reset
+reset => blocoOperacional:blocoOp.reset
+reset => Mod8Counter:m8c.reset
+InpA[0] => blocoOperacional:blocoOp.InpA[0]
+InpA[1] => blocoOperacional:blocoOp.InpA[1]
+InpA[2] => blocoOperacional:blocoOp.InpA[2]
+InpA[3] => blocoOperacional:blocoOp.InpA[3]
+InpB[0] => blocoOperacional:blocoOp.InpB[0]
+InpB[1] => blocoOperacional:blocoOp.InpB[1]
+InpB[2] => blocoOperacional:blocoOp.InpB[2]
+InpB[3] => blocoOperacional:blocoOp.InpB[3]
+ALUout[0] <= blocoOperacional:blocoOp.ALUout[0]
+ALUout[1] <= blocoOperacional:blocoOp.ALUout[1]
+ALUout[2] <= blocoOperacional:blocoOp.ALUout[2]
+ALUout[3] <= blocoOperacional:blocoOp.ALUout[3]
+ALUout[4] <= blocoOperacional:blocoOp.ALUout[4]
+RegPrState[0] <= StateMachine_ControlUnit:FSM01.RegPrState[0]
+RegPrState[1] <= StateMachine_ControlUnit:FSM01.RegPrState[1]
+RegNxState[0] <= StateMachine_ControlUnit:FSM01.RegNxState[0]
+RegNxState[1] <= StateMachine_ControlUnit:FSM01.RegNxState[1]
+
+
+|arquitetura|Sistema:sis|StateMachine_ControlUnit:FSM01
+clock => RegNxState[0]~reg0.CLK
+clock => RegNxState[1]~reg0.CLK
+clock => RegPrState[0]~reg0.CLK
+clock => RegPrState[1]~reg0.CLK
+clock => RegALUop[0]~reg0.CLK
+clock => RegALUop[1]~reg0.CLK
+clock => RegWrB~reg0.CLK
+clock => RegWrA~reg0.CLK
+clock => RegSelA~reg0.CLK
+clock => PresentState~1.DATAIN
+reset => RegALUop[0]~reg0.PRESET
+reset => RegALUop[1]~reg0.ACLR
+reset => RegWrB~reg0.ACLR
+reset => RegWrA~reg0.ACLR
+reset => RegSelA~reg0.ACLR
+reset => PresentState~3.DATAIN
+reset => RegNxState[0]~reg0.ENA
+reset => RegPrState[1]~reg0.ENA
+reset => RegPrState[0]~reg0.ENA
+reset => RegNxState[1]~reg0.ENA
+dv => NextState.load.DATAB
+dv => Selector1.IN2
+dv => NxState[0].DATAB
+dv => Selector0.IN2
+RegSelA <= RegSelA~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RegWrA <= RegWrA~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RegWrB <= RegWrB~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RegALUop[0] <= RegALUop[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RegALUop[1] <= RegALUop[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RegPrState[0] <= RegPrState[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RegPrState[1] <= RegPrState[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RegNxState[0] <= RegNxState[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RegNxState[1] <= RegNxState[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|Sistema:sis|blocoOperacional:blocoOp
+InpA[0] => multiplexador:mux1.Inp1[0]
+InpA[1] => multiplexador:mux1.Inp1[1]
+InpA[2] => multiplexador:mux1.Inp1[2]
+InpA[3] => multiplexador:mux1.Inp1[3]
+InpB[0] => registrador:regB.DataIn[0]
+InpB[1] => registrador:regB.DataIn[1]
+InpB[2] => registrador:regB.DataIn[2]
+InpB[3] => registrador:regB.DataIn[3]
+selA => multiplexador:mux1.selA
+wrA => registrador:regA.clock
+wrB => registrador:regB.clock
+ALUop[0] => ULA:alu1.ALUop[0]
+ALUop[1] => ULA:alu1.ALUop[1]
+reset => registrador:regA.reset
+reset => registrador:regB.reset
+ALUout[0] <= ULA:alu1.ALUout[0]
+ALUout[1] <= ULA:alu1.ALUout[1]
+ALUout[2] <= ULA:alu1.ALUout[2]
+ALUout[3] <= ULA:alu1.ALUout[3]
+ALUout[4] <= ULA:alu1.ALUout[4]
+
+
+|arquitetura|Sistema:sis|blocoOperacional:blocoOp|multiplexador:mux1
+Inp0[0] => OutMux.DATAB
+Inp0[1] => OutMux.DATAB
+Inp0[2] => OutMux.DATAB
+Inp0[3] => OutMux.DATAB
+Inp1[0] => OutMux.DATAA
+Inp1[1] => OutMux.DATAA
+Inp1[2] => OutMux.DATAA
+Inp1[3] => OutMux.DATAA
+selA => OutMux.OUTPUTSELECT
+selA => OutMux.OUTPUTSELECT
+selA => OutMux.OUTPUTSELECT
+selA => OutMux.OUTPUTSELECT
+OutMux[0] <= OutMux.DB_MAX_OUTPUT_PORT_TYPE
+OutMux[1] <= OutMux.DB_MAX_OUTPUT_PORT_TYPE
+OutMux[2] <= OutMux.DB_MAX_OUTPUT_PORT_TYPE
+OutMux[3] <= OutMux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|Sistema:sis|blocoOperacional:blocoOp|registrador:regA
+DataIn[0] => DataOut[0]~reg0.DATAIN
+DataIn[1] => DataOut[1]~reg0.DATAIN
+DataIn[2] => DataOut[2]~reg0.DATAIN
+DataIn[3] => DataOut[3]~reg0.DATAIN
+clock => DataOut[0]~reg0.CLK
+clock => DataOut[1]~reg0.CLK
+clock => DataOut[2]~reg0.CLK
+clock => DataOut[3]~reg0.CLK
+reset => DataOut[0]~reg0.ACLR
+reset => DataOut[1]~reg0.ACLR
+reset => DataOut[2]~reg0.ACLR
+reset => DataOut[3]~reg0.ACLR
+DataOut[0] <= DataOut[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DataOut[1] <= DataOut[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DataOut[2] <= DataOut[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DataOut[3] <= DataOut[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|Sistema:sis|blocoOperacional:blocoOp|registrador:regB
+DataIn[0] => DataOut[0]~reg0.DATAIN
+DataIn[1] => DataOut[1]~reg0.DATAIN
+DataIn[2] => DataOut[2]~reg0.DATAIN
+DataIn[3] => DataOut[3]~reg0.DATAIN
+clock => DataOut[0]~reg0.CLK
+clock => DataOut[1]~reg0.CLK
+clock => DataOut[2]~reg0.CLK
+clock => DataOut[3]~reg0.CLK
+reset => DataOut[0]~reg0.ACLR
+reset => DataOut[1]~reg0.ACLR
+reset => DataOut[2]~reg0.ACLR
+reset => DataOut[3]~reg0.ACLR
+DataOut[0] <= DataOut[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DataOut[1] <= DataOut[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DataOut[2] <= DataOut[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DataOut[3] <= DataOut[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|Sistema:sis|blocoOperacional:blocoOp|ULA:alu1
+A[0] => Mux4.IN1
+A[0] => Somador:sum01.A[0]
+A[1] => Mux3.IN1
+A[1] => Somador:sum01.A[1]
+A[2] => Mux2.IN1
+A[2] => Somador:sum01.A[2]
+A[3] => Mux1.IN1
+A[3] => Somador:sum01.A[3]
+B[0] => Mux4.IN2
+B[0] => Somador:sum01.B[0]
+B[1] => Mux3.IN2
+B[1] => Somador:sum01.B[1]
+B[2] => Mux2.IN2
+B[2] => Somador:sum01.B[2]
+B[3] => Mux1.IN2
+B[3] => Somador:sum01.B[3]
+ALUop[0] => Mux0.IN4
+ALUop[0] => Mux1.IN4
+ALUop[0] => Mux2.IN4
+ALUop[0] => Mux3.IN4
+ALUop[0] => Mux4.IN4
+ALUop[1] => Mux0.IN3
+ALUop[1] => Mux1.IN3
+ALUop[1] => Mux2.IN3
+ALUop[1] => Mux3.IN3
+ALUop[1] => Mux4.IN3
+ALUout[0] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+ALUout[1] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+ALUout[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+ALUout[3] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+ALUout[4] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|Sistema:sis|blocoOperacional:blocoOp|ULA:alu1|Somador:sum01
+A[0] => Add0.IN4
+A[1] => Add0.IN3
+A[2] => Add0.IN2
+A[3] => Add0.IN1
+B[0] => Add0.IN8
+B[1] => Add0.IN7
+B[2] => Add0.IN6
+B[3] => Add0.IN5
+Sum[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Sum[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Sum[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Sum[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Sum[4] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|Sistema:sis|Mod8Counter:m8c
+CLK => CountBuffer[0].CLK
+CLK => CountBuffer[1].CLK
+CLK => CountBuffer[2].CLK
+reset => CountBuffer[0].ACLR
+reset => CountBuffer[1].ACLR
+reset => CountBuffer[2].ACLR
+dv <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|saida:sai
+InpA[0] => SevenSegmentsDecoder_4bitsToDec:outA.A[0]
+InpA[1] => SevenSegmentsDecoder_4bitsToDec:outA.A[1]
+InpA[2] => SevenSegmentsDecoder_4bitsToDec:outA.A[2]
+InpA[3] => SevenSegmentsDecoder_4bitsToDec:outA.A[3]
+InpB[0] => SevenSegmentsDecoder_4bitsToDec:outB.A[0]
+InpB[1] => SevenSegmentsDecoder_4bitsToDec:outB.A[1]
+InpB[2] => SevenSegmentsDecoder_4bitsToDec:outB.A[2]
+InpB[3] => SevenSegmentsDecoder_4bitsToDec:outB.A[3]
+ALUOut[0] => SevenSegmentsDecoder_5bitsToDec:outALU.A[0]
+ALUOut[1] => SevenSegmentsDecoder_5bitsToDec:outALU.A[1]
+ALUOut[2] => SevenSegmentsDecoder_5bitsToDec:outALU.A[2]
+ALUOut[3] => SevenSegmentsDecoder_5bitsToDec:outALU.A[3]
+ALUOut[4] => SevenSegmentsDecoder_5bitsToDec:outALU.A[4]
+InpA_ssU[0] <= SevenSegmentsDecoder_4bitsToDec:outA.ssA0[0]
+InpA_ssU[1] <= SevenSegmentsDecoder_4bitsToDec:outA.ssA0[1]
+InpA_ssU[2] <= SevenSegmentsDecoder_4bitsToDec:outA.ssA0[2]
+InpA_ssU[3] <= SevenSegmentsDecoder_4bitsToDec:outA.ssA0[3]
+InpA_ssU[4] <= SevenSegmentsDecoder_4bitsToDec:outA.ssA0[4]
+InpA_ssU[5] <= SevenSegmentsDecoder_4bitsToDec:outA.ssA0[5]
+InpA_ssU[6] <= SevenSegmentsDecoder_4bitsToDec:outA.ssA0[6]
+InpA_ssD[0] <= SevenSegmentsDecoder_4bitsToDec:outA.ssA1[0]
+InpA_ssD[1] <= SevenSegmentsDecoder_4bitsToDec:outA.ssA1[1]
+InpA_ssD[2] <= SevenSegmentsDecoder_4bitsToDec:outA.ssA1[2]
+InpA_ssD[3] <= SevenSegmentsDecoder_4bitsToDec:outA.ssA1[3]
+InpA_ssD[4] <= SevenSegmentsDecoder_4bitsToDec:outA.ssA1[4]
+InpA_ssD[5] <= SevenSegmentsDecoder_4bitsToDec:outA.ssA1[5]
+InpA_ssD[6] <= SevenSegmentsDecoder_4bitsToDec:outA.ssA1[6]
+InpB_ssU[0] <= SevenSegmentsDecoder_4bitsToDec:outB.ssA0[0]
+InpB_ssU[1] <= SevenSegmentsDecoder_4bitsToDec:outB.ssA0[1]
+InpB_ssU[2] <= SevenSegmentsDecoder_4bitsToDec:outB.ssA0[2]
+InpB_ssU[3] <= SevenSegmentsDecoder_4bitsToDec:outB.ssA0[3]
+InpB_ssU[4] <= SevenSegmentsDecoder_4bitsToDec:outB.ssA0[4]
+InpB_ssU[5] <= SevenSegmentsDecoder_4bitsToDec:outB.ssA0[5]
+InpB_ssU[6] <= SevenSegmentsDecoder_4bitsToDec:outB.ssA0[6]
+InpB_ssD[0] <= SevenSegmentsDecoder_4bitsToDec:outB.ssA1[0]
+InpB_ssD[1] <= SevenSegmentsDecoder_4bitsToDec:outB.ssA1[1]
+InpB_ssD[2] <= SevenSegmentsDecoder_4bitsToDec:outB.ssA1[2]
+InpB_ssD[3] <= SevenSegmentsDecoder_4bitsToDec:outB.ssA1[3]
+InpB_ssD[4] <= SevenSegmentsDecoder_4bitsToDec:outB.ssA1[4]
+InpB_ssD[5] <= SevenSegmentsDecoder_4bitsToDec:outB.ssA1[5]
+InpB_ssD[6] <= SevenSegmentsDecoder_4bitsToDec:outB.ssA1[6]
+ALUOut_ssU[0] <= SevenSegmentsDecoder_5bitsToDec:outALU.ssA0[0]
+ALUOut_ssU[1] <= SevenSegmentsDecoder_5bitsToDec:outALU.ssA0[1]
+ALUOut_ssU[2] <= SevenSegmentsDecoder_5bitsToDec:outALU.ssA0[2]
+ALUOut_ssU[3] <= SevenSegmentsDecoder_5bitsToDec:outALU.ssA0[3]
+ALUOut_ssU[4] <= SevenSegmentsDecoder_5bitsToDec:outALU.ssA0[4]
+ALUOut_ssU[5] <= SevenSegmentsDecoder_5bitsToDec:outALU.ssA0[5]
+ALUOut_ssU[6] <= SevenSegmentsDecoder_5bitsToDec:outALU.ssA0[6]
+ALUOut_ssD[0] <= SevenSegmentsDecoder_5bitsToDec:outALU.ssA1[0]
+ALUOut_ssD[1] <= SevenSegmentsDecoder_5bitsToDec:outALU.ssA1[1]
+ALUOut_ssD[2] <= SevenSegmentsDecoder_5bitsToDec:outALU.ssA1[2]
+ALUOut_ssD[3] <= SevenSegmentsDecoder_5bitsToDec:outALU.ssA1[3]
+ALUOut_ssD[4] <= SevenSegmentsDecoder_5bitsToDec:outALU.ssA1[4]
+ALUOut_ssD[5] <= SevenSegmentsDecoder_5bitsToDec:outALU.ssA1[5]
+ALUOut_ssD[6] <= SevenSegmentsDecoder_5bitsToDec:outALU.ssA1[6]
+
+
+|arquitetura|saida:sai|SevenSegmentsDecoder_4bitsToDec:outA
+A[0] => Div0.IN13
+A[0] => Equal9.IN3
+A[0] => Equal10.IN2
+A[0] => Equal11.IN3
+A[0] => Equal12.IN1
+A[0] => Equal13.IN3
+A[0] => Equal14.IN1
+A[0] => Equal15.IN3
+A[0] => Equal16.IN0
+A[0] => Equal17.IN3
+A[1] => Div0.IN12
+A[1] => Add1.IN18
+A[2] => Div0.IN11
+A[2] => Add1.IN17
+A[3] => Div0.IN10
+A[3] => Add1.IN16
+ssA0[0] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA0[1] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA0[2] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA0[3] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA0[4] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA0[5] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA0[6] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[0] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[1] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[2] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[3] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[4] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[5] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[6] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|saida:sai|SevenSegmentsDecoder_4bitsToDec:outB
+A[0] => Div0.IN13
+A[0] => Equal9.IN3
+A[0] => Equal10.IN2
+A[0] => Equal11.IN3
+A[0] => Equal12.IN1
+A[0] => Equal13.IN3
+A[0] => Equal14.IN1
+A[0] => Equal15.IN3
+A[0] => Equal16.IN0
+A[0] => Equal17.IN3
+A[1] => Div0.IN12
+A[1] => Add1.IN18
+A[2] => Div0.IN11
+A[2] => Add1.IN17
+A[3] => Div0.IN10
+A[3] => Add1.IN16
+ssA0[0] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA0[1] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA0[2] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA0[3] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA0[4] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA0[5] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA0[6] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[0] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[1] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[2] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[3] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[4] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[5] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[6] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|saida:sai|SevenSegmentsDecoder_5bitsToDec:outALU
+A[0] => Div0.IN13
+A[0] => Equal9.IN3
+A[0] => Equal10.IN2
+A[0] => Equal11.IN3
+A[0] => Equal12.IN1
+A[0] => Equal13.IN3
+A[0] => Equal14.IN1
+A[0] => Equal15.IN3
+A[0] => Equal16.IN0
+A[0] => Equal17.IN3
+A[1] => Div0.IN12
+A[1] => Add1.IN18
+A[2] => Div0.IN11
+A[2] => Add1.IN17
+A[3] => Div0.IN10
+A[3] => Add1.IN16
+A[4] => Div0.IN9
+A[4] => Add1.IN15
+ssA0[0] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA0[1] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA0[2] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA0[3] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA0[4] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA0[5] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA0[6] <= ssA0.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[0] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[1] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[2] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[3] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[4] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[5] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+ssA1[6] <= ssA1.DB_MAX_OUTPUT_PORT_TYPE
+
+

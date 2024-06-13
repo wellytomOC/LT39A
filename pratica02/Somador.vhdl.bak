@@ -1,0 +1,20 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+entity Somador is
+    port
+    (
+        A,B: in unsigned(3 downto 0);
+
+        Sum: out unsigned(4 downto 0)
+    );
+end entity;
+
+architecture behavior of Somador is
+
+begin
+
+    Sum <= A + B;
+
+
+end architecture;

@@ -1,0 +1,5 @@
+module Divisor (output[3:0]Q,R, input[3:0]A,B);
+
+	
+
+endmodule

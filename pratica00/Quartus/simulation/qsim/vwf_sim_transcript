@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off atv00 -c atv00 --vector_source="C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/Waveform1.vwf" --testbench_file="C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/simulation/qsim/Waveform1.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off atv00 -c atv00 --vector_source="C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/Waveform6.vwf" --testbench_file="C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/simulation/qsim/Waveform6.vwf.vht"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,8 +26,8 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Intel and sold by Intel or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Sun Mar 17 07:09:01 2024
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off atv00 -c atv00 --vector_source=C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/Waveform1.vwf --testbench_file=C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/simulation/qsim/Waveform1.vwf.vht
+    Info: Processing started: Thu Apr 11 21:12:55 2024
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off atv00 -c atv00 --vector_source=C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/Waveform6.vwf --testbench_file=C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/simulation/qsim/Waveform6.vwf.vht
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
 Completed successfully. 
@@ -53,13 +53,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Intel and sold by Intel or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Sun Mar 17 07:09:01 2024
+    Info: Processing started: Thu Apr 11 21:12:55 2024
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/simulation/qsim/ atv00 -c atv00
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file atv00.vho in folder "C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4641 megabytes
-    Info: Processing ended: Sun Mar 17 07:09:02 2024
+    Info: Peak virtual memory: 4639 megabytes
+    Info: Processing ended: Thu Apr 11 21:12:56 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
@@ -79,80 +79,68 @@ Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 
 # 10.5b
 
-
 # do atv00.do
-
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:09:03 on Mar 17,2024
+# Start time: 21:12:56 on Apr 11,2024
 # vcom -work work atv00.vho 
-
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
+
 # -- Loading package VITAL_Timing
 # -- Loading package VITAL_Primitives
 # -- Loading package cycloneive_atom_pack
 # -- Loading package cycloneive_components
 # -- Compiling entity hard_block
 # -- Compiling architecture structure of hard_block
-
-# -- Loading package dffeas_pack
-# -- Loading package altera_primitives_components
-# -- Compiling entity arquitetura
-# -- Compiling architecture structure of arquitetura
-# End time: 07:09:04 on Mar 17,2024, Elapsed time: 0:00:01
+# -- Compiling entity sevenSegDecoder
+# -- Compiling architecture structure of sevenSegDecoder
+# End time: 21:12:56 on Apr 11,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:09:04 on Mar 17,2024
-# vcom -work work Waveform1.vwf.vht 
+# Start time: 21:12:56 on Apr 11,2024
+# vcom -work work Waveform6.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity arquitetura_vhd_vec_tst
-# -- Compiling architecture arquitetura_arch of arquitetura_vhd_vec_tst
-# End time: 07:09:04 on Mar 17,2024, Elapsed time: 0:00:00
+# -- Compiling entity sevenSegDecoder_vhd_vec_tst
+# -- Compiling architecture sevenSegDecoder_arch of sevenSegDecoder_vhd_vec_tst
+# End time: 21:12:56 on Apr 11,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
-# vsim -novopt -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.arquitetura_vhd_vec_tst 
-# Start time: 07:09:04 on Mar 17,2024
+# vsim -novopt -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.sevenSegDecoder_vhd_vec_tst 
+# Start time: 21:12:56 on Apr 11,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading work.arquitetura_vhd_vec_tst(arquitetura_arch)
+# Loading work.sevensegdecoder_vhd_vec_tst(sevensegdecoder_arch)
 # Loading ieee.vital_timing(body)
 # Loading ieee.vital_primitives(body)
-# Loading altera.dffeas_pack
-# Loading altera.altera_primitives_components
 # Loading cycloneive.cycloneive_atom_pack(body)
 # Loading cycloneive.cycloneive_components
-# Loading work.arquitetura(structure)
+# Loading work.sevensegdecoder(structure)
 # Loading work.hard_block(structure)
 # Loading ieee.std_logic_arith(body)
 # Loading cycloneive.cycloneive_io_obuf(arch)
 # Loading cycloneive.cycloneive_io_ibuf(arch)
-# Loading cycloneive.cycloneive_clkctrl(vital_clkctrl)
-# Loading cycloneive.cycloneive_ena_reg(behave)
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
-# Loading altera.dffeas(vital_dffeas)
-# ** Warning: Design size of 20325 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
-# Expect performance to be adversely affected.
-# after#35
+# after#33
 
-# End time: 07:09:05 on Mar 17,2024, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 1
+# End time: 21:12:57 on Apr 11,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/Waveform1.vwf...
+Reading C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/Waveform6.vwf...
 
 Reading C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/simulation/qsim/atv00.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/simulation/qsim/atv00_20240317070905.sim.vwf
+Writing the resulting VWF to C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/simulation/qsim/atv00_20240411211257.sim.vwf
 
 Finished VCD to VWF conversion.
 

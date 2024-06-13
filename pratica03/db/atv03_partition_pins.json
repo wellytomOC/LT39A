@@ -1,0 +1,337 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ssdQD[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdQD[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdQD[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdQD[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdQD[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdQD[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdQD[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdQU[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdQU[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdQU[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdQU[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdQU[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdQU[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdQU[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdRD[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdRD[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdRD[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdRD[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdRD[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdRD[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdRD[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdRU[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdRU[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdRU[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdRU[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdRU[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdRU[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdRU[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdAD[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdAD[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdAD[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdAD[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdAD[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdAD[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdAD[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdAU[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdAU[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdAU[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdAU[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdAU[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdAU[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdAU[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdBD[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdBD[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdBD[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdBD[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdBD[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdBD[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdBD[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdBU[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdBU[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdBU[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdBU[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdBU[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdBU[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ssdBU[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Asig[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Asig[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Asig[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Asig[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Bsig[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Bsig[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Bsig[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Bsig[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Qsig[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Qsig[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Qsig[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Qsig[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Rsig[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Rsig[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Rsig[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Rsig[3]",
+					"strict" : false
+				},
+				{
+					"name" : "A[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Enable",
+					"strict" : false
+				},
+				{
+					"name" : "B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "B[3]",
+					"strict" : false
+				},
+				{
+					"name" : "B[2]",
+					"strict" : false
+				},
+				{
+					"name" : "B[1]",
+					"strict" : false
+				},
+				{
+					"name" : "A[2]",
+					"strict" : false
+				},
+				{
+					"name" : "A[1]",
+					"strict" : false
+				},
+				{
+					"name" : "A[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Strobe",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

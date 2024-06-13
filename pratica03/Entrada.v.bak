@@ -1,0 +1,6 @@
+module entrada (input [3:0]A,B, input enable, output [3:0]Ao,Bo)
+
+	assign Ao = (enable == 1'b1)? A : 1'bZ;
+	assign Bo = (enable == 1'b1)? B : 1'bZ;
+
+endmodule 

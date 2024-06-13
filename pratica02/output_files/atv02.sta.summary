@@ -1,0 +1,125 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'Clock50MHz'
+Slack : -5.159
+TNS   : -114.134
+
+Type  : Slow 1200mV 85C Model Setup 'Sistema:sis|StateMachine_ControlUnit:FSM01|RegWrA'
+Slack : -2.109
+TNS   : -7.901
+
+Type  : Slow 1200mV 85C Model Setup 'entrada:ent|ClockDivider:CD01|tmp'
+Slack : -0.598
+TNS   : -2.829
+
+Type  : Slow 1200mV 85C Model Hold 'entrada:ent|ClockDivider:CD01|tmp'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Sistema:sis|StateMachine_ControlUnit:FSM01|RegWrA'
+Slack : 0.520
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Clock50MHz'
+Slack : 1.096
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Clock50MHz'
+Slack : -3.000
+TNS   : -45.405
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'entrada:ent|ClockDivider:CD01|tmp'
+Slack : -1.285
+TNS   : -16.705
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Sistema:sis|StateMachine_ControlUnit:FSM01|RegWrA'
+Slack : -1.285
+TNS   : -5.140
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Sistema:sis|StateMachine_ControlUnit:FSM01|RegWrB'
+Slack : -1.285
+TNS   : -5.140
+
+Type  : Slow 1200mV 0C Model Setup 'Clock50MHz'
+Slack : -4.656
+TNS   : -101.382
+
+Type  : Slow 1200mV 0C Model Setup 'Sistema:sis|StateMachine_ControlUnit:FSM01|RegWrA'
+Slack : -1.864
+TNS   : -6.866
+
+Type  : Slow 1200mV 0C Model Setup 'entrada:ent|ClockDivider:CD01|tmp'
+Slack : -0.440
+TNS   : -1.742
+
+Type  : Slow 1200mV 0C Model Hold 'entrada:ent|ClockDivider:CD01|tmp'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Sistema:sis|StateMachine_ControlUnit:FSM01|RegWrA'
+Slack : 0.443
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Clock50MHz'
+Slack : 0.981
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Clock50MHz'
+Slack : -3.000
+TNS   : -45.405
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'entrada:ent|ClockDivider:CD01|tmp'
+Slack : -1.285
+TNS   : -16.705
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Sistema:sis|StateMachine_ControlUnit:FSM01|RegWrA'
+Slack : -1.285
+TNS   : -5.140
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Sistema:sis|StateMachine_ControlUnit:FSM01|RegWrB'
+Slack : -1.285
+TNS   : -5.140
+
+Type  : Fast 1200mV 0C Model Setup 'Clock50MHz'
+Slack : -2.154
+TNS   : -40.295
+
+Type  : Fast 1200mV 0C Model Setup 'Sistema:sis|StateMachine_ControlUnit:FSM01|RegWrA'
+Slack : -0.503
+TNS   : -1.746
+
+Type  : Fast 1200mV 0C Model Setup 'entrada:ent|ClockDivider:CD01|tmp'
+Slack : 0.220
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'entrada:ent|ClockDivider:CD01|tmp'
+Slack : 0.180
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Sistema:sis|StateMachine_ControlUnit:FSM01|RegWrA'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Clock50MHz'
+Slack : 0.512
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Clock50MHz'
+Slack : -3.000
+TNS   : -38.058
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'entrada:ent|ClockDivider:CD01|tmp'
+Slack : -1.000
+TNS   : -13.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Sistema:sis|StateMachine_ControlUnit:FSM01|RegWrA'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Sistema:sis|StateMachine_ControlUnit:FSM01|RegWrB'
+Slack : -1.000
+TNS   : -4.000
+
+------------------------------------------------------------

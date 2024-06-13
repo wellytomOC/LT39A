@@ -1,0 +1,485 @@
+|Arquitetura
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+Enable => Enable.IN1
+Strobe => Strobe.IN1
+ssdQD[0] <= Saida:sai1.port5
+ssdQD[1] <= Saida:sai1.port5
+ssdQD[2] <= Saida:sai1.port5
+ssdQD[3] <= Saida:sai1.port5
+ssdQD[4] <= Saida:sai1.port5
+ssdQD[5] <= Saida:sai1.port5
+ssdQD[6] <= Saida:sai1.port5
+ssdQU[0] <= Saida:sai1.port6
+ssdQU[1] <= Saida:sai1.port6
+ssdQU[2] <= Saida:sai1.port6
+ssdQU[3] <= Saida:sai1.port6
+ssdQU[4] <= Saida:sai1.port6
+ssdQU[5] <= Saida:sai1.port6
+ssdQU[6] <= Saida:sai1.port6
+ssdRD[0] <= Saida:sai1.port7
+ssdRD[1] <= Saida:sai1.port7
+ssdRD[2] <= Saida:sai1.port7
+ssdRD[3] <= Saida:sai1.port7
+ssdRD[4] <= Saida:sai1.port7
+ssdRD[5] <= Saida:sai1.port7
+ssdRD[6] <= Saida:sai1.port7
+ssdRU[0] <= Saida:sai1.port8
+ssdRU[1] <= Saida:sai1.port8
+ssdRU[2] <= Saida:sai1.port8
+ssdRU[3] <= Saida:sai1.port8
+ssdRU[4] <= Saida:sai1.port8
+ssdRU[5] <= Saida:sai1.port8
+ssdRU[6] <= Saida:sai1.port8
+ssdAD[0] <= Saida:sai1.port9
+ssdAD[1] <= Saida:sai1.port9
+ssdAD[2] <= Saida:sai1.port9
+ssdAD[3] <= Saida:sai1.port9
+ssdAD[4] <= Saida:sai1.port9
+ssdAD[5] <= Saida:sai1.port9
+ssdAD[6] <= Saida:sai1.port9
+ssdAU[0] <= Saida:sai1.port10
+ssdAU[1] <= Saida:sai1.port10
+ssdAU[2] <= Saida:sai1.port10
+ssdAU[3] <= Saida:sai1.port10
+ssdAU[4] <= Saida:sai1.port10
+ssdAU[5] <= Saida:sai1.port10
+ssdAU[6] <= Saida:sai1.port10
+ssdBD[0] <= Saida:sai1.port11
+ssdBD[1] <= Saida:sai1.port11
+ssdBD[2] <= Saida:sai1.port11
+ssdBD[3] <= Saida:sai1.port11
+ssdBD[4] <= Saida:sai1.port11
+ssdBD[5] <= Saida:sai1.port11
+ssdBD[6] <= Saida:sai1.port11
+ssdBU[0] <= Saida:sai1.port12
+ssdBU[1] <= Saida:sai1.port12
+ssdBU[2] <= Saida:sai1.port12
+ssdBU[3] <= Saida:sai1.port12
+ssdBU[4] <= Saida:sai1.port12
+ssdBU[5] <= Saida:sai1.port12
+ssdBU[6] <= Saida:sai1.port12
+Asig[0] <= Ao[0].DB_MAX_OUTPUT_PORT_TYPE
+Asig[1] <= Ao[1].DB_MAX_OUTPUT_PORT_TYPE
+Asig[2] <= Ao[2].DB_MAX_OUTPUT_PORT_TYPE
+Asig[3] <= Ao[3].DB_MAX_OUTPUT_PORT_TYPE
+Bsig[0] <= Bo[0].DB_MAX_OUTPUT_PORT_TYPE
+Bsig[1] <= Bo[1].DB_MAX_OUTPUT_PORT_TYPE
+Bsig[2] <= Bo[2].DB_MAX_OUTPUT_PORT_TYPE
+Bsig[3] <= Bo[3].DB_MAX_OUTPUT_PORT_TYPE
+Qsig[0] <= Q[0].DB_MAX_OUTPUT_PORT_TYPE
+Qsig[1] <= Q[1].DB_MAX_OUTPUT_PORT_TYPE
+Qsig[2] <= Q[2].DB_MAX_OUTPUT_PORT_TYPE
+Qsig[3] <= Q[3].DB_MAX_OUTPUT_PORT_TYPE
+Rsig[0] <= R[0].DB_MAX_OUTPUT_PORT_TYPE
+Rsig[1] <= R[1].DB_MAX_OUTPUT_PORT_TYPE
+Rsig[2] <= R[2].DB_MAX_OUTPUT_PORT_TYPE
+Rsig[3] <= R[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Entrada:ent1
+A[0] => Ao[0].DATAIN
+A[1] => Ao[1].DATAIN
+A[2] => Ao[2].DATAIN
+A[3] => Ao[3].DATAIN
+B[0] => Bo[0].DATAIN
+B[1] => Bo[1].DATAIN
+B[2] => Bo[2].DATAIN
+B[3] => Bo[3].DATAIN
+Enable => Bo[0].OE
+Enable => Bo[1].OE
+Enable => Bo[2].OE
+Enable => Bo[3].OE
+Enable => Ao[0].OE
+Enable => Ao[1].OE
+Enable => Ao[2].OE
+Enable => Ao[3].OE
+Ao[0] <= Ao[0].DB_MAX_OUTPUT_PORT_TYPE
+Ao[1] <= Ao[1].DB_MAX_OUTPUT_PORT_TYPE
+Ao[2] <= Ao[2].DB_MAX_OUTPUT_PORT_TYPE
+Ao[3] <= Ao[3].DB_MAX_OUTPUT_PORT_TYPE
+Bo[0] <= Bo[0].DB_MAX_OUTPUT_PORT_TYPE
+Bo[1] <= Bo[1].DB_MAX_OUTPUT_PORT_TYPE
+Bo[2] <= Bo[2].DB_MAX_OUTPUT_PORT_TYPE
+Bo[3] <= Bo[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Divisor:div1
+Q[0] <= BOut4.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= BOut3.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= BOut2.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= BOut1.DB_MAX_OUTPUT_PORT_TYPE
+R[0] <= Multiplexer4x:m4.port0
+R[1] <= Multiplexer4x:m4.port0
+R[2] <= Multiplexer4x:m4.port0
+R[3] <= Multiplexer4x:m4.port0
+A[0] => A[0].IN2
+A[1] => A[1].IN2
+A[2] => A[2].IN2
+A[3] => A[3].IN2
+B[0] => B[0].IN4
+B[1] => B[1].IN4
+B[2] => B[2].IN4
+B[3] => B[3].IN4
+
+
+|Arquitetura|Divisor:div1|Subtractor:s1
+S[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Bout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => Add0.IN8
+A[1] => Add0.IN7
+A[2] => Add0.IN6
+A[3] => Add0.IN5
+B[0] => Add0.IN4
+B[1] => Add0.IN3
+B[2] => Add0.IN2
+B[3] => Add0.IN1
+Bin => Add1.IN10
+
+
+|Arquitetura|Divisor:div1|Multiplexer:m1
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+Inp0[0] => out.DATAA
+Inp0[1] => out.DATAA
+Inp0[2] => out.DATAA
+Inp1[0] => out.DATAB
+Inp1[1] => out.DATAB
+Inp1[2] => out.DATAB
+sel => Decoder0.IN0
+
+
+|Arquitetura|Divisor:div1|Subtractor:s2
+S[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Bout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => Add0.IN8
+A[1] => Add0.IN7
+A[2] => Add0.IN6
+A[3] => Add0.IN5
+B[0] => Add0.IN4
+B[1] => Add0.IN3
+B[2] => Add0.IN2
+B[3] => Add0.IN1
+Bin => Add1.IN10
+
+
+|Arquitetura|Divisor:div1|Multiplexer:m2
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+Inp0[0] => out.DATAA
+Inp0[1] => out.DATAA
+Inp0[2] => out.DATAA
+Inp1[0] => out.DATAB
+Inp1[1] => out.DATAB
+Inp1[2] => out.DATAB
+sel => Decoder0.IN0
+
+
+|Arquitetura|Divisor:div1|Subtractor:s3
+S[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Bout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => Add0.IN8
+A[1] => Add0.IN7
+A[2] => Add0.IN6
+A[3] => Add0.IN5
+B[0] => Add0.IN4
+B[1] => Add0.IN3
+B[2] => Add0.IN2
+B[3] => Add0.IN1
+Bin => Add1.IN10
+
+
+|Arquitetura|Divisor:div1|Multiplexer:m3
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+Inp0[0] => out.DATAA
+Inp0[1] => out.DATAA
+Inp0[2] => out.DATAA
+Inp1[0] => out.DATAB
+Inp1[1] => out.DATAB
+Inp1[2] => out.DATAB
+sel => Decoder0.IN0
+
+
+|Arquitetura|Divisor:div1|Subtractor:s4
+S[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Bout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => Add0.IN8
+A[1] => Add0.IN7
+A[2] => Add0.IN6
+A[3] => Add0.IN5
+B[0] => Add0.IN4
+B[1] => Add0.IN3
+B[2] => Add0.IN2
+B[3] => Add0.IN1
+Bin => Add1.IN10
+
+
+|Arquitetura|Divisor:div1|Multiplexer4x:m4
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+Inp0[0] => out.DATAA
+Inp0[1] => out.DATAA
+Inp0[2] => out.DATAA
+Inp0[3] => out.DATAA
+Inp1[0] => out.DATAB
+Inp1[1] => out.DATAB
+Inp1[2] => out.DATAB
+Inp1[3] => out.DATAB
+sel => Decoder0.IN0
+
+
+|Arquitetura|Saida:sai1
+Q[0] => Q[0].IN1
+Q[1] => Q[1].IN1
+Q[2] => Q[2].IN1
+Q[3] => Q[3].IN1
+R[0] => R[0].IN1
+R[1] => R[1].IN1
+R[2] => R[2].IN1
+R[3] => R[3].IN1
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+Strobe => ssdQD[0].OE
+Strobe => ssdQD[1].OE
+Strobe => ssdQD[2].OE
+Strobe => ssdQD[3].OE
+Strobe => ssdQD[4].OE
+Strobe => ssdQD[5].OE
+Strobe => ssdQD[6].OE
+Strobe => ssdQU[0].OE
+Strobe => ssdQU[1].OE
+Strobe => ssdQU[2].OE
+Strobe => ssdQU[3].OE
+Strobe => ssdQU[4].OE
+Strobe => ssdQU[5].OE
+Strobe => ssdQU[6].OE
+Strobe => ssdRD[0].OE
+Strobe => ssdRD[1].OE
+Strobe => ssdRD[2].OE
+Strobe => ssdRD[3].OE
+Strobe => ssdRD[4].OE
+Strobe => ssdRD[5].OE
+Strobe => ssdRD[6].OE
+Strobe => ssdRU[0].OE
+Strobe => ssdRU[1].OE
+Strobe => ssdRU[2].OE
+Strobe => ssdRU[3].OE
+Strobe => ssdRU[4].OE
+Strobe => ssdRU[5].OE
+Strobe => ssdRU[6].OE
+Strobe => ssdAD[0].OE
+Strobe => ssdAD[1].OE
+Strobe => ssdAD[2].OE
+Strobe => ssdAD[3].OE
+Strobe => ssdAD[4].OE
+Strobe => ssdAD[5].OE
+Strobe => ssdAD[6].OE
+Strobe => ssdAU[0].OE
+Strobe => ssdAU[1].OE
+Strobe => ssdAU[2].OE
+Strobe => ssdAU[3].OE
+Strobe => ssdAU[4].OE
+Strobe => ssdAU[5].OE
+Strobe => ssdAU[6].OE
+Strobe => ssdBD[0].OE
+Strobe => ssdBD[1].OE
+Strobe => ssdBD[2].OE
+Strobe => ssdBD[3].OE
+Strobe => ssdBD[4].OE
+Strobe => ssdBD[5].OE
+Strobe => ssdBD[6].OE
+Strobe => ssdBU[0].OE
+Strobe => ssdBU[1].OE
+Strobe => ssdBU[2].OE
+Strobe => ssdBU[3].OE
+Strobe => ssdBU[4].OE
+Strobe => ssdBU[5].OE
+Strobe => ssdBU[6].OE
+ssdQD[0] <= ssdQD[0].DB_MAX_OUTPUT_PORT_TYPE
+ssdQD[1] <= ssdQD[1].DB_MAX_OUTPUT_PORT_TYPE
+ssdQD[2] <= ssdQD[2].DB_MAX_OUTPUT_PORT_TYPE
+ssdQD[3] <= ssdQD[3].DB_MAX_OUTPUT_PORT_TYPE
+ssdQD[4] <= ssdQD[4].DB_MAX_OUTPUT_PORT_TYPE
+ssdQD[5] <= ssdQD[5].DB_MAX_OUTPUT_PORT_TYPE
+ssdQD[6] <= ssdQD[6].DB_MAX_OUTPUT_PORT_TYPE
+ssdQU[0] <= ssdQU[0].DB_MAX_OUTPUT_PORT_TYPE
+ssdQU[1] <= ssdQU[1].DB_MAX_OUTPUT_PORT_TYPE
+ssdQU[2] <= ssdQU[2].DB_MAX_OUTPUT_PORT_TYPE
+ssdQU[3] <= ssdQU[3].DB_MAX_OUTPUT_PORT_TYPE
+ssdQU[4] <= ssdQU[4].DB_MAX_OUTPUT_PORT_TYPE
+ssdQU[5] <= ssdQU[5].DB_MAX_OUTPUT_PORT_TYPE
+ssdQU[6] <= ssdQU[6].DB_MAX_OUTPUT_PORT_TYPE
+ssdRD[0] <= ssdRD[0].DB_MAX_OUTPUT_PORT_TYPE
+ssdRD[1] <= ssdRD[1].DB_MAX_OUTPUT_PORT_TYPE
+ssdRD[2] <= ssdRD[2].DB_MAX_OUTPUT_PORT_TYPE
+ssdRD[3] <= ssdRD[3].DB_MAX_OUTPUT_PORT_TYPE
+ssdRD[4] <= ssdRD[4].DB_MAX_OUTPUT_PORT_TYPE
+ssdRD[5] <= ssdRD[5].DB_MAX_OUTPUT_PORT_TYPE
+ssdRD[6] <= ssdRD[6].DB_MAX_OUTPUT_PORT_TYPE
+ssdRU[0] <= ssdRU[0].DB_MAX_OUTPUT_PORT_TYPE
+ssdRU[1] <= ssdRU[1].DB_MAX_OUTPUT_PORT_TYPE
+ssdRU[2] <= ssdRU[2].DB_MAX_OUTPUT_PORT_TYPE
+ssdRU[3] <= ssdRU[3].DB_MAX_OUTPUT_PORT_TYPE
+ssdRU[4] <= ssdRU[4].DB_MAX_OUTPUT_PORT_TYPE
+ssdRU[5] <= ssdRU[5].DB_MAX_OUTPUT_PORT_TYPE
+ssdRU[6] <= ssdRU[6].DB_MAX_OUTPUT_PORT_TYPE
+ssdAD[0] <= ssdAD[0].DB_MAX_OUTPUT_PORT_TYPE
+ssdAD[1] <= ssdAD[1].DB_MAX_OUTPUT_PORT_TYPE
+ssdAD[2] <= ssdAD[2].DB_MAX_OUTPUT_PORT_TYPE
+ssdAD[3] <= ssdAD[3].DB_MAX_OUTPUT_PORT_TYPE
+ssdAD[4] <= ssdAD[4].DB_MAX_OUTPUT_PORT_TYPE
+ssdAD[5] <= ssdAD[5].DB_MAX_OUTPUT_PORT_TYPE
+ssdAD[6] <= ssdAD[6].DB_MAX_OUTPUT_PORT_TYPE
+ssdAU[0] <= ssdAU[0].DB_MAX_OUTPUT_PORT_TYPE
+ssdAU[1] <= ssdAU[1].DB_MAX_OUTPUT_PORT_TYPE
+ssdAU[2] <= ssdAU[2].DB_MAX_OUTPUT_PORT_TYPE
+ssdAU[3] <= ssdAU[3].DB_MAX_OUTPUT_PORT_TYPE
+ssdAU[4] <= ssdAU[4].DB_MAX_OUTPUT_PORT_TYPE
+ssdAU[5] <= ssdAU[5].DB_MAX_OUTPUT_PORT_TYPE
+ssdAU[6] <= ssdAU[6].DB_MAX_OUTPUT_PORT_TYPE
+ssdBD[0] <= ssdBD[0].DB_MAX_OUTPUT_PORT_TYPE
+ssdBD[1] <= ssdBD[1].DB_MAX_OUTPUT_PORT_TYPE
+ssdBD[2] <= ssdBD[2].DB_MAX_OUTPUT_PORT_TYPE
+ssdBD[3] <= ssdBD[3].DB_MAX_OUTPUT_PORT_TYPE
+ssdBD[4] <= ssdBD[4].DB_MAX_OUTPUT_PORT_TYPE
+ssdBD[5] <= ssdBD[5].DB_MAX_OUTPUT_PORT_TYPE
+ssdBD[6] <= ssdBD[6].DB_MAX_OUTPUT_PORT_TYPE
+ssdBU[0] <= ssdBU[0].DB_MAX_OUTPUT_PORT_TYPE
+ssdBU[1] <= ssdBU[1].DB_MAX_OUTPUT_PORT_TYPE
+ssdBU[2] <= ssdBU[2].DB_MAX_OUTPUT_PORT_TYPE
+ssdBU[3] <= ssdBU[3].DB_MAX_OUTPUT_PORT_TYPE
+ssdBU[4] <= ssdBU[4].DB_MAX_OUTPUT_PORT_TYPE
+ssdBU[5] <= ssdBU[5].DB_MAX_OUTPUT_PORT_TYPE
+ssdBU[6] <= ssdBU[6].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdA
+In[0] => Div0.IN7
+In[0] => Mod0.IN7
+In[1] => Div0.IN6
+In[1] => Mod0.IN6
+In[2] => Div0.IN5
+In[2] => Mod0.IN5
+In[3] => Div0.IN4
+In[3] => Mod0.IN4
+OutDezena[0] <= seven_seg.DATAOUT
+OutDezena[1] <= seven_seg.DATAOUT1
+OutDezena[2] <= seven_seg.DATAOUT2
+OutDezena[3] <= seven_seg.DATAOUT3
+OutDezena[4] <= seven_seg.DATAOUT4
+OutDezena[5] <= seven_seg.DATAOUT5
+OutDezena[6] <= seven_seg.DATAOUT6
+OutUnidade[0] <= seven_seg.PORTBDATAOUT
+OutUnidade[1] <= seven_seg.PORTBDATAOUT1
+OutUnidade[2] <= seven_seg.PORTBDATAOUT2
+OutUnidade[3] <= seven_seg.PORTBDATAOUT3
+OutUnidade[4] <= seven_seg.PORTBDATAOUT4
+OutUnidade[5] <= seven_seg.PORTBDATAOUT5
+OutUnidade[6] <= seven_seg.PORTBDATAOUT6
+
+
+|Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdB
+In[0] => Div0.IN7
+In[0] => Mod0.IN7
+In[1] => Div0.IN6
+In[1] => Mod0.IN6
+In[2] => Div0.IN5
+In[2] => Mod0.IN5
+In[3] => Div0.IN4
+In[3] => Mod0.IN4
+OutDezena[0] <= seven_seg.DATAOUT
+OutDezena[1] <= seven_seg.DATAOUT1
+OutDezena[2] <= seven_seg.DATAOUT2
+OutDezena[3] <= seven_seg.DATAOUT3
+OutDezena[4] <= seven_seg.DATAOUT4
+OutDezena[5] <= seven_seg.DATAOUT5
+OutDezena[6] <= seven_seg.DATAOUT6
+OutUnidade[0] <= seven_seg.PORTBDATAOUT
+OutUnidade[1] <= seven_seg.PORTBDATAOUT1
+OutUnidade[2] <= seven_seg.PORTBDATAOUT2
+OutUnidade[3] <= seven_seg.PORTBDATAOUT3
+OutUnidade[4] <= seven_seg.PORTBDATAOUT4
+OutUnidade[5] <= seven_seg.PORTBDATAOUT5
+OutUnidade[6] <= seven_seg.PORTBDATAOUT6
+
+
+|Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdQ
+In[0] => Div0.IN7
+In[0] => Mod0.IN7
+In[1] => Div0.IN6
+In[1] => Mod0.IN6
+In[2] => Div0.IN5
+In[2] => Mod0.IN5
+In[3] => Div0.IN4
+In[3] => Mod0.IN4
+OutDezena[0] <= seven_seg.DATAOUT
+OutDezena[1] <= seven_seg.DATAOUT1
+OutDezena[2] <= seven_seg.DATAOUT2
+OutDezena[3] <= seven_seg.DATAOUT3
+OutDezena[4] <= seven_seg.DATAOUT4
+OutDezena[5] <= seven_seg.DATAOUT5
+OutDezena[6] <= seven_seg.DATAOUT6
+OutUnidade[0] <= seven_seg.PORTBDATAOUT
+OutUnidade[1] <= seven_seg.PORTBDATAOUT1
+OutUnidade[2] <= seven_seg.PORTBDATAOUT2
+OutUnidade[3] <= seven_seg.PORTBDATAOUT3
+OutUnidade[4] <= seven_seg.PORTBDATAOUT4
+OutUnidade[5] <= seven_seg.PORTBDATAOUT5
+OutUnidade[6] <= seven_seg.PORTBDATAOUT6
+
+
+|Arquitetura|Saida:sai1|DecoderSsd_4bits_Dec:ssdR
+In[0] => Div0.IN7
+In[0] => Mod0.IN7
+In[1] => Div0.IN6
+In[1] => Mod0.IN6
+In[2] => Div0.IN5
+In[2] => Mod0.IN5
+In[3] => Div0.IN4
+In[3] => Mod0.IN4
+OutDezena[0] <= seven_seg.DATAOUT
+OutDezena[1] <= seven_seg.DATAOUT1
+OutDezena[2] <= seven_seg.DATAOUT2
+OutDezena[3] <= seven_seg.DATAOUT3
+OutDezena[4] <= seven_seg.DATAOUT4
+OutDezena[5] <= seven_seg.DATAOUT5
+OutDezena[6] <= seven_seg.DATAOUT6
+OutUnidade[0] <= seven_seg.PORTBDATAOUT
+OutUnidade[1] <= seven_seg.PORTBDATAOUT1
+OutUnidade[2] <= seven_seg.PORTBDATAOUT2
+OutUnidade[3] <= seven_seg.PORTBDATAOUT3
+OutUnidade[4] <= seven_seg.PORTBDATAOUT4
+OutUnidade[5] <= seven_seg.PORTBDATAOUT5
+OutUnidade[6] <= seven_seg.PORTBDATAOUT6
+
+

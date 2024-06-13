@@ -1,5 +1,5 @@
 Analysis & Synthesis report for atv00
-Sun Mar 17 07:08:06 2024
+Thu Apr 11 21:16:49 2024
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -15,7 +15,7 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
   9. Inverted Register Statistics
- 10. Port Connectivity Checks: "saida:sai|sevenSegDecoder:ssd1"
+ 10. Port Connectivity Checks: "arquitetura:inst|saida:sai|sevenSegDecoder:ssd1"
  11. Post-Synthesis Netlist Statistics for Top Partition
  12. Elapsed Time Per Partition
  13. Analysis & Synthesis Messages
@@ -45,16 +45,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Mar 17 07:08:06 2024       ;
+; Analysis & Synthesis Status        ; Successful - Thu Apr 11 21:16:49 2024       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; atv00                                       ;
-; Top-level Entity Name              ; arquitetura                                 ;
+; Top-level Entity Name              ; final                                       ;
 ; Family                             ; Cyclone IV E                                ;
 ; Total logic elements               ; 101                                         ;
 ;     Total combinational functions  ; 93                                          ;
 ;     Dedicated logic registers      ; 44                                          ;
 ; Total registers                    ; 44                                          ;
-; Total pins                         ; 18                                          ;
+; Total pins                         ; 19                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -68,7 +68,7 @@ agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                                      ; arquitetura        ; atv00              ;
+; Top-level entity name                                                      ; final              ; atv00              ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -165,70 +165,72 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                        ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                 ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
-; arquitetura.vhdl                 ; yes             ; User VHDL File  ; C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/arquitetura.vhdl     ;         ;
-; sevenSegDecoder.vhdl             ; yes             ; User VHDL File  ; C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/sevenSegDecoder.vhdl ;         ;
-; saida.vhdl                       ; yes             ; User VHDL File  ; C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/saida.vhdl           ;         ;
-; sistema.vhdl                     ; yes             ; User VHDL File  ; C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/sistema.vhdl         ;         ;
-; Mux.vhdl                         ; yes             ; User VHDL File  ; C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/Mux.vhdl             ;         ;
-; Mod8Counter.vhdl                 ; yes             ; User VHDL File  ; C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/Mod8Counter.vhdl     ;         ;
-; entrada.vhdl                     ; yes             ; User VHDL File  ; C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/entrada.vhdl         ;         ;
-; DataRegister.vhdl                ; yes             ; User VHDL File  ; C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/DataRegister.vhdl    ;         ;
-; clockdivider.vhdl                ; yes             ; User VHDL File  ; C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/clockdivider.vhdl    ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------+---------+
+; arquitetura.vhdl                 ; yes             ; User VHDL File                     ; C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/arquitetura.vhdl     ;         ;
+; sevenSegDecoder.vhdl             ; yes             ; User VHDL File                     ; C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/sevenSegDecoder.vhdl ;         ;
+; saida.vhdl                       ; yes             ; User VHDL File                     ; C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/saida.vhdl           ;         ;
+; sistema.vhdl                     ; yes             ; User VHDL File                     ; C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/sistema.vhdl         ;         ;
+; Mux.vhdl                         ; yes             ; User VHDL File                     ; C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/Mux.vhdl             ;         ;
+; Mod8Counter.vhdl                 ; yes             ; User VHDL File                     ; C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/Mod8Counter.vhdl     ;         ;
+; entrada.vhdl                     ; yes             ; User VHDL File                     ; C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/entrada.vhdl         ;         ;
+; DataRegister.vhdl                ; yes             ; User VHDL File                     ; C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/DataRegister.vhdl    ;         ;
+; clockdivider.vhdl                ; yes             ; User VHDL File                     ; C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/clockdivider.vhdl    ;         ;
+; final.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/final.bdf            ;         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                              ;
-+---------------------------------------------+--------------------------------------------+
-; Resource                                    ; Usage                                      ;
-+---------------------------------------------+--------------------------------------------+
-; Estimated Total logic elements              ; 101                                        ;
-;                                             ;                                            ;
-; Total combinational functions               ; 93                                         ;
-; Logic element usage by number of LUT inputs ;                                            ;
-;     -- 4 input functions                    ; 16                                         ;
-;     -- 3 input functions                    ; 10                                         ;
-;     -- <=2 input functions                  ; 67                                         ;
-;                                             ;                                            ;
-; Logic elements by mode                      ;                                            ;
-;     -- normal mode                          ; 62                                         ;
-;     -- arithmetic mode                      ; 31                                         ;
-;                                             ;                                            ;
-; Total registers                             ; 44                                         ;
-;     -- Dedicated logic registers            ; 44                                         ;
-;     -- I/O registers                        ; 0                                          ;
-;                                             ;                                            ;
-; I/O pins                                    ; 18                                         ;
-;                                             ;                                            ;
-; Embedded Multiplier 9-bit elements          ; 0                                          ;
-;                                             ;                                            ;
-; Maximum fan-out node                        ; entrada:ent|ClockDivider:CD01|LessThan0~11 ;
-; Maximum fan-out                             ; 33                                         ;
-; Total fan-out                               ; 340                                        ;
-; Average fan-out                             ; 1.97                                       ;
-+---------------------------------------------+--------------------------------------------+
++-----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                               ;
++---------------------------------------------+-------------------------------------------------------------+
+; Resource                                    ; Usage                                                       ;
++---------------------------------------------+-------------------------------------------------------------+
+; Estimated Total logic elements              ; 101                                                         ;
+;                                             ;                                                             ;
+; Total combinational functions               ; 93                                                          ;
+; Logic element usage by number of LUT inputs ;                                                             ;
+;     -- 4 input functions                    ; 16                                                          ;
+;     -- 3 input functions                    ; 10                                                          ;
+;     -- <=2 input functions                  ; 67                                                          ;
+;                                             ;                                                             ;
+; Logic elements by mode                      ;                                                             ;
+;     -- normal mode                          ; 62                                                          ;
+;     -- arithmetic mode                      ; 31                                                          ;
+;                                             ;                                                             ;
+; Total registers                             ; 44                                                          ;
+;     -- Dedicated logic registers            ; 44                                                          ;
+;     -- I/O registers                        ; 0                                                           ;
+;                                             ;                                                             ;
+; I/O pins                                    ; 19                                                          ;
+;                                             ;                                                             ;
+; Embedded Multiplier 9-bit elements          ; 0                                                           ;
+;                                             ;                                                             ;
+; Maximum fan-out node                        ; arquitetura:inst|entrada:ent|ClockDivider:CD01|LessThan0~11 ;
+; Maximum fan-out                             ; 33                                                          ;
+; Total fan-out                               ; 342                                                         ;
+; Average fan-out                             ; 1.95                                                        ;
++---------------------------------------------+-------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                    ;
-+------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Entity Name     ; Library Name ;
-+------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+-----------------+--------------+
-; |arquitetura                 ; 93 (0)              ; 44 (0)                    ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |arquitetura                                ; arquitetura     ; work         ;
-;    |entrada:ent|             ; 77 (0)              ; 33 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|entrada:ent                    ; entrada         ; work         ;
-;       |ClockDivider:CD01|    ; 77 (77)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|entrada:ent|ClockDivider:CD01  ; ClockDivider    ; work         ;
-;    |saida:sai|               ; 8 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|saida:sai                      ; saida           ; work         ;
-;       |sevenSegDecoder:ssd1| ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|saida:sai|sevenSegDecoder:ssd1 ; sevenSegDecoder ; work         ;
-;    |sistema:sis|             ; 8 (0)               ; 11 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|sistema:sis                    ; sistema         ; work         ;
-;       |DataRegister:DR1|     ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|sistema:sis|DataRegister:DR1   ; DataRegister    ; work         ;
-;       |Mod8Counter:M8C1|     ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|sistema:sis|Mod8Counter:M8C1   ; Mod8Counter     ; work         ;
-;       |Mux:MX1|              ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|sistema:sis|Mux:MX1            ; Mux             ; work         ;
-+------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+-----------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                  ;
++---------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                    ; Entity Name     ; Library Name ;
++---------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+-----------------+--------------+
+; |final                          ; 93 (0)              ; 44 (0)                    ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |final                                                 ; final           ; work         ;
+;    |arquitetura:inst|           ; 93 (0)              ; 44 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final|arquitetura:inst                                ; arquitetura     ; work         ;
+;       |entrada:ent|             ; 77 (0)              ; 33 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final|arquitetura:inst|entrada:ent                    ; entrada         ; work         ;
+;          |ClockDivider:CD01|    ; 77 (77)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final|arquitetura:inst|entrada:ent|ClockDivider:CD01  ; ClockDivider    ; work         ;
+;       |saida:sai|               ; 8 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final|arquitetura:inst|saida:sai                      ; saida           ; work         ;
+;          |sevenSegDecoder:ssd1| ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final|arquitetura:inst|saida:sai|sevenSegDecoder:ssd1 ; sevenSegDecoder ; work         ;
+;       |sistema:sis|             ; 8 (0)               ; 11 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final|arquitetura:inst|sistema:sis                    ; sistema         ; work         ;
+;          |DataRegister:DR1|     ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final|arquitetura:inst|sistema:sis|DataRegister:DR1   ; DataRegister    ; work         ;
+;          |Mod8Counter:M8C1|     ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final|arquitetura:inst|sistema:sis|Mod8Counter:M8C1   ; Mod8Counter     ; work         ;
+;          |Mux:MX1|              ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final|arquitetura:inst|sistema:sis|Mux:MX1            ; Mux             ; work         ;
++---------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -247,23 +249,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; entrada:ent|ClockDivider:CD01|count[0] ; 2       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
++-------------------------------------------------------------------+
+; Inverted Register Statistics                                      ;
++---------------------------------------------------------+---------+
+; Inverted Register                                       ; Fan out ;
++---------------------------------------------------------+---------+
+; arquitetura:inst|entrada:ent|ClockDivider:CD01|count[0] ; 2       ;
+; Total number of inverted registers = 1                  ;         ;
++---------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Port Connectivity Checks: "saida:sai|sevenSegDecoder:ssd1" ;
-+---------+-------+----------+-------------------------------+
-; Port    ; Type  ; Severity ; Details                       ;
-+---------+-------+----------+-------------------------------+
-; data[3] ; Input ; Info     ; Stuck at GND                  ;
-+---------+-------+----------+-------------------------------+
++-----------------------------------------------------------------------------+
+; Port Connectivity Checks: "arquitetura:inst|saida:sai|sevenSegDecoder:ssd1" ;
++---------+-------+----------+------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                        ;
++---------+-------+----------+------------------------------------------------+
+; data[3] ; Input ; Info     ; Stuck at GND                                   ;
++---------+-------+----------+------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -271,7 +273,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 18                          ;
+; boundary_port         ; 19                          ;
 ; cycloneiii_ff         ; 44                          ;
 ;     plain             ; 44                          ;
 ; cycloneiii_lcell_comb ; 94                          ;
@@ -303,12 +305,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Mar 17 07:07:59 2024
+    Info: Processing started: Thu Apr 11 21:16:42 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off atv00 -c atv00
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file arquitetura.vhdl
-    Info (12022): Found design unit 1: arquitetura-behavior File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/arquitetura.vhdl Line: 19
+    Info (12022): Found design unit 1: arquitetura-behavior File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/arquitetura.vhdl Line: 21
     Info (12023): Found entity 1: arquitetura File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/arquitetura.vhdl Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file sevensegdecoder.vhdl
     Info (12022): Found design unit 1: sevenSegDecoder-behavior File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/sevenSegDecoder.vhdl Line: 12
@@ -335,32 +337,35 @@ Info (12021): Found 2 design units, including 1 entities, in source file datareg
 Info (12021): Found 2 design units, including 1 entities, in source file clockdivider.vhdl
     Info (12022): Found design unit 1: ClockDivider-behavior File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/clockdivider.vhdl Line: 10
     Info (12023): Found entity 1: ClockDivider File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/clockdivider.vhdl Line: 5
-Info (12127): Elaborating entity "arquitetura" for the top level hierarchy
-Info (12128): Elaborating entity "entrada" for hierarchy "entrada:ent" File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/arquitetura.vhdl Line: 61
-Info (12128): Elaborating entity "ClockDivider" for hierarchy "entrada:ent|ClockDivider:CD01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/entrada.vhdl Line: 29
+Info (12021): Found 1 design units, including 1 entities, in source file final.bdf
+    Info (12023): Found entity 1: final
+Info (12127): Elaborating entity "final" for the top level hierarchy
+Info (12128): Elaborating entity "arquitetura" for hierarchy "arquitetura:inst"
+Info (12128): Elaborating entity "entrada" for hierarchy "arquitetura:inst|entrada:ent" File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/arquitetura.vhdl Line: 63
+Info (12128): Elaborating entity "ClockDivider" for hierarchy "arquitetura:inst|entrada:ent|ClockDivider:CD01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/entrada.vhdl Line: 29
 Warning (10540): VHDL Signal Declaration warning at clockdivider.vhdl(15): used explicit default value for signal "oscillator" because signal was never assigned a value File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/clockdivider.vhdl Line: 15
 Warning (10540): VHDL Signal Declaration warning at clockdivider.vhdl(16): used explicit default value for signal "newfrequency" because signal was never assigned a value File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/clockdivider.vhdl Line: 16
 Warning (10542): VHDL Variable Declaration warning at clockdivider.vhdl(23): used initial value expression for variable "halfPeriod" because variable was never assigned a value File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/clockdivider.vhdl Line: 23
 Warning (10492): VHDL Process Statement warning at clockdivider.vhdl(23): signal "oscillator" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/clockdivider.vhdl Line: 23
 Warning (10492): VHDL Process Statement warning at clockdivider.vhdl(23): signal "newfrequency" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/clockdivider.vhdl Line: 23
 Warning (10492): VHDL Process Statement warning at clockdivider.vhdl(35): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/clockdivider.vhdl Line: 35
-Info (12128): Elaborating entity "sistema" for hierarchy "sistema:sis" File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/arquitetura.vhdl Line: 62
-Info (12128): Elaborating entity "DataRegister" for hierarchy "sistema:sis|DataRegister:DR1" File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/sistema.vhdl Line: 52
-Info (12128): Elaborating entity "Mux" for hierarchy "sistema:sis|Mux:MX1" File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/sistema.vhdl Line: 53
-Info (12128): Elaborating entity "Mod8Counter" for hierarchy "sistema:sis|Mod8Counter:M8C1" File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/sistema.vhdl Line: 54
-Info (12128): Elaborating entity "saida" for hierarchy "saida:sai" File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/arquitetura.vhdl Line: 63
-Info (12128): Elaborating entity "sevenSegDecoder" for hierarchy "saida:sai|sevenSegDecoder:ssd1" File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/saida.vhdl Line: 32
+Info (12128): Elaborating entity "sistema" for hierarchy "arquitetura:inst|sistema:sis" File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/arquitetura.vhdl Line: 64
+Info (12128): Elaborating entity "DataRegister" for hierarchy "arquitetura:inst|sistema:sis|DataRegister:DR1" File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/sistema.vhdl Line: 52
+Info (12128): Elaborating entity "Mux" for hierarchy "arquitetura:inst|sistema:sis|Mux:MX1" File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/sistema.vhdl Line: 53
+Info (12128): Elaborating entity "Mod8Counter" for hierarchy "arquitetura:inst|sistema:sis|Mod8Counter:M8C1" File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/sistema.vhdl Line: 54
+Info (12128): Elaborating entity "saida" for hierarchy "arquitetura:inst|saida:sai" File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/arquitetura.vhdl Line: 65
+Info (12128): Elaborating entity "sevenSegDecoder" for hierarchy "arquitetura:inst|saida:sai|sevenSegDecoder:ssd1" File: C:/Users/welly/Documents/GitHub/LT39A/pratica00/Quartus/saida.vhdl Line: 32
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 119 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 120 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
-    Info (21059): Implemented 8 output pins
+    Info (21059): Implemented 9 output pins
     Info (21061): Implemented 101 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4810 megabytes
-    Info: Processing ended: Sun Mar 17 07:08:06 2024
+    Info: Peak virtual memory: 4808 megabytes
+    Info: Processing ended: Thu Apr 11 21:16:49 2024
     Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Total CPU time (on all processors): 00:00:06
 
 

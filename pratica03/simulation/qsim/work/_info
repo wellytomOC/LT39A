@@ -1,0 +1,163 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim
+vArquitetura
+Z1 !s110 1713985699
+!i10b 1
+!s100 9mO3O^OfPZVYP;9]dgiH13
+I5Q4J5anEJKO@@NRKek`<41
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1713985697
+Z4 8atv03.vo
+Z5 Fatv03.vo
+Z6 L0 32
+Z7 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z8 !s108 1713985699.000000
+Z9 !s107 atv03.vo|
+Z10 !s90 -work|work|atv03.vo|
+!i113 1
+Z11 o-work work
+Z12 tCvgOpt 0
+n@arquitetura
+vArquitetura_vlg_vec_tst
+R1
+!i10b 1
+!s100 KVWZ2S[;22EUXcSI2d^LX1
+IUSg<8n3G@0KfO?5d:>[j>1
+R2
+R0
+w1713985696
+8Waveform1.vwf.vt
+FWaveform1.vwf.vt
+Z13 L0 30
+R7
+r1
+!s85 0
+31
+R8
+!s107 Waveform1.vwf.vt|
+!s90 -work|work|Waveform1.vwf.vt|
+!i113 1
+R11
+R12
+n@arquitetura_vlg_vec_tst
+vDivisor
+Z14 !s110 1713400381
+!i10b 1
+!s100 ai60@QXY^:8?aoLXD@T?61
+Io@cGPIgF0YAL[CVVKc7^m3
+R2
+R0
+w1713400381
+R4
+R5
+R6
+R7
+r1
+!s85 0
+31
+Z15 !s108 1713400381.000000
+R9
+R10
+!i113 1
+R11
+R12
+n@divisor
+vDivisor_vlg_vec_tst
+R14
+!i10b 1
+!s100 2QL:S`aK@]Zb7Y?C`HN_L1
+IGDAZ<[LkjdEUV]_GGXJ4]2
+R2
+R0
+w1713400380
+Z16 8Waveform.vwf.vt
+Z17 FWaveform.vwf.vt
+R13
+R7
+r1
+!s85 0
+31
+R15
+Z18 !s107 Waveform.vwf.vt|
+Z19 !s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R11
+R12
+n@divisor_vlg_vec_tst
+vhard_block
+R1
+!i10b 1
+!s100 _nEF>^[eZed9oReT1dzY?0
+IcB=XiV9URCLM`H4EbiS=>0
+R2
+R0
+R3
+R4
+R5
+L0 3611
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+vSubtractor
+Z20 !s110 1713384042
+!i10b 1
+!s100 em28W8YeD2Z]knmWk3o=i2
+ID3>00BQLn=BMdY3=JOGjU1
+R2
+R0
+w1713384042
+R4
+R5
+R6
+R7
+r1
+!s85 0
+31
+Z21 !s108 1713384042.000000
+R9
+R10
+!i113 1
+R11
+R12
+n@subtractor
+vSubtractor_vlg_vec_tst
+R20
+!i10b 1
+!s100 TS^<SA4mV:bQC<Dmb;bd=0
+Izj5GJgGCY7WY>B^RH[8G23
+R2
+R0
+w1713384041
+R16
+R17
+R13
+R7
+r1
+!s85 0
+31
+R21
+R18
+R19
+!i113 1
+R11
+R12
+n@subtractor_vlg_vec_tst

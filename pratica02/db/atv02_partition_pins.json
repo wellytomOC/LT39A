@@ -1,0 +1,205 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "InpA_ssU[0]",
+					"strict" : false
+				},
+				{
+					"name" : "InpA_ssU[1]",
+					"strict" : false
+				},
+				{
+					"name" : "InpA_ssU[2]",
+					"strict" : false
+				},
+				{
+					"name" : "InpA_ssU[3]",
+					"strict" : false
+				},
+				{
+					"name" : "InpA_ssU[4]",
+					"strict" : false
+				},
+				{
+					"name" : "InpA_ssU[5]",
+					"strict" : false
+				},
+				{
+					"name" : "InpA_ssU[6]",
+					"strict" : false
+				},
+				{
+					"name" : "InpA_ssD[0]",
+					"strict" : false
+				},
+				{
+					"name" : "InpA_ssD[3]",
+					"strict" : false
+				},
+				{
+					"name" : "InpA_ssD[4]",
+					"strict" : false
+				},
+				{
+					"name" : "InpA_ssD[5]",
+					"strict" : false
+				},
+				{
+					"name" : "InpB_ssU[0]",
+					"strict" : false
+				},
+				{
+					"name" : "InpB_ssU[1]",
+					"strict" : false
+				},
+				{
+					"name" : "InpB_ssU[2]",
+					"strict" : false
+				},
+				{
+					"name" : "InpB_ssU[3]",
+					"strict" : false
+				},
+				{
+					"name" : "InpB_ssU[4]",
+					"strict" : false
+				},
+				{
+					"name" : "InpB_ssU[5]",
+					"strict" : false
+				},
+				{
+					"name" : "InpB_ssU[6]",
+					"strict" : false
+				},
+				{
+					"name" : "InpB_ssD[0]",
+					"strict" : false
+				},
+				{
+					"name" : "InpB_ssD[3]",
+					"strict" : false
+				},
+				{
+					"name" : "InpB_ssD[4]",
+					"strict" : false
+				},
+				{
+					"name" : "InpB_ssD[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUOut_ssU[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUOut_ssU[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUOut_ssU[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUOut_ssU[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUOut_ssU[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUOut_ssU[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUOut_ssU[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUOut_ssD[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUOut_ssD[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUOut_ssD[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUOut_ssD[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUOut_ssD[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUOut_ssD[6]",
+					"strict" : false
+				},
+				{
+					"name" : "RegPrState[0]",
+					"strict" : false
+				},
+				{
+					"name" : "RegPrState[1]",
+					"strict" : false
+				},
+				{
+					"name" : "RegNxState[0]",
+					"strict" : false
+				},
+				{
+					"name" : "RegNxState[1]",
+					"strict" : false
+				},
+				{
+					"name" : "InpA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "InpA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "InpA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "InpA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "InpB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "InpB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "InpB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "InpB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "Clock50MHz",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

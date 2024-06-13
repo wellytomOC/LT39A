@@ -1,0 +1,88 @@
+# Copyright (C) 2017  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel MegaCore Function License Agreement, or other 
+# applicable license agreement, including, without limitation, 
+# that your use is for the sole purpose of programming logic 
+# devices manufactured by Intel and sold by Intel or its 
+# authorized distributors.  Please refer to the applicable 
+# agreement for further details.
+
+# Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+# File: C:\Users\welly\Documents\GitHub\LT39A\pratica03\atv03.csv
+# Generated on: Fri Apr 19 14:43:09 2024
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus Prime software.
+
+To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair,Strict Preservation
+A[3],Input,PIN_AD27,5,B5_N2,PIN_Y25,,,,,,
+A[2],Input,PIN_AC27,5,B5_N2,PIN_C21,,,,,,
+A[1],Input,PIN_AC28,5,B5_N2,PIN_B22,,,,,,
+A[0],Input,PIN_AB28,5,B5_N1,PIN_L7,,,,,,
+B[3],Input,PIN_AB26,5,B5_N1,PIN_AG26,,,,,,
+B[2],Input,PIN_AD26,5,B5_N2,PIN_AF17,,,,,,
+B[1],Input,PIN_AC26,5,B5_N2,PIN_AE15,,,,,,
+B[0],Input,PIN_AB27,5,B5_N1,PIN_R3,,,,,,
+Enable,Input,PIN_Y23,5,B5_N2,PIN_P2,,,,,,
+Strobe,Input,PIN_Y24,5,B5_N2,PIN_N8,,,,,,
+ssdAD[6],Output,PIN_AH18,4,B4_N2,PIN_W1,,,,,,
+ssdAD[5],Output,PIN_AF18,4,B4_N1,PIN_AH12,,,,,,
+ssdAD[4],Output,PIN_AG19,4,B4_N2,PIN_AH10,,,,,,
+ssdAD[3],Output,PIN_AH19,4,B4_N2,PIN_AF27,,,,,,
+ssdAD[2],Output,PIN_AB18,4,B4_N0,PIN_AG23,,,,,,
+ssdAD[1],Output,PIN_AC18,4,B4_N1,PIN_F7,,,,,,
+ssdAD[0],Output,PIN_AD18,4,B4_N1,PIN_AE6,,,,,,
+ssdAU[6],Output,PIN_AE18,4,B4_N2,PIN_N4,,,,,,
+ssdAU[5],Output,PIN_AF19,4,B4_N1,PIN_AB18,,,,,,
+ssdAU[4],Output,PIN_AE19,4,B4_N1,PIN_M28,,,,,,
+ssdAU[3],Output,PIN_AH21,4,B4_N2,PIN_M5,,,,,,
+ssdAU[2],Output,PIN_AG21,4,B4_N2,PIN_L6,,,,,,
+ssdAU[1],Output,PIN_AA19,4,B4_N0,PIN_N3,,,,,,
+ssdAU[0],Output,PIN_AB19,4,B4_N0,PIN_F22,,,,,,
+ssdBD[6],Output,PIN_AA14,3,B3_N0,PIN_AD8,,,,,,
+ssdBD[5],Output,PIN_AG18,4,B4_N2,PIN_B19,,,,,,
+ssdBD[4],Output,PIN_AF17,4,B4_N2,PIN_E19,,,,,,
+ssdBD[3],Output,PIN_AH17,4,B4_N2,PIN_AF8,,,,,,
+ssdBD[2],Output,PIN_AG17,4,B4_N2,PIN_AC12,,,,,,
+ssdBD[1],Output,PIN_AE17,4,B4_N2,PIN_AD25,,,,,,
+ssdBD[0],Output,PIN_AD17,4,B4_N2,PIN_AD17,,,,,,
+ssdBU[6],Output,PIN_AC17,4,B4_N2,PIN_U3,,,,,,
+ssdBU[5],Output,PIN_AA15,4,B4_N2,PIN_B25,,,,,,
+ssdBU[4],Output,PIN_AB15,4,B4_N2,PIN_AA21,,,,,,
+ssdBU[3],Output,PIN_AB17,4,B4_N1,PIN_R6,,,,,,
+ssdBU[2],Output,PIN_AA16,4,B4_N2,PIN_U4,,,,,,
+ssdBU[1],Output,PIN_AB16,4,B4_N2,PIN_M8,,,,,,
+ssdBU[0],Output,PIN_AA17,4,B4_N1,PIN_AD18,,,,,,
+ssdQD[6],Output,PIN_Y19,4,B4_N0,PIN_AF5,,,,,,
+ssdQD[5],Output,PIN_AF23,4,B4_N0,PIN_AB22,,,,,,
+ssdQD[4],Output,PIN_AD24,4,B4_N0,PIN_C11,,,,,,
+ssdQD[3],Output,PIN_AA21,4,B4_N0,PIN_D19,,,,,,
+ssdQD[2],Output,PIN_AB20,4,B4_N0,PIN_D17,,,,,,
+ssdQD[1],Output,PIN_U21,5,B5_N0,PIN_AB10,,,,,,
+ssdQD[0],Output,PIN_V21,5,B5_N1,PIN_Y14,,,,,,
+ssdQU[6],Output,PIN_W28,5,B5_N1,PIN_L2,,,,,,
+ssdQU[5],Output,PIN_W27,5,B5_N1,PIN_AE8,,,,,,
+ssdQU[4],Output,PIN_Y26,5,B5_N1,PIN_A11,,,,,,
+ssdQU[3],Output,PIN_W26,5,B5_N1,PIN_L1,,,,,,
+ssdQU[2],Output,PIN_Y25,5,B5_N1,PIN_M2,,,,,,
+ssdQU[1],Output,PIN_AA26,5,B5_N1,PIN_M1,,,,,,
+ssdQU[0],Output,PIN_AA25,5,B5_N1,PIN_AA19,,,,,,
+ssdRD[6],Output,PIN_U24,5,B5_N0,PIN_A19,,,,,,
+ssdRD[5],Output,PIN_U23,5,B5_N1,PIN_C8,,,,,,
+ssdRD[4],Output,PIN_W25,5,B5_N1,PIN_AB23,,,,,,
+ssdRD[3],Output,PIN_W22,5,B5_N0,PIN_AA16,,,,,,
+ssdRD[2],Output,PIN_W21,5,B5_N1,PIN_U27,,,,,,
+ssdRD[1],Output,PIN_Y22,5,B5_N0,PIN_V25,,,,,,
+ssdRD[0],Output,PIN_M24,6,B6_N2,PIN_F8,,,,,,
+ssdRU[6],Output,PIN_H22,6,B6_N0,PIN_R2,,,,,,
+ssdRU[5],Output,PIN_J22,6,B6_N0,PIN_B3,,,,,,
+ssdRU[4],Output,PIN_L25,6,B6_N1,PIN_K21,,,,,,
+ssdRU[3],Output,PIN_L26,6,B6_N1,PIN_R7,,,,,,
+ssdRU[2],Output,PIN_E17,7,B7_N2,PIN_R1,,,,,,
+ssdRU[1],Output,PIN_F22,7,B7_N0,PIN_P1,,,,,,
+ssdRU[0],Output,PIN_G18,7,B7_N2,PIN_H26,,,,,,

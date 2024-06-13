@@ -1,4 +1,26 @@
-|arquitetura
+|final
+DataOutOut <= arquitetura:inst.DataOutOut
+Clock => arquitetura:inst.Clock
+En => arquitetura:inst.En
+DataInput[0] => arquitetura:inst.DataInput[0]
+DataInput[1] => arquitetura:inst.DataInput[1]
+DataInput[2] => arquitetura:inst.DataInput[2]
+DataInput[3] => arquitetura:inst.DataInput[3]
+DataInput[4] => arquitetura:inst.DataInput[4]
+DataInput[5] => arquitetura:inst.DataInput[5]
+DataInput[6] => arquitetura:inst.DataInput[6]
+DataInput[7] => arquitetura:inst.DataInput[7]
+testClockOut <= arquitetura:inst.testClockOut
+ss[0] <= arquitetura:inst.ss[0]
+ss[1] <= arquitetura:inst.ss[1]
+ss[2] <= arquitetura:inst.ss[2]
+ss[3] <= arquitetura:inst.ss[3]
+ss[4] <= arquitetura:inst.ss[4]
+ss[5] <= arquitetura:inst.ss[5]
+ss[6] <= arquitetura:inst.ss[6]
+
+
+|final|arquitetura:inst
 Clock => entrada:ent.Clock
 DataInput[0] => entrada:ent.DataInput[0]
 DataInput[1] => entrada:ent.DataInput[1]
@@ -9,17 +31,18 @@ DataInput[5] => entrada:ent.DataInput[5]
 DataInput[6] => entrada:ent.DataInput[6]
 DataInput[7] => entrada:ent.DataInput[7]
 En => sistema:sis.En
-ss[0] << saida:sai.ss[0]
-ss[1] << saida:sai.ss[1]
-ss[2] << saida:sai.ss[2]
-ss[3] << saida:sai.ss[3]
-ss[4] << saida:sai.ss[4]
-ss[5] << saida:sai.ss[5]
-ss[6] << saida:sai.ss[6]
-DataOutOut << saida:sai.DataOut
+ss[0] <= saida:sai.ss[0]
+ss[1] <= saida:sai.ss[1]
+ss[2] <= saida:sai.ss[2]
+ss[3] <= saida:sai.ss[3]
+ss[4] <= saida:sai.ss[4]
+ss[5] <= saida:sai.ss[5]
+ss[6] <= saida:sai.ss[6]
+DataOutOut <= saida:sai.DataOut
+testClockOut <= entrada:ent.ClockDivided
 
 
-|arquitetura|entrada:ent
+|final|arquitetura:inst|entrada:ent
 Clock => ClockDivider:CD01.clk
 DataInput[0] => DataOutput[0].DATAIN
 DataInput[1] => DataOutput[1].DATAIN
@@ -40,7 +63,7 @@ DataOutput[7] <= DataInput[7].DB_MAX_OUTPUT_PORT_TYPE
 ClockDivided <= ClockDivider:CD01.clock_out
 
 
-|arquitetura|entrada:ent|ClockDivider:CD01
+|final|arquitetura:inst|entrada:ent|ClockDivider:CD01
 clk => tmp.CLK
 clk => count[0].CLK
 clk => count[1].CLK
@@ -77,7 +100,7 @@ clk => count[31].CLK
 clock_out <= tmp.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|arquitetura|sistema:sis
+|final|arquitetura:inst|sistema:sis
 CLK => Mod8Counter:M8C1.CLK
 D[0] => DataRegister:DR1.D[0]
 D[1] => DataRegister:DR1.D[1]
@@ -94,7 +117,7 @@ Counter[1] <= Mod8Counter:M8C1.SelOut[1]
 Counter[2] <= Mod8Counter:M8C1.SelOut[2]
 
 
-|arquitetura|sistema:sis|DataRegister:DR1
+|final|arquitetura:inst|sistema:sis|DataRegister:DR1
 CLK => Q[0]~reg0.CLK
 CLK => Q[1]~reg0.CLK
 CLK => Q[2]~reg0.CLK
@@ -121,7 +144,7 @@ Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|arquitetura|sistema:sis|Mux:MX1
+|final|arquitetura:inst|sistema:sis|Mux:MX1
 DataIn[0] => Mux0.IN7
 DataIn[1] => Mux0.IN6
 DataIn[2] => Mux0.IN5
@@ -137,7 +160,7 @@ En => DataOut.OUTPUTSELECT
 DataOut <= DataOut.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|arquitetura|sistema:sis|Mod8Counter:M8C1
+|final|arquitetura:inst|sistema:sis|Mod8Counter:M8C1
 CLK => CountBuffer[0].CLK
 CLK => CountBuffer[1].CLK
 CLK => CountBuffer[2].CLK
@@ -147,7 +170,7 @@ SelOut[1] <= CountBuffer[1].DB_MAX_OUTPUT_PORT_TYPE
 SelOut[2] <= CountBuffer[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|arquitetura|saida:sai
+|final|arquitetura:inst|saida:sai
 Data => DataOut.DATAIN
 Counter[0] => sevenSegDecoder:ssd1.data[0]
 Counter[1] => sevenSegDecoder:ssd1.data[1]
@@ -162,7 +185,7 @@ ss[6] <= sevenSegDecoder:ssd1.ss[6]
 DataOut <= Data.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|arquitetura|saida:sai|sevenSegDecoder:ssd1
+|final|arquitetura:inst|saida:sai|sevenSegDecoder:ssd1
 data[0] => Equal0.IN0
 data[0] => Equal1.IN3
 data[0] => Equal2.IN1
