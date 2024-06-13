@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition"
 
--- DATE "04/10/2024 16:33:45"
+-- DATE "06/13/2024 18:30:32"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -70,36 +70,28 @@ ww_devpor <= devpor;
 END structure;
 
 
+LIBRARY ALTERA;
 LIBRARY CYCLONEIVE;
 LIBRARY IEEE;
+USE ALTERA.ALTERA_PRIMITIVES_COMPONENTS.ALL;
 USE CYCLONEIVE.CYCLONEIVE_COMPONENTS.ALL;
 USE IEEE.STD_LOGIC_1164.ALL;
 
-ENTITY 	testSomador IS
+ENTITY 	Mod8Counter IS
     PORT (
-	Sum : OUT std_logic_vector(4 DOWNTO 0);
-	A : IN std_logic_vector(3 DOWNTO 0);
-	B : IN std_logic_vector(3 DOWNTO 0)
+	CLK : IN std_logic;
+	reset : IN std_logic;
+	dv : BUFFER std_logic
 	);
-END testSomador;
+END Mod8Counter;
 
 -- Design Ports Information
--- Sum[4]	=>  Location: PIN_V4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- Sum[3]	=>  Location: PIN_V1,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- Sum[2]	=>  Location: PIN_U1,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- Sum[1]	=>  Location: PIN_V3,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- Sum[0]	=>  Location: PIN_U2,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- B[3]	=>  Location: PIN_U4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- A[3]	=>  Location: PIN_R6,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- B[2]	=>  Location: PIN_T7,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- A[2]	=>  Location: PIN_T3,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- B[1]	=>  Location: PIN_R5,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- A[1]	=>  Location: PIN_R4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- B[0]	=>  Location: PIN_U3,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- A[0]	=>  Location: PIN_T4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- dv	=>  Location: PIN_AC25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- CLK	=>  Location: PIN_Y27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- reset	=>  Location: PIN_AC24,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
-ARCHITECTURE structure OF testSomador IS
+ARCHITECTURE structure OF Mod8Counter IS
 SIGNAL gnd : std_logic := '0';
 SIGNAL vcc : std_logic := '1';
 SIGNAL unknown : std_logic := 'X';
@@ -109,31 +101,20 @@ SIGNAL devpor : std_logic := '1';
 SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
-SIGNAL ww_Sum : std_logic_vector(4 DOWNTO 0);
-SIGNAL ww_A : std_logic_vector(3 DOWNTO 0);
-SIGNAL ww_B : std_logic_vector(3 DOWNTO 0);
-SIGNAL \Sum[4]~output_o\ : std_logic;
-SIGNAL \Sum[3]~output_o\ : std_logic;
-SIGNAL \Sum[2]~output_o\ : std_logic;
-SIGNAL \Sum[1]~output_o\ : std_logic;
-SIGNAL \Sum[0]~output_o\ : std_logic;
-SIGNAL \A[3]~input_o\ : std_logic;
-SIGNAL \B[3]~input_o\ : std_logic;
-SIGNAL \B[2]~input_o\ : std_logic;
-SIGNAL \A[2]~input_o\ : std_logic;
-SIGNAL \A[1]~input_o\ : std_logic;
-SIGNAL \B[1]~input_o\ : std_logic;
-SIGNAL \A[0]~input_o\ : std_logic;
-SIGNAL \B[0]~input_o\ : std_logic;
-SIGNAL \inst|Sum[0]~1\ : std_logic;
-SIGNAL \inst|Sum[1]~3\ : std_logic;
-SIGNAL \inst|Sum[2]~5\ : std_logic;
-SIGNAL \inst|Sum[3]~7\ : std_logic;
-SIGNAL \inst|Sum[4]~8_combout\ : std_logic;
-SIGNAL \inst|Sum[3]~6_combout\ : std_logic;
-SIGNAL \inst|Sum[2]~4_combout\ : std_logic;
-SIGNAL \inst|Sum[1]~2_combout\ : std_logic;
-SIGNAL \inst|Sum[0]~0_combout\ : std_logic;
+SIGNAL ww_CLK : std_logic;
+SIGNAL ww_reset : std_logic;
+SIGNAL ww_dv : std_logic;
+SIGNAL \CLK~inputclkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \dv~output_o\ : std_logic;
+SIGNAL \CLK~input_o\ : std_logic;
+SIGNAL \CLK~inputclkctrl_outclk\ : std_logic;
+SIGNAL \CountBuffer[0]~2_combout\ : std_logic;
+SIGNAL \reset~input_o\ : std_logic;
+SIGNAL \CountBuffer[1]~1_combout\ : std_logic;
+SIGNAL \CountBuffer[2]~0_combout\ : std_logic;
+SIGNAL \LessThan0~0_combout\ : std_logic;
+SIGNAL CountBuffer : std_logic_vector(2 DOWNTO 0);
+SIGNAL \ALT_INV_LessThan0~0_combout\ : std_logic;
 
 COMPONENT hard_block
     PORT (
@@ -144,264 +125,175 @@ END COMPONENT;
 
 BEGIN
 
-Sum <= ww_Sum;
-ww_A <= A;
-ww_B <= B;
+ww_CLK <= CLK;
+ww_reset <= reset;
+dv <= ww_dv;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
+
+\CLK~inputclkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \CLK~input_o\);
+\ALT_INV_LessThan0~0_combout\ <= NOT \LessThan0~0_combout\;
 auto_generated_inst : hard_block
 PORT MAP (
 	devoe => ww_devoe,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor);
 
--- Location: IOOBUF_X0_Y29_N16
-\Sum[4]~output\ : cycloneive_io_obuf
+-- Location: IOOBUF_X115_Y4_N23
+\dv~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \inst|Sum[4]~8_combout\,
+	i => \ALT_INV_LessThan0~0_combout\,
 	devoe => ww_devoe,
-	o => \Sum[4]~output_o\);
+	o => \dv~output_o\);
 
--- Location: IOOBUF_X0_Y28_N23
-\Sum[3]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => \inst|Sum[3]~6_combout\,
-	devoe => ww_devoe,
-	o => \Sum[3]~output_o\);
-
--- Location: IOOBUF_X0_Y30_N9
-\Sum[2]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => \inst|Sum[2]~4_combout\,
-	devoe => ww_devoe,
-	o => \Sum[2]~output_o\);
-
--- Location: IOOBUF_X0_Y29_N23
-\Sum[1]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => \inst|Sum[1]~2_combout\,
-	devoe => ww_devoe,
-	o => \Sum[1]~output_o\);
-
--- Location: IOOBUF_X0_Y30_N2
-\Sum[0]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => \inst|Sum[0]~0_combout\,
-	devoe => ww_devoe,
-	o => \Sum[0]~output_o\);
-
--- Location: IOIBUF_X0_Y34_N1
-\A[3]~input\ : cycloneive_io_ibuf
+-- Location: IOIBUF_X115_Y37_N15
+\CLK~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_A(3),
-	o => \A[3]~input_o\);
+	i => ww_CLK,
+	o => \CLK~input_o\);
 
--- Location: IOIBUF_X0_Y34_N15
-\B[3]~input\ : cycloneive_io_ibuf
+-- Location: CLKCTRL_G9
+\CLK~inputclkctrl\ : cycloneive_clkctrl
 -- pragma translate_off
 GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
+	clock_type => "global clock",
+	ena_register_mode => "none")
 -- pragma translate_on
 PORT MAP (
-	i => ww_B(3),
-	o => \B[3]~input_o\);
+	inclk => \CLK~inputclkctrl_INCLK_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	outclk => \CLK~inputclkctrl_outclk\);
 
--- Location: IOIBUF_X0_Y31_N15
-\B[2]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_B(2),
-	o => \B[2]~input_o\);
-
--- Location: IOIBUF_X0_Y32_N15
-\A[2]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_A(2),
-	o => \A[2]~input_o\);
-
--- Location: IOIBUF_X0_Y33_N15
-\A[1]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_A(1),
-	o => \A[1]~input_o\);
-
--- Location: IOIBUF_X0_Y32_N22
-\B[1]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_B(1),
-	o => \B[1]~input_o\);
-
--- Location: IOIBUF_X0_Y33_N22
-\A[0]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_A(0),
-	o => \A[0]~input_o\);
-
--- Location: IOIBUF_X0_Y34_N8
-\B[0]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_B(0),
-	o => \B[0]~input_o\);
-
--- Location: LCCOMB_X1_Y30_N20
-\inst|Sum[0]~0\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X114_Y4_N12
+\CountBuffer[0]~2\ : cycloneive_lcell_comb
 -- Equation(s):
--- \inst|Sum[0]~0_combout\ = (\A[0]~input_o\ & (\B[0]~input_o\ $ (VCC))) # (!\A[0]~input_o\ & (\B[0]~input_o\ & VCC))
--- \inst|Sum[0]~1\ = CARRY((\A[0]~input_o\ & \B[0]~input_o\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0110011010001000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \A[0]~input_o\,
-	datab => \B[0]~input_o\,
-	datad => VCC,
-	combout => \inst|Sum[0]~0_combout\,
-	cout => \inst|Sum[0]~1\);
-
--- Location: LCCOMB_X1_Y30_N22
-\inst|Sum[1]~2\ : cycloneive_lcell_comb
--- Equation(s):
--- \inst|Sum[1]~2_combout\ = (\A[1]~input_o\ & ((\B[1]~input_o\ & (\inst|Sum[0]~1\ & VCC)) # (!\B[1]~input_o\ & (!\inst|Sum[0]~1\)))) # (!\A[1]~input_o\ & ((\B[1]~input_o\ & (!\inst|Sum[0]~1\)) # (!\B[1]~input_o\ & ((\inst|Sum[0]~1\) # (GND)))))
--- \inst|Sum[1]~3\ = CARRY((\A[1]~input_o\ & (!\B[1]~input_o\ & !\inst|Sum[0]~1\)) # (!\A[1]~input_o\ & ((!\inst|Sum[0]~1\) # (!\B[1]~input_o\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1001011000010111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \A[1]~input_o\,
-	datab => \B[1]~input_o\,
-	datad => VCC,
-	cin => \inst|Sum[0]~1\,
-	combout => \inst|Sum[1]~2_combout\,
-	cout => \inst|Sum[1]~3\);
-
--- Location: LCCOMB_X1_Y30_N24
-\inst|Sum[2]~4\ : cycloneive_lcell_comb
--- Equation(s):
--- \inst|Sum[2]~4_combout\ = ((\B[2]~input_o\ $ (\A[2]~input_o\ $ (!\inst|Sum[1]~3\)))) # (GND)
--- \inst|Sum[2]~5\ = CARRY((\B[2]~input_o\ & ((\A[2]~input_o\) # (!\inst|Sum[1]~3\))) # (!\B[2]~input_o\ & (\A[2]~input_o\ & !\inst|Sum[1]~3\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0110100110001110",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \B[2]~input_o\,
-	datab => \A[2]~input_o\,
-	datad => VCC,
-	cin => \inst|Sum[1]~3\,
-	combout => \inst|Sum[2]~4_combout\,
-	cout => \inst|Sum[2]~5\);
-
--- Location: LCCOMB_X1_Y30_N26
-\inst|Sum[3]~6\ : cycloneive_lcell_comb
--- Equation(s):
--- \inst|Sum[3]~6_combout\ = (\A[3]~input_o\ & ((\B[3]~input_o\ & (\inst|Sum[2]~5\ & VCC)) # (!\B[3]~input_o\ & (!\inst|Sum[2]~5\)))) # (!\A[3]~input_o\ & ((\B[3]~input_o\ & (!\inst|Sum[2]~5\)) # (!\B[3]~input_o\ & ((\inst|Sum[2]~5\) # (GND)))))
--- \inst|Sum[3]~7\ = CARRY((\A[3]~input_o\ & (!\B[3]~input_o\ & !\inst|Sum[2]~5\)) # (!\A[3]~input_o\ & ((!\inst|Sum[2]~5\) # (!\B[3]~input_o\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1001011000010111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \A[3]~input_o\,
-	datab => \B[3]~input_o\,
-	datad => VCC,
-	cin => \inst|Sum[2]~5\,
-	combout => \inst|Sum[3]~6_combout\,
-	cout => \inst|Sum[3]~7\);
-
--- Location: LCCOMB_X1_Y30_N28
-\inst|Sum[4]~8\ : cycloneive_lcell_comb
--- Equation(s):
--- \inst|Sum[4]~8_combout\ = !\inst|Sum[3]~7\
+-- \CountBuffer[0]~2_combout\ = !CountBuffer(0)
 
 -- pragma translate_off
 GENERIC MAP (
 	lut_mask => "0000111100001111",
-	sum_lutc_input => "cin")
+	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	cin => \inst|Sum[3]~7\,
-	combout => \inst|Sum[4]~8_combout\);
+	datac => CountBuffer(0),
+	combout => \CountBuffer[0]~2_combout\);
 
-ww_Sum(4) <= \Sum[4]~output_o\;
+-- Location: IOIBUF_X115_Y4_N15
+\reset~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_reset,
+	o => \reset~input_o\);
 
-ww_Sum(3) <= \Sum[3]~output_o\;
+-- Location: FF_X114_Y4_N13
+\CountBuffer[0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK~inputclkctrl_outclk\,
+	d => \CountBuffer[0]~2_combout\,
+	clrn => \reset~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => CountBuffer(0));
 
-ww_Sum(2) <= \Sum[2]~output_o\;
+-- Location: LCCOMB_X114_Y4_N2
+\CountBuffer[1]~1\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \CountBuffer[1]~1_combout\ = CountBuffer(1) $ (CountBuffer(0))
 
-ww_Sum(1) <= \Sum[1]~output_o\;
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111111110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => CountBuffer(1),
+	datad => CountBuffer(0),
+	combout => \CountBuffer[1]~1_combout\);
 
-ww_Sum(0) <= \Sum[0]~output_o\;
+-- Location: FF_X114_Y4_N3
+\CountBuffer[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK~inputclkctrl_outclk\,
+	d => \CountBuffer[1]~1_combout\,
+	clrn => \reset~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => CountBuffer(1));
+
+-- Location: LCCOMB_X114_Y4_N28
+\CountBuffer[2]~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \CountBuffer[2]~0_combout\ = CountBuffer(2) $ (((CountBuffer(0) & CountBuffer(1))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => CountBuffer(0),
+	datac => CountBuffer(2),
+	datad => CountBuffer(1),
+	combout => \CountBuffer[2]~0_combout\);
+
+-- Location: FF_X114_Y4_N29
+\CountBuffer[2]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK~inputclkctrl_outclk\,
+	d => \CountBuffer[2]~0_combout\,
+	clrn => \reset~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => CountBuffer(2));
+
+-- Location: LCCOMB_X114_Y4_N18
+\LessThan0~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \LessThan0~0_combout\ = ((!CountBuffer(2)) # (!CountBuffer(0))) # (!CountBuffer(1))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011111111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => CountBuffer(1),
+	datac => CountBuffer(0),
+	datad => CountBuffer(2),
+	combout => \LessThan0~0_combout\);
+
+ww_dv <= \dv~output_o\;
 END structure;
 
 

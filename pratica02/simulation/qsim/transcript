@@ -1,7 +1,7 @@
 # do atv02.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:33:46 on Apr 10,2024
+# Start time: 18:30:33 on Jun 13,2024
 # vcom -work work atv02.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -12,36 +12,43 @@
 # -- Loading package cycloneive_components
 # -- Compiling entity hard_block
 # -- Compiling architecture structure of hard_block
-# -- Compiling entity testSomador
-# -- Compiling architecture structure of testSomador
-# End time: 16:33:46 on Apr 10,2024, Elapsed time: 0:00:00
+# -- Loading package dffeas_pack
+# -- Loading package altera_primitives_components
+# -- Compiling entity Mod8Counter
+# -- Compiling architecture structure of Mod8Counter
+# End time: 18:30:33 on Jun 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:33:46 on Apr 10,2024
-# vcom -work work Waveform1.vwf.vht 
+# Start time: 18:30:33 on Jun 13,2024
+# vcom -work work Waveform5.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity testSomador_vhd_vec_tst
-# -- Compiling architecture testSomador_arch of testSomador_vhd_vec_tst
-# End time: 16:33:46 on Apr 10,2024, Elapsed time: 0:00:00
+# -- Compiling entity Mod8Counter_vhd_vec_tst
+# -- Compiling architecture Mod8Counter_arch of Mod8Counter_vhd_vec_tst
+# End time: 18:30:33 on Jun 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -novopt -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.testSomador_vhd_vec_tst 
-# Start time: 16:33:46 on Apr 10,2024
+# vsim -novopt -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.Mod8Counter_vhd_vec_tst 
+# Start time: 18:30:33 on Jun 13,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading work.testsomador_vhd_vec_tst(testsomador_arch)
+# Loading work.mod8counter_vhd_vec_tst(mod8counter_arch)
 # Loading ieee.vital_timing(body)
 # Loading ieee.vital_primitives(body)
+# Loading altera.dffeas_pack
+# Loading altera.altera_primitives_components
 # Loading cycloneive.cycloneive_atom_pack(body)
 # Loading cycloneive.cycloneive_components
-# Loading work.testsomador(structure)
+# Loading work.mod8counter(structure)
 # Loading work.hard_block(structure)
 # Loading ieee.std_logic_arith(body)
 # Loading cycloneive.cycloneive_io_obuf(arch)
 # Loading cycloneive.cycloneive_io_ibuf(arch)
+# Loading cycloneive.cycloneive_clkctrl(vital_clkctrl)
+# Loading cycloneive.cycloneive_ena_reg(behave)
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
-# after#33
-# End time: 16:33:46 on Apr 10,2024, Elapsed time: 0:00:00
+# Loading altera.dffeas(vital_dffeas)
+# after#35
+# End time: 18:30:33 on Jun 13,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0

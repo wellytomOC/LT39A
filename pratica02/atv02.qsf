@@ -70,9 +70,6 @@ set_global_assignment -name VHDL_FILE clockdivider.vhdl
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name BDF_FILE testSomador.bdf
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_AB28 -to InpA[0]
 set_location_assignment PIN_AC28 -to InpA[1]
 set_location_assignment PIN_AC27 -to InpA[2]
@@ -181,4 +178,11 @@ set_instance_assignment -name IO_STANDARD "2.5 V" -to InpB_ssU[2]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to InpB_ssU[1]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to InpB_ssU[0]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to reset
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform3.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform4.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform5.vwf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
