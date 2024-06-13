@@ -1,5 +1,5 @@
 EDA Netlist Writer report for atv03
-Wed Apr 24 16:08:17 2024
+Thu Jun 13 17:58:39 2024
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Wed Apr 24 16:08:17 2024 ;
+; EDA Netlist Writer Status ; Successful - Thu Jun 13 17:58:39 2024 ;
 ; Revision Name             ; atv03                                 ;
 ; Top-level Entity Name     ; Arquitetura                           ;
 ; Family                    ; Cyclone IV E                          ;
@@ -51,7 +51,8 @@ agreement for further details.
 ; Option                                                                                            ; Setting                   ;
 +---------------------------------------------------------------------------------------------------+---------------------------+
 ; Tool Name                                                                                         ; ModelSim-Altera (Verilog) ;
-; Generate functional simulation netlist                                                            ; On                        ;
+; Generate functional simulation netlist                                                            ; Off                       ;
+; Time scale                                                                                        ; 1 ps                      ;
 ; Truncate long hierarchy paths                                                                     ; Off                       ;
 ; Map illegal HDL characters                                                                        ; Off                       ;
 ; Flatten buses into individual nodes                                                               ; Off                       ;
@@ -66,13 +67,20 @@ agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+---------------------------------------------------------------------------+
-; Simulation Generated Files                                                ;
-+---------------------------------------------------------------------------+
-; Generated Files                                                           ;
-+---------------------------------------------------------------------------+
-; C:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim//atv03.vo ;
-+---------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                      ;
++-------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                 ;
++-------------------------------------------------------------------------------------------------+
+; C:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim//atv03_7_1200mv_85c_slow.vo     ;
+; C:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim//atv03_7_1200mv_0c_slow.vo      ;
+; C:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim//atv03_min_1200mv_0c_fast.vo    ;
+; C:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim//atv03.vo                       ;
+; C:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim//atv03_7_1200mv_85c_v_slow.sdo  ;
+; C:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim//atv03_7_1200mv_0c_v_slow.sdo   ;
+; C:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim//atv03_min_1200mv_0c_v_fast.sdo ;
+; C:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim//atv03_v.sdo                    ;
++-------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -95,14 +103,21 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Intel and sold by Intel or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Wed Apr 24 16:08:17 2024
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim/ atv03 -c atv03
+    Info: Processing started: Thu Jun 13 17:58:38 2024
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory=C:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim/ atv03 -c atv03
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (204019): Generated file atv03_7_1200mv_85c_slow.vo in folder "C:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file atv03_7_1200mv_0c_slow.vo in folder "C:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file atv03_min_1200mv_0c_fast.vo in folder "C:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim//" for EDA simulation tool
 Info (204019): Generated file atv03.vo in folder "C:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file atv03_7_1200mv_85c_v_slow.sdo in folder "C:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file atv03_7_1200mv_0c_v_slow.sdo in folder "C:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file atv03_min_1200mv_0c_v_fast.sdo in folder "C:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file atv03_v.sdo in folder "C:/Users/welly/Documents/GitHub/LT39A/pratica03/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4642 megabytes
-    Info: Processing ended: Wed Apr 24 16:08:17 2024
-    Info: Elapsed time: 00:00:00
+    Info: Peak virtual memory: 4655 megabytes
+    Info: Processing ended: Thu Jun 13 17:58:39 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 

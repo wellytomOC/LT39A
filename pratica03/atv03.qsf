@@ -60,9 +60,6 @@ set_global_assignment -name VERILOG_FILE Entrada.v
 set_global_assignment -name VERILOG_FILE DecoderSsd_4bits_Dec.v
 set_global_assignment -name VERILOG_FILE Saida.v
 set_global_assignment -name VERILOG_FILE Arquitetura.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_AB28 -to A[0]
 set_location_assignment PIN_AC28 -to A[1]
 set_location_assignment PIN_AC27 -to A[2]
@@ -129,5 +126,14 @@ set_location_assignment PIN_L26 -to ssdRU[3]
 set_location_assignment PIN_L25 -to ssdRU[4]
 set_location_assignment PIN_J22 -to ssdRU[5]
 set_location_assignment PIN_H22 -to ssdRU[6]
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform3.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform4.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform5.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform6.vwf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform7.vwf

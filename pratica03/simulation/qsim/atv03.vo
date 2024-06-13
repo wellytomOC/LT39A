@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition"
 
-// DATE "04/24/2024 16:08:17"
+// DATE "06/13/2024 17:58:39"
 
 // 
 // Device: Altera EP4CE115F29C7 Package FBGA780
@@ -159,6 +159,10 @@ assign unknown = 1'bx;
 tri1 devclrn;
 tri1 devpor;
 tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("atv03_v.sdo");
+// synopsys translate_on
+
 wire \ssdQD[0]~output_o ;
 wire \ssdQD[1]~output_o ;
 wire \ssdQD[2]~output_o ;
