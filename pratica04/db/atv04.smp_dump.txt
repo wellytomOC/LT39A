@@ -1,0 +1,8 @@
+
+State Machine - |sistema|controle:controle01|PrState
+Name PrState.storeQ PrState.displayB PrState.load PrState.idle PrState.storeR 
+PrState.idle 0 0 0 0 0 
+PrState.load 0 0 1 1 0 
+PrState.displayB 0 1 0 1 0 
+PrState.storeQ 1 0 0 1 0 
+PrState.storeR 0 0 0 1 1 

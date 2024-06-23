@@ -1,0 +1,13 @@
+module muxIn (
+    input wire[3:0] zero, one,
+    input wire sel,
+    output wire[3:0] s
+);
+    
+    if(sel) begin
+        s <= one;
+    end else begin
+        s <= zero;
+    end
+    
+endmodule
