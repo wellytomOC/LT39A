@@ -1,5 +1,5 @@
 Analysis & Synthesis report for atv04
-Fri Jun 21 13:43:27 2024
+Wed Jul 31 17:35:59 2024
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -13,17 +13,28 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |sistema|controle:controle01|PrState
+  8. State Machine - |Arquitetura|sistema:sistema01|controle:controle01|PrState
   9. Registers Removed During Synthesis
  10. General Register Statistics
  11. Inverted Register Statistics
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: controle:controle01
- 14. Parameter Settings for Inferred Entity Instance: operacional:op01|ALU2bits:alu01|lpm_divide:Div0
- 15. Parameter Settings for Inferred Entity Instance: operacional:op01|ALU2bits:alu01|lpm_divide:Mod0
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+ 13. Parameter Settings for User Entity Instance: entrada:entrada01|clockDivider:clk1Hz
+ 14. Parameter Settings for User Entity Instance: sistema:sistema01|controle:controle01
+ 15. Parameter Settings for Inferred Entity Instance: saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|lpm_divide:Mod0
+ 16. Parameter Settings for Inferred Entity Instance: saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|lpm_divide:Div0
+ 17. Parameter Settings for Inferred Entity Instance: saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|lpm_divide:Mod0
+ 18. Parameter Settings for Inferred Entity Instance: saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|lpm_divide:Div0
+ 19. Parameter Settings for Inferred Entity Instance: saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|lpm_divide:Mod0
+ 20. Parameter Settings for Inferred Entity Instance: saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|lpm_divide:Div0
+ 21. Port Connectivity Checks: "sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Subtractor:s4"
+ 22. Port Connectivity Checks: "sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Subtractor:s3"
+ 23. Port Connectivity Checks: "sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Subtractor:s2"
+ 24. Port Connectivity Checks: "sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Multiplexer:m1"
+ 25. Port Connectivity Checks: "sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Subtractor:s1"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
+ 29. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -50,16 +61,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jun 21 13:43:27 2024       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul 31 17:35:59 2024       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; atv04                                       ;
-; Top-level Entity Name              ; sistema                                     ;
+; Top-level Entity Name              ; Arquitetura                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 67                                          ;
-;     Total combinational functions  ; 63                                          ;
-;     Dedicated logic registers      ; 17                                          ;
-; Total registers                    ; 17                                          ;
-; Total pins                         ; 20                                          ;
+; Total logic elements               ; 162                                         ;
+;     Total combinational functions  ; 154                                         ;
+;     Dedicated logic registers      ; 50                                          ;
+; Total registers                    ; 50                                          ;
+; Total pins                         ; 58                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -73,7 +84,7 @@ agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                                      ; sistema            ; atv04              ;
+; Top-level entity name                                                      ; Arquitetura        ; atv04              ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -175,86 +186,126 @@ agreement for further details.
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; Arquitetura.v                    ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/Arquitetura.v              ;         ;
+; saida.v                          ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/saida.v                    ;         ;
+; DecoderSsd_4bits_Dec.v           ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v     ;         ;
+; Multiplexer4x.v                  ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/Multiplexer4x.v            ;         ;
+; Subtractor.v                     ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/Subtractor.v               ;         ;
+; Multiplexer.v                    ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/Multiplexer.v              ;         ;
+; Divisor.v                        ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/Divisor.v                  ;         ;
 ; sistema.v                        ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/sistema.v                  ;         ;
 ; mod8counter.v                    ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/mod8counter.v              ;         ;
 ; registrador.v                    ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/registrador.v              ;         ;
 ; operacional.v                    ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/operacional.v              ;         ;
 ; muxIn.v                          ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/muxIn.v                    ;         ;
 ; ALU2bits.v                       ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/ALU2bits.v                 ;         ;
+; entrada.v                        ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/entrada.v                  ;         ;
 ; controle.v                       ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/controle.v                 ;         ;
+; clockDivider.v                   ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/clockDivider.v             ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
 ; aglobal170.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/aglobal170.inc      ;         ;
-; db/lpm_divide_fhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/db/lpm_divide_fhm.tdf      ;         ;
+; db/lpm_divide_i9m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/db/lpm_divide_i9m.tdf      ;         ;
 ; db/sign_div_unsign_7kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/db/sign_div_unsign_7kh.tdf ;         ;
 ; db/alt_u_div_24f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/db/alt_u_div_24f.tdf       ;         ;
 ; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/db/add_sub_7pc.tdf         ;         ;
 ; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/db/add_sub_8pc.tdf         ;         ;
-; db/lpm_divide_i9m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/db/lpm_divide_i9m.tdf      ;         ;
+; db/lpm_divide_fhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica04/db/lpm_divide_fhm.tdf      ;         ;
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 67        ;
-;                                             ;           ;
-; Total combinational functions               ; 63        ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 20        ;
-;     -- 3 input functions                    ; 32        ;
-;     -- <=2 input functions                  ; 11        ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 49        ;
-;     -- arithmetic mode                      ; 14        ;
-;                                             ;           ;
-; Total registers                             ; 17        ;
-;     -- Dedicated logic registers            ; 17        ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 20        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 17        ;
-; Total fan-out                               ; 268       ;
-; Average fan-out                             ; 2.23      ;
-+---------------------------------------------+-----------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 162         ;
+;                                             ;             ;
+; Total combinational functions               ; 154         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 44          ;
+;     -- 3 input functions                    ; 39          ;
+;     -- <=2 input functions                  ; 71          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 89          ;
+;     -- arithmetic mode                      ; 65          ;
+;                                             ;             ;
+; Total registers                             ; 50          ;
+;     -- Dedicated logic registers            ; 50          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 58          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; reset~input ;
+; Maximum fan-out                             ; 50          ;
+; Total fan-out                               ; 698         ;
+; Average fan-out                             ; 2.18        ;
++---------------------------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                     ;
-+----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                      ; Entity Name         ; Library Name ;
-+----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |sistema                                     ; 63 (0)              ; 17 (0)                    ; 0           ; 0            ; 0       ; 0         ; 20   ; 0            ; |sistema                                                                                                                                 ; sistema             ; work         ;
-;    |controle:controle01|                     ; 11 (11)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sistema|controle:controle01                                                                                                             ; controle            ; work         ;
-;    |mod8counter:mod01|                       ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sistema|mod8counter:mod01                                                                                                               ; mod8counter         ; work         ;
-;    |operacional:op01|                        ; 48 (0)              ; 8 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sistema|operacional:op01                                                                                                                ; operacional         ; work         ;
-;       |ALU2bits:alu01|                       ; 44 (8)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sistema|operacional:op01|ALU2bits:alu01                                                                                                 ; ALU2bits            ; work         ;
-;          |lpm_divide:Div0|                   ; 17 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sistema|operacional:op01|ALU2bits:alu01|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;             |lpm_divide_fhm:auto_generated|  ; 17 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sistema|operacional:op01|ALU2bits:alu01|lpm_divide:Div0|lpm_divide_fhm:auto_generated                                                   ; lpm_divide_fhm      ; work         ;
-;                |sign_div_unsign_7kh:divider| ; 17 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sistema|operacional:op01|ALU2bits:alu01|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
-;                   |alt_u_div_24f:divider|    ; 17 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sistema|operacional:op01|ALU2bits:alu01|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f       ; work         ;
-;          |lpm_divide:Mod0|                   ; 19 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sistema|operacional:op01|ALU2bits:alu01|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
-;             |lpm_divide_i9m:auto_generated|  ; 19 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sistema|operacional:op01|ALU2bits:alu01|lpm_divide:Mod0|lpm_divide_i9m:auto_generated                                                   ; lpm_divide_i9m      ; work         ;
-;                |sign_div_unsign_7kh:divider| ; 19 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sistema|operacional:op01|ALU2bits:alu01|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
-;                   |alt_u_div_24f:divider|    ; 19 (19)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sistema|operacional:op01|ALU2bits:alu01|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f       ; work         ;
-;       |muxIn:mux01|                          ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sistema|operacional:op01|muxIn:mux01                                                                                                    ; muxIn               ; work         ;
-;       |registrador:reg01|                    ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sistema|operacional:op01|registrador:reg01                                                                                              ; registrador         ; work         ;
-;       |registrador:reg02|                    ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sistema|operacional:op01|registrador:reg02                                                                                              ; registrador         ; work         ;
-+----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                       ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                       ; Entity Name          ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+; |Arquitetura                                 ; 154 (0)             ; 50 (0)                    ; 0           ; 0            ; 0       ; 0         ; 58   ; 0            ; |Arquitetura                                                                                                                                              ; Arquitetura          ; work         ;
+;    |entrada:entrada01|                       ; 42 (0)              ; 33 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|entrada:entrada01                                                                                                                            ; entrada              ; work         ;
+;       |clockDivider:clk1Hz|                  ; 42 (42)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|entrada:entrada01|clockDivider:clk1Hz                                                                                                        ; clockDivider         ; work         ;
+;    |saida:saida01|                           ; 54 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01                                                                                                                                ; saida                ; work         ;
+;       |DecoderSsd_4bits_Dec:SsdAluOut|       ; 18 (7)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut                                                                                                 ; DecoderSsd_4bits_Dec ; work         ;
+;          |lpm_divide:Div0|                   ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|lpm_divide:Div0                                                                                 ; lpm_divide           ; work         ;
+;             |lpm_divide_fhm:auto_generated|  ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|lpm_divide:Div0|lpm_divide_fhm:auto_generated                                                   ; lpm_divide_fhm       ; work         ;
+;                |sign_div_unsign_7kh:divider| ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh  ; work         ;
+;                   |alt_u_div_24f:divider|    ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f        ; work         ;
+;          |lpm_divide:Mod0|                   ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|lpm_divide:Mod0                                                                                 ; lpm_divide           ; work         ;
+;             |lpm_divide_i9m:auto_generated|  ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|lpm_divide:Mod0|lpm_divide_i9m:auto_generated                                                   ; lpm_divide_i9m       ; work         ;
+;                |sign_div_unsign_7kh:divider| ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh  ; work         ;
+;                   |alt_u_div_24f:divider|    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f        ; work         ;
+;       |DecoderSsd_4bits_Dec:SsdInpA|         ; 18 (7)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdInpA                                                                                                   ; DecoderSsd_4bits_Dec ; work         ;
+;          |lpm_divide:Div0|                   ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|lpm_divide:Div0                                                                                   ; lpm_divide           ; work         ;
+;             |lpm_divide_fhm:auto_generated|  ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|lpm_divide:Div0|lpm_divide_fhm:auto_generated                                                     ; lpm_divide_fhm       ; work         ;
+;                |sign_div_unsign_7kh:divider| ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider                         ; sign_div_unsign_7kh  ; work         ;
+;                   |alt_u_div_24f:divider|    ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider   ; alt_u_div_24f        ; work         ;
+;          |lpm_divide:Mod0|                   ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|lpm_divide:Mod0                                                                                   ; lpm_divide           ; work         ;
+;             |lpm_divide_i9m:auto_generated|  ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|lpm_divide:Mod0|lpm_divide_i9m:auto_generated                                                     ; lpm_divide_i9m       ; work         ;
+;                |sign_div_unsign_7kh:divider| ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider                         ; sign_div_unsign_7kh  ; work         ;
+;                   |alt_u_div_24f:divider|    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider   ; alt_u_div_24f        ; work         ;
+;       |DecoderSsd_4bits_Dec:SsdInpB|         ; 18 (7)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdInpB                                                                                                   ; DecoderSsd_4bits_Dec ; work         ;
+;          |lpm_divide:Div0|                   ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|lpm_divide:Div0                                                                                   ; lpm_divide           ; work         ;
+;             |lpm_divide_fhm:auto_generated|  ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|lpm_divide:Div0|lpm_divide_fhm:auto_generated                                                     ; lpm_divide_fhm       ; work         ;
+;                |sign_div_unsign_7kh:divider| ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider                         ; sign_div_unsign_7kh  ; work         ;
+;                   |alt_u_div_24f:divider|    ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider   ; alt_u_div_24f        ; work         ;
+;          |lpm_divide:Mod0|                   ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|lpm_divide:Mod0                                                                                   ; lpm_divide           ; work         ;
+;             |lpm_divide_i9m:auto_generated|  ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|lpm_divide:Mod0|lpm_divide_i9m:auto_generated                                                     ; lpm_divide_i9m       ; work         ;
+;                |sign_div_unsign_7kh:divider| ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider                         ; sign_div_unsign_7kh  ; work         ;
+;                   |alt_u_div_24f:divider|    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider   ; alt_u_div_24f        ; work         ;
+;    |sistema:sistema01|                       ; 58 (0)              ; 17 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|sistema:sistema01                                                                                                                            ; sistema              ; work         ;
+;       |controle:controle01|                  ; 11 (11)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|sistema:sistema01|controle:controle01                                                                                                        ; controle             ; work         ;
+;       |mod8counter:mod01|                    ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|sistema:sistema01|mod8counter:mod01                                                                                                          ; mod8counter          ; work         ;
+;       |operacional:op01|                     ; 43 (0)              ; 8 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|sistema:sistema01|operacional:op01                                                                                                           ; operacional          ; work         ;
+;          |ALU2bits:alu01|                    ; 43 (13)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|sistema:sistema01|operacional:op01|ALU2bits:alu01                                                                                            ; ALU2bits             ; work         ;
+;             |Divisor:Divisor01|              ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01                                                                          ; Divisor              ; work         ;
+;                |Multiplexer4x:m4|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Multiplexer4x:m4                                                         ; Multiplexer4x        ; work         ;
+;                |Multiplexer:m1|              ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Multiplexer:m1                                                           ; Multiplexer          ; work         ;
+;                |Multiplexer:m2|              ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Multiplexer:m2                                                           ; Multiplexer          ; work         ;
+;                |Multiplexer:m3|              ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Multiplexer:m3                                                           ; Multiplexer          ; work         ;
+;                |Subtractor:s1|               ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Subtractor:s1                                                            ; Subtractor           ; work         ;
+;                |Subtractor:s2|               ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Subtractor:s2                                                            ; Subtractor           ; work         ;
+;                |Subtractor:s3|               ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Subtractor:s3                                                            ; Subtractor           ; work         ;
+;                |Subtractor:s4|               ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Subtractor:s4                                                            ; Subtractor           ; work         ;
+;          |registrador:reg01|                 ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|sistema:sistema01|operacional:op01|registrador:reg01                                                                                         ; registrador          ; work         ;
+;          |registrador:reg02|                 ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|sistema:sistema01|operacional:op01|registrador:reg02                                                                                         ; registrador          ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
 +-----------------------------------------------------------------------------------------------------+
-; State Machine - |sistema|controle:controle01|PrState                                                ;
+; State Machine - |Arquitetura|sistema:sistema01|controle:controle01|PrState                          ;
 +------------------+----------------+------------------+--------------+--------------+----------------+
 ; Name             ; PrState.storeQ ; PrState.displayB ; PrState.load ; PrState.idle ; PrState.storeR ;
 +------------------+----------------+------------------+--------------+--------------+----------------+
@@ -266,15 +317,225 @@ Encoding Type:  One-Hot
 +------------------+----------------+------------------+--------------+--------------+----------------+
 
 
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; controle:controle01|PrState~4         ; Lost fanout        ;
-; controle:controle01|PrState~5         ; Lost fanout        ;
-; Total Number of Removed Registers = 2 ;                    ;
-+---------------------------------------+--------------------+
++--------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                               ;
++-----------------------------------------------------------+--------------------------------------+
+; Register name                                             ; Reason for Removal                   ;
++-----------------------------------------------------------+--------------------------------------+
+; sistema:sistema01|controle:controle01|PrState~4           ; Lost fanout                          ;
+; sistema:sistema01|controle:controle01|PrState~5           ; Lost fanout                          ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~0    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~1    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~2    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~3    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~4    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~5    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~6    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~7    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~8    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~9    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~10   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~11   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~12   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~13   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~14   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~15   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~16   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~17   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~18   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~19   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~20   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~21   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~22   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~23   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~24   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~25   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~26   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~27   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~28   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~29   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~30   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~31   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~32   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~33   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~34   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~35   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~36   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~37   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~38   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~39   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~40   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~41   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~42   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~43   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~44   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~45   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~46   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~47   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~48   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~49   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~50   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~51   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~52   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~53   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~54   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~55   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~56   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~57   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~58   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~59   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~60   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~61   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~62   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~63   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~64   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~65   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~66   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~67   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~68   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg~69   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~0    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~1    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~2    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~3    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~4    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~5    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~6    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~7    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~8    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~9    ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~10   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~11   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~12   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~13   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~14   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~15   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~16   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~17   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~18   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~19   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~20   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~21   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~22   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~23   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~24   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~25   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~26   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~27   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~28   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~29   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~30   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~31   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~32   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~33   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~34   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~35   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~36   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~37   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~38   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~39   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~40   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~41   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~42   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~43   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~44   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~45   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~46   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~47   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~48   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~49   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~50   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~51   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~52   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~53   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~54   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~55   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~56   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~57   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~58   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~59   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~60   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~61   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~62   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~63   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~64   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~65   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~66   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~67   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~68   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg~69   ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~0  ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~1  ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~2  ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~3  ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~4  ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~5  ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~6  ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~7  ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~8  ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~9  ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~10 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~11 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~12 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~13 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~14 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~15 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~16 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~17 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~18 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~19 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~20 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~21 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~22 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~23 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~24 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~25 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~26 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~27 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~28 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~29 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~30 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~31 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~32 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~33 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~34 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~35 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~36 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~37 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~38 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~39 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~40 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~41 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~42 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~43 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~44 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~45 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~46 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~47 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~48 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~49 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~50 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~51 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~52 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~53 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~54 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~55 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~56 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~57 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~58 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~59 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~60 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~61 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~62 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~63 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~64 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~65 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~66 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~67 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~68 ; Stuck at GND due to stuck port clock ;
+; saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg~69 ; Stuck at GND due to stuck port clock ;
+; Total Number of Removed Registers = 212                   ;                                      ;
++-----------------------------------------------------------+--------------------------------------+
 
 
 +------------------------------------------------------+
@@ -282,93 +543,245 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 17    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 50    ;
+; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 14    ;
+; Number of registers using Asynchronous Clear ; 47    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; mod8counter:mod01|counter[0]           ; 4       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
++----------------------------------------------------------+
+; Inverted Register Statistics                             ;
++------------------------------------------------+---------+
+; Inverted Register                              ; Fan out ;
++------------------------------------------------+---------+
+; sistema:sistema01|mod8counter:mod01|counter[0] ; 4       ;
+; Total number of inverted registers = 1         ;         ;
++------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |sistema|operacional:op01|ALU2bits:alu01|Mux3 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |Arquitetura|sistema:sistema01|operacional:op01|ALU2bits:alu01|Mux0 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: controle:controle01 ;
-+----------------+-------+-----------------------------------------+
-; Parameter Name ; Value ; Type                                    ;
-+----------------+-------+-----------------------------------------+
-; idle           ; 000   ; Unsigned Binary                         ;
-; load           ; 001   ; Unsigned Binary                         ;
-; displayB       ; 010   ; Unsigned Binary                         ;
-; storeQ         ; 011   ; Unsigned Binary                         ;
-; storeR         ; 100   ; Unsigned Binary                         ;
-+----------------+-------+-----------------------------------------+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: entrada:entrada01|clockDivider:clk1Hz ;
++----------------+----------+--------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                   ;
++----------------+----------+--------------------------------------------------------+
+; INPUT_FREQ     ; 50000000 ; Signed Integer                                         ;
+; OUTPUT_FREQ    ; 1        ; Signed Integer                                         ;
++----------------+----------+--------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: operacional:op01|ALU2bits:alu01|lpm_divide:Div0 ;
-+------------------------+----------------+--------------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                                   ;
-+------------------------+----------------+--------------------------------------------------------+
-; LPM_WIDTHN             ; 4              ; Untyped                                                ;
-; LPM_WIDTHD             ; 4              ; Untyped                                                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                ;
-; LPM_PIPELINE           ; 0              ; Untyped                                                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                                ;
-; CBXI_PARAMETER         ; lpm_divide_fhm ; Untyped                                                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                         ;
-+------------------------+----------------+--------------------------------------------------------+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sistema:sistema01|controle:controle01 ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; idle           ; 000   ; Unsigned Binary                                           ;
+; load           ; 001   ; Unsigned Binary                                           ;
+; displayB       ; 010   ; Unsigned Binary                                           ;
+; storeQ         ; 011   ; Unsigned Binary                                           ;
+; storeR         ; 100   ; Unsigned Binary                                           ;
++----------------+-------+-----------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: operacional:op01|ALU2bits:alu01|lpm_divide:Mod0 ;
-+------------------------+----------------+--------------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                                   ;
-+------------------------+----------------+--------------------------------------------------------+
-; LPM_WIDTHN             ; 4              ; Untyped                                                ;
-; LPM_WIDTHD             ; 4              ; Untyped                                                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                ;
-; LPM_PIPELINE           ; 0              ; Untyped                                                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                                ;
-; CBXI_PARAMETER         ; lpm_divide_i9m ; Untyped                                                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                         ;
-+------------------------+----------------+--------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                              ;
++------------------------+----------------+-------------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                           ;
+; CBXI_PARAMETER         ; lpm_divide_i9m ; Untyped                                                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                    ;
++------------------------+----------------+-------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|lpm_divide:Div0 ;
++------------------------+----------------+-------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                              ;
++------------------------+----------------+-------------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                           ;
+; CBXI_PARAMETER         ; lpm_divide_fhm ; Untyped                                                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                    ;
++------------------------+----------------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                              ;
++------------------------+----------------+-------------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                           ;
+; CBXI_PARAMETER         ; lpm_divide_i9m ; Untyped                                                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                    ;
++------------------------+----------------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|lpm_divide:Div0 ;
++------------------------+----------------+-------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                              ;
++------------------------+----------------+-------------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                           ;
+; CBXI_PARAMETER         ; lpm_divide_fhm ; Untyped                                                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                    ;
++------------------------+----------------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|lpm_divide:Mod0 ;
++------------------------+----------------+---------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                ;
++------------------------+----------------+---------------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                             ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                             ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                             ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                             ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                             ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                             ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                             ;
+; CBXI_PARAMETER         ; lpm_divide_i9m ; Untyped                                                             ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                             ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                             ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                        ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                      ;
++------------------------+----------------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|lpm_divide:Div0 ;
++------------------------+----------------+---------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                ;
++------------------------+----------------+---------------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                             ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                             ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                             ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                             ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                             ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                             ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                             ;
+; CBXI_PARAMETER         ; lpm_divide_fhm ; Untyped                                                             ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                             ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                             ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                        ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                      ;
++------------------------+----------------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Subtractor:s4" ;
++------+-------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                             ;
++------+-------+----------+-------------------------------------------------------------------------------------+
+; Bin  ; Input ; Info     ; Stuck at GND                                                                        ;
++------+-------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Subtractor:s3"  ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; S[3] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Bin  ; Input  ; Info     ; Stuck at GND                                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Subtractor:s2"  ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; S[3] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Bin  ; Input  ; Info     ; Stuck at GND                                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Multiplexer:m1" ;
++------------+-------+----------+--------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                        ;
++------------+-------+----------+--------------------------------------------------------------------------------+
+; Inp1[2..1] ; Input ; Info     ; Stuck at GND                                                                   ;
++------------+-------+----------+--------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Subtractor:s1"     ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; S[3]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; A[3..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Bin     ; Input  ; Info     ; Stuck at GND                                                                        ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -376,21 +789,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 20                          ;
-; cycloneiii_ff         ; 17                          ;
-;     CLR               ; 14                          ;
+; boundary_port         ; 58                          ;
+; cycloneiii_ff         ; 50                          ;
+;     CLR               ; 7                           ;
+;     CLR SCLR          ; 32                          ;
+;     ENA CLR           ; 8                           ;
 ;     plain             ; 3                           ;
-; cycloneiii_lcell_comb ; 63                          ;
-;     arith             ; 14                          ;
-;         3 data inputs ; 14                          ;
-;     normal            ; 49                          ;
-;         0 data inputs ; 4                           ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 18                          ;
-;         4 data inputs ; 20                          ;
+; cycloneiii_lcell_comb ; 162                         ;
+;     arith             ; 65                          ;
+;         2 data inputs ; 52                          ;
+;         3 data inputs ; 13                          ;
+;     normal            ; 97                          ;
+;         0 data inputs ; 12                          ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 26                          ;
+;         4 data inputs ; 44                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.50                        ;
-; Average LUT depth     ; 5.37                        ;
+; Max LUT depth         ; 16.60                       ;
+; Average LUT depth     ; 7.29                        ;
 +-----------------------+-----------------------------+
 
 
@@ -409,10 +826,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Jun 21 13:43:20 2024
+    Info: Processing started: Wed Jul 31 17:35:52 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off atv04 -c atv04
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file arquitetura.v
+    Info (12023): Found entity 1: Arquitetura File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Arquitetura.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file saida.v
+    Info (12023): Found entity 1: saida File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/saida.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decoderssd_4bits_dec.v
+    Info (12023): Found entity 1: DecoderSsd_4bits_Dec File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file multiplexer4x.v
+    Info (12023): Found entity 1: Multiplexer4x File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Multiplexer4x.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file subtractor.v
+    Info (12023): Found entity 1: Subtractor File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Subtractor.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file multiplexer.v
+    Info (12023): Found entity 1: Multiplexer File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Multiplexer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file divisor.v
+    Info (12023): Found entity 1: Divisor File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Divisor.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file sistema.v
     Info (12023): Found entity 1: sistema File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/sistema.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file mod8counter.v
@@ -431,27 +862,54 @@ Info (12021): Found 1 design units, including 1 entities, in source file control
     Info (12023): Found entity 1: controle File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/controle.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file clockdivider.v
     Info (12023): Found entity 1: clockDivider File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/clockDivider.v Line: 1
-Info (12127): Elaborating entity "sistema" for the top level hierarchy
-Info (12128): Elaborating entity "controle" for hierarchy "controle:controle01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/sistema.v Line: 14
-Info (12128): Elaborating entity "operacional" for hierarchy "operacional:op01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/sistema.v Line: 16
-Info (12128): Elaborating entity "muxIn" for hierarchy "operacional:op01|muxIn:mux01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/operacional.v Line: 12
+Info (12127): Elaborating entity "Arquitetura" for the top level hierarchy
+Info (12128): Elaborating entity "entrada" for hierarchy "entrada:entrada01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Arquitetura.v Line: 12
+Info (12128): Elaborating entity "clockDivider" for hierarchy "entrada:entrada01|clockDivider:clk1Hz" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/entrada.v Line: 8
+Info (12128): Elaborating entity "sistema" for hierarchy "sistema:sistema01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Arquitetura.v Line: 15
+Info (12128): Elaborating entity "controle" for hierarchy "sistema:sistema01|controle:controle01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/sistema.v Line: 15
+Info (12128): Elaborating entity "operacional" for hierarchy "sistema:sistema01|operacional:op01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/sistema.v Line: 17
+Info (12128): Elaborating entity "muxIn" for hierarchy "sistema:sistema01|operacional:op01|muxIn:mux01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/operacional.v Line: 12
 Warning (10235): Verilog HDL Always Construct warning at muxIn.v(8): variable "one" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/muxIn.v Line: 8
 Warning (10235): Verilog HDL Always Construct warning at muxIn.v(10): variable "zero" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/muxIn.v Line: 10
-Info (12128): Elaborating entity "registrador" for hierarchy "operacional:op01|registrador:reg01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/operacional.v Line: 15
-Info (12128): Elaborating entity "ALU2bits" for hierarchy "operacional:op01|ALU2bits:alu01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/operacional.v Line: 18
-Info (12128): Elaborating entity "mod8counter" for hierarchy "mod8counter:mod01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/sistema.v Line: 18
+Info (12128): Elaborating entity "registrador" for hierarchy "sistema:sistema01|operacional:op01|registrador:reg01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/operacional.v Line: 15
+Info (12128): Elaborating entity "ALU2bits" for hierarchy "sistema:sistema01|operacional:op01|ALU2bits:alu01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/operacional.v Line: 18
+Info (12128): Elaborating entity "Divisor" for hierarchy "sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/ALU2bits.v Line: 9
+Info (12128): Elaborating entity "Subtractor" for hierarchy "sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Subtractor:s1" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Divisor.v Line: 7
+Info (12128): Elaborating entity "Multiplexer" for hierarchy "sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Multiplexer:m1" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Divisor.v Line: 9
+Warning (10235): Verilog HDL Always Construct warning at Multiplexer.v(6): variable "Inp0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Multiplexer.v Line: 6
+Warning (10235): Verilog HDL Always Construct warning at Multiplexer.v(7): variable "Inp1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Multiplexer.v Line: 7
+Info (12128): Elaborating entity "Multiplexer4x" for hierarchy "sistema:sistema01|operacional:op01|ALU2bits:alu01|Divisor:Divisor01|Multiplexer4x:m4" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Divisor.v Line: 32
+Warning (10235): Verilog HDL Always Construct warning at Multiplexer4x.v(6): variable "Inp0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Multiplexer4x.v Line: 6
+Warning (10235): Verilog HDL Always Construct warning at Multiplexer4x.v(7): variable "Inp1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Multiplexer4x.v Line: 7
+Info (12128): Elaborating entity "mod8counter" for hierarchy "sistema:sistema01|mod8counter:mod01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/sistema.v Line: 19
 Warning (10230): Verilog HDL assignment warning at mod8counter.v(12): truncated value with size 32 to match size of target (3) File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/mod8counter.v Line: 12
-Info (278001): Inferred 2 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "operacional:op01|ALU2bits:alu01|Div0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/ALU2bits.v Line: 12
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "operacional:op01|ALU2bits:alu01|Mod0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/ALU2bits.v Line: 13
-Info (12130): Elaborated megafunction instantiation "operacional:op01|ALU2bits:alu01|lpm_divide:Div0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/ALU2bits.v Line: 12
-Info (12133): Instantiated megafunction "operacional:op01|ALU2bits:alu01|lpm_divide:Div0" with the following parameter: File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/ALU2bits.v Line: 12
+Info (12128): Elaborating entity "saida" for hierarchy "saida:saida01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Arquitetura.v Line: 17
+Info (12128): Elaborating entity "DecoderSsd_4bits_Dec" for hierarchy "saida:saida01|DecoderSsd_4bits_Dec:SsdInpA" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/saida.v Line: 10
+Warning (10230): Verilog HDL assignment warning at DecoderSsd_4bits_Dec.v(24): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v Line: 24
+Warning (10230): Verilog HDL assignment warning at DecoderSsd_4bits_Dec.v(25): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v Line: 25
+Warning (10030): Net "seven_seg.data_a" at DecoderSsd_4bits_Dec.v(3) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v Line: 3
+Warning (10030): Net "seven_seg.waddr_a" at DecoderSsd_4bits_Dec.v(3) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v Line: 3
+Warning (10030): Net "seven_seg.we_a" at DecoderSsd_4bits_Dec.v(3) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v Line: 3
+Info (276014): Found 3 instances of uninferred RAM logic
+    Info (276004): RAM logic "saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|seven_seg" is uninferred due to inappropriate RAM size File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v Line: 3
+    Info (276004): RAM logic "saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|seven_seg" is uninferred due to inappropriate RAM size File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v Line: 3
+    Info (276004): RAM logic "saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|seven_seg" is uninferred due to inappropriate RAM size File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v Line: 3
+Critical Warning (127005): Memory depth (16) in the design file differs from memory depth (10) in the Memory Initialization File "C:/Users/welly/Documents/GitHub/LT39A/pratica04/db/atv04.ram0_DecoderSsd_4bits_Dec_c69e66dc.hdl.mif" -- setting initial value for remaining addresses to 0
+Info (278001): Inferred 6 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|Mod0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v Line: 25
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|Div0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v Line: 24
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|Mod0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v Line: 25
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "saida:saida01|DecoderSsd_4bits_Dec:SsdInpB|Div0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v Line: 24
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|Mod0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v Line: 25
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "saida:saida01|DecoderSsd_4bits_Dec:SsdAluOut|Div0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v Line: 24
+Info (12130): Elaborated megafunction instantiation "saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|lpm_divide:Mod0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v Line: 25
+Info (12133): Instantiated megafunction "saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|lpm_divide:Mod0" with the following parameter: File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v Line: 25
     Info (12134): Parameter "LPM_WIDTHN" = "4"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_fhm.tdf
-    Info (12023): Found entity 1: lpm_divide_fhm File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/db/lpm_divide_fhm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_i9m.tdf
+    Info (12023): Found entity 1: lpm_divide_i9m File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/db/lpm_divide_i9m.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_7kh.tdf
     Info (12023): Found entity 1: sign_div_unsign_7kh File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/db/sign_div_unsign_7kh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_24f.tdf
@@ -460,26 +918,43 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_7pc File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/db/add_sub_7pc.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
     Info (12023): Found entity 1: add_sub_8pc File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/db/add_sub_8pc.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "operacional:op01|ALU2bits:alu01|lpm_divide:Mod0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/ALU2bits.v Line: 13
-Info (12133): Instantiated megafunction "operacional:op01|ALU2bits:alu01|lpm_divide:Mod0" with the following parameter: File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/ALU2bits.v Line: 13
+Info (12130): Elaborated megafunction instantiation "saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|lpm_divide:Div0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v Line: 24
+Info (12133): Instantiated megafunction "saida:saida01|DecoderSsd_4bits_Dec:SsdInpA|lpm_divide:Div0" with the following parameter: File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/DecoderSsd_4bits_Dec.v Line: 24
     Info (12134): Parameter "LPM_WIDTHN" = "4"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_i9m.tdf
-    Info (12023): Found entity 1: lpm_divide_i9m File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/db/lpm_divide_i9m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_fhm.tdf
+    Info (12023): Found entity 1: lpm_divide_fhm File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/db/lpm_divide_fhm.tdf Line: 25
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "InputASsdD[1]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Arquitetura.v Line: 6
+    Warning (13410): Pin "InputASsdD[2]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Arquitetura.v Line: 6
+    Warning (13410): Pin "InputASsdD[6]" is stuck at VCC File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Arquitetura.v Line: 6
+    Warning (13410): Pin "InputBSsdD[1]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Arquitetura.v Line: 7
+    Warning (13410): Pin "InputBSsdD[2]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Arquitetura.v Line: 7
+    Warning (13410): Pin "InputBSsdD[6]" is stuck at VCC File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Arquitetura.v Line: 7
+    Warning (13410): Pin "AluOutSsdD[1]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Arquitetura.v Line: 9
+    Warning (13410): Pin "AluOutSsdD[2]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Arquitetura.v Line: 9
+    Warning (13410): Pin "AluOutSsdD[6]" is stuck at VCC File: C:/Users/welly/Documents/GitHub/LT39A/pratica04/Arquitetura.v Line: 9
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/welly/Documents/GitHub/LT39A/pratica04/output_files/atv04.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 89 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 222 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
-    Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 69 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4795 megabytes
-    Info: Processing ended: Fri Jun 21 13:43:27 2024
+    Info (21059): Implemented 48 output pins
+    Info (21061): Implemented 164 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 4794 megabytes
+    Info: Processing ended: Wed Jul 31 17:35:59 2024
     Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Total CPU time (on all processors): 00:00:05
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/welly/Documents/GitHub/LT39A/pratica04/output_files/atv04.map.smsg.
 
 

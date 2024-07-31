@@ -9,21 +9,21 @@ z2
 cModel Technology
 Z0 dC:/Users/welly/Documents/GitHub/LT39A/pratica04/simulation/qsim
 vhard_block
-Z1 !s110 1718988455
+Z1 !s110 1722456228
 !i10b 1
-!s100 Bech>_3NV;jj=KXRLE9Da2
-I7[9L[Kngo?=C8FnLkB]mU1
+!s100 d78<JBjRKl8hJ4ZJ`dN@:1
+IaKd^FFAYle;ONh1KG0@8B1
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1718988455
+Z3 w1722456227
 Z4 8atv04.vo
 Z5 Fatv04.vo
-L0 1957
+L0 1846
 Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1718988455.000000
+Z7 !s108 1722456228.000000
 Z8 !s107 atv04.vo|
 Z9 !s90 -work|work|atv04.vo|
 !i113 1
@@ -74,8 +74,8 @@ R11
 vsistema
 R1
 !i10b 1
-!s100 UZeCV2KW44EYD<?8`36zD3
-IB?bADWeU0l?Vd53:MQ_]62
+!s100 _7Q?749^0aedn>O1Clg0@2
+I@5h?k]]`hh9k7Z[O:8<GJ2
 R2
 R0
 R3
@@ -95,21 +95,21 @@ R11
 vsistema_vlg_vec_tst
 R1
 !i10b 1
-!s100 :0AJ[EbTAT1V5l>WeGdF10
-Io<XmV@29OkIHUmX58<AQY1
+!s100 hzL2hQiUg49`M:<=n0`7T0
+IoX51jz]JfmNBhacR:zljQ1
 R2
 R0
-w1718988454
-8Waveform3.vwf.vt
-FWaveform3.vwf.vt
+R3
+8Waveform4.vwf.vt
+FWaveform4.vwf.vt
 R16
 R6
 r1
 !s85 0
 31
 R7
-!s107 Waveform3.vwf.vt|
-!s90 -work|work|Waveform3.vwf.vt|
+!s107 Waveform4.vwf.vt|
+!s90 -work|work|Waveform4.vwf.vt|
 !i113 1
 R10
 R11

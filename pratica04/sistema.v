@@ -4,6 +4,7 @@ module sistema (
 
     output wire[3:0] solution,
     output wire[2:0] prStateLed, nxStateLed
+
 );
 
     wire dv;

@@ -1,6 +1,7 @@
 module registrador (
     input wire clk,   
     input wire reset, 
+    input wire Wr,
     input wire [3:0] din,  
     output reg [3:0] dout
 );
@@ -9,7 +10,9 @@ module registrador (
         if (reset) begin
             dout <= 4'b0000; 
         end else begin
-            dout <= din; 
+            if (Wr) begin
+                dout <= din; 
+            end
         end
     end
 

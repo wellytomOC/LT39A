@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "06/21/2024 13:47:34"
+// Generated on "07/31/2024 16:25:30"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          sistema
 // 
@@ -66,21 +66,16 @@ end
 initial
 begin
 	inpA[3] = 1'b0;
-	inpA[3] = #500000 1'b1;
 end 
 // inpA[ 2 ]
-always
+initial
 begin
-	inpA[2] = 1'b0;
-	inpA[2] = #250000 1'b1;
-	#250000;
+	inpA[2] = 1'b1;
 end 
 // inpA[ 1 ]
-always
+initial
 begin
-	inpA[1] = 1'b0;
-	inpA[1] = #125000 1'b1;
-	#125000;
+	inpA[1] = 1'b1;
 end 
 // inpA[ 0 ]
 initial
@@ -91,30 +86,21 @@ end
 initial
 begin
 	inpB[3] = 1'b0;
-	inpB[3] = #875000 1'b1;
 end 
 // inpB[ 2 ]
 initial
 begin
 	inpB[2] = 1'b0;
-	inpB[2] = #375000 1'b1;
-	inpB[2] = #500000 1'b0;
 end 
 // inpB[ 1 ]
 initial
 begin
-	inpB[1] = 1'b0;
-	inpB[1] = #125000 1'b1;
-	inpB[1] = #250000 1'b0;
-	inpB[1] = #250000 1'b1;
-	inpB[1] = #250000 1'b0;
+	inpB[1] = 1'b1;
 end 
 // inpB[ 0 ]
-always
+initial
 begin
-	inpB[0] = 1'b1;
-	inpB[0] = #125000 1'b0;
-	#125000;
+	inpB[0] = 1'b0;
 end 
 
 // reset

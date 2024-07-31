@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off atv04 -c atv04 --vector_source="C:/Users/welly/Documents/GitHub/LT39A/pratica04/Waveform3.vwf" --testbench_file="C:/Users/welly/Documents/GitHub/LT39A/pratica04/simulation/qsim/Waveform3.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off atv04 -c atv04 --vector_source="C:/Users/welly/Documents/GitHub/LT39A/pratica04/Waveform4.vwf" --testbench_file="C:/Users/welly/Documents/GitHub/LT39A/pratica04/simulation/qsim/Waveform4.vwf.vt"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,8 +26,8 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Intel and sold by Intel or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Fri Jun 21 13:47:34 2024
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off atv04 -c atv04 --vector_source=C:/Users/welly/Documents/GitHub/LT39A/pratica04/Waveform3.vwf --testbench_file=C:/Users/welly/Documents/GitHub/LT39A/pratica04/simulation/qsim/Waveform3.vwf.vt
+    Info: Processing started: Wed Jul 31 17:03:46 2024
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off atv04 -c atv04 --vector_source=C:/Users/welly/Documents/GitHub/LT39A/pratica04/Waveform4.vwf --testbench_file=C:/Users/welly/Documents/GitHub/LT39A/pratica04/simulation/qsim/Waveform4.vwf.vt
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
 Completed successfully. 
@@ -55,14 +55,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Intel and sold by Intel or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Fri Jun 21 13:47:34 2024
+    Info: Processing started: Wed Jul 31 17:03:47 2024
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/welly/Documents/GitHub/LT39A/pratica04/simulation/qsim/ atv04 -c atv04
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file atv04.vo in folder "C:/Users/welly/Documents/GitHub/LT39A/pratica04/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4641 megabytes
-    Info: Processing ended: Fri Jun 21 13:47:35 2024
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 4642 megabytes
+    Info: Processing ended: Wed Jul 31 17:03:47 2024
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
 Completed successfully. 
@@ -79,34 +79,34 @@ c:/intelfpga_lite/17.0/modelsim_ase/win32aloem//vsim -c -do atv04.do
 
 Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 
-
 # 10.5b
+
 
 # do atv04.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:47:35 on Jun 21,2024
+# Start time: 17:03:48 on Jul 31,2024
 # vlog -work work atv04.vo 
 # -- Compiling module sistema
-
 # -- Compiling module hard_block
 # 
 # Top level modules:
 # 	sistema
-# End time: 13:47:35 on Jun 21,2024, Elapsed time: 0:00:00
+# End time: 17:03:48 on Jul 31,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:47:35 on Jun 21,2024
-# vlog -work work Waveform3.vwf.vt 
+# Start time: 17:03:48 on Jul 31,2024
+# vlog -work work Waveform4.vwf.vt 
 # -- Compiling module sistema_vlg_vec_tst
 # 
 # Top level modules:
 # 	sistema_vlg_vec_tst
-# End time: 13:47:35 on Jun 21,2024, Elapsed time: 0:00:00
+# End time: 17:03:48 on Jul 31,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.sistema_vlg_vec_tst 
-# Start time: 13:47:35 on Jun 21,2024
+# Start time: 17:03:48 on Jul 31,2024
 # Loading work.sistema_vlg_vec_tst
 # Loading work.sistema
 # Loading work.hard_block
@@ -119,22 +119,22 @@ Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 # Loading altera_ver.dffeas
 # Loading altera_ver.PRIM_GDFF_LOW
 # after#26
-# ** Note: $finish    : Waveform3.vwf.vt(55)
+# ** Note: $finish    : Waveform4.vwf.vt(55)
 #    Time: 1 us  Iteration: 0  Instance: /sistema_vlg_vec_tst
-# End time: 13:47:35 on Jun 21,2024, Elapsed time: 0:00:00
+# End time: 17:03:48 on Jul 31,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/welly/Documents/GitHub/LT39A/pratica04/Waveform3.vwf...
+Reading C:/Users/welly/Documents/GitHub/LT39A/pratica04/Waveform4.vwf...
 
 Reading C:/Users/welly/Documents/GitHub/LT39A/pratica04/simulation/qsim/atv04.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/welly/Documents/GitHub/LT39A/pratica04/simulation/qsim/atv04_20240621134736.sim.vwf
+Writing the resulting VWF to C:/Users/welly/Documents/GitHub/LT39A/pratica04/simulation/qsim/atv04_20240731170348.sim.vwf
 
 Finished VCD to VWF conversion.
 

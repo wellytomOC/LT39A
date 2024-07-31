@@ -1,0 +1,19 @@
+module saida(
+    input wire[3:0] InputA,InputB,AluOut,
+    input wire[2:0] PrState,NxState,
+
+    output reg[2:0] PrStateLed,NxStateLed,
+    output reg[6:0] InputASsdU,InputASsdD,
+    output reg[6:0] InputBSsdU,InputBSsdD,
+    output reg[6:0] AluOutSsdU,AluOutSsdD
+
+);
+
+DecoderSsd_4bits_Dec SsdInpA(InputA,InputASsdD,InputASsdU);
+DecoderSsd_4bits_Dec SsdInpB(InputB,InputBSsdD,InputBSsdU);
+DecoderSsd_4bits_Dec SsdAluOut(AluOut,AluOutSsdD,AluOutSsdU);
+
+assign PrStateLed = PrState;
+assign NxStateLed = NxState;
+
+endmodule

@@ -4,51 +4,191 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "solution[0]",
+					"name" : "PrStateLed[0]",
 					"strict" : false
 				},
 				{
-					"name" : "solution[1]",
+					"name" : "PrStateLed[1]",
 					"strict" : false
 				},
 				{
-					"name" : "solution[2]",
+					"name" : "PrStateLed[2]",
 					"strict" : false
 				},
 				{
-					"name" : "solution[3]",
+					"name" : "NxStateLed[0]",
 					"strict" : false
 				},
 				{
-					"name" : "prStateLed[0]",
+					"name" : "NxStateLed[1]",
 					"strict" : false
 				},
 				{
-					"name" : "prStateLed[1]",
+					"name" : "NxStateLed[2]",
 					"strict" : false
 				},
 				{
-					"name" : "prStateLed[2]",
+					"name" : "InputASsdU[0]",
 					"strict" : false
 				},
 				{
-					"name" : "nxStateLed[0]",
+					"name" : "InputASsdU[1]",
 					"strict" : false
 				},
 				{
-					"name" : "nxStateLed[1]",
+					"name" : "InputASsdU[2]",
 					"strict" : false
 				},
 				{
-					"name" : "nxStateLed[2]",
+					"name" : "InputASsdU[3]",
 					"strict" : false
 				},
 				{
-					"name" : "inpA[3]",
+					"name" : "InputASsdU[4]",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "InputASsdU[5]",
+					"strict" : false
+				},
+				{
+					"name" : "InputASsdU[6]",
+					"strict" : false
+				},
+				{
+					"name" : "InputASsdD[0]",
+					"strict" : false
+				},
+				{
+					"name" : "InputASsdD[3]",
+					"strict" : false
+				},
+				{
+					"name" : "InputASsdD[4]",
+					"strict" : false
+				},
+				{
+					"name" : "InputASsdD[5]",
+					"strict" : false
+				},
+				{
+					"name" : "InputBSsdU[0]",
+					"strict" : false
+				},
+				{
+					"name" : "InputBSsdU[1]",
+					"strict" : false
+				},
+				{
+					"name" : "InputBSsdU[2]",
+					"strict" : false
+				},
+				{
+					"name" : "InputBSsdU[3]",
+					"strict" : false
+				},
+				{
+					"name" : "InputBSsdU[4]",
+					"strict" : false
+				},
+				{
+					"name" : "InputBSsdU[5]",
+					"strict" : false
+				},
+				{
+					"name" : "InputBSsdU[6]",
+					"strict" : false
+				},
+				{
+					"name" : "InputBSsdD[0]",
+					"strict" : false
+				},
+				{
+					"name" : "InputBSsdD[3]",
+					"strict" : false
+				},
+				{
+					"name" : "InputBSsdD[4]",
+					"strict" : false
+				},
+				{
+					"name" : "InputBSsdD[5]",
+					"strict" : false
+				},
+				{
+					"name" : "AluOutSsdU[0]",
+					"strict" : false
+				},
+				{
+					"name" : "AluOutSsdU[1]",
+					"strict" : false
+				},
+				{
+					"name" : "AluOutSsdU[2]",
+					"strict" : false
+				},
+				{
+					"name" : "AluOutSsdU[3]",
+					"strict" : false
+				},
+				{
+					"name" : "AluOutSsdU[4]",
+					"strict" : false
+				},
+				{
+					"name" : "AluOutSsdU[5]",
+					"strict" : false
+				},
+				{
+					"name" : "AluOutSsdU[6]",
+					"strict" : false
+				},
+				{
+					"name" : "AluOutSsdD[0]",
+					"strict" : false
+				},
+				{
+					"name" : "AluOutSsdD[3]",
+					"strict" : false
+				},
+				{
+					"name" : "AluOutSsdD[4]",
+					"strict" : false
+				},
+				{
+					"name" : "AluOutSsdD[5]",
+					"strict" : false
+				},
+				{
+					"name" : "InputA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "InputA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "InputA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "InputA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "InputB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "InputB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "InputB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "InputB[2]",
 					"strict" : false
 				},
 				{
@@ -56,31 +196,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "inpB[3]",
-					"strict" : false
-				},
-				{
-					"name" : "inpB[2]",
-					"strict" : false
-				},
-				{
-					"name" : "inpB[1]",
-					"strict" : false
-				},
-				{
-					"name" : "inpB[0]",
-					"strict" : false
-				},
-				{
-					"name" : "inpA[2]",
-					"strict" : false
-				},
-				{
-					"name" : "inpA[1]",
-					"strict" : false
-				},
-				{
-					"name" : "inpA[0]",
+					"name" : "clock50Mhz",
 					"strict" : false
 				}
 			]

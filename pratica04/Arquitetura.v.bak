@@ -1,0 +1,20 @@
+module Arquitetura (
+    input wire[3:0]InputA, InputB,
+    input wire clock50Mhz, reset,
+
+    output reg[2:0] PrStateLed,NxStateLed,
+    output reg[6:0] InputASsdU,InputASsdD,
+    output reg[6:0] InputBSsdU,InputBSsdD,
+    output reg[6:0] AluOutSsdU,AluOutSsdD
+);
+
+wire clock1Hz;
+entrada entrada01(clock50Mhz, reset, clock1Hz);
+
+wire[3:0] AluOut;
+wire[2:0] prState, nxState;
+sistema sistema01(clock1Hz, reset, InputA, InputB, prState, nxState);
+
+saida saida01(InputA, InputB, AluOut, PrStateLed, NxStateLed, InputASsdU, InputASsdD, InputBSsdU, InputBSsdD, AluOutSsdU, AluOutSsdD);
+
+endmodule

@@ -1,0 +1,80 @@
+# Copyright (C) 2017  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel MegaCore Function License Agreement, or other 
+# applicable license agreement, including, without limitation, 
+# that your use is for the sole purpose of programming logic 
+# devices manufactured by Intel and sold by Intel or its 
+# authorized distributors.  Please refer to the applicable 
+# agreement for further details.
+
+# Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+# File: C:\Users\welly\Documents\GitHub\LT39A\pratica04\atv04.csv
+# Generated on: Wed Jul 31 19:17:04 2024
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus Prime software.
+
+To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair,Strict Preservation
+AluOutSsdD[6],Output,PIN_AH18,4,B4_N2,PIN_G14,,,,,,
+AluOutSsdD[5],Output,PIN_AF18,4,B4_N1,PIN_D15,,,,,,
+AluOutSsdD[4],Output,PIN_AG19,4,B4_N2,PIN_F15,,,,,,
+AluOutSsdD[3],Output,PIN_AH19,4,B4_N2,PIN_C15,,,,,,
+AluOutSsdD[2],Output,PIN_AB18,4,B4_N0,PIN_A10,,,,,,
+AluOutSsdD[1],Output,PIN_AC18,4,B4_N1,PIN_R2,,,,,,
+AluOutSsdD[0],Output,PIN_AD18,4,B4_N1,PIN_E15,,,,,,
+AluOutSsdU[6],Output,PIN_AE18,4,B4_N2,PIN_H19,,,,,,
+AluOutSsdU[5],Output,PIN_AF19,4,B4_N1,PIN_H21,,,,,,
+AluOutSsdU[4],Output,PIN_AE19,4,B4_N1,PIN_J19,,,,,,
+AluOutSsdU[3],Output,PIN_AH21,4,B4_N2,PIN_A18,,,,,,
+AluOutSsdU[2],Output,PIN_AG21,4,B4_N2,PIN_G21,,,,,,
+AluOutSsdU[1],Output,PIN_AA19,4,B4_N0,PIN_G20,,,,,,
+AluOutSsdU[0],Output,PIN_AB19,4,B4_N0,PIN_B18,,,,,,
+InputA[3],Input,PIN_AD27,5,B5_N2,PIN_D19,,,,,,
+InputA[2],Input,PIN_AC27,5,B5_N2,PIN_G17,,,,,,
+InputA[1],Input,PIN_AC28,5,B5_N2,PIN_J27,,,,,,
+InputA[0],Input,PIN_AB28,5,B5_N1,PIN_J28,,,,,,
+InputASsdD[6],Output,PIN_U24,5,B5_N0,PIN_AD12,,,,,,
+InputASsdD[5],Output,PIN_U23,5,B5_N1,PIN_E25,,,,,,
+InputASsdD[4],Output,PIN_W25,5,B5_N1,PIN_C19,,,,,,
+InputASsdD[3],Output,PIN_W22,5,B5_N0,PIN_D20,,,,,,
+InputASsdD[2],Output,PIN_W21,5,B5_N1,PIN_W21,,,,,,
+InputASsdD[1],Output,PIN_Y22,5,B5_N0,PIN_C21,,,,,,
+InputASsdD[0],Output,PIN_M24,6,B6_N2,PIN_E24,,,,,,
+InputASsdU[6],Output,PIN_H22,6,B6_N0,PIN_A22,,,,,,
+InputASsdU[5],Output,PIN_J22,6,B6_N0,PIN_E18,,,,,,
+InputASsdU[4],Output,PIN_L25,6,B6_N1,PIN_C18,,,,,,
+InputASsdU[3],Output,PIN_L26,6,B6_N1,PIN_B21,,,,,,
+InputASsdU[2],Output,PIN_E17,7,B7_N2,PIN_C20,,,,,,
+InputASsdU[1],Output,PIN_F22,7,B7_N0,PIN_F18,,,,,,
+InputASsdU[0],Output,PIN_G18,7,B7_N2,PIN_D18,,,,,,
+InputB[3],Input,PIN_AB26,5,B5_N1,PIN_J16,,,,,,
+InputB[2],Input,PIN_AD26,5,B5_N2,PIN_F17,,,,,,
+InputB[1],Input,PIN_AC26,5,B5_N2,PIN_G15,,,,,,
+InputB[0],Input,PIN_AB27,5,B5_N1,PIN_E17,,,,,,
+InputBSsdD[6],Output,PIN_Y19,4,B4_N0,PIN_AF5,,,,,,
+InputBSsdD[5],Output,PIN_AF23,4,B4_N0,PIN_C12,,,,,,
+InputBSsdD[4],Output,PIN_AD24,4,B4_N0,PIN_D12,,,,,,
+InputBSsdD[3],Output,PIN_AA21,4,B4_N0,PIN_D13,,,,,,
+InputBSsdD[2],Output,PIN_AB20,4,B4_N0,PIN_A6,,,,,,
+InputBSsdD[1],Output,PIN_U21,5,B5_N0,PIN_F5,,,,,,
+InputBSsdD[0],Output,PIN_V21,5,B5_N1,PIN_C13,,,,,,
+InputBSsdU[6],Output,PIN_W28,5,B5_N1,PIN_B17,,,,,,
+InputBSsdU[5],Output,PIN_W27,5,B5_N1,PIN_J15,,,,,,
+InputBSsdU[4],Output,PIN_Y26,5,B5_N1,PIN_D16,,,,,,
+InputBSsdU[3],Output,PIN_W26,5,B5_N1,PIN_A17,,,,,,
+InputBSsdU[2],Output,PIN_Y25,5,B5_N1,PIN_H15,,,,,,
+InputBSsdU[1],Output,PIN_AA26,5,B5_N1,PIN_H16,,,,,,
+InputBSsdU[0],Output,PIN_AA25,5,B5_N1,PIN_C16,,,,,,
+NxStateLed[2],Output,PIN_E25,7,B7_N1,PIN_G18,,,,,,
+NxStateLed[1],Output,PIN_E22,7,B7_N0,PIN_G16,,,,,,
+NxStateLed[0],Output,PIN_E21,7,B7_N0,PIN_H17,,,,,,
+PrStateLed[2],Output,PIN_E19,7,B7_N0,PIN_G22,,,,,,
+PrStateLed[1],Output,PIN_F19,7,B7_N0,PIN_J17,,,,,,
+PrStateLed[0],Output,PIN_G19,7,B7_N2,PIN_G19,,,,,,
+clock50Mhz,Input,PIN_Y2,2,B2_N0,PIN_J1,,,,,,
+reset,Input,PIN_Y23,5,B5_N2,PIN_Y2,,,,,,

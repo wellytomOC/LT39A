@@ -17,7 +17,7 @@ module controle(
     //reg aluOp;
     
     //bloco sequencial
-    always @(posedge reset or negedge clock) begin
+    always @(posedge reset or posedge clock) begin
         if(reset) begin
             PrState <= idle;
         end
@@ -67,7 +67,7 @@ module controle(
             end
             storeQ: begin
                 selA = 1'b0;
-                wrA = 1'b1;
+                wrA = 1'b0;
                 wrB = 1'b0;
                 aluOp = 2'b10;
 
@@ -79,7 +79,7 @@ module controle(
             end
             storeR: begin
                 selA = 1'b0;
-                wrA = 1'b1;
+                wrA = 1'b0;
                 wrB = 1'b0;
                 aluOp = 2'b11;
 

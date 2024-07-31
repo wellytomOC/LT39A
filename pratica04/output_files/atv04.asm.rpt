@@ -1,5 +1,5 @@
 Assembler report for atv04
-Fri Jun 21 13:43:40 2024
+Wed Jul 31 17:36:13 2024
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -38,9 +38,9 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Jun 21 13:43:40 2024 ;
+; Assembler Status      ; Successful - Wed Jul 31 17:36:13 2024 ;
 ; Revision Name         ; atv04                                 ;
-; Top-level Entity Name ; sistema                               ;
+; Top-level Entity Name ; Arquitetura                           ;
 ; Family                ; Cyclone IV E                          ;
 ; Device                ; EP4CE115F29C7                         ;
 +-----------------------+---------------------------------------+
@@ -67,8 +67,8 @@ agreement for further details.
 +----------------+---------------------------------------------------------------------------------+
 ; Option         ; Setting                                                                         ;
 +----------------+---------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x0056CF62                                                                      ;
-; Checksum       ; 0x0056CF62                                                                      ;
+; JTAG usercode  ; 0x00579E45                                                                      ;
+; Checksum       ; 0x00579E45                                                                      ;
 +----------------+---------------------------------------------------------------------------------+
 
 
@@ -78,14 +78,14 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Jun 21 13:43:38 2024
+    Info: Processing started: Wed Jul 31 17:36:11 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off atv04 -c atv04
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4680 megabytes
-    Info: Processing ended: Fri Jun 21 13:43:40 2024
+    Info: Peak virtual memory: 4683 megabytes
+    Info: Processing ended: Wed Jul 31 17:36:13 2024
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
