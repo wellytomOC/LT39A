@@ -1,0 +1,29 @@
+module RegisterBank (
+    input wire reset,
+    input wire[5:0] RS,
+
+    output reg[6:0] TpvOut, TsvOut, TaOut
+);
+
+
+wire[3:0] din, TpvUnit, TpvTen;
+Register #(4'd0) reg_TempoPrincipalVerde_Unit (RS[0], reset, din, TpvUnit);
+Register #(4'd3) reg_TempoPrincipalVerde_Ten (RS[1], reset, din, TpvTen);
+
+Concatener Concat_Tpv (TpvUnit, TpvTen, TpvOut);
+
+wire[3:0] TsvUnit, TsvTen;
+Register #(4'd5) reg_TempoSecundariaVerde_Unit (RS[2], reset, din, TsvUnit);
+Register #(4'd1) reg_TempoSecundariaVerde_Ten (RS[3], reset, din, TsvTen);
+
+Concatener Concat_Tsv (TsvUnit, TsvTen, TsvOut);
+
+wire[3:0] TaUnit, TaTen;
+Register #(4'd3) reg_TempoAmarelo_Unit (RS[4], reset, din, TaUnit);
+Register #(4'd0) reg_TempoAmarelo_Ten (RS[5], reset, din, TaTen);
+
+Concatener Concat_Ta (TaUnit, TaTen, TaOut);
+
+
+    
+endmodule

@@ -1,4 +1,95 @@
-|Concatener
+|Sistema
+clock => ~NO_FANOUT~
+clock1Hz => clock1Hz.IN1
+reset => reset.IN2
+dataIn[0] => dataIn[0].IN1
+dataIn[1] => dataIn[1].IN1
+dataIn[2] => dataIn[2].IN1
+dataIn[3] => dataIn[3].IN1
+trigger << Timer:Timer01.port3
+timeRemaining[0] << Timer:Timer01.port4
+timeRemaining[1] << Timer:Timer01.port4
+timeRemaining[2] << Timer:Timer01.port4
+timeRemaining[3] << Timer:Timer01.port4
+timeRemaining[4] << Timer:Timer01.port4
+timeRemaining[5] << Timer:Timer01.port4
+timeRemaining[6] << Timer:Timer01.port4
+
+
+|Sistema|RegisterBank:regBank01
+reset => reset.IN6
+RS[0] => RS[0].IN1
+RS[1] => RS[1].IN1
+RS[2] => RS[2].IN1
+RS[3] => RS[3].IN1
+RS[4] => RS[4].IN1
+RS[5] => RS[5].IN1
+dataIn[0] => dataIn[0].IN6
+dataIn[1] => dataIn[1].IN6
+dataIn[2] => dataIn[2].IN6
+dataIn[3] => dataIn[3].IN6
+TpvOut[0] <= Concatener:Concat_Tpv.port2
+TpvOut[1] <= Concatener:Concat_Tpv.port2
+TpvOut[2] <= Concatener:Concat_Tpv.port2
+TpvOut[3] <= Concatener:Concat_Tpv.port2
+TpvOut[4] <= Concatener:Concat_Tpv.port2
+TpvOut[5] <= Concatener:Concat_Tpv.port2
+TpvOut[6] <= Concatener:Concat_Tpv.port2
+TsvOut[0] <= Concatener:Concat_Tsv.port2
+TsvOut[1] <= Concatener:Concat_Tsv.port2
+TsvOut[2] <= Concatener:Concat_Tsv.port2
+TsvOut[3] <= Concatener:Concat_Tsv.port2
+TsvOut[4] <= Concatener:Concat_Tsv.port2
+TsvOut[5] <= Concatener:Concat_Tsv.port2
+TsvOut[6] <= Concatener:Concat_Tsv.port2
+TaOut[0] <= Concatener:Concat_Ta.port2
+TaOut[1] <= Concatener:Concat_Ta.port2
+TaOut[2] <= Concatener:Concat_Ta.port2
+TaOut[3] <= Concatener:Concat_Ta.port2
+TaOut[4] <= Concatener:Concat_Ta.port2
+TaOut[5] <= Concatener:Concat_Ta.port2
+TaOut[6] <= Concatener:Concat_Ta.port2
+
+
+|Sistema|RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Unit
+clock => dout[0]~reg0.CLK
+clock => dout[1]~reg0.CLK
+clock => dout[2]~reg0.CLK
+clock => dout[3]~reg0.CLK
+reset => dout[0]~reg0.ACLR
+reset => dout[1]~reg0.ACLR
+reset => dout[2]~reg0.ACLR
+reset => dout[3]~reg0.ACLR
+din[0] => dout[0]~reg0.DATAIN
+din[1] => dout[1]~reg0.DATAIN
+din[2] => dout[2]~reg0.DATAIN
+din[3] => dout[3]~reg0.DATAIN
+dout[0] <= dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Sistema|RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Ten
+clock => dout[0]~reg0.CLK
+clock => dout[1]~reg0.CLK
+clock => dout[2]~reg0.CLK
+clock => dout[3]~reg0.CLK
+reset => dout[0]~reg0.PRESET
+reset => dout[1]~reg0.PRESET
+reset => dout[2]~reg0.ACLR
+reset => dout[3]~reg0.ACLR
+din[0] => dout[0]~reg0.DATAIN
+din[1] => dout[1]~reg0.DATAIN
+din[2] => dout[2]~reg0.DATAIN
+din[3] => dout[3]~reg0.DATAIN
+dout[0] <= dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Sistema|RegisterBank:regBank01|Concatener:Concat_Tpv
 unit[0] => dout[0].DATAIN
 unit[1] => Add1.IN10
 unit[2] => Add1.IN9
@@ -18,5 +109,225 @@ dout[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 dout[4] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 dout[5] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 dout[6] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Sistema|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit
+clock => dout[0]~reg0.CLK
+clock => dout[1]~reg0.CLK
+clock => dout[2]~reg0.CLK
+clock => dout[3]~reg0.CLK
+reset => dout[0]~reg0.PRESET
+reset => dout[1]~reg0.ACLR
+reset => dout[2]~reg0.PRESET
+reset => dout[3]~reg0.ACLR
+din[0] => dout[0]~reg0.DATAIN
+din[1] => dout[1]~reg0.DATAIN
+din[2] => dout[2]~reg0.DATAIN
+din[3] => dout[3]~reg0.DATAIN
+dout[0] <= dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Sistema|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten
+clock => dout[0]~reg0.CLK
+clock => dout[1]~reg0.CLK
+clock => dout[2]~reg0.CLK
+clock => dout[3]~reg0.CLK
+reset => dout[0]~reg0.PRESET
+reset => dout[1]~reg0.ACLR
+reset => dout[2]~reg0.ACLR
+reset => dout[3]~reg0.ACLR
+din[0] => dout[0]~reg0.DATAIN
+din[1] => dout[1]~reg0.DATAIN
+din[2] => dout[2]~reg0.DATAIN
+din[3] => dout[3]~reg0.DATAIN
+dout[0] <= dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Sistema|RegisterBank:regBank01|Concatener:Concat_Tsv
+unit[0] => dout[0].DATAIN
+unit[1] => Add1.IN10
+unit[2] => Add1.IN9
+unit[3] => Add1.IN8
+ten[0] => Add0.IN8
+ten[0] => Add1.IN12
+ten[1] => Add0.IN7
+ten[1] => Add1.IN11
+ten[2] => Add0.IN5
+ten[2] => Add0.IN6
+ten[3] => Add0.IN3
+ten[3] => Add0.IN4
+dout[0] <= unit[0].DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[4] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[5] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[6] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Sistema|RegisterBank:regBank01|Register:reg_TempoAmarelo_Unit
+clock => dout[0]~reg0.CLK
+clock => dout[1]~reg0.CLK
+clock => dout[2]~reg0.CLK
+clock => dout[3]~reg0.CLK
+reset => dout[0]~reg0.PRESET
+reset => dout[1]~reg0.PRESET
+reset => dout[2]~reg0.ACLR
+reset => dout[3]~reg0.ACLR
+din[0] => dout[0]~reg0.DATAIN
+din[1] => dout[1]~reg0.DATAIN
+din[2] => dout[2]~reg0.DATAIN
+din[3] => dout[3]~reg0.DATAIN
+dout[0] <= dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Sistema|RegisterBank:regBank01|Register:reg_TempoAmarelo_Ten
+clock => dout[0]~reg0.CLK
+clock => dout[1]~reg0.CLK
+clock => dout[2]~reg0.CLK
+clock => dout[3]~reg0.CLK
+reset => dout[0]~reg0.ACLR
+reset => dout[1]~reg0.ACLR
+reset => dout[2]~reg0.ACLR
+reset => dout[3]~reg0.ACLR
+din[0] => dout[0]~reg0.DATAIN
+din[1] => dout[1]~reg0.DATAIN
+din[2] => dout[2]~reg0.DATAIN
+din[3] => dout[3]~reg0.DATAIN
+dout[0] <= dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Sistema|RegisterBank:regBank01|Concatener:Concat_Ta
+unit[0] => dout[0].DATAIN
+unit[1] => Add1.IN10
+unit[2] => Add1.IN9
+unit[3] => Add1.IN8
+ten[0] => Add0.IN8
+ten[0] => Add1.IN12
+ten[1] => Add0.IN7
+ten[1] => Add1.IN11
+ten[2] => Add0.IN5
+ten[2] => Add0.IN6
+ten[3] => Add0.IN3
+ten[3] => Add0.IN4
+dout[0] <= unit[0].DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[4] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[5] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[6] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Sistema|TimerMultiplexer:TimerMux01
+sel[0] => Mux0.IN2
+sel[0] => Mux1.IN2
+sel[0] => Mux2.IN2
+sel[0] => Mux3.IN2
+sel[0] => Mux4.IN2
+sel[0] => Mux5.IN2
+sel[0] => Mux6.IN2
+sel[1] => Mux0.IN1
+sel[1] => Mux1.IN1
+sel[1] => Mux2.IN1
+sel[1] => Mux3.IN1
+sel[1] => Mux4.IN1
+sel[1] => Mux5.IN1
+sel[1] => Mux6.IN1
+Tpv[0] => Mux6.IN3
+Tpv[1] => Mux5.IN3
+Tpv[2] => Mux4.IN3
+Tpv[3] => Mux3.IN3
+Tpv[4] => Mux2.IN3
+Tpv[5] => Mux1.IN3
+Tpv[6] => Mux0.IN3
+Tsv[0] => Mux6.IN4
+Tsv[1] => Mux5.IN4
+Tsv[2] => Mux4.IN4
+Tsv[3] => Mux3.IN4
+Tsv[4] => Mux2.IN4
+Tsv[5] => Mux1.IN4
+Tsv[6] => Mux0.IN4
+Ta[0] => Mux6.IN5
+Ta[1] => Mux5.IN5
+Ta[2] => Mux4.IN5
+Ta[3] => Mux3.IN5
+Ta[4] => Mux2.IN5
+Ta[5] => Mux1.IN5
+Ta[6] => Mux0.IN5
+MuxOut[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+MuxOut[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+MuxOut[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+MuxOut[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+MuxOut[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+MuxOut[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+MuxOut[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Sistema|Timer:Timer01
+ref[0] => Equal0.IN6
+ref[0] => Add1.IN14
+ref[1] => Equal0.IN5
+ref[1] => Add1.IN13
+ref[2] => Equal0.IN4
+ref[2] => Add1.IN12
+ref[3] => Equal0.IN3
+ref[3] => Add1.IN11
+ref[4] => Equal0.IN2
+ref[4] => Add1.IN10
+ref[5] => Equal0.IN1
+ref[5] => Add1.IN9
+ref[6] => Equal0.IN0
+ref[6] => Add1.IN8
+clock => timeRemaining[0]~reg0.CLK
+clock => timeRemaining[1]~reg0.CLK
+clock => timeRemaining[2]~reg0.CLK
+clock => timeRemaining[3]~reg0.CLK
+clock => timeRemaining[4]~reg0.CLK
+clock => timeRemaining[5]~reg0.CLK
+clock => timeRemaining[6]~reg0.CLK
+clock => trigger~reg0.CLK
+clock => counter[0].CLK
+clock => counter[1].CLK
+clock => counter[2].CLK
+clock => counter[3].CLK
+clock => counter[4].CLK
+clock => counter[5].CLK
+clock => counter[6].CLK
+reset => trigger~reg0.ACLR
+reset => counter[0].ACLR
+reset => counter[1].ACLR
+reset => counter[2].ACLR
+reset => counter[3].ACLR
+reset => counter[4].ACLR
+reset => counter[5].ACLR
+reset => counter[6].ACLR
+reset => timeRemaining[0]~reg0.ENA
+reset => timeRemaining[6]~reg0.ENA
+reset => timeRemaining[5]~reg0.ENA
+reset => timeRemaining[4]~reg0.ENA
+reset => timeRemaining[3]~reg0.ENA
+reset => timeRemaining[2]~reg0.ENA
+reset => timeRemaining[1]~reg0.ENA
+trigger <= trigger~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timeRemaining[0] <= timeRemaining[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timeRemaining[1] <= timeRemaining[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timeRemaining[2] <= timeRemaining[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timeRemaining[3] <= timeRemaining[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timeRemaining[4] <= timeRemaining[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timeRemaining[5] <= timeRemaining[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timeRemaining[6] <= timeRemaining[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

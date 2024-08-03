@@ -1,4 +1,4 @@
-module registrador #(
+module Register #(
     parameter INITIAL_VALUE = 4'b0  
 )(
     input wire clock, reset,
@@ -6,13 +6,9 @@ module registrador #(
     output reg [3:0] dout
 );
 
-    initial begin
-        dout = INITIAL_VALUE; 
-    end
-
     always @(negedge clock or posedge reset) begin
         if (reset) begin
-            dout <= 4'b0; 
+            dout <= INITIAL_VALUE; 
         end else begin
             dout <= din; 
         end

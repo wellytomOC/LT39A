@@ -7,10 +7,10 @@
 vlib work
 vlog -work work projeto01.vo
 vlog -work work Waveform.vwf.vt
-vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.Concatener_vlg_vec_tst
+vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.Sistema_vlg_vec_tst
 vcd file -direction projeto01.msim.vcd
-vcd add -internal Concatener_vlg_vec_tst/*
-vcd add -internal Concatener_vlg_vec_tst/i1/*
+vcd add -internal Sistema_vlg_vec_tst/*
+vcd add -internal Sistema_vlg_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {
@@ -25,10 +25,10 @@ quit -f
 vlib work
 vlog -work work projeto01.vo
 vlog -work work Waveform.vwf.vt
-vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.Concatener_vlg_vec_tst
+vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.Sistema_vlg_vec_tst
 vcd file -direction projeto01.msim.vcd
-vcd add -internal Concatener_vlg_vec_tst/*
-vcd add -internal Concatener_vlg_vec_tst/i1/*
+vcd add -internal Sistema_vlg_vec_tst/*
+vcd add -internal Sistema_vlg_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {
@@ -76,7 +76,87 @@ HEADER
 	GRID_DUTY_CYCLE = 50;
 }
 
-SIGNAL("dout")
+SIGNAL("clock")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("clock1Hz")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("dataIn")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 4;
+	LSB_INDEX = 0;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("dataIn[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "dataIn";
+}
+
+SIGNAL("dataIn[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "dataIn";
+}
+
+SIGNAL("dataIn[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "dataIn";
+}
+
+SIGNAL("dataIn[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "dataIn";
+}
+
+SIGNAL("reset")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("timeRemaining")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
@@ -86,288 +166,115 @@ SIGNAL("dout")
 	PARENT = "";
 }
 
-SIGNAL("dout[6]")
+SIGNAL("timeRemaining[6]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "dout";
+	PARENT = "timeRemaining";
 }
 
-SIGNAL("dout[5]")
+SIGNAL("timeRemaining[5]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "dout";
+	PARENT = "timeRemaining";
 }
 
-SIGNAL("dout[4]")
+SIGNAL("timeRemaining[4]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "dout";
+	PARENT = "timeRemaining";
 }
 
-SIGNAL("dout[3]")
+SIGNAL("timeRemaining[3]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "dout";
+	PARENT = "timeRemaining";
 }
 
-SIGNAL("dout[2]")
+SIGNAL("timeRemaining[2]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "dout";
+	PARENT = "timeRemaining";
 }
 
-SIGNAL("dout[1]")
+SIGNAL("timeRemaining[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "dout";
+	PARENT = "timeRemaining";
 }
 
-SIGNAL("dout[0]")
+SIGNAL("timeRemaining[0]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "dout";
+	PARENT = "timeRemaining";
 }
 
-SIGNAL("ten")
+SIGNAL("trigger")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = BUS;
-	WIDTH = 4;
-	LSB_INDEX = 0;
-	DIRECTION = INPUT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
 	PARENT = "";
 }
 
-SIGNAL("ten[3]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "ten";
-}
-
-SIGNAL("ten[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "ten";
-}
-
-SIGNAL("ten[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "ten";
-}
-
-SIGNAL("ten[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "ten";
-}
-
-SIGNAL("unit")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = BUS;
-	WIDTH = 4;
-	LSB_INDEX = 0;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("unit[3]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "unit";
-}
-
-SIGNAL("unit[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "unit";
-}
-
-SIGNAL("unit[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "unit";
-}
-
-SIGNAL("unit[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "unit";
-}
-
-TRANSITION_LIST("dout[6]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("dout[5]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("dout[4]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("dout[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("dout[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("dout[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("dout[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("ten[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 875.0;
-		LEVEL 1 FOR 125.0;
-	}
-}
-
-TRANSITION_LIST("ten[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 375.0;
-		LEVEL 1 FOR 500.0;
-		LEVEL 0 FOR 125.0;
-	}
-}
-
-TRANSITION_LIST("ten[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 125.0;
-		LEVEL 1 FOR 250.0;
-		LEVEL 0 FOR 250.0;
-		LEVEL 1 FOR 250.0;
-		LEVEL 0 FOR 125.0;
-	}
-}
-
-TRANSITION_LIST("ten[0]")
+TRANSITION_LIST("clock")
 {
 	NODE
 	{
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 4;
-			LEVEL 1 FOR 125.0;
-			LEVEL 0 FOR 125.0;
+			REPEAT = 100;
+			LEVEL 0 FOR 5.0;
+			LEVEL 1 FOR 5.0;
 		}
 	}
 }
 
-TRANSITION_LIST("unit[3]")
+TRANSITION_LIST("clock1Hz")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 100;
+			LEVEL 0 FOR 5.0;
+			LEVEL 1 FOR 5.0;
+		}
+	}
+}
+
+TRANSITION_LIST("dataIn[3]")
 {
 	NODE
 	{
@@ -376,7 +283,7 @@ TRANSITION_LIST("unit[3]")
 	}
 }
 
-TRANSITION_LIST("unit[2]")
+TRANSITION_LIST("dataIn[2]")
 {
 	NODE
 	{
@@ -385,212 +292,271 @@ TRANSITION_LIST("unit[2]")
 	}
 }
 
-TRANSITION_LIST("unit[1]")
+TRANSITION_LIST("dataIn[1]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		NODE
-		{
-			REPEAT = 1;
-			LEVEL 0 FOR 500.0;
-			LEVEL 1 FOR 500.0;
-		}
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("unit[0]")
+TRANSITION_LIST("dataIn[0]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		NODE
-		{
-			REPEAT = 2;
-			LEVEL 0 FOR 250.0;
-			LEVEL 1 FOR 250.0;
-		}
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("reset")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 430.0;
+		LEVEL 1 FOR 110.0;
+		LEVEL 0 FOR 460.0;
+	}
+}
+
+TRANSITION_LIST("timeRemaining[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("timeRemaining[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("timeRemaining[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("timeRemaining[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("timeRemaining[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("timeRemaining[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("timeRemaining[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("trigger")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
 	}
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "unit";
+	CHANNEL = "clock";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 0;
 	TREE_LEVEL = 0;
-	CHILDREN = 1, 2, 3, 4;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "unit[3]";
+	CHANNEL = "clock1Hz";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 1;
-	TREE_LEVEL = 1;
-	PARENT = 0;
+	TREE_LEVEL = 0;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "unit[2]";
+	CHANNEL = "dataIn";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 2;
-	TREE_LEVEL = 1;
-	PARENT = 0;
+	TREE_LEVEL = 0;
+	CHILDREN = 3, 4, 5, 6;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "unit[1]";
+	CHANNEL = "dataIn[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 3;
 	TREE_LEVEL = 1;
-	PARENT = 0;
+	PARENT = 2;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "unit[0]";
+	CHANNEL = "dataIn[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 4;
 	TREE_LEVEL = 1;
-	PARENT = 0;
+	PARENT = 2;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "ten";
+	CHANNEL = "dataIn[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 5;
-	TREE_LEVEL = 0;
-	CHILDREN = 6, 7, 8, 9;
+	TREE_LEVEL = 1;
+	PARENT = 2;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "ten[3]";
+	CHANNEL = "dataIn[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 6;
 	TREE_LEVEL = 1;
-	PARENT = 5;
+	PARENT = 2;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "ten[2]";
+	CHANNEL = "reset";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 7;
-	TREE_LEVEL = 1;
-	PARENT = 5;
+	TREE_LEVEL = 0;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "ten[1]";
+	CHANNEL = "timeRemaining";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 8;
-	TREE_LEVEL = 1;
-	PARENT = 5;
+	TREE_LEVEL = 0;
+	CHILDREN = 9, 10, 11, 12, 13, 14, 15;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "ten[0]";
+	CHANNEL = "timeRemaining[6]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 9;
 	TREE_LEVEL = 1;
-	PARENT = 5;
+	PARENT = 8;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "dout";
+	CHANNEL = "timeRemaining[5]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 10;
-	TREE_LEVEL = 0;
-	CHILDREN = 11, 12, 13, 14, 15, 16, 17;
+	TREE_LEVEL = 1;
+	PARENT = 8;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "dout[6]";
+	CHANNEL = "timeRemaining[4]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 11;
 	TREE_LEVEL = 1;
-	PARENT = 10;
+	PARENT = 8;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "dout[5]";
+	CHANNEL = "timeRemaining[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 12;
 	TREE_LEVEL = 1;
-	PARENT = 10;
+	PARENT = 8;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "dout[4]";
+	CHANNEL = "timeRemaining[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 13;
 	TREE_LEVEL = 1;
-	PARENT = 10;
+	PARENT = 8;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "dout[3]";
+	CHANNEL = "timeRemaining[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 14;
 	TREE_LEVEL = 1;
-	PARENT = 10;
+	PARENT = 8;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "dout[2]";
+	CHANNEL = "timeRemaining[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 15;
 	TREE_LEVEL = 1;
-	PARENT = 10;
+	PARENT = 8;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "dout[1]";
+	CHANNEL = "trigger";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 16;
-	TREE_LEVEL = 1;
-	PARENT = 10;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "dout[0]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 17;
-	TREE_LEVEL = 1;
-	PARENT = 10;
+	TREE_LEVEL = 0;
 }
 
 TIME_BAR

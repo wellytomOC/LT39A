@@ -4,63 +4,43 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "dout[0]",
+					"name" : "trigger",
 					"strict" : false
 				},
 				{
-					"name" : "dout[1]",
+					"name" : "timeRemaining[0]",
 					"strict" : false
 				},
 				{
-					"name" : "dout[2]",
+					"name" : "timeRemaining[1]",
 					"strict" : false
 				},
 				{
-					"name" : "dout[3]",
+					"name" : "timeRemaining[2]",
 					"strict" : false
 				},
 				{
-					"name" : "dout[4]",
+					"name" : "timeRemaining[3]",
 					"strict" : false
 				},
 				{
-					"name" : "dout[5]",
+					"name" : "timeRemaining[4]",
 					"strict" : false
 				},
 				{
-					"name" : "dout[6]",
+					"name" : "timeRemaining[5]",
 					"strict" : false
 				},
 				{
-					"name" : "unit[0]",
+					"name" : "timeRemaining[6]",
 					"strict" : false
 				},
 				{
-					"name" : "ten[0]",
+					"name" : "clock1Hz",
 					"strict" : false
 				},
 				{
-					"name" : "unit[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ten[1]",
-					"strict" : false
-				},
-				{
-					"name" : "unit[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ten[2]",
-					"strict" : false
-				},
-				{
-					"name" : "unit[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ten[3]",
+					"name" : "reset",
 					"strict" : false
 				}
 			]
