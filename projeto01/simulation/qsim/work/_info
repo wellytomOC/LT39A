@@ -1,0 +1,75 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/welly/Documents/GitHub/LT39A/projeto01/simulation/qsim
+vhard_block
+Z1 !s110 1722643391
+!i10b 1
+!s100 <Un47l9l4FDekGcRUcVnW2
+IP0@^]ZHSUFgTaCRa=YbfY1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1722643390
+Z4 8projeto01.vo
+Z5 Fprojeto01.vo
+L0 1001
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1722643391.000000
+Z8 !s107 projeto01.vo|
+Z9 !s90 -work|work|projeto01.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vTimer
+R1
+!i10b 1
+!s100 Z<Kg3;bk8co@2<KhEo9123
+IO3NlBX]S2g<C7]4ET0hcJ1
+R2
+R0
+R3
+R4
+R5
+L0 32
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@timer
+vTimer_vlg_vec_tst
+!s110 1722643392
+!i10b 1
+!s100 ]:3_Gzl9jMn_g=3^S5=mU3
+Io9;5]>3KnD@=k76T[XoCn0
+R2
+R0
+w1722643389
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R6
+r1
+!s85 0
+31
+!s108 1722643392.000000
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R10
+R11
+n@timer_vlg_vec_tst

@@ -1,0 +1,77 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "trigger",
+					"strict" : false
+				},
+				{
+					"name" : "timeRemaining[0]",
+					"strict" : false
+				},
+				{
+					"name" : "timeRemaining[1]",
+					"strict" : false
+				},
+				{
+					"name" : "timeRemaining[2]",
+					"strict" : false
+				},
+				{
+					"name" : "timeRemaining[3]",
+					"strict" : false
+				},
+				{
+					"name" : "timeRemaining[4]",
+					"strict" : false
+				},
+				{
+					"name" : "timeRemaining[5]",
+					"strict" : false
+				},
+				{
+					"name" : "timeRemaining[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ref[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ref[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ref[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ref[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ref[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ref[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ref[6]",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
