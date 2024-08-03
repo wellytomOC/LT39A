@@ -1,12 +1,11 @@
 vendor_name = ModelSim
+source_file = 1, C:/Users/welly/Documents/GitHub/LT39A/projeto01/Entrada.v
 source_file = 1, C:/Users/welly/Documents/GitHub/LT39A/projeto01/TimerMultiplexer.v
 source_file = 1, C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v
 source_file = 1, C:/Users/welly/Documents/GitHub/LT39A/projeto01/RegisterBank.v
 source_file = 1, C:/Users/welly/Documents/GitHub/LT39A/projeto01/Register.v
 source_file = 1, C:/Users/welly/Documents/GitHub/LT39A/projeto01/Concatener.v
 source_file = 1, C:/Users/welly/Documents/GitHub/LT39A/projeto01/Timer.v
-source_file = 1, C:/Users/welly/Documents/GitHub/LT39A/projeto01/Waveform.vwf
-source_file = 1, C:/Users/welly/Documents/GitHub/LT39A/projeto01/Waveform1.vwf
 source_file = 1, C:/Users/welly/Documents/GitHub/LT39A/projeto01/db/projeto01.cbx.xml
 design_name = Sistema
 instance = comp, \trigger~output , trigger~output, Sistema, 1
