@@ -4,43 +4,123 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "trigger",
+					"name" : "MuxOut[0]",
 					"strict" : false
 				},
 				{
-					"name" : "timeRemaining[0]",
+					"name" : "MuxOut[1]",
 					"strict" : false
 				},
 				{
-					"name" : "timeRemaining[1]",
+					"name" : "MuxOut[2]",
 					"strict" : false
 				},
 				{
-					"name" : "timeRemaining[2]",
+					"name" : "MuxOut[3]",
 					"strict" : false
 				},
 				{
-					"name" : "timeRemaining[3]",
+					"name" : "MuxOut[4]",
 					"strict" : false
 				},
 				{
-					"name" : "timeRemaining[4]",
+					"name" : "MuxOut[5]",
 					"strict" : false
 				},
 				{
-					"name" : "timeRemaining[5]",
+					"name" : "MuxOut[6]",
 					"strict" : false
 				},
 				{
-					"name" : "timeRemaining[6]",
+					"name" : "Ta[0]",
 					"strict" : false
 				},
 				{
-					"name" : "clock1Hz",
+					"name" : "Tpv[0]",
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "sel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Tsv[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Ta[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Tpv[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Tsv[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Ta[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Tpv[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Tsv[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Ta[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Tpv[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Tsv[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Ta[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Tpv[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Tsv[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Ta[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Tpv[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Tsv[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Ta[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Tpv[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Tsv[6]",
 					"strict" : false
 				}
 			]

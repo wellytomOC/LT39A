@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projeto01
-Fri Aug 02 22:39:35 2024
+Fri Aug 02 22:41:26 2024
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -13,19 +13,12 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Unit
- 11. Parameter Settings for User Entity Instance: RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Ten
- 12. Parameter Settings for User Entity Instance: RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit
- 13. Parameter Settings for User Entity Instance: RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten
- 14. Parameter Settings for User Entity Instance: RegisterBank:regBank01|Register:reg_TempoAmarelo_Unit
- 15. Parameter Settings for User Entity Instance: RegisterBank:regBank01|Register:reg_TempoAmarelo_Ten
- 16. Port Connectivity Checks: "TimerMultiplexer:TimerMux01"
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
- 20. Analysis & Synthesis Suppressed Messages
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
+ 13. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -52,16 +45,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Aug 02 22:39:35 2024       ;
+; Analysis & Synthesis Status        ; Successful - Fri Aug 02 22:41:26 2024       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; projeto01                                   ;
-; Top-level Entity Name              ; Sistema                                     ;
+; Top-level Entity Name              ; TimerMultiplexer                            ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 22                                          ;
-;     Total combinational functions  ; 22                                          ;
-;     Dedicated logic registers      ; 15                                          ;
-; Total registers                    ; 15                                          ;
-; Total pins                         ; 15                                          ;
+; Total logic elements               ; 14                                          ;
+;     Total combinational functions  ; 14                                          ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 30                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -75,7 +68,7 @@ agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                                      ; Sistema            ; projeto01          ;
+; Top-level entity name                                                      ; TimerMultiplexer   ; projeto01          ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -164,11 +157,10 @@ agreement for further details.
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -178,75 +170,49 @@ agreement for further details.
 ; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                       ; Library ;
 +----------------------------------+-----------------+------------------------+--------------------------------------------------------------------+---------+
 ; TimerMultiplexer.v               ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/TimerMultiplexer.v ;         ;
-; Sistema.v                        ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v          ;         ;
-; RegisterBank.v                   ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/RegisterBank.v     ;         ;
-; Register.v                       ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/Register.v         ;         ;
-; Concatener.v                     ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/Concatener.v       ;         ;
-; Timer.v                          ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/Timer.v            ;         ;
 +----------------------------------+-----------------+------------------------+--------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 22             ;
-;                                             ;                ;
-; Total combinational functions               ; 22             ;
-; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 2              ;
-;     -- 3 input functions                    ; 1              ;
-;     -- <=2 input functions                  ; 19             ;
-;                                             ;                ;
-; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 10             ;
-;     -- arithmetic mode                      ; 12             ;
-;                                             ;                ;
-; Total registers                             ; 15             ;
-;     -- Dedicated logic registers            ; 15             ;
-;     -- I/O registers                        ; 0              ;
-;                                             ;                ;
-; I/O pins                                    ; 15             ;
-;                                             ;                ;
-; Embedded Multiplier 9-bit elements          ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; clock1Hz~input ;
-; Maximum fan-out                             ; 15             ;
-; Total fan-out                               ; 114            ;
-; Average fan-out                             ; 1.70           ;
-+---------------------------------------------+----------------+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 14           ;
+;                                             ;              ;
+; Total combinational functions               ; 14           ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 14           ;
+;     -- 3 input functions                    ; 0            ;
+;     -- <=2 input functions                  ; 0            ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 14           ;
+;     -- arithmetic mode                      ; 0            ;
+;                                             ;              ;
+; Total registers                             ; 0            ;
+;     -- Dedicated logic registers            ; 0            ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 30           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; sel[1]~input ;
+; Maximum fan-out                             ; 14           ;
+; Total fan-out                               ; 93           ;
+; Average fan-out                             ; 1.26         ;
++---------------------------------------------+--------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name    ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------+-------------+--------------+
-; |Sistema                   ; 22 (0)              ; 15 (0)                    ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |Sistema               ; Sistema     ; work         ;
-;    |Timer:Timer01|         ; 22 (22)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Sistema|Timer:Timer01 ; Timer       ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------+-------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                           ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name      ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+------------------+--------------+
+; |TimerMultiplexer          ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 30   ; 0            ; |TimerMultiplexer   ; TimerMultiplexer ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                              ;
-+--------------------------------------------------------------------------+--------------------------------------+
-; Register name                                                            ; Reason for Removal                   ;
-+--------------------------------------------------------------------------+--------------------------------------+
-; RegisterBank:regBank01|Register:reg_TempoAmarelo_Ten|dout[2,3]           ; Lost fanout                          ;
-; RegisterBank:regBank01|Register:reg_TempoAmarelo_Unit|dout[1..3]         ; Lost fanout                          ;
-; RegisterBank:regBank01|Register:reg_TempoAmarelo_Ten|dout[0,1]           ; Lost fanout                          ;
-; RegisterBank:regBank01|Register:reg_TempoAmarelo_Unit|dout[0]            ; Lost fanout                          ;
-; RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[2,3]   ; Lost fanout                          ;
-; RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[1..3] ; Lost fanout                          ;
-; RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[0,1]   ; Lost fanout                          ;
-; RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[0]    ; Lost fanout                          ;
-; RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Ten|dout[2,3]    ; Stuck at GND due to stuck port clock ;
-; RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Ten|dout[0,1]    ; Stuck at VCC due to stuck port clock ;
-; RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Unit|dout[0..3]  ; Stuck at GND due to stuck port clock ;
-; Total Number of Removed Registers = 24                                   ;                                      ;
-+--------------------------------------------------------------------------+--------------------------------------+
 
 
 +------------------------------------------------------+
@@ -254,83 +220,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 15    ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 8     ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 6     ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Unit ;
-+----------------+-------+----------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                             ;
-+----------------+-------+----------------------------------------------------------------------------------+
-; INITIAL_VALUE  ; 0000  ; Unsigned Binary                                                                  ;
-+----------------+-------+----------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Ten ;
-+----------------+-------+---------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                            ;
-+----------------+-------+---------------------------------------------------------------------------------+
-; INITIAL_VALUE  ; 0011  ; Unsigned Binary                                                                 ;
-+----------------+-------+---------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit ;
-+----------------+-------+-----------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                              ;
-+----------------+-------+-----------------------------------------------------------------------------------+
-; INITIAL_VALUE  ; 0101  ; Unsigned Binary                                                                   ;
-+----------------+-------+-----------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten ;
-+----------------+-------+----------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                             ;
-+----------------+-------+----------------------------------------------------------------------------------+
-; INITIAL_VALUE  ; 0001  ; Unsigned Binary                                                                  ;
-+----------------+-------+----------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: RegisterBank:regBank01|Register:reg_TempoAmarelo_Unit ;
-+----------------+-------+---------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                      ;
-+----------------+-------+---------------------------------------------------------------------------+
-; INITIAL_VALUE  ; 0011  ; Unsigned Binary                                                           ;
-+----------------+-------+---------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: RegisterBank:regBank01|Register:reg_TempoAmarelo_Ten ;
-+----------------+-------+--------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                     ;
-+----------------+-------+--------------------------------------------------------------------------+
-; INITIAL_VALUE  ; 0000  ; Unsigned Binary                                                          ;
-+----------------+-------+--------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------+
-; Port Connectivity Checks: "TimerMultiplexer:TimerMux01" ;
-+------+-------+----------+-------------------------------+
-; Port ; Type  ; Severity ; Details                       ;
-+------+-------+----------+-------------------------------+
-; sel  ; Input ; Info     ; Stuck at GND                  ;
-+------+-------+----------+-------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |TimerMultiplexer|Mux6     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +-----------------------------------------------------+
@@ -338,22 +244,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 15                          ;
-; cycloneiii_ff         ; 15                          ;
-;     CLR               ; 8                           ;
-;     ENA               ; 6                           ;
-;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 22                          ;
-;     arith             ; 12                          ;
-;         2 data inputs ; 12                          ;
-;     normal            ; 10                          ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 5                           ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 2                           ;
+; boundary_port         ; 30                          ;
+; cycloneiii_lcell_comb ; 14                          ;
+;     normal            ; 14                          ;
+;         4 data inputs ; 14                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.75                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.81                        ;
 +-----------------------+-----------------------------+
 
 
@@ -372,7 +269,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Aug 02 22:39:28 2024
+    Info: Processing started: Fri Aug 02 22:41:18 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projeto01 -c projeto01
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -391,40 +288,22 @@ Info (12021): Found 1 design units, including 1 entities, in source file concate
 Warning (10463): Verilog HDL Declaration warning at Timer.v(2): "ref" is SystemVerilog-2005 keyword File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Timer.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file timer.v
     Info (12023): Found entity 1: Timer File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Timer.v Line: 1
-Info (12127): Elaborating entity "Sistema" for the top level hierarchy
-Info (12128): Elaborating entity "RegisterBank" for hierarchy "RegisterBank:regBank01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v Line: 11
-Info (12128): Elaborating entity "Register" for hierarchy "RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Unit" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RegisterBank.v Line: 11
-Info (12128): Elaborating entity "Register" for hierarchy "RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Ten" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RegisterBank.v Line: 12
-Info (12128): Elaborating entity "Concatener" for hierarchy "RegisterBank:regBank01|Concatener:Concat_Tpv" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RegisterBank.v Line: 14
-Info (12128): Elaborating entity "Register" for hierarchy "RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RegisterBank.v Line: 17
-Info (12128): Elaborating entity "Register" for hierarchy "RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RegisterBank.v Line: 18
-Info (12128): Elaborating entity "TimerMultiplexer" for hierarchy "TimerMultiplexer:TimerMux01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v Line: 14
+Info (12127): Elaborating entity "TimerMultiplexer" for the top level hierarchy
 Warning (10235): Verilog HDL Always Construct warning at TimerMultiplexer.v(10): variable "Tpv" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/TimerMultiplexer.v Line: 10
 Warning (10235): Verilog HDL Always Construct warning at TimerMultiplexer.v(11): variable "Tsv" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/TimerMultiplexer.v Line: 11
 Warning (10235): Verilog HDL Always Construct warning at TimerMultiplexer.v(12): variable "Ta" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/TimerMultiplexer.v Line: 12
-Info (12128): Elaborating entity "Timer" for hierarchy "Timer:Timer01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v Line: 16
-Warning (10230): Verilog HDL assignment warning at Timer.v(13): truncated value with size 8 to match size of target (7) File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Timer.v Line: 13
-Warning (10230): Verilog HDL assignment warning at Timer.v(18): truncated value with size 8 to match size of target (7) File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Timer.v Line: 18
-Warning (10230): Verilog HDL assignment warning at Timer.v(21): truncated value with size 32 to match size of target (7) File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Timer.v Line: 21
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 16 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/welly/Documents/GitHub/LT39A/projeto01/output_files/projeto01.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 5 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clock" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v Line: 2
-    Warning (15610): No output dependent on input pin "dataIn[0]" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v Line: 3
-    Warning (15610): No output dependent on input pin "dataIn[1]" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v Line: 3
-    Warning (15610): No output dependent on input pin "dataIn[2]" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v Line: 3
-    Warning (15610): No output dependent on input pin "dataIn[3]" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v Line: 3
-Info (21057): Implemented 38 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 23 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 4787 megabytes
-    Info: Processing ended: Fri Aug 02 22:39:35 2024
-    Info: Elapsed time: 00:00:07
+Info (21057): Implemented 44 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 7 output pins
+    Info (21061): Implemented 14 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4764 megabytes
+    Info: Processing ended: Fri Aug 02 22:41:26 2024
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:05
 
 

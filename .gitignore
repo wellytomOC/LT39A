@@ -5,3 +5,8 @@
 /projeto01/incremental_db
 /projeto01/output_files
 /projeto01/simulation
+projeto01/db/projeto01.cmp.bpm
+projeto01/db/projeto01.cmp.logdb
+projeto01/db/projeto01.cmp.idb
+*.cdb
+*.ddb
