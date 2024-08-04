@@ -2,17 +2,41 @@ module Sistema (
     input wire clock, clock1Hz, reset,
     input wire[3:0] dataIn,
 
-    output wire trigger,
-    output wire[6:0] timeRemaining
+    output wire[6:0] timeRemaining,
+
+    output wire[2:0] Principal_Road,
+    output wire[2:0] Secondary_Road,
+    output wire[1:0] Principal_Pedestrian,
+    output wire[1:0] Secondary_Pedestrian,
+    output wire[1:0] StateFlag
+
 );
 
-wire[5:0] RegisterSelect;
-wire[6:0] Tpv, Tsv, Ta;
-RegisterBank regBank01 (reset, RegisterSelect, dataIn, Tpv, Tsv, Ta);
+    //Register bank
+    wire[5:0] RegisterSelect;
+    wire[6:0] Tpv, Tsv, Ta;
+    RegisterBank regBank01 (reset, RegisterSelect, dataIn, Tpv, Tsv, Ta);
 
-wire[6:0] MuxOut;
-TimerMultiplexer TimerMux01 (2'b00, Tpv, Tsv, Ta, MuxOut);
+    //Timer Multiplexer
+    wire[6:0] MuxOut;
+    TimerMultiplexer TimerMux01 (MuxSel, Tpv, Tsv, Ta, MuxOut);
 
-Timer Timer01  (MuxOut, clock1Hz, reset, trigger, timeRemaining);
-    
+    //Timer
+    wire trigger;
+    Timer Timer01  (MuxOut, clock1Hz, reset, trigger, timeRemaining);
+
+    //Semaphore control
+    wire[1:0] MuxSel;
+    SemaphoreControlUnit SCU01 (
+        clock1Hz, reset, trigger, MuxSel,
+
+        Principal_Road,
+        Secondary_Road,
+        Principal_Pedestrian,
+        Secondary_Pedestrian,
+
+        StateFlag
+    );
+
+        
 endmodule

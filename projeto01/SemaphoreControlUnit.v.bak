@@ -1,0 +1,143 @@
+module SemaphoreControlUnit (
+    input wire clock, reset, trigger,
+
+    output reg TimerMux,
+    output reg Principal_Road_Green, Principal_Road_Yellow, Principal_Road_Red,
+    output reg Secondary_Road_Green, Secondary_Road_Yellow, Secondary_Road_Red,
+    output reg Principal_Pedestrian_Green, Principal_Pedestrian_Red,
+    output reg Secondary_Pedestrian_Green, Secondary_Pedestrian_Red,
+
+    output reg[1:0] PresentState
+);
+    
+    //estados
+    parameter   PrincipalGreen = 2'h0,
+				PrincipalYellow = 2'h1,
+                SecondaryGreen = 2'h2,
+                SecondaryYellow = 2'h3;
+
+     reg[1:0] PresentState,NextState;
+
+     //bloco sequencial
+    always @(posedge reset or posedge clock) begin
+        if(reset) begin
+            PresentState <= PrincipalGreen;
+        end
+        else begin
+            PresentState <= NextState;
+        end
+    end
+
+    //bloco combinacional
+    always @(*) begin
+        case(PresentState)
+            PrincipalGreen begin
+
+                Principal_Road_Green = 1'b1;
+                Principal_Road_Yellow = 1'b0;
+                Principal_Road_Red = 1'b0;
+
+                Secondary_Road_Green = 1'b0;
+                Secondary_Road_Yellow = 1'b0;
+                Secondary_Road_Red = 1'b1;
+
+                Principal_Pedestrian_Green = 1'b0;
+                Principal_Pedestrian_Red = 1'b1;
+
+                Secondary_Pedestrian_Green = 1'b1;
+                Secondary_Pedestrian_Red = 1'b0;
+
+                TimerMux = 2'b00;
+
+                if(trigger) begin
+                    NextState = PrincipalYellow;
+                end
+                else begin
+                    NextState = PrincipalGreen;
+                end
+
+            end
+
+            PrincipalYellow begin
+
+                Principal_Road_Green = 1'b0;
+                Principal_Road_Yellow = 1'b1;
+                Principal_Road_Red = 1'b0;
+
+                Secondary_Road_Green = 1'b0;
+                Secondary_Road_Yellow = 1'b0;
+                Secondary_Road_Red = 1'b1;
+
+                Principal_Pedestrian_Green = 1'b0;
+                Principal_Pedestrian_Red = 1'b1;
+
+                Secondary_Pedestrian_Green = 1'b0;
+                Secondary_Pedestrian_Red = 1'b1;
+
+                TimerMux = 2'b10;
+
+                if(trigger) begin
+                    NextState = SecondaryGreen;
+                end
+                else begin
+                    NextState = PrincipalYellow;
+                end
+
+            end
+
+            SecondaryGreen begin
+
+                Principal_Road_Green = 1'b0;
+                Principal_Road_Yellow = 1'b0;
+                Principal_Road_Red = 1'b1;
+
+                Secondary_Road_Green = 1'b1;
+                Secondary_Road_Yellow = 1'b0;
+                Secondary_Road_Red = 1'b0;
+
+                Principal_Pedestrian_Green = 1'b1;
+                Principal_Pedestrian_Red = 1'b0;
+
+                Secondary_Pedestrian_Green = 1'b0;
+                Secondary_Pedestrian_Red = 1'b1;
+
+                TimerMux = 2'b01;
+
+                if(trigger) begin
+                    NextState = SecondaryYellow;
+                end
+                else begin
+                    NextState = SecondaryGreen;
+                end
+
+            end
+
+            SecondaryYellow begin
+
+                Principal_Road_Green = 1'b0;
+                Principal_Road_Yellow = 1'b0;
+                Principal_Road_Red = 1'b1;
+
+                Secondary_Road_Green = 1'b0;
+                Secondary_Road_Yellow = 1'b1;
+                Secondary_Road_Red = 1'b0;
+
+                Principal_Pedestrian_Green = 1'b0;
+                Principal_Pedestrian_Red = 1'b1;
+
+                Secondary_Pedestrian_Green = 1'b0;
+                Secondary_Pedestrian_Red = 1'b1;
+
+                TimerMux = 2'b10;
+
+                if(trigger) begin
+                    NextState = PrincipalGreen;
+                end
+                else begin
+                    NextState = SecondaryYellow;
+                end
+            end
+        endcase
+    end
+
+endmodule
