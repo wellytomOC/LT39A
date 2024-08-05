@@ -1,39 +1,38 @@
 # do projeto01.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:04:10 on Aug 04,2024
+# Start time: 21:56:44 on Aug 04,2024
 # vlog -work work projeto01.vo 
-# -- Compiling module Sistema
+# -- Compiling module test
 # -- Compiling module hard_block
 # 
 # Top level modules:
-# 	Sistema
-# End time: 12:04:10 on Aug 04,2024, Elapsed time: 0:00:00
+# 	test
+# End time: 21:56:44 on Aug 04,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:04:10 on Aug 04,2024
-# vlog -work work Waveform3.vwf.vt 
-# -- Compiling module Sistema_vlg_vec_tst
+# Start time: 21:56:44 on Aug 04,2024
+# vlog -work work Waveform1.vwf.vt 
+# -- Compiling module test_vlg_vec_tst
 # 
 # Top level modules:
-# 	Sistema_vlg_vec_tst
-# End time: 12:04:10 on Aug 04,2024, Elapsed time: 0:00:00
+# 	test_vlg_vec_tst
+# End time: 21:56:44 on Aug 04,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.Sistema_vlg_vec_tst 
-# Start time: 12:04:10 on Aug 04,2024
-# Loading work.Sistema_vlg_vec_tst
-# Loading work.Sistema
+# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.test_vlg_vec_tst 
+# Start time: 21:56:44 on Aug 04,2024
+# Loading work.test_vlg_vec_tst
+# Loading work.test
 # Loading work.hard_block
 # Loading cycloneive_ver.cycloneive_io_obuf
 # Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_lcell_comb
 # Loading cycloneive_ver.cycloneive_clkctrl
 # Loading cycloneive_ver.cycloneive_mux41
 # Loading cycloneive_ver.cycloneive_ena_reg
-# Loading cycloneive_ver.cycloneive_lcell_comb
 # Loading altera_ver.dffeas
 # Loading altera_ver.PRIM_GDFF_LOW
 # after#26
-# ** Note: $finish    : Waveform3.vwf.vt(61)
-#    Time: 1 us  Iteration: 0  Instance: /Sistema_vlg_vec_tst
-# End time: 12:04:10 on Aug 04,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 85 ns.
+# End time: 21:56:45 on Aug 04,2024, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0

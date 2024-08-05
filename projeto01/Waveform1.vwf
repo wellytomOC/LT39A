@@ -7,10 +7,10 @@
 vlib work
 vlog -work work projeto01.vo
 vlog -work work Waveform1.vwf.vt
-vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.RegisterBank_vlg_vec_tst
+vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.test_vlg_vec_tst
 vcd file -direction projeto01.msim.vcd
-vcd add -internal RegisterBank_vlg_vec_tst/*
-vcd add -internal RegisterBank_vlg_vec_tst/i1/*
+vcd add -internal test_vlg_vec_tst/*
+vcd add -internal test_vlg_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {
@@ -20,16 +20,15 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
 vlog -work work projeto01.vo
 vlog -work work Waveform1.vwf.vt
-vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.RegisterBank_vlg_vec_tst
+vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.test_vlg_vec_tst
 vcd file -direction projeto01.msim.vcd
-vcd add -internal RegisterBank_vlg_vec_tst/*
-vcd add -internal RegisterBank_vlg_vec_tst/i1/*
+vcd add -internal test_vlg_vec_tst/*
+vcd add -internal test_vlg_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {
@@ -39,7 +38,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
 </simulation_settings>*/
@@ -78,157 +76,127 @@ HEADER
 	GRID_DUTY_CYCLE = 50;
 }
 
-SIGNAL("RS")
+SIGNAL("clock500Hz")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = BUS;
-	WIDTH = 6;
-	LSB_INDEX = 0;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
 	DIRECTION = INPUT;
 	PARENT = "";
 }
 
-SIGNAL("RS[5]")
+SIGNAL("ConfigFlag")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "RS";
+	PARENT = "";
 }
 
-SIGNAL("RS[4]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "RS";
-}
-
-SIGNAL("RS[3]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "RS";
-}
-
-SIGNAL("RS[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "RS";
-}
-
-SIGNAL("RS[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "RS";
-}
-
-SIGNAL("RS[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "RS";
-}
-
-SIGNAL("TaOut")
+SIGNAL("DB")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
-	WIDTH = 7;
+	WIDTH = 8;
 	LSB_INDEX = 0;
 	DIRECTION = OUTPUT;
 	PARENT = "";
 }
 
-SIGNAL("TaOut[6]")
+SIGNAL("DB[7]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "TaOut";
+	PARENT = "DB";
 }
 
-SIGNAL("TaOut[5]")
+SIGNAL("DB[6]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "TaOut";
+	PARENT = "DB";
 }
 
-SIGNAL("TaOut[4]")
+SIGNAL("DB[5]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "TaOut";
+	PARENT = "DB";
 }
 
-SIGNAL("TaOut[3]")
+SIGNAL("DB[4]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "TaOut";
+	PARENT = "DB";
 }
 
-SIGNAL("TaOut[2]")
+SIGNAL("DB[3]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "TaOut";
+	PARENT = "DB";
 }
 
-SIGNAL("TaOut[1]")
+SIGNAL("DB[2]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "TaOut";
+	PARENT = "DB";
 }
 
-SIGNAL("TaOut[0]")
+SIGNAL("DB[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "TaOut";
+	PARENT = "DB";
 }
 
-SIGNAL("TpvOut")
+SIGNAL("DB[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "DB";
+}
+
+SIGNAL("E")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("indexDEBUG")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
@@ -238,204 +206,204 @@ SIGNAL("TpvOut")
 	PARENT = "";
 }
 
-SIGNAL("TpvOut[6]")
+SIGNAL("indexDEBUG[6]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "TpvOut";
+	PARENT = "indexDEBUG";
 }
 
-SIGNAL("TpvOut[5]")
+SIGNAL("indexDEBUG[5]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "TpvOut";
+	PARENT = "indexDEBUG";
 }
 
-SIGNAL("TpvOut[4]")
+SIGNAL("indexDEBUG[4]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "TpvOut";
+	PARENT = "indexDEBUG";
 }
 
-SIGNAL("TpvOut[3]")
+SIGNAL("indexDEBUG[3]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "TpvOut";
+	PARENT = "indexDEBUG";
 }
 
-SIGNAL("TpvOut[2]")
+SIGNAL("indexDEBUG[2]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "TpvOut";
+	PARENT = "indexDEBUG";
 }
 
-SIGNAL("TpvOut[1]")
+SIGNAL("indexDEBUG[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "TpvOut";
+	PARENT = "indexDEBUG";
 }
 
-SIGNAL("TpvOut[0]")
+SIGNAL("indexDEBUG[0]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "TpvOut";
+	PARENT = "indexDEBUG";
 }
 
-SIGNAL("TsvOut")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = BUS;
-	WIDTH = 7;
-	LSB_INDEX = 0;
-	DIRECTION = OUTPUT;
-	PARENT = "";
-}
-
-SIGNAL("TsvOut[6]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "TsvOut";
-}
-
-SIGNAL("TsvOut[5]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "TsvOut";
-}
-
-SIGNAL("TsvOut[4]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "TsvOut";
-}
-
-SIGNAL("TsvOut[3]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "TsvOut";
-}
-
-SIGNAL("TsvOut[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "TsvOut";
-}
-
-SIGNAL("TsvOut[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "TsvOut";
-}
-
-SIGNAL("TsvOut[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "TsvOut";
-}
-
-SIGNAL("dataIn")
+SIGNAL("NextStateDEBUG")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
 	WIDTH = 4;
 	LSB_INDEX = 0;
-	DIRECTION = INPUT;
+	DIRECTION = OUTPUT;
 	PARENT = "";
 }
 
-SIGNAL("dataIn[3]")
+SIGNAL("NextStateDEBUG[3]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "dataIn";
+	DIRECTION = OUTPUT;
+	PARENT = "NextStateDEBUG";
 }
 
-SIGNAL("dataIn[2]")
+SIGNAL("NextStateDEBUG[2]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "dataIn";
+	DIRECTION = OUTPUT;
+	PARENT = "NextStateDEBUG";
 }
 
-SIGNAL("dataIn[1]")
+SIGNAL("NextStateDEBUG[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "dataIn";
+	DIRECTION = OUTPUT;
+	PARENT = "NextStateDEBUG";
 }
 
-SIGNAL("dataIn[0]")
+SIGNAL("NextStateDEBUG[0]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "dataIn";
+	DIRECTION = OUTPUT;
+	PARENT = "NextStateDEBUG";
+}
+
+SIGNAL("PresentPhraseDEBUG")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 2;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("PresentPhraseDEBUG[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "PresentPhraseDEBUG";
+}
+
+SIGNAL("PresentPhraseDEBUG[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "PresentPhraseDEBUG";
+}
+
+SIGNAL("PresentStateDEBUG")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 4;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("PresentStateDEBUG[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "PresentStateDEBUG";
+}
+
+SIGNAL("PresentStateDEBUG[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "PresentStateDEBUG";
+}
+
+SIGNAL("PresentStateDEBUG[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "PresentStateDEBUG";
+}
+
+SIGNAL("PresentStateDEBUG[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "PresentStateDEBUG";
 }
 
 SIGNAL("reset")
@@ -448,7 +416,41 @@ SIGNAL("reset")
 	PARENT = "";
 }
 
-TRANSITION_LIST("RS[5]")
+SIGNAL("RS")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("RW")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+TRANSITION_LIST("clock500Hz")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 100;
+			LEVEL 0 FOR 5.0;
+			LEVEL 1 FOR 5.0;
+		}
+	}
+}
+
+TRANSITION_LIST("ConfigFlag")
 {
 	NODE
 	{
@@ -457,52 +459,7 @@ TRANSITION_LIST("RS[5]")
 	}
 }
 
-TRANSITION_LIST("RS[4]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("RS[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("RS[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("RS[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("RS[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("TaOut[6]")
+TRANSITION_LIST("DB[7]")
 {
 	NODE
 	{
@@ -511,7 +468,7 @@ TRANSITION_LIST("TaOut[6]")
 	}
 }
 
-TRANSITION_LIST("TaOut[5]")
+TRANSITION_LIST("DB[6]")
 {
 	NODE
 	{
@@ -520,7 +477,7 @@ TRANSITION_LIST("TaOut[5]")
 	}
 }
 
-TRANSITION_LIST("TaOut[4]")
+TRANSITION_LIST("DB[5]")
 {
 	NODE
 	{
@@ -529,7 +486,7 @@ TRANSITION_LIST("TaOut[4]")
 	}
 }
 
-TRANSITION_LIST("TaOut[3]")
+TRANSITION_LIST("DB[4]")
 {
 	NODE
 	{
@@ -538,7 +495,7 @@ TRANSITION_LIST("TaOut[3]")
 	}
 }
 
-TRANSITION_LIST("TaOut[2]")
+TRANSITION_LIST("DB[3]")
 {
 	NODE
 	{
@@ -547,7 +504,7 @@ TRANSITION_LIST("TaOut[2]")
 	}
 }
 
-TRANSITION_LIST("TaOut[1]")
+TRANSITION_LIST("DB[2]")
 {
 	NODE
 	{
@@ -556,7 +513,7 @@ TRANSITION_LIST("TaOut[1]")
 	}
 }
 
-TRANSITION_LIST("TaOut[0]")
+TRANSITION_LIST("DB[1]")
 {
 	NODE
 	{
@@ -565,7 +522,7 @@ TRANSITION_LIST("TaOut[0]")
 	}
 }
 
-TRANSITION_LIST("TpvOut[6]")
+TRANSITION_LIST("DB[0]")
 {
 	NODE
 	{
@@ -574,7 +531,7 @@ TRANSITION_LIST("TpvOut[6]")
 	}
 }
 
-TRANSITION_LIST("TpvOut[5]")
+TRANSITION_LIST("E")
 {
 	NODE
 	{
@@ -583,7 +540,7 @@ TRANSITION_LIST("TpvOut[5]")
 	}
 }
 
-TRANSITION_LIST("TpvOut[4]")
+TRANSITION_LIST("indexDEBUG[6]")
 {
 	NODE
 	{
@@ -592,7 +549,7 @@ TRANSITION_LIST("TpvOut[4]")
 	}
 }
 
-TRANSITION_LIST("TpvOut[3]")
+TRANSITION_LIST("indexDEBUG[5]")
 {
 	NODE
 	{
@@ -601,7 +558,7 @@ TRANSITION_LIST("TpvOut[3]")
 	}
 }
 
-TRANSITION_LIST("TpvOut[2]")
+TRANSITION_LIST("indexDEBUG[4]")
 {
 	NODE
 	{
@@ -610,7 +567,7 @@ TRANSITION_LIST("TpvOut[2]")
 	}
 }
 
-TRANSITION_LIST("TpvOut[1]")
+TRANSITION_LIST("indexDEBUG[3]")
 {
 	NODE
 	{
@@ -619,7 +576,7 @@ TRANSITION_LIST("TpvOut[1]")
 	}
 }
 
-TRANSITION_LIST("TpvOut[0]")
+TRANSITION_LIST("indexDEBUG[2]")
 {
 	NODE
 	{
@@ -628,7 +585,7 @@ TRANSITION_LIST("TpvOut[0]")
 	}
 }
 
-TRANSITION_LIST("TsvOut[6]")
+TRANSITION_LIST("indexDEBUG[1]")
 {
 	NODE
 	{
@@ -637,7 +594,7 @@ TRANSITION_LIST("TsvOut[6]")
 	}
 }
 
-TRANSITION_LIST("TsvOut[5]")
+TRANSITION_LIST("indexDEBUG[0]")
 {
 	NODE
 	{
@@ -646,7 +603,7 @@ TRANSITION_LIST("TsvOut[5]")
 	}
 }
 
-TRANSITION_LIST("TsvOut[4]")
+TRANSITION_LIST("NextStateDEBUG[3]")
 {
 	NODE
 	{
@@ -655,7 +612,7 @@ TRANSITION_LIST("TsvOut[4]")
 	}
 }
 
-TRANSITION_LIST("TsvOut[3]")
+TRANSITION_LIST("NextStateDEBUG[2]")
 {
 	NODE
 	{
@@ -664,7 +621,7 @@ TRANSITION_LIST("TsvOut[3]")
 	}
 }
 
-TRANSITION_LIST("TsvOut[2]")
+TRANSITION_LIST("NextStateDEBUG[1]")
 {
 	NODE
 	{
@@ -673,7 +630,7 @@ TRANSITION_LIST("TsvOut[2]")
 	}
 }
 
-TRANSITION_LIST("TsvOut[1]")
+TRANSITION_LIST("NextStateDEBUG[0]")
 {
 	NODE
 	{
@@ -682,7 +639,7 @@ TRANSITION_LIST("TsvOut[1]")
 	}
 }
 
-TRANSITION_LIST("TsvOut[0]")
+TRANSITION_LIST("PresentPhraseDEBUG[1]")
 {
 	NODE
 	{
@@ -691,39 +648,48 @@ TRANSITION_LIST("TsvOut[0]")
 	}
 }
 
-TRANSITION_LIST("dataIn[3]")
+TRANSITION_LIST("PresentPhraseDEBUG[0]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("dataIn[2]")
+TRANSITION_LIST("PresentStateDEBUG[3]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("dataIn[1]")
+TRANSITION_LIST("PresentStateDEBUG[2]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("dataIn[0]")
+TRANSITION_LIST("PresentStateDEBUG[1]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("PresentStateDEBUG[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
 	}
 }
 
@@ -737,140 +703,155 @@ TRANSITION_LIST("reset")
 	}
 }
 
+TRANSITION_LIST("RS")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("RW")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
 DISPLAY_LINE
 {
-	CHANNEL = "RS";
+	CHANNEL = "clock500Hz";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 0;
 	TREE_LEVEL = 0;
-	CHILDREN = 1, 2, 3, 4, 5, 6;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "RS[5]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 1;
-	TREE_LEVEL = 1;
-	PARENT = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "RS[4]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 2;
-	TREE_LEVEL = 1;
-	PARENT = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "RS[3]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 3;
-	TREE_LEVEL = 1;
-	PARENT = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "RS[2]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 4;
-	TREE_LEVEL = 1;
-	PARENT = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "RS[1]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 5;
-	TREE_LEVEL = 1;
-	PARENT = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "RS[0]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 6;
-	TREE_LEVEL = 1;
-	PARENT = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "dataIn";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 7;
-	TREE_LEVEL = 0;
-	CHILDREN = 8, 9, 10, 11;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "dataIn[3]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 8;
-	TREE_LEVEL = 1;
-	PARENT = 7;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "dataIn[2]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 9;
-	TREE_LEVEL = 1;
-	PARENT = 7;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "dataIn[1]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 10;
-	TREE_LEVEL = 1;
-	PARENT = 7;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "dataIn[0]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 11;
-	TREE_LEVEL = 1;
-	PARENT = 7;
 }
 
 DISPLAY_LINE
 {
 	CHANNEL = "reset";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
+	TREE_INDEX = 1;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ConfigFlag";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 2;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "DB";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 3;
+	TREE_LEVEL = 0;
+	CHILDREN = 4, 5, 6, 7, 8, 9, 10, 11;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "DB[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 4;
+	TREE_LEVEL = 1;
+	PARENT = 3;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "DB[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 5;
+	TREE_LEVEL = 1;
+	PARENT = 3;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "DB[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 6;
+	TREE_LEVEL = 1;
+	PARENT = 3;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "DB[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 7;
+	TREE_LEVEL = 1;
+	PARENT = 3;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "DB[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 8;
+	TREE_LEVEL = 1;
+	PARENT = 3;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "DB[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 9;
+	TREE_LEVEL = 1;
+	PARENT = 3;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "DB[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 10;
+	TREE_LEVEL = 1;
+	PARENT = 3;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "DB[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 11;
+	TREE_LEVEL = 1;
+	PARENT = 3;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "E";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
 	TREE_INDEX = 12;
 	TREE_LEVEL = 0;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "TaOut";
+	CHANNEL = "indexDEBUG";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 13;
 	TREE_LEVEL = 0;
 	CHILDREN = 14, 15, 16, 17, 18, 19, 20;
@@ -878,9 +859,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "TaOut[6]";
+	CHANNEL = "indexDEBUG[6]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 14;
 	TREE_LEVEL = 1;
 	PARENT = 13;
@@ -888,9 +869,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "TaOut[5]";
+	CHANNEL = "indexDEBUG[5]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 15;
 	TREE_LEVEL = 1;
 	PARENT = 13;
@@ -898,9 +879,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "TaOut[4]";
+	CHANNEL = "indexDEBUG[4]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 16;
 	TREE_LEVEL = 1;
 	PARENT = 13;
@@ -908,9 +889,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "TaOut[3]";
+	CHANNEL = "indexDEBUG[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 17;
 	TREE_LEVEL = 1;
 	PARENT = 13;
@@ -918,9 +899,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "TaOut[2]";
+	CHANNEL = "indexDEBUG[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 18;
 	TREE_LEVEL = 1;
 	PARENT = 13;
@@ -928,9 +909,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "TaOut[1]";
+	CHANNEL = "indexDEBUG[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 19;
 	TREE_LEVEL = 1;
 	PARENT = 13;
@@ -938,9 +919,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "TaOut[0]";
+	CHANNEL = "indexDEBUG[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 20;
 	TREE_LEVEL = 1;
 	PARENT = 13;
@@ -948,19 +929,19 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "TpvOut";
+	CHANNEL = "NextStateDEBUG";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 21;
 	TREE_LEVEL = 0;
-	CHILDREN = 22, 23, 24, 25, 26, 27, 28;
+	CHILDREN = 22, 23, 24, 25;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "TpvOut[6]";
+	CHANNEL = "NextStateDEBUG[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 22;
 	TREE_LEVEL = 1;
 	PARENT = 21;
@@ -968,9 +949,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "TpvOut[5]";
+	CHANNEL = "NextStateDEBUG[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 23;
 	TREE_LEVEL = 1;
 	PARENT = 21;
@@ -978,9 +959,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "TpvOut[4]";
+	CHANNEL = "NextStateDEBUG[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 24;
 	TREE_LEVEL = 1;
 	PARENT = 21;
@@ -988,9 +969,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "TpvOut[3]";
+	CHANNEL = "NextStateDEBUG[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 25;
 	TREE_LEVEL = 1;
 	PARENT = 21;
@@ -998,49 +979,49 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "TpvOut[2]";
+	CHANNEL = "PresentPhraseDEBUG";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 26;
-	TREE_LEVEL = 1;
-	PARENT = 21;
+	TREE_LEVEL = 0;
+	CHILDREN = 27, 28;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "TpvOut[1]";
+	CHANNEL = "PresentPhraseDEBUG[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 27;
 	TREE_LEVEL = 1;
-	PARENT = 21;
+	PARENT = 26;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "TpvOut[0]";
+	CHANNEL = "PresentPhraseDEBUG[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 28;
 	TREE_LEVEL = 1;
-	PARENT = 21;
+	PARENT = 26;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "TsvOut";
+	CHANNEL = "PresentStateDEBUG";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 29;
 	TREE_LEVEL = 0;
-	CHILDREN = 30, 31, 32, 33, 34, 35, 36;
+	CHILDREN = 30, 31, 32, 33;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "TsvOut[6]";
+	CHANNEL = "PresentStateDEBUG[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 30;
 	TREE_LEVEL = 1;
 	PARENT = 29;
@@ -1048,9 +1029,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "TsvOut[5]";
+	CHANNEL = "PresentStateDEBUG[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 31;
 	TREE_LEVEL = 1;
 	PARENT = 29;
@@ -1058,9 +1039,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "TsvOut[4]";
+	CHANNEL = "PresentStateDEBUG[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 32;
 	TREE_LEVEL = 1;
 	PARENT = 29;
@@ -1068,9 +1049,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "TsvOut[3]";
+	CHANNEL = "PresentStateDEBUG[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 33;
 	TREE_LEVEL = 1;
 	PARENT = 29;
@@ -1078,32 +1059,20 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "TsvOut[2]";
+	CHANNEL = "RS";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 34;
-	TREE_LEVEL = 1;
-	PARENT = 29;
+	TREE_LEVEL = 0;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "TsvOut[1]";
+	CHANNEL = "RW";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 35;
-	TREE_LEVEL = 1;
-	PARENT = 29;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "TsvOut[0]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 36;
-	TREE_LEVEL = 1;
-	PARENT = 29;
+	TREE_LEVEL = 0;
 }
 
 TIME_BAR

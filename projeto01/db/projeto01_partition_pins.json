@@ -4,87 +4,123 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "timeRemaining[0]",
+					"name" : "RS",
 					"strict" : false
 				},
 				{
-					"name" : "timeRemaining[1]",
+					"name" : "E",
 					"strict" : false
 				},
 				{
-					"name" : "timeRemaining[2]",
+					"name" : "DB[7]",
 					"strict" : false
 				},
 				{
-					"name" : "timeRemaining[3]",
+					"name" : "DB[6]",
 					"strict" : false
 				},
 				{
-					"name" : "timeRemaining[4]",
+					"name" : "DB[5]",
 					"strict" : false
 				},
 				{
-					"name" : "timeRemaining[5]",
+					"name" : "DB[4]",
 					"strict" : false
 				},
 				{
-					"name" : "timeRemaining[6]",
+					"name" : "DB[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Principal_Road[0]",
+					"name" : "DB[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Principal_Road[1]",
+					"name" : "DB[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Principal_Road[2]",
+					"name" : "DB[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Secondary_Road[0]",
+					"name" : "indexDEBUG[6]",
 					"strict" : false
 				},
 				{
-					"name" : "Secondary_Road[1]",
+					"name" : "indexDEBUG[5]",
 					"strict" : false
 				},
 				{
-					"name" : "Secondary_Road[2]",
+					"name" : "indexDEBUG[4]",
 					"strict" : false
 				},
 				{
-					"name" : "Principal_Pedestrian[0]",
+					"name" : "indexDEBUG[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Principal_Pedestrian[1]",
+					"name" : "indexDEBUG[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Secondary_Pedestrian[0]",
+					"name" : "indexDEBUG[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Secondary_Pedestrian[1]",
+					"name" : "indexDEBUG[0]",
 					"strict" : false
 				},
 				{
-					"name" : "StateFlag[0]",
+					"name" : "NextStateDEBUG[3]",
 					"strict" : false
 				},
 				{
-					"name" : "StateFlag[1]",
+					"name" : "NextStateDEBUG[2]",
 					"strict" : false
 				},
 				{
-					"name" : "clock1Hz",
+					"name" : "NextStateDEBUG[1]",
+					"strict" : false
+				},
+				{
+					"name" : "NextStateDEBUG[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PresentPhraseDEBUG[1]",
+					"strict" : false
+				},
+				{
+					"name" : "PresentPhraseDEBUG[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PresentStateDEBUG[3]",
+					"strict" : false
+				},
+				{
+					"name" : "PresentStateDEBUG[2]",
+					"strict" : false
+				},
+				{
+					"name" : "PresentStateDEBUG[1]",
+					"strict" : false
+				},
+				{
+					"name" : "PresentStateDEBUG[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clock500Hz",
 					"strict" : false
 				},
 				{
 					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "ConfigFlag",
 					"strict" : false
 				}
 			]

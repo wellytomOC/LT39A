@@ -1,1 +1,2 @@
+Warning (10268): Verilog HDL information at DisplayControlUnit.v(30): always construct contains both blocking and non-blocking assignments File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/DisplayControlUnit.v Line: 30
 Warning (10268): Verilog HDL information at Timer.v(11): always construct contains both blocking and non-blocking assignments File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Timer.v Line: 11
