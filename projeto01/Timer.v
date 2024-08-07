@@ -1,5 +1,5 @@
 module Timer (
-    input wire[6:0] ref,
+    input wire[6:0] TimerRef,
     input wire clock, reset,
 
     output reg trigger,
@@ -13,14 +13,14 @@ module Timer (
             counter = 8'b0;
             trigger = 1'b0;
         end else begin
-            if (counter == ref) begin
+            if (counter == TimerRef) begin
                 trigger <= 1'b1;  
                 counter <= 8'b0; 
             end else begin
                 trigger <= 1'b0;  
                 counter <= counter + 1; 
             end
-				timeRemaining <= ref - counter;
+				timeRemaining <= TimerRef - counter;
         end
     end
 

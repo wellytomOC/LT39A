@@ -12,27 +12,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "DB[7]",
-					"strict" : false
-				},
-				{
-					"name" : "DB[6]",
-					"strict" : false
-				},
-				{
-					"name" : "DB[5]",
-					"strict" : false
-				},
-				{
-					"name" : "DB[4]",
-					"strict" : false
-				},
-				{
-					"name" : "DB[3]",
-					"strict" : false
-				},
-				{
-					"name" : "DB[2]",
+					"name" : "DB[0]",
 					"strict" : false
 				},
 				{
@@ -40,75 +20,27 @@
 					"strict" : false
 				},
 				{
-					"name" : "DB[0]",
+					"name" : "DB[2]",
 					"strict" : false
 				},
 				{
-					"name" : "indexDEBUG[6]",
+					"name" : "DB[3]",
 					"strict" : false
 				},
 				{
-					"name" : "indexDEBUG[5]",
+					"name" : "DB[4]",
 					"strict" : false
 				},
 				{
-					"name" : "indexDEBUG[4]",
+					"name" : "DB[5]",
 					"strict" : false
 				},
 				{
-					"name" : "indexDEBUG[3]",
+					"name" : "DB[6]",
 					"strict" : false
 				},
 				{
-					"name" : "indexDEBUG[2]",
-					"strict" : false
-				},
-				{
-					"name" : "indexDEBUG[1]",
-					"strict" : false
-				},
-				{
-					"name" : "indexDEBUG[0]",
-					"strict" : false
-				},
-				{
-					"name" : "NextStateDEBUG[3]",
-					"strict" : false
-				},
-				{
-					"name" : "NextStateDEBUG[2]",
-					"strict" : false
-				},
-				{
-					"name" : "NextStateDEBUG[1]",
-					"strict" : false
-				},
-				{
-					"name" : "NextStateDEBUG[0]",
-					"strict" : false
-				},
-				{
-					"name" : "PresentPhraseDEBUG[1]",
-					"strict" : false
-				},
-				{
-					"name" : "PresentPhraseDEBUG[0]",
-					"strict" : false
-				},
-				{
-					"name" : "PresentStateDEBUG[3]",
-					"strict" : false
-				},
-				{
-					"name" : "PresentStateDEBUG[2]",
-					"strict" : false
-				},
-				{
-					"name" : "PresentStateDEBUG[1]",
-					"strict" : false
-				},
-				{
-					"name" : "PresentStateDEBUG[0]",
+					"name" : "DB[7]",
 					"strict" : false
 				},
 				{
@@ -116,11 +48,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "PhraseSel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PhraseSel[1]",
+					"strict" : false
+				},
+				{
 					"name" : "reset",
 					"strict" : false
 				},
 				{
-					"name" : "ConfigFlag",
+					"name" : "clock50MHz",
 					"strict" : false
 				}
 			]

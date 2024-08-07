@@ -1,152 +1,18 @@
 module DisplayControlUnit (
-    input wire clock500Hz, reset, ConfigFlag,
+    input wire clock500Hz, reset,
+
+    input wire[7:0] phrase,
+    output reg[4:0] char_index,
 
     output reg RS,RW,
     output wire E,
-    output reg[7:0] DB,
-	 
-	 output wire[6:0] indexDEBUG,
-	 output wire[1:0] PresentPhraseDEBUG,
-	 output wire[3:0] PresentStateDEBUG, NextStateDEBUG
+    output reg[7:0] DB
 );
 
-	assign indexDEBUG = char_index;
-    assign PresentPhraseDEBUG = PresentPhrase;
-    assign PresentStateDEBUG = PresentState;
-    assign NextStateDEBUG = NextState;
     assign E = clock500Hz;
 	 
-	 
-	 //Frases
-	 parameter
-        Padrao = 2'd0,
-        DefinirPrincipal = 2'd1,
-        DefinirSecundario = 2'd2,
-        DefinirAmarelo = 2'd3;
-
-    reg[1:0] PresentPhrase;
-
-    // Bloco sequencial - Frases
-     always @( posedge ConfigFlag or posedge reset) begin
-	    if(reset) begin
-            PresentPhrase <= Padrao;
-        end
-        else begin
-            case(PresentPhrase)
-                Padrao: begin
-                    PresentPhrase = DefinirPrincipal;
-                end
-                DefinirPrincipal: begin
-                    PresentPhrase = DefinirSecundario;
-                end
-                DefinirSecundario: begin
-                    PresentPhrase = DefinirAmarelo;
-                end
-                DefinirAmarelo: begin
-                    PresentPhrase = Padrao;
-                end
-            endcase
-        end
-     end
-	 
-	 
-    // Bloco combinacional - Frases
-    reg [7:0] phrase [0:31], address;
-    reg [6:0] char_index;
-    always @(posedge clock500Hz) begin
-
-        case(PresentPhrase)
-            Padrao: begin
-                phrase[0]  = 8'd0;
-                phrase[1]  = 8'd0;
-                phrase[2]  = 8'd0;
-                phrase[3]  = 8'd0;
-                phrase[4]  = 8'd0;
-                phrase[5]  = ".";
-                phrase[6]  = ":";
-                phrase[7]  = " ";
-
-                phrase[8]  = "R";
-                phrase[9]  = "E";
-                phrase[10] = "D";
-
-                phrase[11] = "";
-                phrase[12] = "";
-                phrase[13] = "X";
-                phrase[14] = "Y";
-                phrase[15] = "s";
-
-
-
-                phrase[16] = "S";
-                phrase[17] = "e";
-                phrase[18] = "c";
-                phrase[19] = "u";
-                phrase[20] = "n";
-                phrase[21] = ".";
-                phrase[22] = ":";
-                phrase[23] = " ";
-
-                phrase[24] = "G";
-                phrase[25] = "R";
-                phrase[26] = "N";
-
-                phrase[27] = "";
-                phrase[28] = "";
-                phrase[29] = "X";
-                phrase[30] = "Y";
-                phrase[31] = "s";
-            end
-            DefinirPrincipal: begin
-                phrase[0] = "";
-                phrase[1] = "";
-                phrase[2] = "";
-                phrase[3] = "";
-                phrase[4] = "";
-                phrase[5] = "";
-                phrase[6] = "";
-                phrase[7] = "";
-                phrase[8] = "";
-                phrase[9] = "";
-                phrase[10] = "";
-                phrase[11] = "";
-                phrase[12] = "";
-                phrase[13] = "";
-                phrase[14] = "";
-                phrase[15] = "";
-
-                phrase[16] = "";
-                phrase[17] = "";
-                phrase[18] = "";
-                phrase[19] = "";
-                phrase[20] = "";
-                phrase[21] = "";
-                phrase[22] = "";
-                phrase[23] = "";
-                phrase[24] = "";
-                phrase[25] = "";
-                phrase[26] = "";
-                phrase[27] = "";
-                phrase[28] = "";
-                phrase[29] = "";
-                phrase[30] = "";
-                phrase[31] = "";
-            end
-            DefinirSecundario: begin
-                
-            end
-            DefinirAmarelo: begin
-                
-            end
-        endcase 
-    end
-
-
-
-
-
     // Estados
-    parameter   
+    parameter  
         FS1 = 4'd0,
 		FS2 = 4'd1,
         FS3 = 4'd2,
@@ -170,128 +36,110 @@ module DisplayControlUnit (
         end
     end
 
-    //Bloco Combinacional - Estados
+    // Bloco Combinacional - Estados
     always @(*) begin
         case(PresentState) 
+            default: begin
+                RS = 1'b0;
+                RW = 1'b0;
+                DB = 8'b00111000;
+                NextState = FS2;
+				char_index = 5'd0;
+            end 
+
             FS1: begin
-                RS <= 1'b0;
-                RW <= 1'b0;
-                DB <= 8'b00111000;
-                NextState <= FS2;
-				char_index <= 6'd0;
+                RS = 1'b0;
+                RW = 1'b0;
+                DB = 8'b00111000;
+                NextState = FS2;
+				char_index = 5'd0;
             end
 
             FS2: begin
-                RS <= 1'b0;
-                RW <= 1'b0;
-                DB <= 8'b00111000;
-                NextState <= FS3;
+                RS = 1'b0;
+                RW = 1'b0;
+                DB = 8'b00111000;
+                NextState = FS3;
+                char_index = 5'd0;
             end
 
             FS3: begin
-                RS <= 1'b0;
-                RW <= 1'b0;
-                DB <= 8'b00111000;
-                NextState <= FS4;
+                RS = 1'b0;
+                RW = 1'b0;
+                DB = 8'b00111000;
+                NextState = FS4;
+                char_index = 5'd0;
             end
 
             FS4: begin
-                RS <= 1'b0;
-                RW <= 1'b0;
-                DB <= 8'b00111000;
-                NextState <= ClearDisplay;
+                RS = 1'b0;
+                RW = 1'b0;
+                DB = 8'b00111000;
+                NextState = ClearDisplay;
+                char_index = 5'd0;
             end
 
             ClearDisplay: begin
-                RS <= 1'b0;
-                RW <= 1'b0;
-                DB <= 8'b00000001;
-                NextState <= DisplayControl;
+                RS = 1'b0;
+                RW = 1'b0;
+                DB = 8'b00000001;
+                NextState = DisplayControl;
+                char_index = 5'd0;
             end
 
             DisplayControl: begin
-                RS <= 1'b0;
-                RW <= 1'b0;
-                DB <= 8'b00001100;
-                NextState <= EntryMode;
+                RS = 1'b0;
+                RW = 1'b0;
+                DB = 8'b00001100;
+                NextState = EntryMode;
+                char_index = 5'd0;
             end
 
             EntryMode: begin
-                RS <= 1'b0;
-                RW <= 1'b0;
-                DB <= 8'b00000110;
-                NextState <= WriteChar;
+                RS = 1'b0;
+                RW = 1'b0;
+                DB = 8'b00000110;
+                NextState = WriteChar;
+                char_index = 5'd0;
             end
 
             ReturnHome: begin
-                RS <= 1'b0;
-                RW <= 1'b0;
-                DB <= 8'b10000000;
-                NextState <= WriteChar;
+                RS = 1'b0;
+                RW = 1'b0;
+                DB = 8'b10000000;
+                NextState = WriteChar;
+                char_index = 5'd0;
             end
 
             SetAddress: begin
-                RS <= 1'b0;
-                RW <= 1'b0;
-                DB <= address;
-                NextState <= WriteChar;
+                RS = 1'b0;
+                RW = 1'b0;
+                DB = 8'b11000000;
+                NextState = WriteChar;
+                char_index = 5'd16;
             end
 
             WriteChar: begin
-                RS <= 1'b1;
-                RW <= 1'b0;
-                DB <= phrase[char_index];
+                RS = 1'b1;
+                RW = 1'b0;
+                DB = phrase;
 
-                char_index <= char_index + 1;
+                char_index = char_index + 5'd1;
                 if (char_index == 16) begin
-                    address <= 8'b11000000;
-                    NextState <= SetAddress;
+                    NextState = SetAddress;
                 end
                 else if (char_index == 31) begin
-                    char_index <= 8'd0;
-                    NextState <= ClearDisplay;
+                    char_index = 5'd0;
+                    NextState = ClearDisplay;
                 end
                 else if (char_index != 16 && char_index != 31) begin
-                    NextState <= WriteChar;
+                    NextState = WriteChar;
                 end 
+                else begin
+                    NextState = WriteChar;
+                end
             end
         endcase
     end
 
-
-    /*
-    phrase[0] = "";
-    phrase[1] = "";
-    phrase[2] = "";
-    phrase[3] = "";
-    phrase[4] = "";
-    phrase[5] = "";
-    phrase[6] = "";
-    phrase[7] = "";
-    phrase[8] = "";
-    phrase[9] = "";
-    phrase[10] = "";
-    phrase[11] = "";
-    phrase[12] = "";
-    phrase[13] = "";
-    phrase[14] = "";
-    phrase[15] = "";
-
-    phrase[16] = "";
-    phrase[17] = "";
-    phrase[18] = "";
-    phrase[19] = "";
-    phrase[20] = "";
-    phrase[21] = "";
-    phrase[22] = "";
-    phrase[23] = "";
-    phrase[24] = "";
-    phrase[25] = "";
-    phrase[26] = "";
-    phrase[27] = "";
-    phrase[28] = "";
-    phrase[29] = "";
-    phrase[30] = "";
-    phrase[31] = "";
-    */
 endmodule
