@@ -1,0 +1,29 @@
+module Arquitetura (
+    input wire clock, reset,
+    input wire[2:0] col,
+
+    output wire[3:0] row
+
+    output wire[1:0] PhraseSel,
+
+    
+);
+    
+    //Entrada
+    wire clock50Mhz, clock1Hz, clock500Hz;
+    wire[3:0] KeypadData;
+    wire dav;
+    Entrada inst01 (clock, reset, col, clock50Mhz, clock1Hz, clock500Hz,  row, KeypadData, dav);
+
+    //Sistema
+    wire[6:0] Tpv, Tsv, Ta;
+    wire[6:0] timeRemaining;
+    wire[2:0] Principal_Road;
+    wire[2:0] Secondary_Road;
+    wire[1:0] Principal_Pedestrian;
+    wire[1:0] Secondary_Pedestrian;
+    wire[1:0] StateFlag;
+    Sistema inst02 (clock, clock1Hz, reset, dav, KeypadData, Tpv, Tsv, Ta, timeRemaining,
+                    Principal_Road, Secondary_Road, Principal_Pedestrian, Secondary_Pedestrian, StateFlag);
+
+endmodule

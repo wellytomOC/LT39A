@@ -2,6 +2,7 @@ module DisplayControlUnit (
     input wire clock500Hz, reset,
 
     input wire[7:0] phrase,
+    
     output reg[4:0] char_index,
 
     output reg RS,RW,
@@ -39,11 +40,12 @@ module DisplayControlUnit (
     // Bloco Combinacional - Estados
     always @(*) begin
         case(PresentState) 
+
             default: begin
                 RS = 1'b0;
                 RW = 1'b0;
                 DB = 8'b00111000;
-                NextState = FS2;
+                NextState = FS1;
 				char_index = 5'd0;
             end 
 
@@ -125,14 +127,15 @@ module DisplayControlUnit (
                 DB = phrase;
 
                 char_index = char_index + 5'd1;
-                if (char_index == 16) begin
+
+                if (char_index == 5'd16) begin
                     NextState = SetAddress;
                 end
-                else if (char_index == 31) begin
+                else if (char_index == 5'd31) begin
                     char_index = 5'd0;
                     NextState = ClearDisplay;
                 end
-                else if (char_index != 16 && char_index != 31) begin
+                else if (char_index != 5'd16 && char_index != 5'd31) begin
                     NextState = WriteChar;
                 end 
                 else begin

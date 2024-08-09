@@ -8,44 +8,42 @@ module RomPadrao (
     reg[7:0] phrase [0:31];
     initial begin
         phrase[0]  = "P";
-        phrase[1]  = "r";
-        phrase[2]  = "i";
-        phrase[3]  = "n";
-        phrase[4]  = "c";
-        phrase[5]  = ".";
-        phrase[6]  = ":";
+        phrase[1]  = ":";
+        phrase[2]  = " ";
+        phrase[3]  = "G";
+        phrase[4]  = " ";
+        phrase[5]  = "X";
+        phrase[6]  = "Y";
+
         phrase[7]  = " ";
 
-        phrase[8]  = "R";
-        phrase[9]  = "E";
-        phrase[10] = "D";
-
-        phrase[11] = "";
-        phrase[12] = "";
+        phrase[8]  = "S";
+        phrase[9]  = ":";
+        phrase[10] = " ";
+        phrase[11] = "R";
+        phrase[12] = " ";
         phrase[13] = "X";
         phrase[14] = "Y";
-        phrase[15] = "s";
+        phrase[15] = " ";
 
 
 
-        phrase[16] = "S";
-        phrase[17] = "e";
-        phrase[18] = "c";
-        phrase[19] = "u";
-        phrase[20] = "n";
-        phrase[21] = ".";
-        phrase[22] = ":";
-        phrase[23] = " ";
-
-        phrase[24] = "G";
-        phrase[25] = "R";
-        phrase[26] = "N";
-
-        phrase[27] = "";
-        phrase[28] = "";
-        phrase[29] = "X";
-        phrase[30] = "Y";
-        phrase[31] = "s";
+        phrase[16] = "P";
+        phrase[17] = ":";
+        phrase[18] = "X";
+        phrase[19] = "Y";
+        phrase[20] = " ";
+        phrase[21] = " ";
+        phrase[22] = "S";
+        phrase[23] = ":";
+        phrase[24] = "X";
+        phrase[25] = "Y";
+        phrase[26] = " ";
+        phrase[27] = " ";
+        phrase[28] = "A";
+        phrase[29] = ":";
+        phrase[30] = "X";
+        phrase[31] = "Y";
     end
     always @(posedge clock ) begin
         dataOut <= phrase[addr];

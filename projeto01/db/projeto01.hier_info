@@ -1,9 +1,538 @@
-|Saida
+|Arquitetura
+clock => clock.IN1
+reset => reset.IN3
+col[0] => col[0].IN1
+col[1] => col[1].IN1
+col[2] => col[2].IN1
+row[0] <= Entrada:inst01.port6
+row[1] <= Entrada:inst01.port6
+row[2] <= Entrada:inst01.port6
+row[3] <= Entrada:inst01.port6
+RS <= Saida:inst03.port13
+RW <= Saida:inst03.port14
+E <= Saida:inst03.port15
+DB[0] <= Saida:inst03.port16
+DB[1] <= Saida:inst03.port16
+DB[2] <= Saida:inst03.port16
+DB[3] <= Saida:inst03.port16
+DB[4] <= Saida:inst03.port16
+DB[5] <= Saida:inst03.port16
+DB[6] <= Saida:inst03.port16
+DB[7] <= Saida:inst03.port16
+LCD_Blon <= <VCC>
+LCD_On <= <VCC>
+
+
+|Arquitetura|Entrada:inst01
+clock => clock.IN1
+reset => reset.IN1
+col[0] => col[0].IN1
+col[1] => col[1].IN1
+col[2] => col[2].IN1
+clock50Mhz <= clock.DB_MAX_OUTPUT_PORT_TYPE
+clock1Hz <= ClockDivider:inst01.port2
+clock500Hz <= clock500Hz.DB_MAX_OUTPUT_PORT_TYPE
+row[0] <= keypadEncoder2:inst02.port3
+row[1] <= keypadEncoder2:inst02.port3
+row[2] <= keypadEncoder2:inst02.port3
+row[3] <= keypadEncoder2:inst02.port3
+KeypadData[0] <= keypadEncoder2:inst02.port4
+KeypadData[1] <= keypadEncoder2:inst02.port4
+KeypadData[2] <= keypadEncoder2:inst02.port4
+KeypadData[3] <= keypadEncoder2:inst02.port4
+dav <= keypadEncoder2:inst02.port5
+
+
+|Arquitetura|Entrada:inst01|ClockDivider:inst01
+clock => Clock1Hz~reg0.CLK
+clock => counter1Hz[0].CLK
+clock => counter1Hz[1].CLK
+clock => counter1Hz[2].CLK
+clock => counter1Hz[3].CLK
+clock => counter1Hz[4].CLK
+clock => counter1Hz[5].CLK
+clock => counter1Hz[6].CLK
+clock => counter1Hz[7].CLK
+clock => counter1Hz[8].CLK
+clock => counter1Hz[9].CLK
+clock => counter1Hz[10].CLK
+clock => counter1Hz[11].CLK
+clock => counter1Hz[12].CLK
+clock => counter1Hz[13].CLK
+clock => counter1Hz[14].CLK
+clock => counter1Hz[15].CLK
+clock => counter1Hz[16].CLK
+clock => counter1Hz[17].CLK
+clock => counter1Hz[18].CLK
+clock => counter1Hz[19].CLK
+clock => counter1Hz[20].CLK
+clock => counter1Hz[21].CLK
+clock => counter1Hz[22].CLK
+clock => counter1Hz[23].CLK
+clock => counter1Hz[24].CLK
+clock => clock500Hz~reg0.CLK
+clock => counter500Hz[0].CLK
+clock => counter500Hz[1].CLK
+clock => counter500Hz[2].CLK
+clock => counter500Hz[3].CLK
+clock => counter500Hz[4].CLK
+clock => counter500Hz[5].CLK
+clock => counter500Hz[6].CLK
+clock => counter500Hz[7].CLK
+clock => counter500Hz[8].CLK
+clock => counter500Hz[9].CLK
+clock => counter500Hz[10].CLK
+clock => counter500Hz[11].CLK
+clock => counter500Hz[12].CLK
+clock => counter500Hz[13].CLK
+clock => counter500Hz[14].CLK
+clock => counter500Hz[15].CLK
+clock500Hz <= clock500Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Clock1Hz <= Clock1Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Entrada:inst01|keypadEncoder2:inst02
+clk => ring~1.DATAIN
+reset => ring~3.DATAIN
+col[0] => Decoder0.IN2
+col[1] => Decoder0.IN1
+col[2] => Decoder0.IN0
+row[0] <= row[0].DB_MAX_OUTPUT_PORT_TYPE
+row[1] <= row[1].DB_MAX_OUTPUT_PORT_TYPE
+row[2] <= row[2].DB_MAX_OUTPUT_PORT_TYPE
+row[3] <= row[3].DB_MAX_OUTPUT_PORT_TYPE
+d[0] <= d[0].DB_MAX_OUTPUT_PORT_TYPE
+d[1] <= d[1].DB_MAX_OUTPUT_PORT_TYPE
+d[2] <= d[2].DB_MAX_OUTPUT_PORT_TYPE
+d[3] <= d[3].DB_MAX_OUTPUT_PORT_TYPE
+dav <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Sistema:inst02
+clock1Hz => clock1Hz.IN2
+reset => reset.IN4
+dav => dav.IN1
+dataIn[0] => dataIn[0].IN2
+dataIn[1] => dataIn[1].IN2
+dataIn[2] => dataIn[2].IN2
+dataIn[3] => dataIn[3].IN2
+PhraseSel[0] <= ManualControlUnit:inst01.port4
+PhraseSel[1] <= ManualControlUnit:inst01.port4
+Tpv[0] <= Tpv[0].DB_MAX_OUTPUT_PORT_TYPE
+Tpv[1] <= Tpv[1].DB_MAX_OUTPUT_PORT_TYPE
+Tpv[2] <= Tpv[2].DB_MAX_OUTPUT_PORT_TYPE
+Tpv[3] <= Tpv[3].DB_MAX_OUTPUT_PORT_TYPE
+Tpv[4] <= Tpv[4].DB_MAX_OUTPUT_PORT_TYPE
+Tpv[5] <= Tpv[5].DB_MAX_OUTPUT_PORT_TYPE
+Tpv[6] <= Tpv[6].DB_MAX_OUTPUT_PORT_TYPE
+Tsv[0] <= Tsv[0].DB_MAX_OUTPUT_PORT_TYPE
+Tsv[1] <= Tsv[1].DB_MAX_OUTPUT_PORT_TYPE
+Tsv[2] <= Tsv[2].DB_MAX_OUTPUT_PORT_TYPE
+Tsv[3] <= Tsv[3].DB_MAX_OUTPUT_PORT_TYPE
+Tsv[4] <= Tsv[4].DB_MAX_OUTPUT_PORT_TYPE
+Tsv[5] <= Tsv[5].DB_MAX_OUTPUT_PORT_TYPE
+Tsv[6] <= Tsv[6].DB_MAX_OUTPUT_PORT_TYPE
+Ta[0] <= Ta[0].DB_MAX_OUTPUT_PORT_TYPE
+Ta[1] <= Ta[1].DB_MAX_OUTPUT_PORT_TYPE
+Ta[2] <= Ta[2].DB_MAX_OUTPUT_PORT_TYPE
+Ta[3] <= Ta[3].DB_MAX_OUTPUT_PORT_TYPE
+Ta[4] <= Ta[4].DB_MAX_OUTPUT_PORT_TYPE
+Ta[5] <= Ta[5].DB_MAX_OUTPUT_PORT_TYPE
+Ta[6] <= Ta[6].DB_MAX_OUTPUT_PORT_TYPE
+timeRemaining[0] <= Timer:Timer01.port4
+timeRemaining[1] <= Timer:Timer01.port4
+timeRemaining[2] <= Timer:Timer01.port4
+timeRemaining[3] <= Timer:Timer01.port4
+timeRemaining[4] <= Timer:Timer01.port4
+timeRemaining[5] <= Timer:Timer01.port4
+timeRemaining[6] <= Timer:Timer01.port4
+Principal_Road[0] <= SemaphoreControlUnit:SCU01.port4
+Principal_Road[1] <= SemaphoreControlUnit:SCU01.port4
+Principal_Road[2] <= SemaphoreControlUnit:SCU01.port4
+Secondary_Road[0] <= SemaphoreControlUnit:SCU01.port5
+Secondary_Road[1] <= SemaphoreControlUnit:SCU01.port5
+Secondary_Road[2] <= SemaphoreControlUnit:SCU01.port5
+Principal_Pedestrian[0] <= SemaphoreControlUnit:SCU01.port6
+Principal_Pedestrian[1] <= SemaphoreControlUnit:SCU01.port6
+Secondary_Pedestrian[0] <= SemaphoreControlUnit:SCU01.port7
+Secondary_Pedestrian[1] <= SemaphoreControlUnit:SCU01.port7
+StateFlag[0] <= SemaphoreControlUnit:SCU01.port8
+StateFlag[1] <= SemaphoreControlUnit:SCU01.port8
+
+
+|Arquitetura|Sistema:inst02|ManualControlUnit:inst01
+dav => PresentState~1.DATAIN
+reset => PresentState~3.DATAIN
+dataIn[0] => Equal0.IN3
+dataIn[1] => Equal0.IN2
+dataIn[2] => Equal0.IN1
+dataIn[3] => Equal0.IN0
+RegisterSel[0] <= RegisterSel[0].DB_MAX_OUTPUT_PORT_TYPE
+RegisterSel[1] <= RegisterSel[1].DB_MAX_OUTPUT_PORT_TYPE
+RegisterSel[2] <= RegisterSel[2].DB_MAX_OUTPUT_PORT_TYPE
+RegisterSel[3] <= RegisterSel[3].DB_MAX_OUTPUT_PORT_TYPE
+RegisterSel[4] <= RegisterSel[4].DB_MAX_OUTPUT_PORT_TYPE
+RegisterSel[5] <= RegisterSel[5].DB_MAX_OUTPUT_PORT_TYPE
+PhraseSel[0] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+PhraseSel[1] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Sistema:inst02|RegisterBank:regBank01
+reset => reset.IN6
+RS[0] => RS[0].IN1
+RS[1] => RS[1].IN1
+RS[2] => RS[2].IN1
+RS[3] => RS[3].IN1
+RS[4] => RS[4].IN1
+RS[5] => RS[5].IN1
+dataIn[0] => dataIn[0].IN6
+dataIn[1] => dataIn[1].IN6
+dataIn[2] => dataIn[2].IN6
+dataIn[3] => dataIn[3].IN6
+TpvOut[0] <= Concatener:Concat_Tpv.port2
+TpvOut[1] <= Concatener:Concat_Tpv.port2
+TpvOut[2] <= Concatener:Concat_Tpv.port2
+TpvOut[3] <= Concatener:Concat_Tpv.port2
+TpvOut[4] <= Concatener:Concat_Tpv.port2
+TpvOut[5] <= Concatener:Concat_Tpv.port2
+TpvOut[6] <= Concatener:Concat_Tpv.port2
+TsvOut[0] <= Concatener:Concat_Tsv.port2
+TsvOut[1] <= Concatener:Concat_Tsv.port2
+TsvOut[2] <= Concatener:Concat_Tsv.port2
+TsvOut[3] <= Concatener:Concat_Tsv.port2
+TsvOut[4] <= Concatener:Concat_Tsv.port2
+TsvOut[5] <= Concatener:Concat_Tsv.port2
+TsvOut[6] <= Concatener:Concat_Tsv.port2
+TaOut[0] <= Concatener:Concat_Ta.port2
+TaOut[1] <= Concatener:Concat_Ta.port2
+TaOut[2] <= Concatener:Concat_Ta.port2
+TaOut[3] <= Concatener:Concat_Ta.port2
+TaOut[4] <= Concatener:Concat_Ta.port2
+TaOut[5] <= Concatener:Concat_Ta.port2
+TaOut[6] <= Concatener:Concat_Ta.port2
+
+
+|Arquitetura|Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Unit
+clock => dout[0]~reg0.CLK
+clock => dout[1]~reg0.CLK
+clock => dout[2]~reg0.CLK
+clock => dout[3]~reg0.CLK
+reset => dout[0]~reg0.ACLR
+reset => dout[1]~reg0.ACLR
+reset => dout[2]~reg0.ACLR
+reset => dout[3]~reg0.ACLR
+din[0] => dout[0]~reg0.DATAIN
+din[1] => dout[1]~reg0.DATAIN
+din[2] => dout[2]~reg0.DATAIN
+din[3] => dout[3]~reg0.DATAIN
+dout[0] <= dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Ten
+clock => dout[0]~reg0.CLK
+clock => dout[1]~reg0.CLK
+clock => dout[2]~reg0.CLK
+clock => dout[3]~reg0.CLK
+reset => dout[0]~reg0.PRESET
+reset => dout[1]~reg0.PRESET
+reset => dout[2]~reg0.ACLR
+reset => dout[3]~reg0.ACLR
+din[0] => dout[0]~reg0.DATAIN
+din[1] => dout[1]~reg0.DATAIN
+din[2] => dout[2]~reg0.DATAIN
+din[3] => dout[3]~reg0.DATAIN
+dout[0] <= dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Sistema:inst02|RegisterBank:regBank01|Concatener:Concat_Tpv
+unit[0] => dout[0].DATAIN
+unit[1] => Add1.IN10
+unit[2] => Add1.IN9
+unit[3] => Add1.IN8
+ten[0] => Add0.IN8
+ten[0] => Add1.IN12
+ten[1] => Add0.IN7
+ten[1] => Add1.IN11
+ten[2] => Add0.IN5
+ten[2] => Add0.IN6
+ten[3] => Add0.IN3
+ten[3] => Add0.IN4
+dout[0] <= unit[0].DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[4] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[5] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[6] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit
+clock => dout[0]~reg0.CLK
+clock => dout[1]~reg0.CLK
+clock => dout[2]~reg0.CLK
+clock => dout[3]~reg0.CLK
+reset => dout[0]~reg0.PRESET
+reset => dout[1]~reg0.ACLR
+reset => dout[2]~reg0.PRESET
+reset => dout[3]~reg0.ACLR
+din[0] => dout[0]~reg0.DATAIN
+din[1] => dout[1]~reg0.DATAIN
+din[2] => dout[2]~reg0.DATAIN
+din[3] => dout[3]~reg0.DATAIN
+dout[0] <= dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten
+clock => dout[0]~reg0.CLK
+clock => dout[1]~reg0.CLK
+clock => dout[2]~reg0.CLK
+clock => dout[3]~reg0.CLK
+reset => dout[0]~reg0.PRESET
+reset => dout[1]~reg0.ACLR
+reset => dout[2]~reg0.ACLR
+reset => dout[3]~reg0.ACLR
+din[0] => dout[0]~reg0.DATAIN
+din[1] => dout[1]~reg0.DATAIN
+din[2] => dout[2]~reg0.DATAIN
+din[3] => dout[3]~reg0.DATAIN
+dout[0] <= dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Sistema:inst02|RegisterBank:regBank01|Concatener:Concat_Tsv
+unit[0] => dout[0].DATAIN
+unit[1] => Add1.IN10
+unit[2] => Add1.IN9
+unit[3] => Add1.IN8
+ten[0] => Add0.IN8
+ten[0] => Add1.IN12
+ten[1] => Add0.IN7
+ten[1] => Add1.IN11
+ten[2] => Add0.IN5
+ten[2] => Add0.IN6
+ten[3] => Add0.IN3
+ten[3] => Add0.IN4
+dout[0] <= unit[0].DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[4] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[5] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[6] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoAmarelo_Unit
+clock => dout[0]~reg0.CLK
+clock => dout[1]~reg0.CLK
+clock => dout[2]~reg0.CLK
+clock => dout[3]~reg0.CLK
+reset => dout[0]~reg0.PRESET
+reset => dout[1]~reg0.PRESET
+reset => dout[2]~reg0.ACLR
+reset => dout[3]~reg0.ACLR
+din[0] => dout[0]~reg0.DATAIN
+din[1] => dout[1]~reg0.DATAIN
+din[2] => dout[2]~reg0.DATAIN
+din[3] => dout[3]~reg0.DATAIN
+dout[0] <= dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoAmarelo_Ten
+clock => dout[0]~reg0.CLK
+clock => dout[1]~reg0.CLK
+clock => dout[2]~reg0.CLK
+clock => dout[3]~reg0.CLK
+reset => dout[0]~reg0.ACLR
+reset => dout[1]~reg0.ACLR
+reset => dout[2]~reg0.ACLR
+reset => dout[3]~reg0.ACLR
+din[0] => dout[0]~reg0.DATAIN
+din[1] => dout[1]~reg0.DATAIN
+din[2] => dout[2]~reg0.DATAIN
+din[3] => dout[3]~reg0.DATAIN
+dout[0] <= dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Sistema:inst02|RegisterBank:regBank01|Concatener:Concat_Ta
+unit[0] => dout[0].DATAIN
+unit[1] => Add1.IN10
+unit[2] => Add1.IN9
+unit[3] => Add1.IN8
+ten[0] => Add0.IN8
+ten[0] => Add1.IN12
+ten[1] => Add0.IN7
+ten[1] => Add1.IN11
+ten[2] => Add0.IN5
+ten[2] => Add0.IN6
+ten[3] => Add0.IN3
+ten[3] => Add0.IN4
+dout[0] <= unit[0].DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[4] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[5] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+dout[6] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Sistema:inst02|TimerMultiplexer:TimerMux01
+sel[0] => Mux0.IN2
+sel[0] => Mux1.IN2
+sel[0] => Mux2.IN2
+sel[0] => Mux3.IN2
+sel[0] => Mux4.IN2
+sel[0] => Mux5.IN2
+sel[0] => Mux6.IN2
+sel[1] => Mux0.IN1
+sel[1] => Mux1.IN1
+sel[1] => Mux2.IN1
+sel[1] => Mux3.IN1
+sel[1] => Mux4.IN1
+sel[1] => Mux5.IN1
+sel[1] => Mux6.IN1
+Tpv[0] => Mux6.IN3
+Tpv[1] => Mux5.IN3
+Tpv[2] => Mux4.IN3
+Tpv[3] => Mux3.IN3
+Tpv[4] => Mux2.IN3
+Tpv[5] => Mux1.IN3
+Tpv[6] => Mux0.IN3
+Tsv[0] => Mux6.IN4
+Tsv[1] => Mux5.IN4
+Tsv[2] => Mux4.IN4
+Tsv[3] => Mux3.IN4
+Tsv[4] => Mux2.IN4
+Tsv[5] => Mux1.IN4
+Tsv[6] => Mux0.IN4
+Ta[0] => Mux6.IN5
+Ta[1] => Mux5.IN5
+Ta[2] => Mux4.IN5
+Ta[3] => Mux3.IN5
+Ta[4] => Mux2.IN5
+Ta[5] => Mux1.IN5
+Ta[6] => Mux0.IN5
+MuxOut[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+MuxOut[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+MuxOut[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+MuxOut[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+MuxOut[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+MuxOut[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+MuxOut[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Sistema:inst02|Timer:Timer01
+TimerRef[0] => Equal0.IN6
+TimerRef[0] => Add1.IN14
+TimerRef[1] => Equal0.IN5
+TimerRef[1] => Add1.IN13
+TimerRef[2] => Equal0.IN4
+TimerRef[2] => Add1.IN12
+TimerRef[3] => Equal0.IN3
+TimerRef[3] => Add1.IN11
+TimerRef[4] => Equal0.IN2
+TimerRef[4] => Add1.IN10
+TimerRef[5] => Equal0.IN1
+TimerRef[5] => Add1.IN9
+TimerRef[6] => Equal0.IN0
+TimerRef[6] => Add1.IN8
+clock => timeRemaining[0]~reg0.CLK
+clock => timeRemaining[1]~reg0.CLK
+clock => timeRemaining[2]~reg0.CLK
+clock => timeRemaining[3]~reg0.CLK
+clock => timeRemaining[4]~reg0.CLK
+clock => timeRemaining[5]~reg0.CLK
+clock => timeRemaining[6]~reg0.CLK
+clock => trigger~reg0.CLK
+clock => counter[0].CLK
+clock => counter[1].CLK
+clock => counter[2].CLK
+clock => counter[3].CLK
+clock => counter[4].CLK
+clock => counter[5].CLK
+clock => counter[6].CLK
+reset => trigger~reg0.ACLR
+reset => counter[0].ACLR
+reset => counter[1].ACLR
+reset => counter[2].ACLR
+reset => counter[3].ACLR
+reset => counter[4].ACLR
+reset => counter[5].ACLR
+reset => counter[6].ACLR
+reset => timeRemaining[0]~reg0.ENA
+reset => timeRemaining[6]~reg0.ENA
+reset => timeRemaining[5]~reg0.ENA
+reset => timeRemaining[4]~reg0.ENA
+reset => timeRemaining[3]~reg0.ENA
+reset => timeRemaining[2]~reg0.ENA
+reset => timeRemaining[1]~reg0.ENA
+trigger <= trigger~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timeRemaining[0] <= timeRemaining[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timeRemaining[1] <= timeRemaining[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timeRemaining[2] <= timeRemaining[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timeRemaining[3] <= timeRemaining[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timeRemaining[4] <= timeRemaining[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timeRemaining[5] <= timeRemaining[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timeRemaining[6] <= timeRemaining[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Sistema:inst02|SemaphoreControlUnit:SCU01
+clock => PresentState~1.DATAIN
+reset => PresentState~3.DATAIN
+trigger => Selector3.IN3
+trigger => Selector0.IN2
+trigger => Selector4.IN3
+trigger => Selector1.IN3
+trigger => Selector5.IN3
+trigger => Selector0.IN3
+trigger => Selector2.IN3
+trigger => Selector0.IN0
+trigger => Selector0.IN1
+trigger => Selector1.IN1
+trigger => Selector2.IN1
+trigger => Selector3.IN1
+trigger => Selector4.IN1
+trigger => Selector5.IN1
+TimerMux[0] <= Selector1.DB_MAX_OUTPUT_PORT_TYPE
+TimerMux[1] <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
+Principal_Road[0] <= TimerMux.DB_MAX_OUTPUT_PORT_TYPE
+Principal_Road[1] <= Principal_Road[1].DB_MAX_OUTPUT_PORT_TYPE
+Principal_Road[2] <= Principal_Pedestrian[0].DB_MAX_OUTPUT_PORT_TYPE
+Secondary_Road[0] <= Principal_Pedestrian[0].DB_MAX_OUTPUT_PORT_TYPE
+Secondary_Road[1] <= Secondary_Road[1].DB_MAX_OUTPUT_PORT_TYPE
+Secondary_Road[2] <= Secondary_Road.DB_MAX_OUTPUT_PORT_TYPE
+Principal_Pedestrian[0] <= Principal_Pedestrian[0].DB_MAX_OUTPUT_PORT_TYPE
+Principal_Pedestrian[1] <= Principal_Pedestrian[0].DB_MAX_OUTPUT_PORT_TYPE
+Secondary_Pedestrian[0] <= Secondary_Pedestrian[0].DB_MAX_OUTPUT_PORT_TYPE
+Secondary_Pedestrian[1] <= Secondary_Pedestrian[0].DB_MAX_OUTPUT_PORT_TYPE
+StateFlag[0] <= StateFlag.DB_MAX_OUTPUT_PORT_TYPE
+StateFlag[1] <= Secondary_Road.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Saida:inst03
 clock50MHz => clock50MHz.IN1
 clock500Hz => clock500Hz.IN1
 reset => reset.IN1
 PhraseSel[0] => PhraseSel[0].IN1
 PhraseSel[1] => PhraseSel[1].IN1
+StateFlag[0] => ~NO_FANOUT~
+StateFlag[1] => ~NO_FANOUT~
 Tpv[0] => ~NO_FANOUT~
 Tpv[1] => ~NO_FANOUT~
 Tpv[2] => ~NO_FANOUT~
@@ -42,8 +571,6 @@ Principal_Pedestrian[0] => ~NO_FANOUT~
 Principal_Pedestrian[1] => ~NO_FANOUT~
 Secondary_Pedestrian[0] => ~NO_FANOUT~
 Secondary_Pedestrian[1] => ~NO_FANOUT~
-StateFlag[0] => ~NO_FANOUT~
-StateFlag[1] => ~NO_FANOUT~
 RS <= DisplayControlUnit:inst02.port4
 RW <= DisplayControlUnit:inst02.port5
 E <= DisplayControlUnit:inst02.port6
@@ -57,7 +584,7 @@ DB[6] <= DisplayControlUnit:inst02.port7
 DB[7] <= DisplayControlUnit:inst02.port7
 
 
-|Saida|PhraseBank:inst01
+|Arquitetura|Saida:inst03|PhraseBank:inst01
 clock => clock.IN4
 addr[0] => addr[0].IN4
 addr[1] => addr[1].IN4
@@ -90,7 +617,7 @@ Phrase[6] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 Phrase[7] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Saida|PhraseBank:inst01|RomPadrao:inst01
+|Arquitetura|Saida:inst03|PhraseBank:inst01|RomPadrao:inst01
 clock => dataOut[0]~reg0.CLK
 clock => dataOut[1]~reg0.CLK
 clock => dataOut[2]~reg0.CLK
@@ -114,7 +641,7 @@ dataOut[6] <= dataOut[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dataOut[7] <= dataOut[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Saida|PhraseBank:inst01|RomDefinirPrincipal:inst02
+|Arquitetura|Saida:inst03|PhraseBank:inst01|RomDefinirPrincipal:inst02
 clock => dataOut[0]~reg0.CLK
 clock => dataOut[1]~reg0.CLK
 clock => dataOut[2]~reg0.CLK
@@ -138,7 +665,7 @@ dataOut[6] <= dataOut[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dataOut[7] <= dataOut[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Saida|PhraseBank:inst01|RomDefinirSecundario:inst03
+|Arquitetura|Saida:inst03|PhraseBank:inst01|RomDefinirSecundario:inst03
 clock => dataOut[0]~reg0.CLK
 clock => dataOut[1]~reg0.CLK
 clock => dataOut[2]~reg0.CLK
@@ -162,7 +689,7 @@ dataOut[6] <= dataOut[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dataOut[7] <= dataOut[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Saida|PhraseBank:inst01|RomDefinirAmarelo:inst04
+|Arquitetura|Saida:inst03|PhraseBank:inst01|RomDefinirAmarelo:inst04
 clock => dataOut[0]~reg0.CLK
 clock => dataOut[1]~reg0.CLK
 clock => dataOut[2]~reg0.CLK
@@ -186,7 +713,7 @@ dataOut[6] <= dataOut[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dataOut[7] <= dataOut[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Saida|DisplayControlUnit:inst02
+|Arquitetura|Saida:inst03|DisplayControlUnit:inst02
 clock500Hz => E.DATAIN
 clock500Hz => PresentState~1.DATAIN
 reset => PresentState~3.DATAIN

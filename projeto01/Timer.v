@@ -10,15 +10,15 @@ module Timer (
 
     always @(posedge clock or posedge reset) begin
         if (reset) begin
-            counter = 8'b0;
-            trigger = 1'b0;
+            counter = 7'd0;
+            trigger = 1'd0;
         end else begin
             if (counter == TimerRef) begin
-                trigger <= 1'b1;  
-                counter <= 8'b0; 
+                trigger <= 1'd1;  
+                counter <= 7'd0; 
             end else begin
-                trigger <= 1'b0;  
-                counter <= counter + 1; 
+                trigger <= 1'd0;  
+                counter <= counter + 7'd1; 
             end
 				timeRemaining <= TimerRef - counter;
         end

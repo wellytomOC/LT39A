@@ -19,48 +19,68 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "08/04/2024 21:56:43"
+// Generated on "08/07/2024 14:34:08"
                                                                                 
-// Verilog Test Bench (with test vectors) for design :                          test
+// Verilog Test Bench (with test vectors) for design :                          Saida
 // 
 // Simulation tool : 3rd Party
 // 
 
 `timescale 1 ps/ 1 ps
-module test_vlg_vec_tst();
+module Saida_vlg_vec_tst();
 // constants                                           
 // general purpose registers
+reg [1:0] PhraseSel;
+reg [1:0] Principal_Pedestrian;
+reg [2:0] Principal_Road;
+reg [1:0] Secondary_Pedestrian;
+reg [2:0] Secondary_Road;
+reg [1:0] StateFlag;
+reg [6:0] Ta;
+reg [6:0] Tpv;
+reg [6:0] Tsv;
+reg clock50MHz;
 reg clock500Hz;
-reg ConfigFlag;
 reg reset;
+reg [6:0] timeRemaining;
 // wires                                               
 wire [7:0] DB;
 wire E;
-wire [6:0] indexDEBUG;
-wire [3:0] NextStateDEBUG;
-wire [1:0] PresentPhraseDEBUG;
-wire [3:0] PresentStateDEBUG;
 wire RS;
 wire RW;
 
 // assign statements (if any)                          
-test i1 (
+Saida i1 (
 // port map - connection between master ports and signals/registers   
-	.clock500Hz(clock500Hz),
-	.ConfigFlag(ConfigFlag),
 	.DB(DB),
 	.E(E),
-	.indexDEBUG(indexDEBUG),
-	.NextStateDEBUG(NextStateDEBUG),
-	.PresentPhraseDEBUG(PresentPhraseDEBUG),
-	.PresentStateDEBUG(PresentStateDEBUG),
-	.reset(reset),
+	.PhraseSel(PhraseSel),
+	.Principal_Pedestrian(Principal_Pedestrian),
+	.Principal_Road(Principal_Road),
 	.RS(RS),
-	.RW(RW)
+	.RW(RW),
+	.Secondary_Pedestrian(Secondary_Pedestrian),
+	.Secondary_Road(Secondary_Road),
+	.StateFlag(StateFlag),
+	.Ta(Ta),
+	.Tpv(Tpv),
+	.Tsv(Tsv),
+	.clock50MHz(clock50MHz),
+	.clock500Hz(clock500Hz),
+	.reset(reset),
+	.timeRemaining(timeRemaining)
 );
 initial 
 begin 
 #1000000 $finish;
+end 
+
+// clock50MHz
+always
+begin
+	clock50MHz = 1'b0;
+	clock50MHz = #500 1'b1;
+	#500;
 end 
 
 // clock500Hz
@@ -70,18 +90,222 @@ begin
 	clock500Hz = #5000 1'b1;
 	#5000;
 end 
+// PhraseSel[ 1 ]
+initial
+begin
+	PhraseSel[1] = 1'b0;
+end 
+// PhraseSel[ 0 ]
+initial
+begin
+	PhraseSel[0] = 1'b0;
+end 
 
 // reset
 initial
 begin
 	reset = 1'b1;
-	reset = #20000 1'b0;
+	reset = #30000 1'b0;
 end 
-
-// ConfigFlag
+// Principal_Pedestrian[ 1 ]
 initial
 begin
-	ConfigFlag = 1'b0;
+	Principal_Pedestrian[1] = 1'b0;
+end 
+// Principal_Pedestrian[ 0 ]
+initial
+begin
+	Principal_Pedestrian[0] = 1'b0;
+end 
+// Principal_Road[ 2 ]
+initial
+begin
+	Principal_Road[2] = 1'b0;
+end 
+// Principal_Road[ 1 ]
+initial
+begin
+	Principal_Road[1] = 1'b0;
+end 
+// Principal_Road[ 0 ]
+initial
+begin
+	Principal_Road[0] = 1'b0;
+end 
+// Secondary_Pedestrian[ 1 ]
+initial
+begin
+	Secondary_Pedestrian[1] = 1'b0;
+end 
+// Secondary_Pedestrian[ 0 ]
+initial
+begin
+	Secondary_Pedestrian[0] = 1'b0;
+end 
+// Secondary_Road[ 2 ]
+initial
+begin
+	Secondary_Road[2] = 1'b0;
+end 
+// Secondary_Road[ 1 ]
+initial
+begin
+	Secondary_Road[1] = 1'b0;
+end 
+// Secondary_Road[ 0 ]
+initial
+begin
+	Secondary_Road[0] = 1'b0;
+end 
+// StateFlag[ 1 ]
+initial
+begin
+	StateFlag[1] = 1'b0;
+end 
+// StateFlag[ 0 ]
+initial
+begin
+	StateFlag[0] = 1'b0;
+end 
+// Ta[ 6 ]
+initial
+begin
+	Ta[6] = 1'b0;
+end 
+// Ta[ 5 ]
+initial
+begin
+	Ta[5] = 1'b0;
+end 
+// Ta[ 4 ]
+initial
+begin
+	Ta[4] = 1'b0;
+end 
+// Ta[ 3 ]
+initial
+begin
+	Ta[3] = 1'b0;
+end 
+// Ta[ 2 ]
+initial
+begin
+	Ta[2] = 1'b0;
+end 
+// Ta[ 1 ]
+initial
+begin
+	Ta[1] = 1'b0;
+end 
+// Ta[ 0 ]
+initial
+begin
+	Ta[0] = 1'b0;
+end 
+// Tpv[ 6 ]
+initial
+begin
+	Tpv[6] = 1'b0;
+end 
+// Tpv[ 5 ]
+initial
+begin
+	Tpv[5] = 1'b0;
+end 
+// Tpv[ 4 ]
+initial
+begin
+	Tpv[4] = 1'b0;
+end 
+// Tpv[ 3 ]
+initial
+begin
+	Tpv[3] = 1'b0;
+end 
+// Tpv[ 2 ]
+initial
+begin
+	Tpv[2] = 1'b0;
+end 
+// Tpv[ 1 ]
+initial
+begin
+	Tpv[1] = 1'b0;
+end 
+// Tpv[ 0 ]
+initial
+begin
+	Tpv[0] = 1'b0;
+end 
+// Tsv[ 6 ]
+initial
+begin
+	Tsv[6] = 1'b0;
+end 
+// Tsv[ 5 ]
+initial
+begin
+	Tsv[5] = 1'b0;
+end 
+// Tsv[ 4 ]
+initial
+begin
+	Tsv[4] = 1'b0;
+end 
+// Tsv[ 3 ]
+initial
+begin
+	Tsv[3] = 1'b0;
+end 
+// Tsv[ 2 ]
+initial
+begin
+	Tsv[2] = 1'b0;
+end 
+// Tsv[ 1 ]
+initial
+begin
+	Tsv[1] = 1'b0;
+end 
+// Tsv[ 0 ]
+initial
+begin
+	Tsv[0] = 1'b0;
+end 
+// timeRemaining[ 6 ]
+initial
+begin
+	timeRemaining[6] = 1'b0;
+end 
+// timeRemaining[ 5 ]
+initial
+begin
+	timeRemaining[5] = 1'b0;
+end 
+// timeRemaining[ 4 ]
+initial
+begin
+	timeRemaining[4] = 1'b0;
+end 
+// timeRemaining[ 3 ]
+initial
+begin
+	timeRemaining[3] = 1'b0;
+end 
+// timeRemaining[ 2 ]
+initial
+begin
+	timeRemaining[2] = 1'b0;
+end 
+// timeRemaining[ 1 ]
+initial
+begin
+	timeRemaining[1] = 1'b0;
+end 
+// timeRemaining[ 0 ]
+initial
+begin
+	timeRemaining[0] = 1'b0;
 end 
 endmodule
 

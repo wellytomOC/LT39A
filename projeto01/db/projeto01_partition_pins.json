@@ -4,6 +4,22 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "row[0]",
+					"strict" : false
+				},
+				{
+					"name" : "row[1]",
+					"strict" : false
+				},
+				{
+					"name" : "row[2]",
+					"strict" : false
+				},
+				{
+					"name" : "row[3]",
+					"strict" : false
+				},
+				{
 					"name" : "RS",
 					"strict" : false
 				},
@@ -44,23 +60,23 @@
 					"strict" : false
 				},
 				{
-					"name" : "clock500Hz",
-					"strict" : false
-				},
-				{
-					"name" : "PhraseSel[0]",
-					"strict" : false
-				},
-				{
-					"name" : "PhraseSel[1]",
-					"strict" : false
-				},
-				{
 					"name" : "reset",
 					"strict" : false
 				},
 				{
-					"name" : "clock50MHz",
+					"name" : "col[2]",
+					"strict" : false
+				},
+				{
+					"name" : "col[0]",
+					"strict" : false
+				},
+				{
+					"name" : "col[1]",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
 					"strict" : false
 				}
 			]

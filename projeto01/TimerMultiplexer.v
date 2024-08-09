@@ -5,7 +5,7 @@ module TimerMultiplexer (
     output reg[6:0] MuxOut
 );
 
-    always @(sel) begin   
+    always @(*) begin   
         case (sel)
             2'b00: MuxOut = Tpv;
             2'b01: MuxOut = Tsv;

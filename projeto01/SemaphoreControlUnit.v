@@ -31,6 +31,16 @@ module SemaphoreControlUnit (
     //bloco combinacional
     always @(*) begin
         case(PresentState)                  // 3'bxyz -> vermelho | amarelo | verde         2'bxz -> vermelho | verde
+            default: begin
+                Principal_Road = 3'b001;
+                Secondary_Road = 3'b100;
+
+                Principal_Pedestrian = 2'b10;
+                Secondary_Pedestrian = 2'b01;
+
+                TimerMux = 2'b00;
+                NextState = PrincipalGreen;
+            end
             PrincipalGreen: begin
 
                 Principal_Road = 3'b001;

@@ -1,11 +1,11 @@
-Fitter Status : Successful - Wed Jul 31 17:36:10 2024
+Fitter Status : Successful - Wed Aug 07 16:10:59 2024
 Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 Revision Name : atv04
 Top-level Entity Name : Arquitetura
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 164 / 114,480 ( < 1 % )
+Total logic elements : 160 / 114,480 ( < 1 % )
     Total combinational functions : 154 / 114,480 ( < 1 % )
     Dedicated logic registers : 50 / 114,480 ( < 1 % )
 Total registers : 50

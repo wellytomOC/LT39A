@@ -1,5 +1,5 @@
 module Sistema (
-    input wire clock, clock1Hz, reset,
+    input wire clock1Hz, reset,
 
     input wire dav,
     input wire[3:0] dataIn,

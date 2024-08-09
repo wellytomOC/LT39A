@@ -15,7 +15,7 @@ module ClockDivider (
             counter500Hz <= 0;
             clock500Hz <= ~clock500Hz;
         end else begin
-            counter500Hz <= counter500Hz + 1;
+            counter500Hz <= counter500Hz + 16'd1;
         end
         
         // Clock divider for 1Hz
@@ -23,7 +23,7 @@ module ClockDivider (
             counter1Hz <= 0;
             Clock1Hz <= ~Clock1Hz;
         end else begin
-            counter1Hz <= counter1Hz + 1;
+            counter1Hz <= counter1Hz + 25'd1;
         end
     end
 
