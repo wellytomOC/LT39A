@@ -4,19 +4,23 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "row[0]",
+					"name" : "char_index[0]",
 					"strict" : false
 				},
 				{
-					"name" : "row[1]",
+					"name" : "char_index[1]",
 					"strict" : false
 				},
 				{
-					"name" : "row[2]",
+					"name" : "char_index[2]",
 					"strict" : false
 				},
 				{
-					"name" : "row[3]",
+					"name" : "char_index[3]",
+					"strict" : false
+				},
+				{
+					"name" : "char_index[4]",
 					"strict" : false
 				},
 				{
@@ -60,23 +64,43 @@
 					"strict" : false
 				},
 				{
+					"name" : "clock500Hz",
+					"strict" : false
+				},
+				{
+					"name" : "phrase[0]",
+					"strict" : false
+				},
+				{
+					"name" : "phrase[1]",
+					"strict" : false
+				},
+				{
+					"name" : "phrase[2]",
+					"strict" : false
+				},
+				{
+					"name" : "phrase[3]",
+					"strict" : false
+				},
+				{
+					"name" : "phrase[4]",
+					"strict" : false
+				},
+				{
+					"name" : "phrase[5]",
+					"strict" : false
+				},
+				{
+					"name" : "phrase[6]",
+					"strict" : false
+				},
+				{
+					"name" : "phrase[7]",
+					"strict" : false
+				},
+				{
 					"name" : "reset",
-					"strict" : false
-				},
-				{
-					"name" : "col[2]",
-					"strict" : false
-				},
-				{
-					"name" : "col[0]",
-					"strict" : false
-				},
-				{
-					"name" : "col[1]",
-					"strict" : false
-				},
-				{
-					"name" : "clock",
 					"strict" : false
 				}
 			]

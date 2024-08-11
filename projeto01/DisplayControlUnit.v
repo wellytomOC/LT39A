@@ -31,9 +31,17 @@ module DisplayControlUnit (
      always @(posedge reset or posedge clock500Hz) begin
         if(reset) begin
             PresentState <= FS1;
+            char_index <= 5'd0;
         end
         else begin
             PresentState <= NextState;
+            if(NextState == WriteChar) begin
+                char_index <= char_index + 5'd1;
+            end
+            if(NextState == ReturnHome) begin
+                char_index <= 5'd0;
+            end
+            
         end
     end
 
@@ -46,7 +54,6 @@ module DisplayControlUnit (
                 RW = 1'b0;
                 DB = 8'b00111000;
                 NextState = FS1;
-				char_index = 5'd0;
             end 
 
             FS1: begin
@@ -54,7 +61,6 @@ module DisplayControlUnit (
                 RW = 1'b0;
                 DB = 8'b00111000;
                 NextState = FS2;
-				char_index = 5'd0;
             end
 
             FS2: begin
@@ -62,7 +68,6 @@ module DisplayControlUnit (
                 RW = 1'b0;
                 DB = 8'b00111000;
                 NextState = FS3;
-                char_index = 5'd0;
             end
 
             FS3: begin
@@ -70,7 +75,6 @@ module DisplayControlUnit (
                 RW = 1'b0;
                 DB = 8'b00111000;
                 NextState = FS4;
-                char_index = 5'd0;
             end
 
             FS4: begin
@@ -78,7 +82,6 @@ module DisplayControlUnit (
                 RW = 1'b0;
                 DB = 8'b00111000;
                 NextState = ClearDisplay;
-                char_index = 5'd0;
             end
 
             ClearDisplay: begin
@@ -86,7 +89,6 @@ module DisplayControlUnit (
                 RW = 1'b0;
                 DB = 8'b00000001;
                 NextState = DisplayControl;
-                char_index = 5'd0;
             end
 
             DisplayControl: begin
@@ -94,7 +96,6 @@ module DisplayControlUnit (
                 RW = 1'b0;
                 DB = 8'b00001100;
                 NextState = EntryMode;
-                char_index = 5'd0;
             end
 
             EntryMode: begin
@@ -102,7 +103,6 @@ module DisplayControlUnit (
                 RW = 1'b0;
                 DB = 8'b00000110;
                 NextState = WriteChar;
-                char_index = 5'd0;
             end
 
             ReturnHome: begin
@@ -110,7 +110,6 @@ module DisplayControlUnit (
                 RW = 1'b0;
                 DB = 8'b10000000;
                 NextState = WriteChar;
-                char_index = 5'd0;
             end
 
             SetAddress: begin
@@ -118,26 +117,20 @@ module DisplayControlUnit (
                 RW = 1'b0;
                 DB = 8'b11000000;
                 NextState = WriteChar;
-                char_index = 5'd16;
             end
 
             WriteChar: begin
                 RS = 1'b1;
                 RW = 1'b0;
                 DB = phrase;
+                
 
-                char_index = char_index + 5'd1;
-
-                if (char_index == 5'd16) begin
+                if (char_index == 5'd15) begin
                     NextState = SetAddress;
                 end
                 else if (char_index == 5'd31) begin
-                    char_index = 5'd0;
-                    NextState = ClearDisplay;
+                    NextState = ReturnHome;
                 end
-                else if (char_index != 5'd16 && char_index != 5'd31) begin
-                    NextState = WriteChar;
-                end 
                 else begin
                     NextState = WriteChar;
                 end
