@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projeto01
-Sat Aug 10 17:35:18 2024
+Sat Aug 10 23:19:30 2024
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -13,14 +13,31 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |DisplayControlUnit|PresentState
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |DisplayControlUnit
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  8. State Machine - |Arquitetura|Saida:inst03|DisplayControlUnit:inst02|PresentState
+  9. State Machine - |Arquitetura|Sistema:inst02|SemaphoreControlUnit:SCU01|PresentState
+ 10. State Machine - |Arquitetura|Sistema:inst02|ManualControlUnit:inst01|PresentState
+ 11. State Machine - |Arquitetura|Entrada:inst01|keypadEncoder2:inst02|ring
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for User Entity Instance: Entrada:inst01|ClockDivider:inst01
+ 17. Parameter Settings for User Entity Instance: Sistema:inst02|ManualControlUnit:inst01
+ 18. Parameter Settings for User Entity Instance: Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Unit
+ 19. Parameter Settings for User Entity Instance: Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Ten
+ 20. Parameter Settings for User Entity Instance: Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit
+ 21. Parameter Settings for User Entity Instance: Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten
+ 22. Parameter Settings for User Entity Instance: Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoAmarelo_Unit
+ 23. Parameter Settings for User Entity Instance: Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoAmarelo_Ten
+ 24. Parameter Settings for User Entity Instance: Sistema:inst02|SemaphoreControlUnit:SCU01
+ 25. Parameter Settings for User Entity Instance: Saida:inst03|DisplayControlUnit:inst02
+ 26. Port Connectivity Checks: "Saida:inst03|DisplayControlUnit:inst02"
+ 27. Port Connectivity Checks: "Saida:inst03|PhraseBank:inst01"
+ 28. Port Connectivity Checks: "Entrada:inst01"
+ 29. Post-Synthesis Netlist Statistics for Top Partition
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
+ 32. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -47,16 +64,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Aug 10 17:35:18 2024       ;
+; Analysis & Synthesis Status        ; Successful - Sat Aug 10 23:19:30 2024       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; projeto01                                   ;
-; Top-level Entity Name              ; DisplayControlUnit                          ;
+; Top-level Entity Name              ; Arquitetura                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 31                                          ;
-;     Total combinational functions  ; 25                                          ;
-;     Dedicated logic registers      ; 15                                          ;
-; Total registers                    ; 15                                          ;
-; Total pins                         ; 26                                          ;
+; Total logic elements               ; 106                                         ;
+;     Total combinational functions  ; 98                                          ;
+;     Dedicated logic registers      ; 61                                          ;
+; Total registers                    ; 61                                          ;
+; Total pins                         ; 22                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -70,7 +87,7 @@ agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                                      ; DisplayControlUnit ; projeto01          ;
+; Top-level entity name                                                      ; Arquitetura        ; projeto01          ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
 ; Maximum processors allowed for parallel compilation                        ; 6                  ;                    ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
@@ -168,60 +185,84 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                       ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                         ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+---------+
-; DisplayControlUnit.v             ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/DisplayControlUnit.v ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+---------+
+; Deconcatener.v                   ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/Deconcatener.v         ;         ;
+; Arquitetura.v                    ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v          ;         ;
+; Saida.v                          ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/Saida.v                ;         ;
+; ManualControlUnit.v              ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/ManualControlUnit.v    ;         ;
+; ClockDivider.v                   ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/ClockDivider.v         ;         ;
+; keypadEncoder2.v                 ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/keypadEncoder2.v       ;         ;
+; RomPadrao.v                      ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomPadrao.v            ;         ;
+; RomDefinirSecundario.v           ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomDefinirSecundario.v ;         ;
+; RomDefinirPrincipal.v            ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomDefinirPrincipal.v  ;         ;
+; RomDefinirAmarelo.v              ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomDefinirAmarelo.v    ;         ;
+; PhraseBank.v                     ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/PhraseBank.v           ;         ;
+; DisplayControlUnit.v             ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/DisplayControlUnit.v   ;         ;
+; SemaphoreControlUnit.v           ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/SemaphoreControlUnit.v ;         ;
+; Entrada.v                        ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/Entrada.v              ;         ;
+; TimerMultiplexer.v               ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/TimerMultiplexer.v     ;         ;
+; Sistema.v                        ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v              ;         ;
+; RegisterBank.v                   ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/RegisterBank.v         ;         ;
+; Register.v                       ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/Register.v             ;         ;
+; Concatener.v                     ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/Concatener.v           ;         ;
+; Timer.v                          ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/Timer.v                ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                    ;
-+---------------------------------------------+------------------+
-; Resource                                    ; Usage            ;
-+---------------------------------------------+------------------+
-; Estimated Total logic elements              ; 31               ;
-;                                             ;                  ;
-; Total combinational functions               ; 25               ;
-; Logic element usage by number of LUT inputs ;                  ;
-;     -- 4 input functions                    ; 10               ;
-;     -- 3 input functions                    ; 9                ;
-;     -- <=2 input functions                  ; 6                ;
-;                                             ;                  ;
-; Logic elements by mode                      ;                  ;
-;     -- normal mode                          ; 21               ;
-;     -- arithmetic mode                      ; 4                ;
-;                                             ;                  ;
-; Total registers                             ; 15               ;
-;     -- Dedicated logic registers            ; 15               ;
-;     -- I/O registers                        ; 0                ;
-;                                             ;                  ;
-; I/O pins                                    ; 26               ;
-;                                             ;                  ;
-; Embedded Multiplier 9-bit elements          ; 0                ;
-;                                             ;                  ;
-; Maximum fan-out node                        ; clock500Hz~input ;
-; Maximum fan-out                             ; 16               ;
-; Total fan-out                               ; 162              ;
-; Average fan-out                             ; 1.76             ;
-+---------------------------------------------+------------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 106         ;
+;                                             ;             ;
+; Total combinational functions               ; 98          ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 20          ;
+;     -- 3 input functions                    ; 6           ;
+;     -- <=2 input functions                  ; 72          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 56          ;
+;     -- arithmetic mode                      ; 42          ;
+;                                             ;             ;
+; Total registers                             ; 61          ;
+;     -- Dedicated logic registers            ; 61          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 22          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 42          ;
+; Total fan-out                               ; 416         ;
+; Average fan-out                             ; 2.05        ;
++---------------------------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                             ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name        ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------------+--------------+
-; |DisplayControlUnit        ; 25 (25)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 26   ; 0            ; |DisplayControlUnit ; DisplayControlUnit ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                    ;
++-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                 ; Entity Name        ; Library Name ;
++-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------+--------------------+--------------+
+; |Arquitetura                      ; 98 (0)              ; 61 (0)                    ; 0           ; 0            ; 0       ; 0         ; 22   ; 0            ; |Arquitetura                                        ; Arquitetura        ; work         ;
+;    |Entrada:inst01|               ; 76 (0)              ; 46 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01                         ; Entrada            ; work         ;
+;       |ClockDivider:inst01|       ; 73 (73)             ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01|ClockDivider:inst01     ; ClockDivider       ; work         ;
+;       |keypadEncoder2:inst02|     ; 3 (3)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01|keypadEncoder2:inst02   ; keypadEncoder2     ; work         ;
+;    |Saida:inst03|                 ; 22 (0)              ; 15 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:inst03                           ; Saida              ; work         ;
+;       |DisplayControlUnit:inst02| ; 22 (22)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:inst03|DisplayControlUnit:inst02 ; DisplayControlUnit ; work         ;
++-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |DisplayControlUnit|PresentState                                                                                                                                                                                                                        ;
+; State Machine - |Arquitetura|Saida:inst03|DisplayControlUnit:inst02|PresentState                                                                                                                                                                                        ;
 +-----------------------------+------------------------+-------------------------+-------------------------+------------------------+-----------------------------+---------------------------+------------------+------------------+------------------+------------------+
 ; Name                        ; PresentState.WriteChar ; PresentState.SetAddress ; PresentState.ReturnHome ; PresentState.EntryMode ; PresentState.DisplayControl ; PresentState.ClearDisplay ; PresentState.FS4 ; PresentState.FS3 ; PresentState.FS2 ; PresentState.FS1 ;
 +-----------------------------+------------------------+-------------------------+-------------------------+------------------------+-----------------------------+---------------------------+------------------+------------------+------------------+------------------+
@@ -238,17 +279,108 @@ Encoding Type:  One-Hot
 +-----------------------------+------------------------+-------------------------+-------------------------+------------------------+-----------------------------+---------------------------+------------------+------------------+------------------+------------------+
 
 
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; PresentState~4                        ; Lost fanout        ;
-; PresentState~5                        ; Lost fanout        ;
-; PresentState~6                        ; Lost fanout        ;
-; PresentState~7                        ; Lost fanout        ;
-; Total Number of Removed Registers = 4 ;                    ;
-+---------------------------------------+--------------------+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Arquitetura|Sistema:inst02|SemaphoreControlUnit:SCU01|PresentState                                                                    ;
++------------------------------+------------------------------+-----------------------------+------------------------------+-----------------------------+
+; Name                         ; PresentState.SecondaryYellow ; PresentState.SecondaryGreen ; PresentState.PrincipalYellow ; PresentState.PrincipalGreen ;
++------------------------------+------------------------------+-----------------------------+------------------------------+-----------------------------+
+; PresentState.PrincipalGreen  ; 0                            ; 0                           ; 0                            ; 0                           ;
+; PresentState.PrincipalYellow ; 0                            ; 0                           ; 1                            ; 1                           ;
+; PresentState.SecondaryGreen  ; 0                            ; 1                           ; 0                            ; 1                           ;
+; PresentState.SecondaryYellow ; 1                            ; 0                           ; 0                            ; 1                           ;
++------------------------------+------------------------------+-----------------------------+------------------------------+-----------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Arquitetura|Sistema:inst02|ManualControlUnit:inst01|PresentState                                                                                                                                                                                              ;
++------------------------------------+---------------------------------+---------------------------------+------------------------------------+------------------------------------+-----------------------------------+-----------------------------------+---------------------+
+; Name                               ; PresentState.DefinirAmareloTens ; PresentState.DefinirAmareloUnit ; PresentState.DefinirSecundarioTens ; PresentState.DefinirSecundarioUnit ; PresentState.DefinirPrincipalTens ; PresentState.DefinirPrincipalUnit ; PresentState.Padrao ;
++------------------------------------+---------------------------------+---------------------------------+------------------------------------+------------------------------------+-----------------------------------+-----------------------------------+---------------------+
+; PresentState.Padrao                ; 0                               ; 0                               ; 0                                  ; 0                                  ; 0                                 ; 0                                 ; 0                   ;
+; PresentState.DefinirPrincipalUnit  ; 0                               ; 0                               ; 0                                  ; 0                                  ; 0                                 ; 1                                 ; 1                   ;
+; PresentState.DefinirPrincipalTens  ; 0                               ; 0                               ; 0                                  ; 0                                  ; 1                                 ; 0                                 ; 1                   ;
+; PresentState.DefinirSecundarioUnit ; 0                               ; 0                               ; 0                                  ; 1                                  ; 0                                 ; 0                                 ; 1                   ;
+; PresentState.DefinirSecundarioTens ; 0                               ; 0                               ; 1                                  ; 0                                  ; 0                                 ; 0                                 ; 1                   ;
+; PresentState.DefinirAmareloUnit    ; 0                               ; 1                               ; 0                                  ; 0                                  ; 0                                 ; 0                                 ; 1                   ;
+; PresentState.DefinirAmareloTens    ; 1                               ; 0                               ; 0                                  ; 0                                  ; 0                                 ; 0                                 ; 1                   ;
++------------------------------------+---------------------------------+---------------------------------+------------------------------------+------------------------------------+-----------------------------------+-----------------------------------+---------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------+
+; State Machine - |Arquitetura|Entrada:inst01|keypadEncoder2:inst02|ring ;
++-----------+-----------+-----------+-----------+------------------------+
+; Name      ; ring.0111 ; ring.1011 ; ring.1101 ; ring.1110              ;
++-----------+-----------+-----------+-----------+------------------------+
+; ring.1110 ; 0         ; 0         ; 0         ; 0                      ;
+; ring.1011 ; 0         ; 1         ; 0         ; 1                      ;
+; ring.1101 ; 0         ; 0         ; 1         ; 1                      ;
+; ring.0111 ; 1         ; 0         ; 0         ; 1                      ;
++-----------+-----------+-----------+-----------+------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                     ;
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------+
+; Register name                                                                           ; Reason for Removal                                           ;
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------+
+; Saida:inst03|DisplayControlUnit:inst02|PresentState~4                                   ; Lost fanout                                                  ;
+; Saida:inst03|DisplayControlUnit:inst02|PresentState~5                                   ; Lost fanout                                                  ;
+; Saida:inst03|DisplayControlUnit:inst02|PresentState~6                                   ; Lost fanout                                                  ;
+; Saida:inst03|DisplayControlUnit:inst02|PresentState~7                                   ; Lost fanout                                                  ;
+; Sistema:inst02|SemaphoreControlUnit:SCU01|PresentState~4                                ; Lost fanout                                                  ;
+; Sistema:inst02|SemaphoreControlUnit:SCU01|PresentState~5                                ; Lost fanout                                                  ;
+; Sistema:inst02|ManualControlUnit:inst01|PresentState~4                                  ; Lost fanout                                                  ;
+; Sistema:inst02|ManualControlUnit:inst01|PresentState~5                                  ; Lost fanout                                                  ;
+; Sistema:inst02|ManualControlUnit:inst01|PresentState~6                                  ; Lost fanout                                                  ;
+; Sistema:inst02|Timer:Timer01|trigger                                                    ; Lost fanout                                                  ;
+; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Ten|dout[0..3]   ; Lost fanout                                                  ;
+; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Unit|dout[1..3]  ; Lost fanout                                                  ;
+; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[0..3]  ; Lost fanout                                                  ;
+; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[1..3] ; Lost fanout                                                  ;
+; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoAmarelo_Ten|dout[0..3]          ; Lost fanout                                                  ;
+; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoAmarelo_Unit|dout[1..3]         ; Lost fanout                                                  ;
+; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Unit|dout[0]     ; Lost fanout                                                  ;
+; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[0]    ; Lost fanout                                                  ;
+; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoAmarelo_Unit|dout[0]            ; Lost fanout                                                  ;
+; Sistema:inst02|Timer:Timer01|counter[0..6]                                              ; Lost fanout                                                  ;
+; Sistema:inst02|SemaphoreControlUnit:SCU01|PresentState.PrincipalGreen                   ; Lost fanout                                                  ;
+; Sistema:inst02|SemaphoreControlUnit:SCU01|PresentState.PrincipalYellow                  ; Lost fanout                                                  ;
+; Sistema:inst02|SemaphoreControlUnit:SCU01|PresentState.SecondaryGreen                   ; Lost fanout                                                  ;
+; Sistema:inst02|SemaphoreControlUnit:SCU01|PresentState.SecondaryYellow                  ; Lost fanout                                                  ;
+; Sistema:inst02|ManualControlUnit:inst01|PresentState.Padrao                             ; Lost fanout                                                  ;
+; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalUnit               ; Lost fanout                                                  ;
+; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalTens               ; Lost fanout                                                  ;
+; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit              ; Lost fanout                                                  ;
+; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens              ; Lost fanout                                                  ;
+; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloUnit                 ; Lost fanout                                                  ;
+; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloTens                 ; Lost fanout                                                  ;
+; Entrada:inst01|ClockDivider:inst01|counter500Hz[0]                                      ; Merged with Entrada:inst01|ClockDivider:inst01|counter1Hz[0] ;
+; Total Number of Removed Registers = 53                                                  ;                                                              ;
++-----------------------------------------------------------------------------------------+--------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                       ;
++-----------------------------------------------------------------------------+--------------------+--------------------------------------------------------------------------------+
+; Register name                                                               ; Reason for Removal ; Registers Removed due to This Register                                         ;
++-----------------------------------------------------------------------------+--------------------+--------------------------------------------------------------------------------+
+; Sistema:inst02|SemaphoreControlUnit:SCU01|PresentState~4                    ; Lost Fanouts       ; Sistema:inst02|Timer:Timer01|trigger, Sistema:inst02|Timer:Timer01|counter[6], ;
+;                                                                             ;                    ; Sistema:inst02|Timer:Timer01|counter[5],                                       ;
+;                                                                             ;                    ; Sistema:inst02|SemaphoreControlUnit:SCU01|PresentState.PrincipalGreen,         ;
+;                                                                             ;                    ; Sistema:inst02|SemaphoreControlUnit:SCU01|PresentState.PrincipalYellow,        ;
+;                                                                             ;                    ; Sistema:inst02|SemaphoreControlUnit:SCU01|PresentState.SecondaryGreen,         ;
+;                                                                             ;                    ; Sistema:inst02|SemaphoreControlUnit:SCU01|PresentState.SecondaryYellow         ;
+; Sistema:inst02|ManualControlUnit:inst01|PresentState~4                      ; Lost Fanouts       ; Sistema:inst02|ManualControlUnit:inst01|PresentState.Padrao,                   ;
+;                                                                             ;                    ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalTens,     ;
+;                                                                             ;                    ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens     ;
+; Sistema:inst02|ManualControlUnit:inst01|PresentState~5                      ; Lost Fanouts       ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalUnit,     ;
+;                                                                             ;                    ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloUnit        ;
+; Sistema:inst02|ManualControlUnit:inst01|PresentState~6                      ; Lost Fanouts       ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit     ;
+; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoAmarelo_Ten|dout[3] ; Lost Fanouts       ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloTens        ;
++-----------------------------------------------------------------------------+--------------------+--------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -256,42 +388,173 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 15    ;
+; Total registers                              ; 61    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 15    ;
+; Number of registers using Asynchronous Clear ; 19    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 4     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DisplayControlUnit|char_index[0]~reg0 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |Arquitetura|Saida:inst03|DisplayControlUnit:inst02|char_index[0] ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |Arquitetura|Sistema:inst02|TimerMultiplexer:TimerMux01|Mux6      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |DisplayControlUnit ;
-+----------------+-------+-----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                      ;
-+----------------+-------+-----------------------------------------------------------+
-; FS1            ; 0000  ; Unsigned Binary                                           ;
-; FS2            ; 0001  ; Unsigned Binary                                           ;
-; FS3            ; 0010  ; Unsigned Binary                                           ;
-; FS4            ; 0011  ; Unsigned Binary                                           ;
-; ClearDisplay   ; 0100  ; Unsigned Binary                                           ;
-; DisplayControl ; 0101  ; Unsigned Binary                                           ;
-; EntryMode      ; 0110  ; Unsigned Binary                                           ;
-; ReturnHome     ; 0111  ; Unsigned Binary                                           ;
-; SetAddress     ; 1000  ; Unsigned Binary                                           ;
-; WriteChar      ; 1001  ; Unsigned Binary                                           ;
-+----------------+-------+-----------------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Entrada:inst01|ClockDivider:inst01 ;
++----------------+----------+-----------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                ;
++----------------+----------+-----------------------------------------------------+
+; DIV500HZ       ; 50000    ; Signed Integer                                      ;
+; DIV1HZ         ; 25000000 ; Signed Integer                                      ;
++----------------+----------+-----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Sistema:inst02|ManualControlUnit:inst01 ;
++-----------------------+-------+------------------------------------------------------+
+; Parameter Name        ; Value ; Type                                                 ;
++-----------------------+-------+------------------------------------------------------+
+; Padrao                ; 000   ; Unsigned Binary                                      ;
+; DefinirPrincipalUnit  ; 001   ; Unsigned Binary                                      ;
+; DefinirPrincipalTens  ; 010   ; Unsigned Binary                                      ;
+; DefinirSecundarioUnit ; 011   ; Unsigned Binary                                      ;
+; DefinirSecundarioTens ; 100   ; Unsigned Binary                                      ;
+; DefinirAmareloUnit    ; 101   ; Unsigned Binary                                      ;
+; DefinirAmareloTens    ; 110   ; Unsigned Binary                                      ;
++-----------------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Unit ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+; INITIAL_VALUE  ; 0000  ; Unsigned Binary                                                                                 ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Ten ;
++----------------+-------+------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                           ;
++----------------+-------+------------------------------------------------------------------------------------------------+
+; INITIAL_VALUE  ; 0011  ; Unsigned Binary                                                                                ;
++----------------+-------+------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; INITIAL_VALUE  ; 0101  ; Unsigned Binary                                                                                  ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+; INITIAL_VALUE  ; 0001  ; Unsigned Binary                                                                                 ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoAmarelo_Unit ;
++----------------+-------+------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------------+
+; INITIAL_VALUE  ; 0011  ; Unsigned Binary                                                                          ;
++----------------+-------+------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoAmarelo_Ten ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; INITIAL_VALUE  ; 0000  ; Unsigned Binary                                                                         ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Sistema:inst02|SemaphoreControlUnit:SCU01 ;
++-----------------+-------+--------------------------------------------------------------+
+; Parameter Name  ; Value ; Type                                                         ;
++-----------------+-------+--------------------------------------------------------------+
+; PrincipalGreen  ; 00    ; Unsigned Binary                                              ;
+; PrincipalYellow ; 01    ; Unsigned Binary                                              ;
+; SecondaryGreen  ; 10    ; Unsigned Binary                                              ;
+; SecondaryYellow ; 11    ; Unsigned Binary                                              ;
++-----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Saida:inst03|DisplayControlUnit:inst02 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; FS1            ; 0000  ; Unsigned Binary                                            ;
+; FS2            ; 0001  ; Unsigned Binary                                            ;
+; FS3            ; 0010  ; Unsigned Binary                                            ;
+; FS4            ; 0011  ; Unsigned Binary                                            ;
+; ClearDisplay   ; 0100  ; Unsigned Binary                                            ;
+; DisplayControl ; 0101  ; Unsigned Binary                                            ;
+; EntryMode      ; 0110  ; Unsigned Binary                                            ;
+; ReturnHome     ; 0111  ; Unsigned Binary                                            ;
+; SetAddress     ; 1000  ; Unsigned Binary                                            ;
+; WriteChar      ; 1001  ; Unsigned Binary                                            ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "Saida:inst03|DisplayControlUnit:inst02" ;
++--------------+-------+----------+----------------------------------+
+; Port         ; Type  ; Severity ; Details                          ;
++--------------+-------+----------+----------------------------------+
+; phrase[5..1] ; Input ; Info     ; Stuck at GND                     ;
+; phrase[7]    ; Input ; Info     ; Stuck at GND                     ;
+; phrase[6]    ; Input ; Info     ; Stuck at VCC                     ;
+; phrase[0]    ; Input ; Info     ; Stuck at VCC                     ;
++--------------+-------+----------+----------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Saida:inst03|PhraseBank:inst01"                                                       ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Phrase ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Entrada:inst01"                                                                           ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; clock500Hz ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -299,20 +562,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 26                          ;
-; cycloneiii_ff         ; 15                          ;
+; boundary_port         ; 22                          ;
+; cycloneiii_ff         ; 61                          ;
 ;     CLR               ; 15                          ;
-; cycloneiii_lcell_comb ; 26                          ;
-;     arith             ; 4                           ;
-;         2 data inputs ; 4                           ;
-;     normal            ; 22                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         3 data inputs ; 9                           ;
-;         4 data inputs ; 10                          ;
+;     ENA CLR           ; 4                           ;
+;     plain             ; 42                          ;
+; cycloneiii_lcell_comb ; 105                         ;
+;     arith             ; 42                          ;
+;         2 data inputs ; 41                          ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 63                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 11                          ;
+;         2 data inputs ; 25                          ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 20                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.94                        ;
+; Max LUT depth         ; 4.40                        ;
+; Average LUT depth     ; 2.95                        ;
 +-----------------------+-----------------------------+
 
 
@@ -331,9 +598,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Aug 10 17:35:09 2024
+    Info: Processing started: Sat Aug 10 23:19:21 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projeto01 -c projeto01
 Info (20032): Parallel compilation is enabled and will use up to 6 processors
+Info (12021): Found 1 design units, including 1 entities, in source file deconcatener.v
+    Info (12023): Found entity 1: Deconcatener File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Deconcatener.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file arquitetura.v
     Info (12023): Found entity 1: Arquitetura File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file saida.v
@@ -374,21 +643,84 @@ Info (12021): Found 1 design units, including 1 entities, in source file concate
     Info (12023): Found entity 1: Concatener File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Concatener.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file timer.v
     Info (12023): Found entity 1: Timer File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Timer.v Line: 1
-Info (12127): Elaborating entity "DisplayControlUnit" for the top level hierarchy
+Info (12127): Elaborating entity "Arquitetura" for the top level hierarchy
+Info (12128): Elaborating entity "Entrada" for hierarchy "Entrada:inst01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 21
+Info (12128): Elaborating entity "ClockDivider" for hierarchy "Entrada:inst01|ClockDivider:inst01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Entrada.v Line: 12
+Info (12128): Elaborating entity "keypadEncoder2" for hierarchy "Entrada:inst01|keypadEncoder2:inst02" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Entrada.v Line: 14
+Critical Warning (10237): Verilog HDL warning at keypadEncoder2.v(27): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/keypadEncoder2.v Line: 27
+Info (12128): Elaborating entity "Sistema" for hierarchy "Sistema:inst02" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 33
+Info (12128): Elaborating entity "ManualControlUnit" for hierarchy "Sistema:inst02|ManualControlUnit:inst01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v Line: 21
+Info (12128): Elaborating entity "RegisterBank" for hierarchy "Sistema:inst02|RegisterBank:regBank01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v Line: 24
+Info (12128): Elaborating entity "Register" for hierarchy "Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Unit" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RegisterBank.v Line: 11
+Info (12128): Elaborating entity "Register" for hierarchy "Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Ten" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RegisterBank.v Line: 12
+Info (12128): Elaborating entity "Concatener" for hierarchy "Sistema:inst02|RegisterBank:regBank01|Concatener:Concat_Tpv" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RegisterBank.v Line: 14
+Info (12128): Elaborating entity "Register" for hierarchy "Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RegisterBank.v Line: 17
+Info (12128): Elaborating entity "Register" for hierarchy "Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RegisterBank.v Line: 18
+Info (12128): Elaborating entity "TimerMultiplexer" for hierarchy "Sistema:inst02|TimerMultiplexer:TimerMux01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v Line: 28
+Info (12128): Elaborating entity "Timer" for hierarchy "Sistema:inst02|Timer:Timer01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v Line: 32
+Info (12128): Elaborating entity "SemaphoreControlUnit" for hierarchy "Sistema:inst02|SemaphoreControlUnit:SCU01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v Line: 36
+Info (12128): Elaborating entity "Saida" for hierarchy "Saida:inst03" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 37
+Info (12128): Elaborating entity "PhraseBank" for hierarchy "Saida:inst03|PhraseBank:inst01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Saida.v Line: 21
+Warning (10030): Net "Numbers.data_a" at PhraseBank.v(21) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/PhraseBank.v Line: 21
+Warning (10030): Net "Numbers.waddr_a" at PhraseBank.v(21) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/PhraseBank.v Line: 21
+Warning (10030): Net "Numbers.we_a" at PhraseBank.v(21) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/PhraseBank.v Line: 21
+Info (12128): Elaborating entity "Deconcatener" for hierarchy "Saida:inst03|PhraseBank:inst01|Deconcatener:inst00" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/PhraseBank.v Line: 15
+Warning (10230): Verilog HDL assignment warning at Deconcatener.v(7): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Deconcatener.v Line: 7
+Warning (10230): Verilog HDL assignment warning at Deconcatener.v(8): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Deconcatener.v Line: 8
+Warning (10230): Verilog HDL assignment warning at Deconcatener.v(10): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Deconcatener.v Line: 10
+Warning (10230): Verilog HDL assignment warning at Deconcatener.v(11): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Deconcatener.v Line: 11
+Warning (10230): Verilog HDL assignment warning at Deconcatener.v(13): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Deconcatener.v Line: 13
+Warning (10230): Verilog HDL assignment warning at Deconcatener.v(14): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Deconcatener.v Line: 14
+Warning (10230): Verilog HDL assignment warning at Deconcatener.v(16): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Deconcatener.v Line: 16
+Warning (10230): Verilog HDL assignment warning at Deconcatener.v(17): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Deconcatener.v Line: 17
+Info (12128): Elaborating entity "RomPadrao" for hierarchy "Saida:inst03|PhraseBank:inst01|RomPadrao:inst01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/PhraseBank.v Line: 16
+Warning (10030): Net "phrase.data_a" at RomPadrao.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomPadrao.v Line: 11
+Warning (10030): Net "phrase.waddr_a" at RomPadrao.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomPadrao.v Line: 11
+Warning (10030): Net "Numbers.data_a" at RomPadrao.v(57) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomPadrao.v Line: 57
+Warning (10030): Net "Numbers.waddr_a" at RomPadrao.v(57) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomPadrao.v Line: 57
+Warning (10030): Net "phrase.we_a" at RomPadrao.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomPadrao.v Line: 11
+Warning (10030): Net "Numbers.we_a" at RomPadrao.v(57) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomPadrao.v Line: 57
+Info (12128): Elaborating entity "RomDefinirPrincipal" for hierarchy "Saida:inst03|PhraseBank:inst01|RomDefinirPrincipal:inst02" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/PhraseBank.v Line: 17
+Warning (10030): Net "phrase.data_a" at RomDefinirPrincipal.v(8) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomDefinirPrincipal.v Line: 8
+Warning (10030): Net "phrase.waddr_a" at RomDefinirPrincipal.v(8) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomDefinirPrincipal.v Line: 8
+Warning (10030): Net "phrase.we_a" at RomDefinirPrincipal.v(8) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomDefinirPrincipal.v Line: 8
+Info (12128): Elaborating entity "RomDefinirSecundario" for hierarchy "Saida:inst03|PhraseBank:inst01|RomDefinirSecundario:inst03" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/PhraseBank.v Line: 18
+Warning (10030): Net "phrase.data_a" at RomDefinirSecundario.v(8) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomDefinirSecundario.v Line: 8
+Warning (10030): Net "phrase.waddr_a" at RomDefinirSecundario.v(8) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomDefinirSecundario.v Line: 8
+Warning (10030): Net "phrase.we_a" at RomDefinirSecundario.v(8) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomDefinirSecundario.v Line: 8
+Info (12128): Elaborating entity "RomDefinirAmarelo" for hierarchy "Saida:inst03|PhraseBank:inst01|RomDefinirAmarelo:inst04" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/PhraseBank.v Line: 19
+Warning (10030): Net "phrase.data_a" at RomDefinirAmarelo.v(8) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomDefinirAmarelo.v Line: 8
+Warning (10030): Net "phrase.waddr_a" at RomDefinirAmarelo.v(8) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomDefinirAmarelo.v Line: 8
+Warning (10030): Net "phrase.we_a" at RomDefinirAmarelo.v(8) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomDefinirAmarelo.v Line: 8
+Info (12128): Elaborating entity "DisplayControlUnit" for hierarchy "Saida:inst03|DisplayControlUnit:inst02" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Saida.v Line: 23
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "Entrada:inst01|keypadEncoder2:inst02|d[3]" feeding internal logic into a wire File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/keypadEncoder2.v Line: 5
+    Warning (13049): Converted tri-state buffer "Entrada:inst01|keypadEncoder2:inst02|d[2]" feeding internal logic into a wire File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/keypadEncoder2.v Line: 5
+    Warning (13049): Converted tri-state buffer "Entrada:inst01|keypadEncoder2:inst02|d[1]" feeding internal logic into a wire File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/keypadEncoder2.v Line: 5
+    Warning (13049): Converted tri-state buffer "Entrada:inst01|keypadEncoder2:inst02|d[0]" feeding internal logic into a wire File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/keypadEncoder2.v Line: 5
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "RW" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/DisplayControlUnit.v Line: 8
+    Warning (13410): Pin "RW" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 7
+    Warning (13410): Pin "LCD_Blon" is stuck at VCC File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 11
+    Warning (13410): Pin "LCD_On" is stuck at VCC File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 13
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (17049): 52 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/welly/Documents/GitHub/LT39A/projeto01/output_files/projeto01.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 59 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 10 input pins
-    Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 33 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4786 megabytes
-    Info: Processing ended: Sat Aug 10 17:35:18 2024
+Info (21057): Implemented 130 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 108 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
+    Info: Peak virtual memory: 4787 megabytes
+    Info: Processing ended: Sat Aug 10 23:19:30 2024
     Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/welly/Documents/GitHub/LT39A/projeto01/output_files/projeto01.map.smsg.
 
 
