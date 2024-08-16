@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projeto01
-Thu Aug 15 19:47:38 2024
+Fri Aug 16 15:33:24 2024
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -71,15 +71,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Aug 15 19:47:38 2024       ;
+; Analysis & Synthesis Status        ; Successful - Fri Aug 16 15:33:24 2024       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; projeto01                                   ;
 ; Top-level Entity Name              ; Arquitetura                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 781                                         ;
-;     Total combinational functions  ; 750                                         ;
-;     Dedicated logic registers      ; 149                                         ;
-; Total registers                    ; 149                                         ;
+; Total logic elements               ; 783                                         ;
+;     Total combinational functions  ; 752                                         ;
+;     Dedicated logic registers      ; 150                                         ;
+; Total registers                    ; 150                                         ;
 ; Total pins                         ; 37                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -188,8 +188,7 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-6         ;   0.0%      ;
+;     Processors 2-6         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -245,20 +244,20 @@ agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 781         ;
+; Estimated Total logic elements              ; 783         ;
 ;                                             ;             ;
-; Total combinational functions               ; 750         ;
+; Total combinational functions               ; 752         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 222         ;
-;     -- 3 input functions                    ; 173         ;
-;     -- <=2 input functions                  ; 355         ;
+;     -- 4 input functions                    ; 221         ;
+;     -- 3 input functions                    ; 177         ;
+;     -- <=2 input functions                  ; 354         ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 536         ;
+;     -- normal mode                          ; 538         ;
 ;     -- arithmetic mode                      ; 214         ;
 ;                                             ;             ;
-; Total registers                             ; 149         ;
-;     -- Dedicated logic registers            ; 149         ;
+; Total registers                             ; 150         ;
+;     -- Dedicated logic registers            ; 150         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 37          ;
@@ -267,7 +266,7 @@ agreement for further details.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
 ; Maximum fan-out                             ; 76          ;
-; Total fan-out                               ; 2477        ;
+; Total fan-out                               ; 2485        ;
 ; Average fan-out                             ; 2.55        ;
 +---------------------------------------------+-------------+
 
@@ -277,7 +276,7 @@ agreement for further details.
 +---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                             ; Entity Name          ; Library Name ;
 +---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
-; |Arquitetura                                      ; 750 (0)             ; 149 (0)                   ; 0           ; 0            ; 0       ; 0         ; 37   ; 0            ; |Arquitetura                                                                                                                                                    ; Arquitetura          ; work         ;
+; |Arquitetura                                      ; 752 (0)             ; 150 (0)                   ; 0           ; 0            ; 0       ; 0         ; 37   ; 0            ; |Arquitetura                                                                                                                                                    ; Arquitetura          ; work         ;
 ;    |DecoderSsd_4bits_Dec:inst05|                  ; 18 (7)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|DecoderSsd_4bits_Dec:inst05                                                                                                                        ; DecoderSsd_4bits_Dec ; work         ;
 ;       |lpm_divide:Div0|                           ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|DecoderSsd_4bits_Dec:inst05|lpm_divide:Div0                                                                                                        ; lpm_divide           ; work         ;
 ;          |lpm_divide_fhm:auto_generated|          ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|DecoderSsd_4bits_Dec:inst05|lpm_divide:Div0|lpm_divide_fhm:auto_generated                                                                          ; lpm_divide_fhm       ; work         ;
@@ -287,12 +286,12 @@ agreement for further details.
 ;          |lpm_divide_i9m:auto_generated|          ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|DecoderSsd_4bits_Dec:inst05|lpm_divide:Mod0|lpm_divide_i9m:auto_generated                                                                          ; lpm_divide_i9m       ; work         ;
 ;             |sign_div_unsign_7kh:divider|         ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|DecoderSsd_4bits_Dec:inst05|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider                                              ; sign_div_unsign_7kh  ; work         ;
 ;                |alt_u_div_24f:divider|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|DecoderSsd_4bits_Dec:inst05|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider                        ; alt_u_div_24f        ; work         ;
-;    |Entrada:inst01|                               ; 117 (0)             ; 65 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01                                                                                                                                     ; Entrada              ; work         ;
+;    |Entrada:inst01|                               ; 119 (0)             ; 66 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01                                                                                                                                     ; Entrada              ; work         ;
 ;       |ClockDivider:inst01|                       ; 106 (106)           ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01|ClockDivider:inst01                                                                                                                 ; ClockDivider         ; work         ;
-;       |keypadEncoder:inst02|                      ; 11 (1)              ; 8 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01|keypadEncoder:inst02                                                                                                                ; keypadEncoder        ; work         ;
+;       |keypadEncoder:inst02|                      ; 13 (2)              ; 9 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01|keypadEncoder:inst02                                                                                                                ; keypadEncoder        ; work         ;
 ;          |ColEncoder:inst03|                      ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01|keypadEncoder:inst02|ColEncoder:inst03                                                                                              ; ColEncoder           ; work         ;
 ;          |RingCounter:inst01|                     ; 2 (2)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01|keypadEncoder:inst02|RingCounter:inst01                                                                                             ; RingCounter          ; work         ;
-;          |RowColEncoder:inst04|                   ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01|keypadEncoder:inst02|RowColEncoder:inst04                                                                                           ; RowColEncoder        ; work         ;
+;          |RowColEncoder:inst04|                   ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01|keypadEncoder:inst02|RowColEncoder:inst04                                                                                           ; RowColEncoder        ; work         ;
 ;          |RowEncoder:inst02|                      ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01|keypadEncoder:inst02|RowEncoder:inst02                                                                                              ; RowEncoder           ; work         ;
 ;    |Saida:inst03|                                 ; 535 (0)             ; 34 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:inst03                                                                                                                                       ; Saida                ; work         ;
 ;       |DisplayControlUnit:inst02|                 ; 51 (51)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:inst03|DisplayControlUnit:inst02                                                                                                             ; DisplayControlUnit   ; work         ;
@@ -433,8 +432,8 @@ Encoding Type:  One-Hot
 ; Sistema:inst02|ManualControlUnit:inst01|PresentState~6                ; Lost fanout                                                                      ;
 ; Saida:inst03|PhraseBank:inst01|RomDefinirSecundario:inst03|dataOut[5] ; Merged with Saida:inst03|PhraseBank:inst01|RomDefinirPrincipal:inst02|dataOut[5] ;
 ; Saida:inst03|PhraseBank:inst01|RomDefinirSecundario:inst03|dataOut[6] ; Merged with Saida:inst03|PhraseBank:inst01|RomDefinirPrincipal:inst02|dataOut[6] ;
-; Entrada:inst01|ClockDivider:inst01|counter20Hz[0]                     ; Merged with Entrada:inst01|ClockDivider:inst01|counter500Hz[0]                   ;
 ; Entrada:inst01|ClockDivider:inst01|counter1Hz[0]                      ; Merged with Entrada:inst01|ClockDivider:inst01|counter500Hz[0]                   ;
+; Entrada:inst01|ClockDivider:inst01|counter20Hz[0]                     ; Merged with Entrada:inst01|ClockDivider:inst01|counter500Hz[0]                   ;
 ; Entrada:inst01|ClockDivider:inst01|counter1Hz[1]                      ; Merged with Entrada:inst01|ClockDivider:inst01|counter20Hz[1]                    ;
 ; Entrada:inst01|ClockDivider:inst01|counter20Hz[1]                     ; Merged with Entrada:inst01|ClockDivider:inst01|counter500Hz[1]                   ;
 ; Entrada:inst01|ClockDivider:inst01|counter1Hz[2]                      ; Merged with Entrada:inst01|ClockDivider:inst01|counter20Hz[2]                    ;
@@ -520,10 +519,10 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 149   ;
+; Total registers                              ; 150   ;
 ; Number of registers using Synchronous Clear  ; 7     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 66    ;
+; Number of registers using Asynchronous Clear ; 67    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 14    ;
 ; Number of registers using Preset             ; 0     ;
@@ -915,25 +914,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 37                          ;
-; cycloneiii_ff         ; 149                         ;
-;     CLR               ; 52                          ;
+; cycloneiii_ff         ; 150                         ;
+;     CLR               ; 53                          ;
 ;     CLR SCLR          ; 7                           ;
 ;     ENA               ; 7                           ;
 ;     ENA CLR           ; 7                           ;
 ;     plain             ; 76                          ;
-; cycloneiii_lcell_comb ; 759                         ;
+; cycloneiii_lcell_comb ; 760                         ;
 ;     arith             ; 214                         ;
 ;         2 data inputs ; 98                          ;
 ;         3 data inputs ; 116                         ;
-;     normal            ; 545                         ;
+;     normal            ; 546                         ;
 ;         0 data inputs ; 36                          ;
 ;         1 data inputs ; 26                          ;
-;         2 data inputs ; 204                         ;
-;         3 data inputs ; 57                          ;
-;         4 data inputs ; 222                         ;
+;         2 data inputs ; 202                         ;
+;         3 data inputs ; 61                          ;
+;         4 data inputs ; 221                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 16.50                       ;
-; Average LUT depth     ; 9.62                        ;
+; Average LUT depth     ; 9.63                        ;
 +-----------------------+-----------------------------+
 
 
@@ -952,7 +951,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Aug 15 19:47:29 2024
+    Info: Processing started: Fri Aug 16 15:33:16 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projeto01 -c projeto01
 Info (20032): Parallel compilation is enabled and will use up to 6 processors
 Info (12021): Found 1 design units, including 1 entities, in source file rowencoder.v
@@ -1146,14 +1145,14 @@ Info (17049): 9 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/welly/Documents/GitHub/LT39A/projeto01/output_files/projeto01.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 822 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 824 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 785 logic cells
+    Info (21061): Implemented 787 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 43 warnings
-    Info: Peak virtual memory: 4801 megabytes
-    Info: Processing ended: Thu Aug 15 19:47:38 2024
-    Info: Elapsed time: 00:00:09
+    Info: Peak virtual memory: 4800 megabytes
+    Info: Processing ended: Fri Aug 16 15:33:24 2024
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:07
 
 

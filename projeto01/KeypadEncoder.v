@@ -4,7 +4,7 @@ module keypadEncoder (
 
     output wire[3:0] Row, 
     output reg[3:0] d,
-    output wire dav
+    output reg dav
 
 );
 
@@ -18,14 +18,15 @@ module keypadEncoder (
     RowColEncoder inst04 (RowOut, ColOut, dataConverted);
 
     assign Freeze = ~(Col[0] & Col[1] & Col[2]);
-    assign dav = Freeze;
 
-    always @(posedge dav or posedge reset) begin
+    always @(posedge clk or posedge reset) begin
         if(reset) begin
             d = 4'b0000;
+            dav = 1'b0;
         end
         else begin
             d = dataConverted;
+            dav = Freeze;
         end
     end
 endmodule

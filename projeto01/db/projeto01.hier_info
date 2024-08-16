@@ -4,38 +4,38 @@ reset => reset.IN3
 col[0] => col[0].IN1
 col[1] => col[1].IN1
 col[2] => col[2].IN1
-row[0] <= Entrada:inst01.port6
-row[1] <= Entrada:inst01.port6
-row[2] <= Entrada:inst01.port6
-row[3] <= Entrada:inst01.port6
-RS <= Saida:inst03.port13
-RW <= Saida:inst03.port14
-E <= Saida:inst03.port15
-DB[0] <= Saida:inst03.port16
-DB[1] <= Saida:inst03.port16
-DB[2] <= Saida:inst03.port16
-DB[3] <= Saida:inst03.port16
-DB[4] <= Saida:inst03.port16
-DB[5] <= Saida:inst03.port16
-DB[6] <= Saida:inst03.port16
-DB[7] <= Saida:inst03.port16
-LCD_Blon <= <VCC>
-LCD_On <= <VCC>
-davDEBUG <= dav.DB_MAX_OUTPUT_PORT_TYPE
-dataDezena[0] <= DecoderSsd_4bits_Dec:inst05.port1
-dataDezena[1] <= DecoderSsd_4bits_Dec:inst05.port1
-dataDezena[2] <= DecoderSsd_4bits_Dec:inst05.port1
-dataDezena[3] <= DecoderSsd_4bits_Dec:inst05.port1
-dataDezena[4] <= DecoderSsd_4bits_Dec:inst05.port1
-dataDezena[5] <= DecoderSsd_4bits_Dec:inst05.port1
-dataDezena[6] <= DecoderSsd_4bits_Dec:inst05.port1
-dataUnidade[0] <= DecoderSsd_4bits_Dec:inst05.port2
-dataUnidade[1] <= DecoderSsd_4bits_Dec:inst05.port2
-dataUnidade[2] <= DecoderSsd_4bits_Dec:inst05.port2
-dataUnidade[3] <= DecoderSsd_4bits_Dec:inst05.port2
-dataUnidade[4] <= DecoderSsd_4bits_Dec:inst05.port2
-dataUnidade[5] <= DecoderSsd_4bits_Dec:inst05.port2
-dataUnidade[6] <= DecoderSsd_4bits_Dec:inst05.port2
+row[0] << Entrada:inst01.port6
+row[1] << Entrada:inst01.port6
+row[2] << Entrada:inst01.port6
+row[3] << Entrada:inst01.port6
+RS << Saida:inst03.port13
+RW << Saida:inst03.port14
+E << Saida:inst03.port15
+DB[0] << Saida:inst03.port16
+DB[1] << Saida:inst03.port16
+DB[2] << Saida:inst03.port16
+DB[3] << Saida:inst03.port16
+DB[4] << Saida:inst03.port16
+DB[5] << Saida:inst03.port16
+DB[6] << Saida:inst03.port16
+DB[7] << Saida:inst03.port16
+LCD_Blon << <VCC>
+LCD_On << <VCC>
+davDEBUG << dav.DB_MAX_OUTPUT_PORT_TYPE
+dataDezena[0] << DecoderSsd_4bits_Dec:inst05.port1
+dataDezena[1] << DecoderSsd_4bits_Dec:inst05.port1
+dataDezena[2] << DecoderSsd_4bits_Dec:inst05.port1
+dataDezena[3] << DecoderSsd_4bits_Dec:inst05.port1
+dataDezena[4] << DecoderSsd_4bits_Dec:inst05.port1
+dataDezena[5] << DecoderSsd_4bits_Dec:inst05.port1
+dataDezena[6] << DecoderSsd_4bits_Dec:inst05.port1
+dataUnidade[0] << DecoderSsd_4bits_Dec:inst05.port2
+dataUnidade[1] << DecoderSsd_4bits_Dec:inst05.port2
+dataUnidade[2] << DecoderSsd_4bits_Dec:inst05.port2
+dataUnidade[3] << DecoderSsd_4bits_Dec:inst05.port2
+dataUnidade[4] << DecoderSsd_4bits_Dec:inst05.port2
+dataUnidade[5] << DecoderSsd_4bits_Dec:inst05.port2
+dataUnidade[6] << DecoderSsd_4bits_Dec:inst05.port2
 
 
 |Arquitetura|Entrada:inst01
@@ -143,7 +143,7 @@ d[0] <= d[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d[1] <= d[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d[2] <= d[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d[3] <= d[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-dav <= Freeze.DB_MAX_OUTPUT_PORT_TYPE
+dav <= dav~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Arquitetura|Entrada:inst01|keypadEncoder:inst02|RingCounter:inst01

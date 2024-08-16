@@ -19,36 +19,34 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "08/14/2024 16:53:12"
+// Generated on "08/16/2024 15:02:32"
                                                                                 
-// Verilog Test Bench (with test vectors) for design :                          keypadEncoder2
+// Verilog Test Bench (with test vectors) for design :                          keypadEncoder
 // 
 // Simulation tool : 3rd Party
 // 
 
 `timescale 1 ps/ 1 ps
-module keypadEncoder2_vlg_vec_tst();
+module keypadEncoder_vlg_vec_tst();
 // constants                                           
 // general purpose registers
+reg [2:0] Col;
 reg clk;
-reg [2:0] col;
 reg reset;
-reg [3:0] rowHacked;
 // wires                                               
+wire [3:0] Row;
 wire [3:0] d;
 wire dav;
-wire [3:0] row;
 
 // assign statements (if any)                          
-keypadEncoder2 i1 (
+keypadEncoder i1 (
 // port map - connection between master ports and signals/registers   
+	.Col(Col),
+	.Row(Row),
 	.clk(clk),
-	.col(col),
 	.d(d),
 	.dav(dav),
-	.reset(reset),
-	.row(row),
-	.rowHacked(rowHacked)
+	.reset(reset)
 );
 initial 
 begin 
@@ -67,44 +65,28 @@ end
 initial
 begin
 	reset = 1'b1;
-	reset = #50000 1'b0;
+	reset = #60000 1'b0;
 end 
-// col[ 2 ]
+// Col[ 2 ]
 initial
 begin
-	col[2] = 1'b1;
-	col[2] = #200000 1'b0;
-	col[2] = #40000 1'b1;
+	Col[2] = 1'b1;
+	Col[2] = #470000 1'b0;
+	Col[2] = #70000 1'b1;
 end 
-// col[ 1 ]
+// Col[ 1 ]
 initial
 begin
-	col[1] = 1'b1;
+	Col[1] = 1'b1;
+	Col[1] = #320000 1'b0;
+	Col[1] = #50000 1'b1;
 end 
-// col[ 0 ]
+// Col[ 0 ]
 initial
 begin
-	col[0] = 1'b1;
-end 
-// rowHacked[ 3 ]
-initial
-begin
-	rowHacked[3] = 1'b0;
-end 
-// rowHacked[ 2 ]
-initial
-begin
-	rowHacked[2] = 1'b1;
-end 
-// rowHacked[ 1 ]
-initial
-begin
-	rowHacked[1] = 1'b1;
-end 
-// rowHacked[ 0 ]
-initial
-begin
-	rowHacked[0] = 1'b1;
+	Col[0] = 1'b1;
+	Col[0] = #200000 1'b0;
+	Col[0] = #30000 1'b1;
 end 
 endmodule
 
