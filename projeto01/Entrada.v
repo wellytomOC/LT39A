@@ -9,8 +9,8 @@ module Entrada (
 
 assign clock50Mhz = clock;
 
-ClockDivider inst01(clock, clock500Hz, clock1Hz);
+ClockDivider inst01(clock, clock500Hz, clock20Hz, clock1Hz);
 
-keypadEncoder2 inst02(clock500Hz, reset, col, row, KeypadData, dav);
+keypadEncoder inst02(clock20Hz, reset, col, row, KeypadData, dav);
     
 endmodule

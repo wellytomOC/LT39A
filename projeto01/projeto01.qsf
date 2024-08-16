@@ -98,13 +98,75 @@ set_instance_assignment -name IO_STANDARD "2.5 V" -to row[3]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to row[2]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to row[1]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to row[0]
+set_location_assignment PIN_G19 -to davDEBUG
+set_location_assignment PIN_G18 -to dataUnidade[0]
+set_location_assignment PIN_F22 -to dataUnidade[1]
+set_location_assignment PIN_E17 -to dataUnidade[2]
+set_location_assignment PIN_L26 -to dataUnidade[3]
+set_location_assignment PIN_L25 -to dataUnidade[4]
+set_location_assignment PIN_J22 -to dataUnidade[5]
+set_location_assignment PIN_H22 -to dataUnidade[6]
+set_location_assignment PIN_M24 -to dataDezena[0]
+set_location_assignment PIN_Y22 -to dataDezena[1]
+set_location_assignment PIN_W21 -to dataDezena[2]
+set_location_assignment PIN_W22 -to dataDezena[3]
+set_location_assignment PIN_W25 -to dataDezena[4]
+set_location_assignment PIN_U23 -to dataDezena[5]
+set_location_assignment PIN_U24 -to dataDezena[6]
+set_location_assignment PIN_AA25 -to colunidade[0]
+set_location_assignment PIN_AA26 -to colunidade[1]
+set_location_assignment PIN_Y25 -to colunidade[2]
+set_location_assignment PIN_W26 -to colunidade[3]
+set_location_assignment PIN_Y26 -to colunidade[4]
+set_location_assignment PIN_W27 -to colunidade[5]
+set_location_assignment PIN_W28 -to colunidade[6]
+set_location_assignment PIN_V21 -to coldezena[0]
+set_location_assignment PIN_U21 -to coldezena[1]
+set_location_assignment PIN_AB20 -to coldezena[2]
+set_location_assignment PIN_AA21 -to coldezena[3]
+set_location_assignment PIN_AD24 -to coldezena[4]
+set_location_assignment PIN_AF23 -to coldezena[5]
+set_location_assignment PIN_Y19 -to coldezena[6]
+set_location_assignment PIN_AB19 -to outrodataUnidade[0]
+set_location_assignment PIN_AA19 -to outrodataUnidade[1]
+set_location_assignment PIN_AG21 -to outrodataUnidade[2]
+set_location_assignment PIN_AH21 -to outrodataUnidade[3]
+set_location_assignment PIN_AE19 -to outrodataUnidade[4]
+set_location_assignment PIN_AF19 -to outrodataUnidade[5]
+set_location_assignment PIN_AE18 -to outrodataUnidade[6]
+set_location_assignment PIN_AD18 -to outrodataDezena[0]
+set_location_assignment PIN_AC18 -to outrodataDezena[1]
+set_location_assignment PIN_AB18 -to outrodataDezena[2]
+set_location_assignment PIN_AH19 -to outrodataDezena[3]
+set_location_assignment PIN_AG19 -to outrodataDezena[4]
+set_location_assignment PIN_AF18 -to outrodataDezena[5]
+set_location_assignment PIN_AH18 -to outrodataDezena[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to dataDezena[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to dataDezena[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to dataDezena[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to dataDezena[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to dataDezena[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to dataDezena[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to dataDezena[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to dataUnidade[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to dataUnidade[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to dataUnidade[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to dataUnidade[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to dataUnidade[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to dataUnidade[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to dataUnidade[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to davDEBUG
+set_global_assignment -name VERILOG_FILE RowEncoder.v
+set_global_assignment -name VERILOG_FILE RowColEncoder.v
+set_global_assignment -name VERILOG_FILE RingCounter.v
+set_global_assignment -name VERILOG_FILE keypadEncoder.v
+set_global_assignment -name VERILOG_FILE ColEncoder.v
+set_global_assignment -name VERILOG_FILE DecoderSsd_4bits_Dec.v
 set_global_assignment -name VERILOG_FILE Deconcatener.v
 set_global_assignment -name VERILOG_FILE Arquitetura.v
 set_global_assignment -name VERILOG_FILE Saida.v
 set_global_assignment -name VERILOG_FILE ManualControlUnit.v
 set_global_assignment -name VERILOG_FILE ClockDivider.v
-set_global_assignment -name VERILOG_FILE keypadEncoder2.v
-set_global_assignment -name VERILOG_FILE KeypadEncoder.v
 set_global_assignment -name VERILOG_FILE RomPadrao.v
 set_global_assignment -name VERILOG_FILE RomDefinirSecundario.v
 set_global_assignment -name VERILOG_FILE RomDefinirPrincipal.v
@@ -124,6 +186,7 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform3.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform4.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

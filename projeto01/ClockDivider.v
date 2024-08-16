@@ -1,12 +1,14 @@
 module ClockDivider (
     input wire clock,
-    output reg clock500Hz, Clock1Hz
+    output reg clock500Hz, clock20Hz, Clock1Hz
 );
 
     parameter DIV500HZ = 50000;
+    parameter DIV20HZ = 1250000;
     parameter DIV1HZ = 25000000;
     
     reg [15:0] counter500Hz = 0; 
+    reg [20:0] counter20Hz = 0; 
     reg [24:0] counter1Hz = 0;
 
     always @(posedge clock) begin
@@ -16,6 +18,14 @@ module ClockDivider (
             clock500Hz <= ~clock500Hz;
         end else begin
             counter500Hz <= counter500Hz + 16'd1;
+        end
+
+        // Clock divider for 20Hz
+        if (counter20Hz == DIV20HZ - 1) begin
+            counter20Hz <= 0;
+            clock20Hz <= ~clock20Hz;
+        end else begin
+            counter20Hz <= counter20Hz + 21'd1;
         end
         
         // Clock divider for 1Hz

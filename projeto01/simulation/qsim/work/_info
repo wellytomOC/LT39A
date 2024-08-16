@@ -141,26 +141,70 @@ R11
 R12
 n@display@control@unit_vlg_vec_tst
 vhard_block
-Z22 !s110 1723341806
+Z22 !s110 1723665193
 !i10b 1
-!s100 K;VQ8<aZ=BfFVDNC>_>L[0
-I2_AfMN:Rgogf>A=R^@fU@2
+!s100 9B?@2iha=`z6ZT>mR]8J33
+IH9N?bKao7@:<KXl>n^8E]3
 R2
 R0
-Z23 w1723341805
+Z23 w1723665193
 R4
 R5
-L0 1245
+L0 660
 R7
 r1
 !s85 0
 31
-Z24 !s108 1723341806.000000
+Z24 !s108 1723665193.000000
 R9
 R10
 !i113 1
 R11
 R12
+vkeypadEncoder2
+R22
+!i10b 1
+!s100 mWn7GoOSnPa_H21=PFca;3
+IW2hhfO[0E^1XSSABZzFKA1
+R2
+R0
+R23
+R4
+R5
+R6
+R7
+r1
+!s85 0
+31
+R24
+R9
+R10
+!i113 1
+R11
+R12
+nkeypad@encoder2
+vkeypadEncoder2_vlg_vec_tst
+R22
+!i10b 1
+!s100 >@4H;@nbmI1cD4Ma0dk8l3
+IMbB<7bI2Bn01o1eIBJ;[U3
+R2
+R0
+w1723665192
+R13
+R14
+R15
+R7
+r1
+!s85 0
+31
+R24
+R16
+R17
+!i113 1
+R11
+R12
+nkeypad@encoder2_vlg_vec_tst
 vRegisterBank
 Z25 !s110 1722647601
 !i10b 1
@@ -206,13 +250,13 @@ R11
 R12
 n@register@bank_vlg_vec_tst
 vRomPadrao
-R22
+Z32 !s110 1723341806
 !i10b 1
 !s100 H<8B8YVcJ:^oUN2EFL7`?1
 I`mz>MzWAM0hmk9^=Wl8M10
 R2
 R0
-R23
+w1723341805
 R4
 R5
 R6
@@ -220,7 +264,7 @@ R7
 r1
 !s85 0
 31
-R24
+Z33 !s108 1723341806.000000
 R9
 R10
 !i113 1
@@ -228,7 +272,7 @@ R11
 R12
 n@rom@padrao
 vRomPadrao_vlg_vec_tst
-R22
+R32
 !i10b 1
 !s100 n0RKlZIVJF_[@<A?@=;?E1
 IMEakSiNDi[jJcM_g<X@j33
@@ -242,7 +286,7 @@ R7
 r1
 !s85 0
 31
-R24
+R33
 !s107 Waveform4.vwf.vt|
 !s90 -work|work|Waveform4.vwf.vt|
 !i113 1
@@ -250,7 +294,7 @@ R11
 R12
 n@rom@padrao_vlg_vec_tst
 vSaida
-Z32 !s110 1723052049
+Z34 !s110 1723052049
 !i10b 1
 !s100 9IF94PHYc>j0eV7<1;`8F3
 I<k:eb3SZQ1Y8UlH`AYfm=2
@@ -264,7 +308,7 @@ R7
 r1
 !s85 0
 31
-Z33 !s108 1723052049.000000
+Z35 !s108 1723052049.000000
 R9
 R10
 !i113 1
@@ -272,7 +316,7 @@ R11
 R12
 n@saida
 vSaida_vlg_vec_tst
-R32
+R34
 !i10b 1
 !s100 b[bPcPAW>06SUcZ2_igKY1
 I:P>FlGh9lzNI3X6XmVDnZ1
@@ -286,7 +330,7 @@ R7
 r1
 !s85 0
 31
-R33
+R35
 R30
 R31
 !i113 1
@@ -294,13 +338,13 @@ R11
 R12
 n@saida_vlg_vec_tst
 vSistema
-Z34 !s110 1723051232
+Z36 !s110 1723051232
 !i10b 1
 !s100 7TC_cS2Aj?j7V@?VjKIGj3
 IzhN<:lWjWnR;:k74mKa5:3
 R2
 R0
-Z35 w1723051231
+Z37 w1723051231
 R4
 R5
 R6
@@ -308,7 +352,7 @@ R7
 r1
 !s85 0
 31
-Z36 !s108 1723051232.000000
+Z38 !s108 1723051232.000000
 R9
 R10
 !i113 1
@@ -316,13 +360,13 @@ R11
 R12
 n@sistema
 vSistema_vlg_vec_tst
-R34
+R36
 !i10b 1
 !s100 8m_Z?X7TaI1RQ@njmW`gY0
 ImfKFBW32zQFXI2N1AgS6D2
 R2
 R0
-R35
+R37
 R13
 R14
 R15
@@ -330,7 +374,7 @@ R7
 r1
 !s85 0
 31
-R36
+R38
 R16
 R17
 !i113 1
@@ -338,7 +382,7 @@ R11
 R12
 n@sistema_vlg_vec_tst
 vtest
-Z37 !s110 1722819404
+Z39 !s110 1722819404
 !i10b 1
 !s100 V54K?dX=f7^Lnglba74zI0
 IoV>_eJ2Hk9I1H]6H[HMgN2
@@ -352,14 +396,14 @@ R7
 r1
 !s85 0
 31
-Z38 !s108 1722819404.000000
+Z40 !s108 1722819404.000000
 R9
 R10
 !i113 1
 R11
 R12
 vtest_vlg_vec_tst
-R37
+R39
 !i10b 1
 !s100 ;2T:=<kGDR5>8ZX2`@_SB0
 I7RN[0D?X=<PLI9aiYA>=Q2
@@ -373,7 +417,7 @@ R7
 r1
 !s85 0
 31
-R38
+R40
 R30
 R31
 !i113 1

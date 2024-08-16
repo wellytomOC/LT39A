@@ -4,23 +4,38 @@ reset => reset.IN3
 col[0] => col[0].IN1
 col[1] => col[1].IN1
 col[2] => col[2].IN1
-row[0] << Entrada:inst01.port6
-row[1] << Entrada:inst01.port6
-row[2] << Entrada:inst01.port6
-row[3] << Entrada:inst01.port6
-RS << Saida:inst03.port13
-RW << Saida:inst03.port14
-E << Saida:inst03.port15
-DB[0] << Saida:inst03.port16
-DB[1] << Saida:inst03.port16
-DB[2] << Saida:inst03.port16
-DB[3] << Saida:inst03.port16
-DB[4] << Saida:inst03.port16
-DB[5] << Saida:inst03.port16
-DB[6] << Saida:inst03.port16
-DB[7] << Saida:inst03.port16
-LCD_Blon << <VCC>
-LCD_On << <VCC>
+row[0] <= Entrada:inst01.port6
+row[1] <= Entrada:inst01.port6
+row[2] <= Entrada:inst01.port6
+row[3] <= Entrada:inst01.port6
+RS <= Saida:inst03.port13
+RW <= Saida:inst03.port14
+E <= Saida:inst03.port15
+DB[0] <= Saida:inst03.port16
+DB[1] <= Saida:inst03.port16
+DB[2] <= Saida:inst03.port16
+DB[3] <= Saida:inst03.port16
+DB[4] <= Saida:inst03.port16
+DB[5] <= Saida:inst03.port16
+DB[6] <= Saida:inst03.port16
+DB[7] <= Saida:inst03.port16
+LCD_Blon <= <VCC>
+LCD_On <= <VCC>
+davDEBUG <= dav.DB_MAX_OUTPUT_PORT_TYPE
+dataDezena[0] <= DecoderSsd_4bits_Dec:inst05.port1
+dataDezena[1] <= DecoderSsd_4bits_Dec:inst05.port1
+dataDezena[2] <= DecoderSsd_4bits_Dec:inst05.port1
+dataDezena[3] <= DecoderSsd_4bits_Dec:inst05.port1
+dataDezena[4] <= DecoderSsd_4bits_Dec:inst05.port1
+dataDezena[5] <= DecoderSsd_4bits_Dec:inst05.port1
+dataDezena[6] <= DecoderSsd_4bits_Dec:inst05.port1
+dataUnidade[0] <= DecoderSsd_4bits_Dec:inst05.port2
+dataUnidade[1] <= DecoderSsd_4bits_Dec:inst05.port2
+dataUnidade[2] <= DecoderSsd_4bits_Dec:inst05.port2
+dataUnidade[3] <= DecoderSsd_4bits_Dec:inst05.port2
+dataUnidade[4] <= DecoderSsd_4bits_Dec:inst05.port2
+dataUnidade[5] <= DecoderSsd_4bits_Dec:inst05.port2
+dataUnidade[6] <= DecoderSsd_4bits_Dec:inst05.port2
 
 
 |Arquitetura|Entrada:inst01
@@ -30,17 +45,17 @@ col[0] => col[0].IN1
 col[1] => col[1].IN1
 col[2] => col[2].IN1
 clock50Mhz <= clock.DB_MAX_OUTPUT_PORT_TYPE
-clock1Hz <= ClockDivider:inst01.port2
-clock500Hz <= clock500Hz.DB_MAX_OUTPUT_PORT_TYPE
-row[0] <= keypadEncoder2:inst02.port3
-row[1] <= keypadEncoder2:inst02.port3
-row[2] <= keypadEncoder2:inst02.port3
-row[3] <= keypadEncoder2:inst02.port3
-KeypadData[0] <= keypadEncoder2:inst02.port4
-KeypadData[1] <= keypadEncoder2:inst02.port4
-KeypadData[2] <= keypadEncoder2:inst02.port4
-KeypadData[3] <= keypadEncoder2:inst02.port4
-dav <= keypadEncoder2:inst02.port5
+clock1Hz <= ClockDivider:inst01.port3
+clock500Hz <= ClockDivider:inst01.port1
+row[0] <= keypadEncoder:inst02.port3
+row[1] <= keypadEncoder:inst02.port3
+row[2] <= keypadEncoder:inst02.port3
+row[3] <= keypadEncoder:inst02.port3
+KeypadData[0] <= keypadEncoder:inst02.port4
+KeypadData[1] <= keypadEncoder:inst02.port4
+KeypadData[2] <= keypadEncoder:inst02.port4
+KeypadData[3] <= keypadEncoder:inst02.port4
+dav <= keypadEncoder:inst02.port5
 
 
 |Arquitetura|Entrada:inst01|ClockDivider:inst01
@@ -70,6 +85,28 @@ clock => counter1Hz[21].CLK
 clock => counter1Hz[22].CLK
 clock => counter1Hz[23].CLK
 clock => counter1Hz[24].CLK
+clock => clock20Hz~reg0.CLK
+clock => counter20Hz[0].CLK
+clock => counter20Hz[1].CLK
+clock => counter20Hz[2].CLK
+clock => counter20Hz[3].CLK
+clock => counter20Hz[4].CLK
+clock => counter20Hz[5].CLK
+clock => counter20Hz[6].CLK
+clock => counter20Hz[7].CLK
+clock => counter20Hz[8].CLK
+clock => counter20Hz[9].CLK
+clock => counter20Hz[10].CLK
+clock => counter20Hz[11].CLK
+clock => counter20Hz[12].CLK
+clock => counter20Hz[13].CLK
+clock => counter20Hz[14].CLK
+clock => counter20Hz[15].CLK
+clock => counter20Hz[16].CLK
+clock => counter20Hz[17].CLK
+clock => counter20Hz[18].CLK
+clock => counter20Hz[19].CLK
+clock => counter20Hz[20].CLK
 clock => clock500Hz~reg0.CLK
 clock => counter500Hz[0].CLK
 clock => counter500Hz[1].CLK
@@ -88,24 +125,66 @@ clock => counter500Hz[13].CLK
 clock => counter500Hz[14].CLK
 clock => counter500Hz[15].CLK
 clock500Hz <= clock500Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clock20Hz <= clock20Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Clock1Hz <= Clock1Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Arquitetura|Entrada:inst01|keypadEncoder2:inst02
+|Arquitetura|Entrada:inst01|keypadEncoder:inst02
+clk => clk.IN1
+reset => reset.IN1
+Col[0] => Col[0].IN1
+Col[1] => Col[1].IN1
+Col[2] => Col[2].IN1
+Row[0] <= Row[0].DB_MAX_OUTPUT_PORT_TYPE
+Row[1] <= Row[1].DB_MAX_OUTPUT_PORT_TYPE
+Row[2] <= Row[2].DB_MAX_OUTPUT_PORT_TYPE
+Row[3] <= Row[3].DB_MAX_OUTPUT_PORT_TYPE
+d[0] <= d[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d[1] <= d[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d[2] <= d[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d[3] <= d[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dav <= Freeze.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Entrada:inst01|keypadEncoder:inst02|RingCounter:inst01
 clk => ring~1.DATAIN
 reset => ring~3.DATAIN
-col[0] => Decoder0.IN2
-col[1] => Decoder0.IN1
-col[2] => Decoder0.IN0
+freeze => ring.OUTPUTSELECT
+freeze => ring.OUTPUTSELECT
+freeze => ring.OUTPUTSELECT
+freeze => ring.OUTPUTSELECT
 row[0] <= row[0].DB_MAX_OUTPUT_PORT_TYPE
 row[1] <= row[1].DB_MAX_OUTPUT_PORT_TYPE
 row[2] <= row[2].DB_MAX_OUTPUT_PORT_TYPE
 row[3] <= row[3].DB_MAX_OUTPUT_PORT_TYPE
-d[0] <= d[0].DB_MAX_OUTPUT_PORT_TYPE
-d[1] <= d[1].DB_MAX_OUTPUT_PORT_TYPE
-d[2] <= d[2].DB_MAX_OUTPUT_PORT_TYPE
-d[3] <= d[3].DB_MAX_OUTPUT_PORT_TYPE
-dav <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Entrada:inst01|keypadEncoder:inst02|RowEncoder:inst02
+row[0] => Decoder0.IN3
+row[1] => Decoder0.IN2
+row[2] => Decoder0.IN1
+row[3] => Decoder0.IN0
+rowOut[0] <= rowOut.DB_MAX_OUTPUT_PORT_TYPE
+rowOut[1] <= rowOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Entrada:inst01|keypadEncoder:inst02|ColEncoder:inst03
+Col[0] => Decoder0.IN2
+Col[1] => Decoder0.IN1
+Col[2] => Decoder0.IN0
+ColOut[0] <= ColOut.DB_MAX_OUTPUT_PORT_TYPE
+ColOut[1] <= ColOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Entrada:inst01|keypadEncoder:inst02|RowColEncoder:inst04
+RowOut[0] => Decoder0.IN1
+RowOut[1] => Decoder0.IN0
+ColOut[0] => Decoder0.IN3
+ColOut[1] => Decoder0.IN2
+dataConverted[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+dataConverted[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+dataConverted[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+dataConverted[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Arquitetura|Sistema:inst02
@@ -903,5 +982,30 @@ DB[4] <= Selector3.DB_MAX_OUTPUT_PORT_TYPE
 DB[5] <= Selector2.DB_MAX_OUTPUT_PORT_TYPE
 DB[6] <= Selector1.DB_MAX_OUTPUT_PORT_TYPE
 DB[7] <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|DecoderSsd_4bits_Dec:inst05
+In[0] => Div0.IN7
+In[0] => Mod0.IN7
+In[1] => Div0.IN6
+In[1] => Mod0.IN6
+In[2] => Div0.IN5
+In[2] => Mod0.IN5
+In[3] => Div0.IN4
+In[3] => Mod0.IN4
+OutDezena[0] <= seven_seg.DATAOUT
+OutDezena[1] <= seven_seg.DATAOUT1
+OutDezena[2] <= seven_seg.DATAOUT2
+OutDezena[3] <= seven_seg.DATAOUT3
+OutDezena[4] <= seven_seg.DATAOUT4
+OutDezena[5] <= seven_seg.DATAOUT5
+OutDezena[6] <= seven_seg.DATAOUT6
+OutUnidade[0] <= seven_seg.PORTBDATAOUT
+OutUnidade[1] <= seven_seg.PORTBDATAOUT1
+OutUnidade[2] <= seven_seg.PORTBDATAOUT2
+OutUnidade[3] <= seven_seg.PORTBDATAOUT3
+OutUnidade[4] <= seven_seg.PORTBDATAOUT4
+OutUnidade[5] <= seven_seg.PORTBDATAOUT5
+OutUnidade[6] <= seven_seg.PORTBDATAOUT6
 
 

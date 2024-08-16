@@ -60,11 +60,59 @@
 					"strict" : false
 				},
 				{
+					"name" : "davDEBUG",
+					"strict" : false
+				},
+				{
+					"name" : "dataDezena[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dataDezena[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dataDezena[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dataDezena[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dataUnidade[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dataUnidade[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dataUnidade[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dataUnidade[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dataUnidade[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dataUnidade[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dataUnidade[6]",
+					"strict" : false
+				},
+				{
 					"name" : "reset",
 					"strict" : false
 				},
 				{
-					"name" : "col[2]",
+					"name" : "clock",
 					"strict" : false
 				},
 				{
@@ -76,7 +124,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "clock",
+					"name" : "col[2]",
 					"strict" : false
 				}
 			]

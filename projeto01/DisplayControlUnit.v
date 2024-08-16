@@ -35,7 +35,7 @@ module DisplayControlUnit (
         end
         else begin
             PresentState <= NextState;
-            if(NextState == WriteChar) begin
+            if(PresentState == WriteChar) begin
                 char_index <= char_index + 5'd1;
             end
             if(NextState == ReturnHome) begin

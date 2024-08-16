@@ -20,6 +20,6 @@ wire[4:0] addr;
 wire[7:0] Phrase;
 PhraseBank inst01 (clock50MHz, addr, PhraseSel, Ta, Tpv, Tsv, timeRemaining, StateFlag, Phrase);
 
-DisplayControlUnit inst02 (clock500Hz, reset, 8'b01000001, addr, RS, RW, E, DB);
+DisplayControlUnit inst02 (clock500Hz, reset, Phrase, addr, RS, RW, E, DB);
     
 endmodule
