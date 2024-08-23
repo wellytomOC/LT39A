@@ -8,9 +8,9 @@ module ClockDivider #(
 );
 
     // Frequências desejadas das saídas
-    parameter FREQ1HZ  = 1;
-    parameter FREQ20HZ = 20;
-    parameter FREQ500HZ = 500;
+    localparam FREQ1HZ  = 1;
+    localparam FREQ20HZ = 20;
+    localparam FREQ500HZ = 500;
 
     // Cálculo dos divisores baseados na frequência do relógio de entrada
     localparam DIV1HZ = (CLOCK_FREQ / FREQ1HZ) / 2;

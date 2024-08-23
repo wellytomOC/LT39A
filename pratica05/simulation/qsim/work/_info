@@ -1,0 +1,75 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/welly/Documents/GitHub/LT39A/pratica05/simulation/qsim
+vhard_block
+Z1 !s110 1724433740
+!i10b 1
+!s100 h;WBD5Pbk25RdERgLDVUT3
+I4dX215H[9ZB2V65IJg=DJ0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1724433739
+Z4 8pratica05.vo
+Z5 Fpratica05.vo
+L0 3910
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1724433740.000000
+Z8 !s107 pratica05.vo|
+Z9 !s90 -work|work|pratica05.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vSistema
+R1
+!i10b 1
+!s100 Ed>`Xo:cR_:A5:bP;GgV60
+Iz1BE[26?d][OmLIW2iHeM3
+R2
+R0
+R3
+R4
+R5
+L0 32
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@sistema
+vSistema_vlg_vec_tst
+R1
+!i10b 1
+!s100 [QZ@SSJz]2TB1jM;f4M_i3
+Izl_8AH:e<RlTiT:9@LmNO3
+R2
+R0
+R3
+8Waveform1.vwf.vt
+FWaveform1.vwf.vt
+L0 30
+R6
+r1
+!s85 0
+31
+R7
+!s107 Waveform1.vwf.vt|
+!s90 -work|work|Waveform1.vwf.vt|
+!i113 1
+R10
+R11
+n@sistema_vlg_vec_tst

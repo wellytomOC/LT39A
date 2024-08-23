@@ -3,8 +3,7 @@ module PhraseBank(
     input wire[4:0] DisplayAddr,
 	 
 	 input wire[3:0] AddressIn, DataIn, KeypadDataIn,
-	 input wire RWin,
-
+	 input wire[1:0] PresentStateFlag,
 
     output reg[7:0] Phrase
 );
@@ -29,10 +28,11 @@ module PhraseBank(
         Numbers[9] = "9";
     end
 	 
-	 reg[7:0] RomRW [0:1];
+	 reg[7:0] RomState [0:2];
     initial begin
-        RomRW[0] = "R";
-        RomRW[1] = "W";
+        RomState[0] = "I";
+        RomState[1] = "W";
+        RomState[2] = "R";
     end
 
     always @(*) begin   
@@ -40,7 +40,7 @@ module PhraseBank(
         if(DisplayAddr == 5'd4) Phrase = Numbers[AddressInTens];
         else if(DisplayAddr == 5'd5) Phrase = Numbers[AddressInUnit];
 		  
-        else if(DisplayAddr == 5'd14) Phrase = RomRW[RWin];
+        else if(DisplayAddr == 5'd14) Phrase = RomState[PresentStateFlag];
 		  
         else if(DisplayAddr == 5'd20) Phrase = Numbers[KeypadDataInTens];
         else if(DisplayAddr == 5'd21) Phrase = Numbers[KeypadDataInUnit];

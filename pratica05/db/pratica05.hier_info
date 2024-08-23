@@ -1,4 +1,297 @@
-|RamMemory
+|arquitetura
+clock => clock.IN1
+reset => reset.IN3
+AddressIn[0] => AddressIn[0].IN1
+AddressIn[1] => AddressIn[1].IN1
+AddressIn[2] => AddressIn[2].IN1
+AddressIn[3] => AddressIn[3].IN1
+col[0] => col[0].IN1
+col[1] => col[1].IN1
+col[2] => col[2].IN1
+row[0] << Entrada:inst00.port8
+row[1] << Entrada:inst00.port8
+row[2] << Entrada:inst00.port8
+row[3] << Entrada:inst00.port8
+RS << Saida:inst03.port7
+RW << Saida:inst03.port8
+E << Saida:inst03.port9
+DB[0] << Saida:inst03.port10
+DB[1] << Saida:inst03.port10
+DB[2] << Saida:inst03.port10
+DB[3] << Saida:inst03.port10
+DB[4] << Saida:inst03.port10
+DB[5] << Saida:inst03.port10
+DB[6] << Saida:inst03.port10
+DB[7] << Saida:inst03.port10
+LCD_Blon << Saida:inst03.port11
+LCD_On << Saida:inst03.port12
+
+
+|arquitetura|Entrada:inst00
+clock => clock.IN1
+reset => reset.IN1
+clock50Mhz <= clock.DB_MAX_OUTPUT_PORT_TYPE
+clock500Hz <= ClockDivider:inst01.port3
+clock1Hz <= ClockDivider:inst01.port1
+AddressIn[0] => AddressOut[0].DATAIN
+AddressIn[1] => AddressOut[1].DATAIN
+AddressIn[2] => AddressOut[2].DATAIN
+AddressIn[3] => AddressOut[3].DATAIN
+AddressOut[0] <= AddressIn[0].DB_MAX_OUTPUT_PORT_TYPE
+AddressOut[1] <= AddressIn[1].DB_MAX_OUTPUT_PORT_TYPE
+AddressOut[2] <= AddressIn[2].DB_MAX_OUTPUT_PORT_TYPE
+AddressOut[3] <= AddressIn[3].DB_MAX_OUTPUT_PORT_TYPE
+col[0] => col[0].IN1
+col[1] => col[1].IN1
+col[2] => col[2].IN1
+row[0] <= keypadEncoder:inst02.port3
+row[1] <= keypadEncoder:inst02.port3
+row[2] <= keypadEncoder:inst02.port3
+row[3] <= keypadEncoder:inst02.port3
+KeypadData[0] <= keypadEncoder:inst02.port4
+KeypadData[1] <= keypadEncoder:inst02.port4
+KeypadData[2] <= keypadEncoder:inst02.port4
+KeypadData[3] <= keypadEncoder:inst02.port4
+dav <= keypadEncoder:inst02.port5
+
+
+|arquitetura|Entrada:inst00|ClockDivider:inst01
+clock => clock500Hz~reg0.CLK
+clock => counter500Hz[0].CLK
+clock => counter500Hz[1].CLK
+clock => counter500Hz[2].CLK
+clock => counter500Hz[3].CLK
+clock => counter500Hz[4].CLK
+clock => counter500Hz[5].CLK
+clock => counter500Hz[6].CLK
+clock => counter500Hz[7].CLK
+clock => counter500Hz[8].CLK
+clock => counter500Hz[9].CLK
+clock => counter500Hz[10].CLK
+clock => counter500Hz[11].CLK
+clock => counter500Hz[12].CLK
+clock => counter500Hz[13].CLK
+clock => counter500Hz[14].CLK
+clock => counter500Hz[15].CLK
+clock => counter500Hz[16].CLK
+clock => counter500Hz[17].CLK
+clock => counter500Hz[18].CLK
+clock => counter500Hz[19].CLK
+clock => counter500Hz[20].CLK
+clock => counter500Hz[21].CLK
+clock => counter500Hz[22].CLK
+clock => counter500Hz[23].CLK
+clock => counter500Hz[24].CLK
+clock => counter500Hz[25].CLK
+clock => counter500Hz[26].CLK
+clock => counter500Hz[27].CLK
+clock => counter500Hz[28].CLK
+clock => counter500Hz[29].CLK
+clock => counter500Hz[30].CLK
+clock => counter500Hz[31].CLK
+clock => clock20Hz~reg0.CLK
+clock => counter20Hz[0].CLK
+clock => counter20Hz[1].CLK
+clock => counter20Hz[2].CLK
+clock => counter20Hz[3].CLK
+clock => counter20Hz[4].CLK
+clock => counter20Hz[5].CLK
+clock => counter20Hz[6].CLK
+clock => counter20Hz[7].CLK
+clock => counter20Hz[8].CLK
+clock => counter20Hz[9].CLK
+clock => counter20Hz[10].CLK
+clock => counter20Hz[11].CLK
+clock => counter20Hz[12].CLK
+clock => counter20Hz[13].CLK
+clock => counter20Hz[14].CLK
+clock => counter20Hz[15].CLK
+clock => counter20Hz[16].CLK
+clock => counter20Hz[17].CLK
+clock => counter20Hz[18].CLK
+clock => counter20Hz[19].CLK
+clock => counter20Hz[20].CLK
+clock => counter20Hz[21].CLK
+clock => counter20Hz[22].CLK
+clock => counter20Hz[23].CLK
+clock => counter20Hz[24].CLK
+clock => counter20Hz[25].CLK
+clock => counter20Hz[26].CLK
+clock => counter20Hz[27].CLK
+clock => counter20Hz[28].CLK
+clock => counter20Hz[29].CLK
+clock => counter20Hz[30].CLK
+clock => counter20Hz[31].CLK
+clock => clock1Hz~reg0.CLK
+clock => counter1Hz[0].CLK
+clock => counter1Hz[1].CLK
+clock => counter1Hz[2].CLK
+clock => counter1Hz[3].CLK
+clock => counter1Hz[4].CLK
+clock => counter1Hz[5].CLK
+clock => counter1Hz[6].CLK
+clock => counter1Hz[7].CLK
+clock => counter1Hz[8].CLK
+clock => counter1Hz[9].CLK
+clock => counter1Hz[10].CLK
+clock => counter1Hz[11].CLK
+clock => counter1Hz[12].CLK
+clock => counter1Hz[13].CLK
+clock => counter1Hz[14].CLK
+clock => counter1Hz[15].CLK
+clock => counter1Hz[16].CLK
+clock => counter1Hz[17].CLK
+clock => counter1Hz[18].CLK
+clock => counter1Hz[19].CLK
+clock => counter1Hz[20].CLK
+clock => counter1Hz[21].CLK
+clock => counter1Hz[22].CLK
+clock => counter1Hz[23].CLK
+clock => counter1Hz[24].CLK
+clock => counter1Hz[25].CLK
+clock => counter1Hz[26].CLK
+clock => counter1Hz[27].CLK
+clock => counter1Hz[28].CLK
+clock => counter1Hz[29].CLK
+clock => counter1Hz[30].CLK
+clock => counter1Hz[31].CLK
+clock1Hz <= clock1Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clock20Hz <= clock20Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clock500Hz <= clock500Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|Entrada:inst00|keypadEncoder:inst02
+clk => clk.IN1
+reset => reset.IN1
+Col[0] => Col[0].IN1
+Col[1] => Col[1].IN1
+Col[2] => Col[2].IN1
+Row[0] <= Row[0].DB_MAX_OUTPUT_PORT_TYPE
+Row[1] <= Row[1].DB_MAX_OUTPUT_PORT_TYPE
+Row[2] <= Row[2].DB_MAX_OUTPUT_PORT_TYPE
+Row[3] <= Row[3].DB_MAX_OUTPUT_PORT_TYPE
+d[0] <= d[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d[1] <= d[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d[2] <= d[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d[3] <= d[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dav <= dav~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|Entrada:inst00|keypadEncoder:inst02|RingCounter:inst01
+clk => ring~1.DATAIN
+reset => ring~3.DATAIN
+freeze => ring.OUTPUTSELECT
+freeze => ring.OUTPUTSELECT
+freeze => ring.OUTPUTSELECT
+freeze => ring.OUTPUTSELECT
+row[0] <= row[0].DB_MAX_OUTPUT_PORT_TYPE
+row[1] <= row[1].DB_MAX_OUTPUT_PORT_TYPE
+row[2] <= row[2].DB_MAX_OUTPUT_PORT_TYPE
+row[3] <= row[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|Entrada:inst00|keypadEncoder:inst02|RowEncoder:inst02
+row[0] => Decoder0.IN3
+row[1] => Decoder0.IN2
+row[2] => Decoder0.IN1
+row[3] => Decoder0.IN0
+rowOut[0] <= rowOut.DB_MAX_OUTPUT_PORT_TYPE
+rowOut[1] <= rowOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|Entrada:inst00|keypadEncoder:inst02|ColEncoder:inst03
+Col[0] => Decoder0.IN2
+Col[1] => Decoder0.IN1
+Col[2] => Decoder0.IN0
+ColOut[0] <= ColOut.DB_MAX_OUTPUT_PORT_TYPE
+ColOut[1] <= ColOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|Entrada:inst00|keypadEncoder:inst02|RowColEncoder:inst04
+RowOut[0] => Decoder0.IN1
+RowOut[1] => Decoder0.IN0
+ColOut[0] => Decoder0.IN3
+ColOut[1] => Decoder0.IN2
+dataConverted[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+dataConverted[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+dataConverted[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+dataConverted[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|Sistema:inst01
+clock50MHz => MemoryClock.DATAIN
+clock1Hz => clock1Hz.IN2
+reset => reset.IN2
+dav => dav.IN1
+KeypadData[0] => KeypadData[0].IN1
+KeypadData[1] => KeypadData[1].IN1
+KeypadData[2] => KeypadData[2].IN1
+KeypadData[3] => KeypadData[3].IN1
+AddressIn[0] => AddressIn[0].IN1
+AddressIn[1] => AddressIn[1].IN1
+AddressIn[2] => AddressIn[2].IN1
+AddressIn[3] => AddressIn[3].IN1
+DataOut[0] <= DataOut[0].DB_MAX_OUTPUT_PORT_TYPE
+DataOut[1] <= DataOut[1].DB_MAX_OUTPUT_PORT_TYPE
+DataOut[2] <= DataOut[2].DB_MAX_OUTPUT_PORT_TYPE
+DataOut[3] <= DataOut[3].DB_MAX_OUTPUT_PORT_TYPE
+PresentStateFlag[0] <= ControlUnit:inst00.port7
+PresentStateFlag[1] <= ControlUnit:inst00.port7
+
+
+|arquitetura|Sistema:inst01|ControlUnit:inst00
+clock1Hz => PresentState~1.DATAIN
+reset => PresentState~3.DATAIN
+dav => WriteEnable.DATAB
+WriteEnable <= WriteEnable.DB_MAX_OUTPUT_PORT_TYPE
+MemoryEnable <= MemoryEnable.DB_MAX_OUTPUT_PORT_TYPE
+TimerTrigger => Selector1.IN2
+TimerTrigger => Selector2.IN2
+TimerTrigger => Selector0.IN2
+TimerTrigger => Selector0.IN1
+TimerTrigger => Selector1.IN1
+TimerTrigger => Selector2.IN1
+TimerRef[0] <= MemoryEnable.DB_MAX_OUTPUT_PORT_TYPE
+TimerRef[1] <= MemoryEnable.DB_MAX_OUTPUT_PORT_TYPE
+TimerRef[2] <= MemoryEnable.DB_MAX_OUTPUT_PORT_TYPE
+TimerRef[3] <= MemoryEnable.DB_MAX_OUTPUT_PORT_TYPE
+TimerRef[4] <= <GND>
+TimerRef[5] <= <GND>
+TimerRef[6] <= <GND>
+TimerRef[7] <= <GND>
+PresentStateFlag[0] <= PresentStateFlag[0].DB_MAX_OUTPUT_PORT_TYPE
+PresentStateFlag[1] <= PresentStateFlag[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|Sistema:inst01|Timer:inst01
+TimerRef[0] => Equal0.IN8
+TimerRef[1] => Equal0.IN7
+TimerRef[2] => Equal0.IN6
+TimerRef[3] => Equal0.IN5
+TimerRef[4] => Equal0.IN4
+TimerRef[5] => Equal0.IN3
+TimerRef[6] => Equal0.IN2
+TimerRef[7] => Equal0.IN1
+clock => trigger~reg0.CLK
+clock => counter[0].CLK
+clock => counter[1].CLK
+clock => counter[2].CLK
+clock => counter[3].CLK
+clock => counter[4].CLK
+clock => counter[5].CLK
+clock => counter[6].CLK
+reset => trigger~reg0.ACLR
+reset => counter[0].ACLR
+reset => counter[1].ACLR
+reset => counter[2].ACLR
+reset => counter[3].ACLR
+reset => counter[4].ACLR
+reset => counter[5].ACLR
+reset => counter[6].ACLR
+trigger <= trigger~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|Sistema:inst01|RamMemory:inst02
 clk => RamBlock.we_a.CLK
 clk => RamBlock.waddr_a[3].CLK
 clk => RamBlock.waddr_a[2].CLK
@@ -12,20 +305,12 @@ clk => data_out[0]~reg0.CLK
 clk => data_out[1]~reg0.CLK
 clk => data_out[2]~reg0.CLK
 clk => data_out[3]~reg0.CLK
-clk => data_out[4]~reg0.CLK
-clk => data_out[5]~reg0.CLK
-clk => data_out[6]~reg0.CLK
-clk => data_out[7]~reg0.CLK
 clk => RamBlock.CLK0
 write_enable => RamBlock.we_a.DATAIN
 write_enable => data_out[0]~reg0.ENA
 write_enable => data_out[1]~reg0.ENA
 write_enable => data_out[2]~reg0.ENA
 write_enable => data_out[3]~reg0.ENA
-write_enable => data_out[4]~reg0.ENA
-write_enable => data_out[5]~reg0.ENA
-write_enable => data_out[6]~reg0.ENA
-write_enable => data_out[7]~reg0.ENA
 write_enable => RamBlock.WE
 address[0] => RamBlock.waddr_a[0].DATAIN
 address[0] => RamBlock.WADDR
@@ -53,17 +338,188 @@ data_in[2] => RamBlock.data_a[2].DATAIN
 data_in[2] => RamBlock.DATAIN2
 data_in[3] => RamBlock.data_a[3].DATAIN
 data_in[3] => RamBlock.DATAIN3
-data_in[4] => ~NO_FANOUT~
-data_in[5] => ~NO_FANOUT~
-data_in[6] => ~NO_FANOUT~
-data_in[7] => ~NO_FANOUT~
 data_out[0] <= data_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 data_out[1] <= data_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 data_out[2] <= data_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 data_out[3] <= data_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[4] <= data_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[5] <= data_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[6] <= data_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[7] <= data_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|Saida:inst03
+clock50MHz => clock50MHz.IN1
+clock500Hz => clock500Hz.IN1
+reset => reset.IN1
+AddressIn[0] => AddressIn[0].IN1
+AddressIn[1] => AddressIn[1].IN1
+AddressIn[2] => AddressIn[2].IN1
+AddressIn[3] => AddressIn[3].IN1
+DataIn[0] => DataIn[0].IN1
+DataIn[1] => DataIn[1].IN1
+DataIn[2] => DataIn[2].IN1
+DataIn[3] => DataIn[3].IN1
+KeypadDataIn[0] => KeypadDataIn[0].IN1
+KeypadDataIn[1] => KeypadDataIn[1].IN1
+KeypadDataIn[2] => KeypadDataIn[2].IN1
+KeypadDataIn[3] => KeypadDataIn[3].IN1
+PresentStateFlag[0] => PresentStateFlag[0].IN1
+PresentStateFlag[1] => PresentStateFlag[1].IN1
+RS <= DisplayControlUnit:inst02.port4
+RW <= DisplayControlUnit:inst02.port5
+E <= DisplayControlUnit:inst02.port6
+DB[0] <= DisplayControlUnit:inst02.port7
+DB[1] <= DisplayControlUnit:inst02.port7
+DB[2] <= DisplayControlUnit:inst02.port7
+DB[3] <= DisplayControlUnit:inst02.port7
+DB[4] <= DisplayControlUnit:inst02.port7
+DB[5] <= DisplayControlUnit:inst02.port7
+DB[6] <= DisplayControlUnit:inst02.port7
+DB[7] <= DisplayControlUnit:inst02.port7
+LCD_Blon <= <VCC>
+LCD_On <= <VCC>
+
+
+|arquitetura|Saida:inst03|PhraseBank:inst01
+clock => clock.IN1
+DisplayAddr[0] => DisplayAddr[0].IN1
+DisplayAddr[1] => DisplayAddr[1].IN1
+DisplayAddr[2] => DisplayAddr[2].IN1
+DisplayAddr[3] => DisplayAddr[3].IN1
+DisplayAddr[4] => DisplayAddr[4].IN1
+AddressIn[0] => AddressIn[0].IN1
+AddressIn[1] => AddressIn[1].IN1
+AddressIn[2] => AddressIn[2].IN1
+AddressIn[3] => AddressIn[3].IN1
+DataIn[0] => DataIn[0].IN1
+DataIn[1] => DataIn[1].IN1
+DataIn[2] => DataIn[2].IN1
+DataIn[3] => DataIn[3].IN1
+KeypadDataIn[0] => KeypadDataIn[0].IN1
+KeypadDataIn[1] => KeypadDataIn[1].IN1
+KeypadDataIn[2] => KeypadDataIn[2].IN1
+KeypadDataIn[3] => KeypadDataIn[3].IN1
+PresentStateFlag[0] => RomState.RADDR
+PresentStateFlag[1] => RomState.RADDR1
+Phrase[0] <= Phrase.DB_MAX_OUTPUT_PORT_TYPE
+Phrase[1] <= Phrase.DB_MAX_OUTPUT_PORT_TYPE
+Phrase[2] <= Phrase.DB_MAX_OUTPUT_PORT_TYPE
+Phrase[3] <= Phrase.DB_MAX_OUTPUT_PORT_TYPE
+Phrase[4] <= Phrase.DB_MAX_OUTPUT_PORT_TYPE
+Phrase[5] <= Phrase.DB_MAX_OUTPUT_PORT_TYPE
+Phrase[6] <= Phrase.DB_MAX_OUTPUT_PORT_TYPE
+Phrase[7] <= Phrase.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00
+AddressIn[0] => Mod0.IN7
+AddressIn[0] => Div0.IN7
+AddressIn[1] => Mod0.IN6
+AddressIn[1] => Div0.IN6
+AddressIn[2] => Mod0.IN5
+AddressIn[2] => Div0.IN5
+AddressIn[3] => Mod0.IN4
+AddressIn[3] => Div0.IN4
+DataIn[0] => Mod1.IN7
+DataIn[0] => Div1.IN7
+DataIn[1] => Mod1.IN6
+DataIn[1] => Div1.IN6
+DataIn[2] => Mod1.IN5
+DataIn[2] => Div1.IN5
+DataIn[3] => Mod1.IN4
+DataIn[3] => Div1.IN4
+KeypadDataIn[0] => Mod2.IN7
+KeypadDataIn[0] => Div2.IN7
+KeypadDataIn[1] => Mod2.IN6
+KeypadDataIn[1] => Div2.IN6
+KeypadDataIn[2] => Mod2.IN5
+KeypadDataIn[2] => Div2.IN5
+KeypadDataIn[3] => Mod2.IN4
+KeypadDataIn[3] => Div2.IN4
+AddressInUnit[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+AddressInUnit[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+AddressInUnit[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+AddressInUnit[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+AddressInTens[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+AddressInTens[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+AddressInTens[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+AddressInTens[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+DataInUnit[0] <= Mod1.DB_MAX_OUTPUT_PORT_TYPE
+DataInUnit[1] <= Mod1.DB_MAX_OUTPUT_PORT_TYPE
+DataInUnit[2] <= Mod1.DB_MAX_OUTPUT_PORT_TYPE
+DataInUnit[3] <= Mod1.DB_MAX_OUTPUT_PORT_TYPE
+DataInTens[0] <= Div1.DB_MAX_OUTPUT_PORT_TYPE
+DataInTens[1] <= Div1.DB_MAX_OUTPUT_PORT_TYPE
+DataInTens[2] <= Div1.DB_MAX_OUTPUT_PORT_TYPE
+DataInTens[3] <= Div1.DB_MAX_OUTPUT_PORT_TYPE
+KeypadDataInUnit[0] <= Mod2.DB_MAX_OUTPUT_PORT_TYPE
+KeypadDataInUnit[1] <= Mod2.DB_MAX_OUTPUT_PORT_TYPE
+KeypadDataInUnit[2] <= Mod2.DB_MAX_OUTPUT_PORT_TYPE
+KeypadDataInUnit[3] <= Mod2.DB_MAX_OUTPUT_PORT_TYPE
+KeypadDataInTens[0] <= Div2.DB_MAX_OUTPUT_PORT_TYPE
+KeypadDataInTens[1] <= Div2.DB_MAX_OUTPUT_PORT_TYPE
+KeypadDataInTens[2] <= Div2.DB_MAX_OUTPUT_PORT_TYPE
+KeypadDataInTens[3] <= Div2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|Saida:inst03|PhraseBank:inst01|RomPadrao:inst01
+clock => dataOut[0]~reg0.CLK
+clock => dataOut[1]~reg0.CLK
+clock => dataOut[2]~reg0.CLK
+clock => dataOut[3]~reg0.CLK
+clock => dataOut[4]~reg0.CLK
+clock => dataOut[5]~reg0.CLK
+clock => dataOut[6]~reg0.CLK
+clock => dataOut[7]~reg0.CLK
+addr[0] => phrase.RADDR
+addr[1] => phrase.RADDR1
+addr[2] => phrase.RADDR2
+addr[3] => phrase.RADDR3
+addr[4] => phrase.RADDR4
+dataOut[0] <= dataOut[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataOut[1] <= dataOut[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataOut[2] <= dataOut[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataOut[3] <= dataOut[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataOut[4] <= dataOut[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataOut[5] <= dataOut[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataOut[6] <= dataOut[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataOut[7] <= dataOut[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|arquitetura|Saida:inst03|DisplayControlUnit:inst02
+clock500Hz => char_index[0]~reg0.CLK
+clock500Hz => char_index[1]~reg0.CLK
+clock500Hz => char_index[2]~reg0.CLK
+clock500Hz => char_index[3]~reg0.CLK
+clock500Hz => char_index[4]~reg0.CLK
+clock500Hz => E.DATAIN
+clock500Hz => PresentState~1.DATAIN
+reset => char_index[0]~reg0.ACLR
+reset => char_index[1]~reg0.ACLR
+reset => char_index[2]~reg0.ACLR
+reset => char_index[3]~reg0.ACLR
+reset => char_index[4]~reg0.ACLR
+reset => PresentState~3.DATAIN
+phrase[0] => Selector7.IN3
+phrase[1] => Selector6.IN3
+phrase[2] => Selector5.IN4
+phrase[3] => Selector4.IN4
+phrase[4] => Selector3.IN4
+phrase[5] => Selector2.IN4
+phrase[6] => Selector1.IN3
+phrase[7] => Selector0.IN4
+char_index[0] <= char_index[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+char_index[1] <= char_index[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+char_index[2] <= char_index[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+char_index[3] <= char_index[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+char_index[4] <= char_index[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RS <= RS.DB_MAX_OUTPUT_PORT_TYPE
+RW <= <GND>
+E <= clock500Hz.DB_MAX_OUTPUT_PORT_TYPE
+DB[0] <= Selector7.DB_MAX_OUTPUT_PORT_TYPE
+DB[1] <= Selector6.DB_MAX_OUTPUT_PORT_TYPE
+DB[2] <= Selector5.DB_MAX_OUTPUT_PORT_TYPE
+DB[3] <= Selector4.DB_MAX_OUTPUT_PORT_TYPE
+DB[4] <= Selector3.DB_MAX_OUTPUT_PORT_TYPE
+DB[5] <= Selector2.DB_MAX_OUTPUT_PORT_TYPE
+DB[6] <= Selector1.DB_MAX_OUTPUT_PORT_TYPE
+DB[7] <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
 
 

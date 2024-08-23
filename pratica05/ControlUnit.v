@@ -1,9 +1,17 @@
 module ControlUnit (
-    input wire clock, reset, dav, TimerTrigger,
+    input wire clock1Hz, reset,
 
-    input wire[3:0] DataIn
+    input wire dav,
+    output reg WriteEnable, MemoryEnable,
+
+    input wire TimerTrigger,
+    output reg[7:0] TimerRef,
+
+    output wire[1:0] PresentStateFlag
 );
     
+    assign PresentStateFlag = PresentState;
+
     parameter
         Idle = 2'd0,
         Write = 2'd1,
@@ -11,7 +19,7 @@ module ControlUnit (
     reg[1:0] PresentState,NextState;
 
     //Bloco Sequencial
-    always @(posedge dav or posedge reset) begin
+    always @(posedge clock1Hz or posedge reset) begin
         if (reset) begin
             PresentState <= Idle;
         end
@@ -46,13 +54,20 @@ module ControlUnit (
             default: begin
             end
             Idle: begin
+                TimerRef = 8'd5;
+                WriteEnable = 1'd0;
+                MemoryEnable = 1'd0;
                 
             end
             Write: begin
-               
+                TimerRef = 8'd10;
+                MemoryEnable = 1'd1;
+                WriteEnable = dav;
             end
             Read: begin
-                
+                TimerRef = 8'd10;
+                MemoryEnable = 1'd1;
+                WriteEnable = 1'd0;
             end
         endcase
     end

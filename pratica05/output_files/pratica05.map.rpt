@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pratica05
-Wed Aug 21 20:41:41 2024
+Fri Aug 23 15:04:41 2024
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -13,11 +13,26 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  8. State Machine - |arquitetura|Saida:inst03|DisplayControlUnit:inst02|PresentState
+  9. State Machine - |arquitetura|Sistema:inst01|ControlUnit:inst00|PresentState
+ 10. State Machine - |arquitetura|Entrada:inst00|keypadEncoder:inst02|RingCounter:inst01|ring
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: Entrada:inst00|ClockDivider:inst01
+ 15. Parameter Settings for User Entity Instance: Sistema:inst01|ControlUnit:inst00
+ 16. Parameter Settings for User Entity Instance: Saida:inst03|DisplayControlUnit:inst02
+ 17. Parameter Settings for Inferred Entity Instance: Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div0
+ 18. Parameter Settings for Inferred Entity Instance: Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod0
+ 19. Parameter Settings for Inferred Entity Instance: Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div2
+ 20. Parameter Settings for Inferred Entity Instance: Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod2
+ 21. Parameter Settings for Inferred Entity Instance: Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div1
+ 22. Parameter Settings for Inferred Entity Instance: Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod1
+ 23. Port Connectivity Checks: "Sistema:inst01|RamMemory:inst02"
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
+ 27. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -44,16 +59,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Aug 21 20:41:41 2024       ;
+; Analysis & Synthesis Status        ; Successful - Fri Aug 23 15:04:41 2024       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; pratica05                                   ;
-; Top-level Entity Name              ; RamMemory                                   ;
+; Top-level Entity Name              ; arquitetura                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 136                                         ;
-;     Total combinational functions  ; 72                                          ;
-;     Dedicated logic registers      ; 68                                          ;
-; Total registers                    ; 68                                          ;
-; Total pins                         ; 28                                          ;
+; Total logic elements               ; 434                                         ;
+;     Total combinational functions  ; 361                                         ;
+;     Dedicated logic registers      ; 204                                         ;
+; Total registers                    ; 204                                         ;
+; Total pins                         ; 26                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -67,7 +82,7 @@ agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                                      ; RamMemory          ; pratica05          ;
+; Top-level entity name                                                      ; arquitetura        ; pratica05          ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -164,68 +179,184 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                              ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                ; Library ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------+---------+
-; RamMemory.v                      ; yes             ; User Verilog HDL File  ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v ;         ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; Timer.v                          ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/Timer.v                    ;         ;
+; arquitetura.v                    ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/arquitetura.v              ;         ;
+; RamMemory.v                      ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v                ;         ;
+; Sistema.v                        ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/Sistema.v                  ;         ;
+; ControlUnit.v                    ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/ControlUnit.v              ;         ;
+; RomPadrao.v                      ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/RomPadrao.v                ;         ;
+; Deconcatener.v                   ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/Deconcatener.v             ;         ;
+; Entrada.v                        ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/Entrada.v                  ;         ;
+; Saida.v                          ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/Saida.v                    ;         ;
+; PhraseBank.v                     ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/PhraseBank.v               ;         ;
+; DisplayControlUnit.v             ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/DisplayControlUnit.v       ;         ;
+; RowEncoder.v                     ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/RowEncoder.v               ;         ;
+; RowColEncoder.v                  ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/RowColEncoder.v            ;         ;
+; RingCounter.v                    ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/RingCounter.v              ;         ;
+; keypadEncoder.v                  ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/keypadEncoder.v            ;         ;
+; ColEncoder.v                     ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/ColEncoder.v               ;         ;
+; ClockDivider.v                   ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/ClockDivider.v             ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal170.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/aglobal170.inc      ;         ;
+; db/lpm_divide_fhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/db/lpm_divide_fhm.tdf      ;         ;
+; db/sign_div_unsign_7kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/db/sign_div_unsign_7kh.tdf ;         ;
+; db/alt_u_div_24f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/db/alt_u_div_24f.tdf       ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/db/add_sub_7pc.tdf         ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/db/add_sub_8pc.tdf         ;         ;
+; db/lpm_divide_i9m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/welly/Documents/GitHub/LT39A/pratica05/db/lpm_divide_i9m.tdf      ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 136       ;
-;                                             ;           ;
-; Total combinational functions               ; 72        ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 56        ;
-;     -- 3 input functions                    ; 0         ;
-;     -- <=2 input functions                  ; 16        ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 72        ;
-;     -- arithmetic mode                      ; 0         ;
-;                                             ;           ;
-; Total registers                             ; 68        ;
-;     -- Dedicated logic registers            ; 68        ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 28        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 68        ;
-; Total fan-out                               ; 492       ;
-; Average fan-out                             ; 2.51      ;
-+---------------------------------------------+-----------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 434         ;
+;                                             ;             ;
+; Total combinational functions               ; 361         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 143         ;
+;     -- 3 input functions                    ; 75          ;
+;     -- <=2 input functions                  ; 143         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 242         ;
+;     -- arithmetic mode                      ; 119         ;
+;                                             ;             ;
+; Total registers                             ; 204         ;
+;     -- Dedicated logic registers            ; 204         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 26          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 169         ;
+; Total fan-out                               ; 1626        ;
+; Average fan-out                             ; 2.64        ;
++---------------------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |RamMemory                 ; 72 (72)             ; 68 (68)                   ; 0           ; 0            ; 0       ; 0         ; 28   ; 0            ; |RamMemory          ; RamMemory   ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                               ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                             ; Entity Name         ; Library Name ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |arquitetura                                    ; 361 (0)             ; 204 (0)                   ; 0           ; 0            ; 0       ; 0         ; 26   ; 0            ; |arquitetura                                                                                                                                                    ; arquitetura         ; work         ;
+;    |Entrada:inst00|                             ; 165 (0)             ; 103 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Entrada:inst00                                                                                                                                     ; Entrada             ; work         ;
+;       |ClockDivider:inst01|                     ; 152 (152)           ; 94 (94)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Entrada:inst00|ClockDivider:inst01                                                                                                                 ; ClockDivider        ; work         ;
+;       |keypadEncoder:inst02|                    ; 13 (2)              ; 9 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Entrada:inst00|keypadEncoder:inst02                                                                                                                ; keypadEncoder       ; work         ;
+;          |ColEncoder:inst03|                    ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Entrada:inst00|keypadEncoder:inst02|ColEncoder:inst03                                                                                              ; ColEncoder          ; work         ;
+;          |RingCounter:inst01|                   ; 2 (2)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Entrada:inst00|keypadEncoder:inst02|RingCounter:inst01                                                                                             ; RingCounter         ; work         ;
+;          |RowColEncoder:inst04|                 ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Entrada:inst00|keypadEncoder:inst02|RowColEncoder:inst04                                                                                           ; RowColEncoder       ; work         ;
+;          |RowEncoder:inst02|                    ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Entrada:inst00|keypadEncoder:inst02|RowEncoder:inst02                                                                                              ; RowEncoder          ; work         ;
+;    |Saida:inst03|                               ; 111 (0)             ; 22 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03                                                                                                                                       ; Saida               ; work         ;
+;       |DisplayControlUnit:inst02|               ; 40 (40)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|DisplayControlUnit:inst02                                                                                                             ; DisplayControlUnit  ; work         ;
+;       |PhraseBank:inst01|                       ; 71 (32)             ; 7 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01                                                                                                                     ; PhraseBank          ; work         ;
+;          |Deconcatener:inst00|                  ; 24 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00                                                                                                 ; Deconcatener        ; work         ;
+;             |lpm_divide:Div0|                   ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;                |lpm_divide_fhm:auto_generated|  ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div0|lpm_divide_fhm:auto_generated                                                   ; lpm_divide_fhm      ; work         ;
+;                   |sign_div_unsign_7kh:divider| ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
+;                      |alt_u_div_24f:divider|    ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f       ; work         ;
+;             |lpm_divide:Div1|                   ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;                |lpm_divide_fhm:auto_generated|  ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div1|lpm_divide_fhm:auto_generated                                                   ; lpm_divide_fhm      ; work         ;
+;                   |sign_div_unsign_7kh:divider| ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div1|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
+;                      |alt_u_div_24f:divider|    ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div1|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f       ; work         ;
+;             |lpm_divide:Div2|                   ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div2                                                                                 ; lpm_divide          ; work         ;
+;                |lpm_divide_fhm:auto_generated|  ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div2|lpm_divide_fhm:auto_generated                                                   ; lpm_divide_fhm      ; work         ;
+;                   |sign_div_unsign_7kh:divider| ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div2|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
+;                      |alt_u_div_24f:divider|    ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div2|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f       ; work         ;
+;             |lpm_divide:Mod0|                   ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;                |lpm_divide_i9m:auto_generated|  ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod0|lpm_divide_i9m:auto_generated                                                   ; lpm_divide_i9m      ; work         ;
+;                   |sign_div_unsign_7kh:divider| ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
+;                      |alt_u_div_24f:divider|    ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f       ; work         ;
+;             |lpm_divide:Mod1|                   ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;                |lpm_divide_i9m:auto_generated|  ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod1|lpm_divide_i9m:auto_generated                                                   ; lpm_divide_i9m      ; work         ;
+;                   |sign_div_unsign_7kh:divider| ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod1|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
+;                      |alt_u_div_24f:divider|    ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod1|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f       ; work         ;
+;             |lpm_divide:Mod2|                   ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;                |lpm_divide_i9m:auto_generated|  ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod2|lpm_divide_i9m:auto_generated                                                   ; lpm_divide_i9m      ; work         ;
+;                   |sign_div_unsign_7kh:divider| ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod2|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
+;                      |alt_u_div_24f:divider|    ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod2|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f       ; work         ;
+;          |RomPadrao:inst01|                     ; 15 (15)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Saida:inst03|PhraseBank:inst01|RomPadrao:inst01                                                                                                    ; RomPadrao           ; work         ;
+;    |Sistema:inst01|                             ; 85 (0)              ; 79 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Sistema:inst01                                                                                                                                     ; Sistema             ; work         ;
+;       |ControlUnit:inst00|                      ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Sistema:inst01|ControlUnit:inst00                                                                                                                  ; ControlUnit         ; work         ;
+;       |RamMemory:inst02|                        ; 72 (72)             ; 68 (68)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Sistema:inst01|RamMemory:inst02                                                                                                                    ; RamMemory           ; work         ;
+;       |Timer:inst01|                            ; 10 (10)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |arquitetura|Sistema:inst01|Timer:inst01                                                                                                                        ; Timer               ; work         ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; data_out[4]~reg0                      ; Stuck at GND due to stuck port data_in ;
-; data_out[5]~reg0                      ; Stuck at GND due to stuck port data_in ;
-; data_out[6]~reg0                      ; Stuck at GND due to stuck port data_in ;
-; data_out[7]~reg0                      ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 4 ;                                        ;
-+---------------------------------------+----------------------------------------+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |arquitetura|Saida:inst03|DisplayControlUnit:inst02|PresentState                                                                                                                                                                                        ;
++-----------------------------+------------------------+-------------------------+-------------------------+------------------------+-----------------------------+---------------------------+------------------+------------------+------------------+------------------+
+; Name                        ; PresentState.WriteChar ; PresentState.SetAddress ; PresentState.ReturnHome ; PresentState.EntryMode ; PresentState.DisplayControl ; PresentState.ClearDisplay ; PresentState.FS4 ; PresentState.FS3 ; PresentState.FS2 ; PresentState.FS1 ;
++-----------------------------+------------------------+-------------------------+-------------------------+------------------------+-----------------------------+---------------------------+------------------+------------------+------------------+------------------+
+; PresentState.FS1            ; 0                      ; 0                       ; 0                       ; 0                      ; 0                           ; 0                         ; 0                ; 0                ; 0                ; 0                ;
+; PresentState.FS2            ; 0                      ; 0                       ; 0                       ; 0                      ; 0                           ; 0                         ; 0                ; 0                ; 1                ; 1                ;
+; PresentState.FS3            ; 0                      ; 0                       ; 0                       ; 0                      ; 0                           ; 0                         ; 0                ; 1                ; 0                ; 1                ;
+; PresentState.FS4            ; 0                      ; 0                       ; 0                       ; 0                      ; 0                           ; 0                         ; 1                ; 0                ; 0                ; 1                ;
+; PresentState.ClearDisplay   ; 0                      ; 0                       ; 0                       ; 0                      ; 0                           ; 1                         ; 0                ; 0                ; 0                ; 1                ;
+; PresentState.DisplayControl ; 0                      ; 0                       ; 0                       ; 0                      ; 1                           ; 0                         ; 0                ; 0                ; 0                ; 1                ;
+; PresentState.EntryMode      ; 0                      ; 0                       ; 0                       ; 1                      ; 0                           ; 0                         ; 0                ; 0                ; 0                ; 1                ;
+; PresentState.ReturnHome     ; 0                      ; 0                       ; 1                       ; 0                      ; 0                           ; 0                         ; 0                ; 0                ; 0                ; 1                ;
+; PresentState.SetAddress     ; 0                      ; 1                       ; 0                       ; 0                      ; 0                           ; 0                         ; 0                ; 0                ; 0                ; 1                ;
+; PresentState.WriteChar      ; 1                      ; 0                       ; 0                       ; 0                      ; 0                           ; 0                         ; 0                ; 0                ; 0                ; 1                ;
++-----------------------------+------------------------+-------------------------+-------------------------+------------------------+-----------------------------+---------------------------+------------------+------------------+------------------+------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------+
+; State Machine - |arquitetura|Sistema:inst01|ControlUnit:inst00|PresentState     ;
++--------------------+-------------------+-------------------+--------------------+
+; Name               ; PresentState.Idle ; PresentState.Read ; PresentState.Write ;
++--------------------+-------------------+-------------------+--------------------+
+; PresentState.Idle  ; 0                 ; 0                 ; 0                  ;
+; PresentState.Write ; 1                 ; 0                 ; 1                  ;
+; PresentState.Read  ; 1                 ; 1                 ; 0                  ;
++--------------------+-------------------+-------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------+
+; State Machine - |arquitetura|Entrada:inst00|keypadEncoder:inst02|RingCounter:inst01|ring ;
++-----------+-----------+-----------+-----------+------------------------------------------+
+; Name      ; ring.0111 ; ring.1011 ; ring.1101 ; ring.1110                                ;
++-----------+-----------+-----------+-----------+------------------------------------------+
+; ring.1110 ; 0         ; 0         ; 0         ; 0                                        ;
+; ring.1011 ; 0         ; 1         ; 0         ; 1                                        ;
+; ring.1101 ; 0         ; 0         ; 1         ; 1                                        ;
+; ring.0111 ; 1         ; 0         ; 0         ; 1                                        ;
++-----------+-----------+-----------+-----------+------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                          ;
++------------------------------------------------------------+----------------------------------------------------------------+
+; Register name                                              ; Reason for Removal                                             ;
++------------------------------------------------------------+----------------------------------------------------------------+
+; Saida:inst03|PhraseBank:inst01|RomPadrao:inst01|dataOut[7] ; Stuck at GND due to stuck port data_in                         ;
+; Saida:inst03|DisplayControlUnit:inst02|PresentState~4      ; Lost fanout                                                    ;
+; Saida:inst03|DisplayControlUnit:inst02|PresentState~5      ; Lost fanout                                                    ;
+; Saida:inst03|DisplayControlUnit:inst02|PresentState~6      ; Lost fanout                                                    ;
+; Saida:inst03|DisplayControlUnit:inst02|PresentState~7      ; Lost fanout                                                    ;
+; Entrada:inst00|ClockDivider:inst01|counter1Hz[0]           ; Merged with Entrada:inst00|ClockDivider:inst01|counter500Hz[0] ;
+; Entrada:inst00|ClockDivider:inst01|counter20Hz[0]          ; Merged with Entrada:inst00|ClockDivider:inst01|counter500Hz[0] ;
+; Entrada:inst00|ClockDivider:inst01|counter1Hz[1]           ; Merged with Entrada:inst00|ClockDivider:inst01|counter20Hz[1]  ;
+; Entrada:inst00|ClockDivider:inst01|counter1Hz[2]           ; Merged with Entrada:inst00|ClockDivider:inst01|counter20Hz[2]  ;
+; Entrada:inst00|ClockDivider:inst01|counter1Hz[3]           ; Merged with Entrada:inst00|ClockDivider:inst01|counter20Hz[3]  ;
+; Total Number of Removed Registers = 10                     ;                                                                ;
++------------------------------------------------------------+----------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -233,14 +364,213 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 68    ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Total registers                              ; 204   ;
+; Number of registers using Synchronous Clear  ; 7     ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 35    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 68    ;
+; Number of registers using Clock Enable       ; 75    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |arquitetura|Saida:inst03|DisplayControlUnit:inst02|char_index[0] ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |arquitetura|Saida:inst03|PhraseBank:inst01|Phrase[4]             ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |arquitetura|Saida:inst03|PhraseBank:inst01|Numbers.raddr_a[0]    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Entrada:inst00|ClockDivider:inst01 ;
++----------------+----------+-----------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                ;
++----------------+----------+-----------------------------------------------------+
+; CLOCK_FREQ     ; 50000000 ; Signed Integer                                      ;
++----------------+----------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Sistema:inst01|ControlUnit:inst00 ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; Idle           ; 00    ; Unsigned Binary                                       ;
+; Write          ; 01    ; Unsigned Binary                                       ;
+; Read           ; 10    ; Unsigned Binary                                       ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Saida:inst03|DisplayControlUnit:inst02 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; FS1            ; 0000  ; Unsigned Binary                                            ;
+; FS2            ; 0001  ; Unsigned Binary                                            ;
+; FS3            ; 0010  ; Unsigned Binary                                            ;
+; FS4            ; 0011  ; Unsigned Binary                                            ;
+; ClearDisplay   ; 0100  ; Unsigned Binary                                            ;
+; DisplayControl ; 0101  ; Unsigned Binary                                            ;
+; EntryMode      ; 0110  ; Unsigned Binary                                            ;
+; ReturnHome     ; 0111  ; Unsigned Binary                                            ;
+; SetAddress     ; 1000  ; Unsigned Binary                                            ;
+; WriteChar      ; 1001  ; Unsigned Binary                                            ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div0 ;
++------------------------+----------------+---------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                      ;
++------------------------+----------------+---------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                                   ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_fhm ; Untyped                                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                            ;
++------------------------+----------------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod0 ;
++------------------------+----------------+---------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                      ;
++------------------------+----------------+---------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                                   ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_i9m ; Untyped                                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                            ;
++------------------------+----------------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div2 ;
++------------------------+----------------+---------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                      ;
++------------------------+----------------+---------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                                   ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_fhm ; Untyped                                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                            ;
++------------------------+----------------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod2 ;
++------------------------+----------------+---------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                      ;
++------------------------+----------------+---------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                                   ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_i9m ; Untyped                                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                            ;
++------------------------+----------------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div1 ;
++------------------------+----------------+---------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                      ;
++------------------------+----------------+---------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                                   ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_fhm ; Untyped                                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                            ;
++------------------------+----------------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod1 ;
++------------------------+----------------+---------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                      ;
++------------------------+----------------+---------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                                                   ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_i9m ; Untyped                                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                            ;
++------------------------+----------------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Sistema:inst01|RamMemory:inst02"                                                                                                                   ;
++---------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                          ;
++---------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; address ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "address[9..4]" will be connected to GND. ;
++---------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -248,17 +578,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 28                          ;
-; cycloneiii_ff         ; 68                          ;
+; boundary_port         ; 26                          ;
+; cycloneiii_ff         ; 204                         ;
+;     CLR               ; 21                          ;
+;     CLR SCLR          ; 7                           ;
 ;     ENA               ; 68                          ;
-; cycloneiii_lcell_comb ; 73                          ;
-;     normal            ; 73                          ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 16                          ;
-;         4 data inputs ; 56                          ;
+;     ENA CLR           ; 7                           ;
+;     SLD               ; 1                           ;
+;     plain             ; 100                         ;
+; cycloneiii_lcell_comb ; 367                         ;
+;     arith             ; 119                         ;
+;         2 data inputs ; 117                         ;
+;         3 data inputs ; 2                           ;
+;     normal            ; 248                         ;
+;         0 data inputs ; 8                           ;
+;         1 data inputs ; 15                          ;
+;         2 data inputs ; 9                           ;
+;         3 data inputs ; 73                          ;
+;         4 data inputs ; 143                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.76                        ;
+; Max LUT depth         ; 6.30                        ;
+; Average LUT depth     ; 3.31                        ;
 +-----------------------+-----------------------------+
 
 
@@ -277,10 +617,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Wed Aug 21 20:41:31 2024
+    Info: Processing started: Fri Aug 23 15:04:33 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pratica05 -c pratica05
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file timer.v
+    Info (12023): Found entity 1: Timer File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Timer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file arquitetura.v
+    Info (12023): Found entity 1: arquitetura File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/arquitetura.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file rammemory.v
     Info (12023): Found entity 1: RamMemory File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file sistema.v
@@ -311,40 +655,110 @@ Info (12021): Found 1 design units, including 1 entities, in source file colenco
     Info (12023): Found entity 1: ColEncoder File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/ColEncoder.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file clockdivider.v
     Info (12023): Found entity 1: ClockDivider File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/ClockDivider.v Line: 1
-Warning (10222): Verilog HDL Parameter Declaration warning at ClockDivider.v(11): Parameter Declaration in module "ClockDivider" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/ClockDivider.v Line: 11
-Warning (10222): Verilog HDL Parameter Declaration warning at ClockDivider.v(12): Parameter Declaration in module "ClockDivider" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/ClockDivider.v Line: 12
-Warning (10222): Verilog HDL Parameter Declaration warning at ClockDivider.v(13): Parameter Declaration in module "ClockDivider" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/ClockDivider.v Line: 13
-Info (12127): Elaborating entity "RamMemory" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at RamMemory.v(14): truncated value with size 8 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v Line: 14
-Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276004): RAM logic "RamBlock" is uninferred due to inappropriate RAM size File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v Line: 10
+Info (12127): Elaborating entity "arquitetura" for the top level hierarchy
+Info (12128): Elaborating entity "Entrada" for hierarchy "Entrada:inst00" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/arquitetura.v Line: 16
+Info (12128): Elaborating entity "ClockDivider" for hierarchy "Entrada:inst00|ClockDivider:inst01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Entrada.v Line: 17
+Info (12128): Elaborating entity "keypadEncoder" for hierarchy "Entrada:inst00|keypadEncoder:inst02" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Entrada.v Line: 19
+Info (12128): Elaborating entity "RingCounter" for hierarchy "Entrada:inst00|keypadEncoder:inst02|RingCounter:inst01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/keypadEncoder.v Line: 15
+Critical Warning (10237): Verilog HDL warning at RingCounter.v(22): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RingCounter.v Line: 22
+Info (12128): Elaborating entity "RowEncoder" for hierarchy "Entrada:inst00|keypadEncoder:inst02|RowEncoder:inst02" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/keypadEncoder.v Line: 16
+Info (12128): Elaborating entity "ColEncoder" for hierarchy "Entrada:inst00|keypadEncoder:inst02|ColEncoder:inst03" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/keypadEncoder.v Line: 17
+Info (12128): Elaborating entity "RowColEncoder" for hierarchy "Entrada:inst00|keypadEncoder:inst02|RowColEncoder:inst04" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/keypadEncoder.v Line: 18
+Info (12128): Elaborating entity "Sistema" for hierarchy "Sistema:inst01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/arquitetura.v Line: 20
+Info (12128): Elaborating entity "ControlUnit" for hierarchy "Sistema:inst01|ControlUnit:inst00" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Sistema.v Line: 17
+Info (12128): Elaborating entity "Timer" for hierarchy "Sistema:inst01|Timer:inst01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Sistema.v Line: 19
+Warning (10230): Verilog HDL assignment warning at timer.v(12): truncated value with size 8 to match size of target (7) File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/timer.v Line: 12
+Warning (10230): Verilog HDL assignment warning at timer.v(17): truncated value with size 8 to match size of target (7) File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/timer.v Line: 17
+Warning (10230): Verilog HDL assignment warning at timer.v(20): truncated value with size 8 to match size of target (7) File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/timer.v Line: 20
+Info (12128): Elaborating entity "RamMemory" for hierarchy "Sistema:inst01|RamMemory:inst02" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Sistema.v Line: 24
+Info (12128): Elaborating entity "Saida" for hierarchy "Saida:inst03" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/arquitetura.v Line: 22
+Info (12128): Elaborating entity "PhraseBank" for hierarchy "Saida:inst03|PhraseBank:inst01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Saida.v Line: 18
+Warning (10030): Net "Numbers.data_a" at PhraseBank.v(17) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/PhraseBank.v Line: 17
+Warning (10030): Net "Numbers.waddr_a" at PhraseBank.v(17) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/PhraseBank.v Line: 17
+Warning (10030): Net "RomState.data_a" at PhraseBank.v(31) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/PhraseBank.v Line: 31
+Warning (10030): Net "RomState.waddr_a" at PhraseBank.v(31) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/PhraseBank.v Line: 31
+Warning (10030): Net "Numbers.we_a" at PhraseBank.v(17) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/PhraseBank.v Line: 17
+Warning (10030): Net "RomState.we_a" at PhraseBank.v(31) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/PhraseBank.v Line: 31
+Info (12128): Elaborating entity "Deconcatener" for hierarchy "Saida:inst03|PhraseBank:inst01|Deconcatener:inst00" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/PhraseBank.v Line: 14
+Warning (10230): Verilog HDL assignment warning at Deconcatener.v(7): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Deconcatener.v Line: 7
+Warning (10230): Verilog HDL assignment warning at Deconcatener.v(8): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Deconcatener.v Line: 8
+Warning (10230): Verilog HDL assignment warning at Deconcatener.v(10): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Deconcatener.v Line: 10
+Warning (10230): Verilog HDL assignment warning at Deconcatener.v(11): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Deconcatener.v Line: 11
+Warning (10230): Verilog HDL assignment warning at Deconcatener.v(13): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Deconcatener.v Line: 13
+Warning (10230): Verilog HDL assignment warning at Deconcatener.v(14): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Deconcatener.v Line: 14
+Info (12128): Elaborating entity "RomPadrao" for hierarchy "Saida:inst03|PhraseBank:inst01|RomPadrao:inst01" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/PhraseBank.v Line: 15
+Warning (10030): Net "phrase.data_a" at RomPadrao.v(8) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RomPadrao.v Line: 8
+Warning (10030): Net "phrase.waddr_a" at RomPadrao.v(8) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RomPadrao.v Line: 8
+Warning (10030): Net "phrase.we_a" at RomPadrao.v(8) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RomPadrao.v Line: 8
+Info (12128): Elaborating entity "DisplayControlUnit" for hierarchy "Saida:inst03|DisplayControlUnit:inst02" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Saida.v Line: 20
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "Sistema:inst01|DataOut[0]" feeding internal logic into a wire File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Sistema.v Line: 9
+    Warning (13049): Converted tri-state buffer "Sistema:inst01|DataOut[1]" feeding internal logic into a wire File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Sistema.v Line: 9
+    Warning (13049): Converted tri-state buffer "Sistema:inst01|DataOut[2]" feeding internal logic into a wire File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Sistema.v Line: 9
+    Warning (13049): Converted tri-state buffer "Sistema:inst01|DataOut[3]" feeding internal logic into a wire File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Sistema.v Line: 9
+    Warning (13049): Converted tri-state buffer "Sistema:inst01|MemoryClock" feeding internal logic into a wire File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Sistema.v Line: 21
+Info (276014): Found 4 instances of uninferred RAM logic
+    Info (276004): RAM logic "Saida:inst03|PhraseBank:inst01|Numbers" is uninferred due to inappropriate RAM size File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/PhraseBank.v Line: 17
+    Info (276004): RAM logic "Saida:inst03|PhraseBank:inst01|RomState" is uninferred due to inappropriate RAM size File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/PhraseBank.v Line: 31
+    Info (276004): RAM logic "Saida:inst03|PhraseBank:inst01|RomPadrao:inst01|phrase" is uninferred due to inappropriate RAM size File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RomPadrao.v Line: 8
+    Info (276004): RAM logic "Sistema:inst01|RamMemory:inst02|RamBlock" is uninferred due to inappropriate RAM size File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v Line: 10
+Critical Warning (127005): Memory depth (16) in the design file differs from memory depth (10) in the Memory Initialization File "C:/Users/welly/Documents/GitHub/LT39A/pratica05/db/pratica05.ram0_PhraseBank_af041c1.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (4) in the design file differs from memory depth (3) in the Memory Initialization File "C:/Users/welly/Documents/GitHub/LT39A/pratica05/db/pratica05.ram1_PhraseBank_af041c1.hdl.mif" -- setting initial value for remaining addresses to 0
+Info (278001): Inferred 6 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|Div0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Deconcatener.v Line: 8
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|Mod0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Deconcatener.v Line: 7
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|Div2" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Deconcatener.v Line: 14
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|Mod2" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Deconcatener.v Line: 13
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|Div1" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Deconcatener.v Line: 11
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|Mod1" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Deconcatener.v Line: 10
+Info (12130): Elaborated megafunction instantiation "Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Deconcatener.v Line: 8
+Info (12133): Instantiated megafunction "Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div0" with the following parameter: File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Deconcatener.v Line: 8
+    Info (12134): Parameter "LPM_WIDTHN" = "4"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_fhm.tdf
+    Info (12023): Found entity 1: lpm_divide_fhm File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/db/lpm_divide_fhm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_7kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_7kh File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/db/sign_div_unsign_7kh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_24f.tdf
+    Info (12023): Found entity 1: alt_u_div_24f File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/db/alt_u_div_24f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/db/add_sub_7pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/db/add_sub_8pc.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod0" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Deconcatener.v Line: 7
+Info (12133): Instantiated megafunction "Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Mod0" with the following parameter: File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/Deconcatener.v Line: 7
+    Info (12134): Parameter "LPM_WIDTHN" = "4"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_i9m.tdf
+    Info (12023): Found entity 1: lpm_divide_i9m File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/db/lpm_divide_i9m.tdf Line: 25
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "data_out[4]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v Line: 12
-    Warning (13410): Pin "data_out[5]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v Line: 12
-    Warning (13410): Pin "data_out[6]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v Line: 12
-    Warning (13410): Pin "data_out[7]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v Line: 12
+    Warning (13410): Pin "RW" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/arquitetura.v Line: 8
+    Warning (13410): Pin "LCD_Blon" is stuck at VCC File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/arquitetura.v Line: 11
+    Warning (13410): Pin "LCD_On" is stuck at VCC File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/arquitetura.v Line: 12
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/welly/Documents/GitHub/LT39A/pratica05/output_files/pratica05.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 10 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "address[4]" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v Line: 4
-    Warning (15610): No output dependent on input pin "address[5]" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v Line: 4
-    Warning (15610): No output dependent on input pin "address[6]" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v Line: 4
-    Warning (15610): No output dependent on input pin "address[7]" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v Line: 4
-    Warning (15610): No output dependent on input pin "address[8]" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v Line: 4
-    Warning (15610): No output dependent on input pin "address[9]" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v Line: 4
-    Warning (15610): No output dependent on input pin "data_in[4]" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v Line: 5
-    Warning (15610): No output dependent on input pin "data_in[5]" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v Line: 5
-    Warning (15610): No output dependent on input pin "data_in[6]" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v Line: 5
-    Warning (15610): No output dependent on input pin "data_in[7]" File: C:/Users/welly/Documents/GitHub/LT39A/pratica05/RamMemory.v Line: 5
-Info (21057): Implemented 164 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 20 input pins
-    Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 136 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 4787 megabytes
-    Info: Processing ended: Wed Aug 21 20:41:41 2024
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:07
+Info (21057): Implemented 461 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 435 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 4798 megabytes
+    Info: Processing ended: Fri Aug 23 15:04:41 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:06
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/welly/Documents/GitHub/LT39A/pratica05/output_files/pratica05.map.smsg.
 
 

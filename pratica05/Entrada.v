@@ -5,16 +5,12 @@ module Entrada (
 	 input wire[3:0] AddressIn,
 	 output wire[3:0] AddressOut,
 	 
-	 input wire RWin,
-	 output wire RWout,
-	 
     input wire[2:0] col,
     output wire[3:0] row, KeypadData,
     output wire dav
 );
 
 assign clock50Mhz = clock;
-assign RWout = RWin;
 assign AddressOut = AddressIn;
 
 wire clock20Hz;

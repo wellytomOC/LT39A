@@ -15,11 +15,11 @@ module RomPadrao (
         phrase[5]  = "X";		// Unidade Address
         phrase[6]  = " ";
         phrase[7]  = " ";
-        phrase[8]  = " ";
-        phrase[9]  = " ";
-        phrase[10] = "R";
-        phrase[11] = "/";
-        phrase[12] = "W";
+        phrase[8]  = "S";
+        phrase[9]  = "t";
+        phrase[10] = "a";
+        phrase[11] = "t";
+        phrase[12] = "e";
         phrase[13] = ":";
         phrase[14] = "Y";		// R ou W
         phrase[15] = " ";
