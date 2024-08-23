@@ -61,13 +61,13 @@ module ControlUnit (
             end
             Write: begin
                 TimerRef = 8'd10;
-                MemoryEnable = 1'd1;
                 WriteEnable = dav;
+                MemoryEnable = 1'd1;
             end
             Read: begin
                 TimerRef = 8'd10;
-                MemoryEnable = 1'd1;
                 WriteEnable = 1'd0;
+                MemoryEnable = 1'd1;
             end
         endcase
     end

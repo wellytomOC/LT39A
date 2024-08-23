@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Fri Aug 23 15:04:41 2024
+Analysis & Synthesis Status : Successful - Fri Aug 23 15:29:29 2024
 Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 Revision Name : pratica05
 Top-level Entity Name : arquitetura
 Family : Cyclone IV E
-Total logic elements : 434
-    Total combinational functions : 361
+Total logic elements : 439
+    Total combinational functions : 366
     Dedicated logic registers : 204
 Total registers : 204
 Total pins : 26

@@ -6,7 +6,7 @@ module Sistema (
 
     input wire[3:0] AddressIn,
 
-    output wire[3:0] DataOut,
+    output reg[3:0] DataOut,
 
     output wire[1:0] PresentStateFlag
 
@@ -23,6 +23,16 @@ module Sistema (
     wire[3:0] RamData;
     RamMemory inst02(MemoryClock, WriteEnable, AddressIn, KeypadData, RamData);
 
-    assign DataOut = (PresentStateFlag == 2'd2) ? RamData : 4'bZZZZ;
+    always @(*) begin
+        case (PresentStateFlag)
+            2'd0: DataOut = DataOut;
+            2'd1: DataOut = DataOut;
+            2'd2: DataOut = RamData;
+            default: begin
+                
+            end
+        endcase
+        
+    end
     
 endmodule

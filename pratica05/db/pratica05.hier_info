@@ -231,10 +231,10 @@ AddressIn[0] => AddressIn[0].IN1
 AddressIn[1] => AddressIn[1].IN1
 AddressIn[2] => AddressIn[2].IN1
 AddressIn[3] => AddressIn[3].IN1
-DataOut[0] <= DataOut[0].DB_MAX_OUTPUT_PORT_TYPE
-DataOut[1] <= DataOut[1].DB_MAX_OUTPUT_PORT_TYPE
-DataOut[2] <= DataOut[2].DB_MAX_OUTPUT_PORT_TYPE
-DataOut[3] <= DataOut[3].DB_MAX_OUTPUT_PORT_TYPE
+DataOut[0] <= DataOut[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+DataOut[1] <= DataOut[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+DataOut[2] <= DataOut[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+DataOut[3] <= DataOut[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
 PresentStateFlag[0] <= ControlUnit:inst00.port7
 PresentStateFlag[1] <= ControlUnit:inst00.port7
 
