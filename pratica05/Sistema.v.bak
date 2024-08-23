@@ -1,0 +1,16 @@
+module Sistema (
+    input wire clock50MHz, reset,
+
+    input wire dav,
+    input wire[3:0] KeypadData,
+
+    input wire[3:0] AddressIn,
+    input wire RWin,
+
+    output wire[3:0] DataOut,
+
+);
+
+
+    
+endmodule

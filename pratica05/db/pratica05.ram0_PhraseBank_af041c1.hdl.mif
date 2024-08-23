@@ -1,0 +1,21 @@
+-- begin_signature
+-- PhraseBank
+-- end_signature
+WIDTH=8;
+DEPTH=10;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	9 :	00111001;
+	8 :	00111000;
+	7 :	00110111;
+	6 :	00110110;
+	5 :	00110101;
+	4 :	00110100;
+	3 :	00110011;
+	2 :	00110010;
+	1 :	00110001;
+	0 :	00110000;
+END;

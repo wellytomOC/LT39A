@@ -1,0 +1,13 @@
+
+State Machine - |Saida|DisplayControlUnit:inst02|PresentState
+Name PresentState.WriteChar PresentState.SetAddress PresentState.ReturnHome PresentState.EntryMode PresentState.DisplayControl PresentState.ClearDisplay PresentState.FS4 PresentState.FS3 PresentState.FS2 PresentState.FS1 
+PresentState.FS1 0 0 0 0 0 0 0 0 0 0 
+PresentState.FS2 0 0 0 0 0 0 0 0 1 1 
+PresentState.FS3 0 0 0 0 0 0 0 1 0 1 
+PresentState.FS4 0 0 0 0 0 0 1 0 0 1 
+PresentState.ClearDisplay 0 0 0 0 0 1 0 0 0 1 
+PresentState.DisplayControl 0 0 0 0 1 0 0 0 0 1 
+PresentState.EntryMode 0 0 0 1 0 0 0 0 0 1 
+PresentState.ReturnHome 0 0 1 0 0 0 0 0 0 1 
+PresentState.SetAddress 0 1 0 0 0 0 0 0 0 1 
+PresentState.WriteChar 1 0 0 0 0 0 0 0 0 1 

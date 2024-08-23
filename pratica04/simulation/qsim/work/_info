@@ -8,108 +8,192 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/welly/Documents/GitHub/LT39A/pratica04/simulation/qsim
-vhard_block
-Z1 !s110 1722456228
+vcontrole
+Z1 !s110 1723850490
 !i10b 1
-!s100 d78<JBjRKl8hJ4ZJ`dN@:1
-IaKd^FFAYle;ONh1KG0@8B1
+!s100 zeDAnz>o8gD2SelBT@j7D2
+IiK0Hb@UZYmjJfkgP8C`jG0
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1722456227
+Z3 w1723850489
 Z4 8atv04.vo
 Z5 Fatv04.vo
-L0 1846
-Z6 OV;L;10.5b;63
+Z6 L0 32
+Z7 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1722456228.000000
-Z8 !s107 atv04.vo|
-Z9 !s90 -work|work|atv04.vo|
+Z8 !s108 1723850490.000000
+Z9 !s107 atv04.vo|
+Z10 !s90 -work|work|atv04.vo|
 !i113 1
-Z10 o-work work
-Z11 tCvgOpt 0
+Z11 o-work work
+Z12 tCvgOpt 0
+vcontrole_vlg_vec_tst
+R1
+!i10b 1
+!s100 zB6HK4T8]RZAQKS7Mf=0B2
+I>K8Ofh`Cjl0J7JWaSjX`?1
+R2
+R0
+R3
+8Waveform5.vwf.vt
+FWaveform5.vwf.vt
+Z13 L0 30
+R7
+r1
+!s85 0
+31
+R8
+!s107 Waveform5.vwf.vt|
+!s90 -work|work|Waveform5.vwf.vt|
+!i113 1
+R11
+R12
+vhard_block
+Z14 !s110 1723851155
+!i10b 1
+!s100 FZ;JR0Q>Nfk7Nm`VSQQA`2
+I;D@3[mHL0Bla9:GSJ@eK21
+R2
+R0
+Z15 w1723851155
+R4
+R5
+L0 1853
+R7
+r1
+!s85 0
+31
+Z16 !s108 1723851155.000000
+R9
+R10
+!i113 1
+R11
+R12
 vmod8counter
-Z12 !s110 1718987875
+Z17 !s110 1718987875
 !i10b 1
 !s100 eZ]CnDNbG=@QSPIONnd`?2
 Ie:i;2=nkfh8EI:i0fK6hS1
 R2
 R0
-Z13 w1718987873
+Z18 w1718987873
 R4
 R5
-Z14 L0 32
 R6
+R7
 r1
 !s85 0
 31
-Z15 !s108 1718987875.000000
-R8
+Z19 !s108 1718987875.000000
 R9
-!i113 1
 R10
+!i113 1
 R11
-vmod8counter_vlg_vec_tst
 R12
+vmod8counter_vlg_vec_tst
+R17
 !i10b 1
 !s100 c0zMFVz9@B?8?K1lY`N[>1
 I;NeXI]YMjQdMi43ckE:hV0
 R2
 R0
-R13
+R18
 8Waveform1.vwf.vt
 FWaveform1.vwf.vt
-Z16 L0 30
-R6
+R13
+R7
 r1
 !s85 0
 31
-R15
+R19
 !s107 Waveform1.vwf.vt|
 !s90 -work|work|Waveform1.vwf.vt|
 !i113 1
-R10
 R11
-vsistema
-R1
+R12
+voperacional
+Z20 !s110 1723850931
 !i10b 1
-!s100 _7Q?749^0aedn>O1Clg0@2
-I@5h?k]]`hh9k7Z[O:8<GJ2
+!s100 1E^0z6PRoh;lAob2HLI8;0
+ID2XG9878>1^F:zzn]eV023
 R2
 R0
-R3
+Z21 w1723850930
 R4
 R5
-R14
 R6
+R7
 r1
 !s85 0
 31
-R7
-R8
+Z22 !s108 1723850931.000000
 R9
-!i113 1
 R10
+!i113 1
 R11
-vsistema_vlg_vec_tst
-R1
+R12
+voperacional_vlg_vec_tst
+R20
 !i10b 1
-!s100 hzL2hQiUg49`M:<=n0`7T0
-IoX51jz]JfmNBhacR:zljQ1
+!s100 WZ:Y_i_nOaP0:ZN0Ma6B81
+Ij91F5I5[FmC;b[b<_2@FQ0
 R2
 R0
-R3
-8Waveform4.vwf.vt
-FWaveform4.vwf.vt
-R16
-R6
+R21
+8Waveform6.vwf.vt
+FWaveform6.vwf.vt
+R13
+R7
 r1
 !s85 0
 31
-R7
-!s107 Waveform4.vwf.vt|
-!s90 -work|work|Waveform4.vwf.vt|
+R22
+!s107 Waveform6.vwf.vt|
+!s90 -work|work|Waveform6.vwf.vt|
 !i113 1
-R10
 R11
+R12
+vsistema
+R14
+!i10b 1
+!s100 Pc;=FY3OMbI?U14bjm[hd2
+IVIVM:_8g[;RaIB5X0AcO83
+R2
+R0
+R15
+R4
+R5
+R6
+R7
+r1
+!s85 0
+31
+R16
+R9
+R10
+!i113 1
+R11
+R12
+vsistema_vlg_vec_tst
+R14
+!i10b 1
+!s100 iQNTX@hlkdbo24WYaf=OX3
+Ia=15g4B8]0ETL?;kMJ4852
+R2
+R0
+w1723851154
+8Waveform7.vwf.vt
+FWaveform7.vwf.vt
+R13
+R7
+r1
+!s85 0
+31
+R16
+!s107 Waveform7.vwf.vt|
+!s90 -work|work|Waveform7.vwf.vt|
+!i113 1
+R11
+R12

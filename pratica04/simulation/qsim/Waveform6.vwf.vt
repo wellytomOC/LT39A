@@ -1,0 +1,301 @@
+// Copyright (C) 2017  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Intel and sold by Intel or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "08/16/2024 20:28:49"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          operacional
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module operacional_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg [1:0] aluOp;
+reg clk;
+reg [3:0] inpA;
+reg [3:0] inpB;
+reg reset;
+reg selA;
+reg wrA;
+reg wrB;
+// wires                                               
+wire [3:0] result;
+
+// assign statements (if any)                          
+operacional i1 (
+// port map - connection between master ports and signals/registers   
+	.aluOp(aluOp),
+	.clk(clk),
+	.inpA(inpA),
+	.inpB(inpB),
+	.reset(reset),
+	.result(result),
+	.selA(selA),
+	.wrA(wrA),
+	.wrB(wrB)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// clk
+always
+begin
+	clk = 1'b0;
+	clk = #5000 1'b1;
+	#5000;
+end 
+// inpA[ 3 ]
+initial
+begin
+	inpA[3] = 1'b1;
+end 
+// inpA[ 2 ]
+initial
+begin
+	inpA[2] = 1'b1;
+end 
+// inpA[ 1 ]
+initial
+begin
+	inpA[1] = 1'b0;
+end 
+// inpA[ 0 ]
+initial
+begin
+	inpA[0] = 1'b1;
+end 
+// inpB[ 3 ]
+initial
+begin
+	inpB[3] = 1'b0;
+end 
+// inpB[ 2 ]
+initial
+begin
+	inpB[2] = 1'b1;
+end 
+// inpB[ 1 ]
+initial
+begin
+	inpB[1] = 1'b1;
+end 
+// inpB[ 0 ]
+initial
+begin
+	inpB[0] = 1'b0;
+end 
+// aluOp[ 1 ]
+always
+begin
+	aluOp[1] = 1'b0;
+	aluOp[1] = #500000 1'b1;
+	#500000;
+end 
+// aluOp[ 0 ]
+always
+begin
+	aluOp[0] = 1'b0;
+	aluOp[0] = #250000 1'b1;
+	#250000;
+end 
+
+// reset
+initial
+begin
+	reset = 1'b1;
+	reset = #30000 1'b0;
+end 
+
+// selA
+initial
+begin
+	selA = 1'b0;
+	selA = #20000 1'b1;
+	selA = #30000 1'b0;
+	selA = #10000 1'b1;
+	selA = #10000 1'b0;
+	selA = #10000 1'b1;
+	selA = #30000 1'b0;
+	selA = #30000 1'b1;
+	selA = #10000 1'b0;
+	selA = #20000 1'b1;
+	selA = #10000 1'b0;
+	selA = #20000 1'b1;
+	selA = #30000 1'b0;
+	selA = #20000 1'b1;
+	selA = #10000 1'b0;
+	selA = #30000 1'b1;
+	selA = #10000 1'b0;
+	selA = #10000 1'b1;
+	selA = #10000 1'b0;
+	selA = #40000 1'b1;
+	selA = #10000 1'b0;
+	selA = #30000 1'b1;
+	selA = #20000 1'b0;
+	selA = #10000 1'b1;
+	selA = #10000 1'b0;
+	selA = #30000 1'b1;
+	selA = #10000 1'b0;
+	selA = #10000 1'b1;
+	selA = #40000 1'b0;
+	selA = #10000 1'b1;
+	selA = #10000 1'b0;
+	selA = #10000 1'b1;
+	selA = #10000 1'b0;
+	selA = #10000 1'b1;
+	selA = #10000 1'b0;
+	selA = #10000 1'b1;
+	selA = #20000 1'b0;
+	selA = #20000 1'b1;
+	selA = #30000 1'b0;
+	selA = #10000 1'b1;
+	selA = #10000 1'b0;
+	selA = #10000 1'b1;
+	selA = #30000 1'b0;
+	selA = #50000 1'b1;
+	selA = #20000 1'b0;
+	selA = #10000 1'b1;
+	selA = #50000 1'b0;
+	selA = #30000 1'b1;
+	selA = #20000 1'b0;
+	selA = #20000 1'b1;
+	selA = #30000 1'b0;
+	selA = #10000 1'b1;
+	selA = #20000 1'b0;
+end 
+
+// wrA
+initial
+begin
+	wrA = 1'b0;
+	wrA = #20000 1'b1;
+	wrA = #30000 1'b0;
+	wrA = #10000 1'b1;
+	wrA = #10000 1'b0;
+	wrA = #10000 1'b1;
+	wrA = #30000 1'b0;
+	wrA = #30000 1'b1;
+	wrA = #10000 1'b0;
+	wrA = #20000 1'b1;
+	wrA = #10000 1'b0;
+	wrA = #20000 1'b1;
+	wrA = #30000 1'b0;
+	wrA = #20000 1'b1;
+	wrA = #10000 1'b0;
+	wrA = #30000 1'b1;
+	wrA = #10000 1'b0;
+	wrA = #10000 1'b1;
+	wrA = #10000 1'b0;
+	wrA = #40000 1'b1;
+	wrA = #10000 1'b0;
+	wrA = #30000 1'b1;
+	wrA = #20000 1'b0;
+	wrA = #10000 1'b1;
+	wrA = #10000 1'b0;
+	wrA = #30000 1'b1;
+	wrA = #10000 1'b0;
+	wrA = #10000 1'b1;
+	wrA = #40000 1'b0;
+	wrA = #10000 1'b1;
+	wrA = #10000 1'b0;
+	wrA = #10000 1'b1;
+	wrA = #10000 1'b0;
+	wrA = #10000 1'b1;
+	wrA = #10000 1'b0;
+	wrA = #10000 1'b1;
+	wrA = #20000 1'b0;
+	wrA = #20000 1'b1;
+	wrA = #30000 1'b0;
+	wrA = #10000 1'b1;
+	wrA = #10000 1'b0;
+	wrA = #10000 1'b1;
+	wrA = #30000 1'b0;
+	wrA = #50000 1'b1;
+	wrA = #20000 1'b0;
+	wrA = #10000 1'b1;
+	wrA = #50000 1'b0;
+	wrA = #30000 1'b1;
+	wrA = #20000 1'b0;
+	wrA = #20000 1'b1;
+	wrA = #30000 1'b0;
+	wrA = #10000 1'b1;
+	wrA = #20000 1'b0;
+end 
+
+// wrB
+initial
+begin
+	wrB = 1'b0;
+	wrB = #10000 1'b1;
+	wrB = #20000 1'b0;
+	wrB = #10000 1'b1;
+	wrB = #10000 1'b0;
+	wrB = #50000 1'b1;
+	wrB = #20000 1'b0;
+	wrB = #10000 1'b1;
+	wrB = #10000 1'b0;
+	wrB = #30000 1'b1;
+	wrB = #10000 1'b0;
+	wrB = #10000 1'b1;
+	wrB = #20000 1'b0;
+	wrB = #20000 1'b1;
+	wrB = #10000 1'b0;
+	wrB = #10000 1'b1;
+	wrB = #30000 1'b0;
+	wrB = #20000 1'b1;
+	wrB = #20000 1'b0;
+	wrB = #10000 1'b1;
+	wrB = #50000 1'b0;
+	wrB = #10000 1'b1;
+	wrB = #10000 1'b0;
+	wrB = #30000 1'b1;
+	wrB = #20000 1'b0;
+	wrB = #10000 1'b1;
+	wrB = #20000 1'b0;
+	wrB = #50000 1'b1;
+	wrB = #30000 1'b0;
+	wrB = #10000 1'b1;
+	wrB = #20000 1'b0;
+	wrB = #30000 1'b1;
+	wrB = #10000 1'b0;
+	wrB = #30000 1'b1;
+	wrB = #10000 1'b0;
+	wrB = #20000 1'b1;
+	wrB = #10000 1'b0;
+	wrB = #20000 1'b1;
+	wrB = #20000 1'b0;
+	wrB = #10000 1'b1;
+	wrB = #30000 1'b0;
+	wrB = #10000 1'b1;
+	wrB = #30000 1'b0;
+	wrB = #20000 1'b1;
+	wrB = #40000 1'b0;
+	wrB = #20000 1'b1;
+	wrB = #30000 1'b0;
+	wrB = #20000 1'b1;
+	wrB = #40000 1'b0;
+end 
+endmodule
+

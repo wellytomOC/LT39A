@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Aug 21 20:41:41 2024
+Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+Revision Name : pratica05
+Top-level Entity Name : RamMemory
+Family : Cyclone IV E
+Total logic elements : 136
+    Total combinational functions : 72
+    Dedicated logic registers : 68
+Total registers : 68
+Total pins : 28
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
