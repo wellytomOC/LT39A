@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projeto01
-Fri Aug 16 15:33:24 2024
+Tue Sep 03 20:00:46 2024
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -71,16 +71,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Aug 16 15:33:24 2024       ;
+; Analysis & Synthesis Status        ; Successful - Tue Sep 03 20:00:46 2024       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; projeto01                                   ;
 ; Top-level Entity Name              ; Arquitetura                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 783                                         ;
-;     Total combinational functions  ; 752                                         ;
+; Total logic elements               ; 788                                         ;
+;     Total combinational functions  ; 757                                         ;
 ;     Dedicated logic registers      ; 150                                         ;
 ; Total registers                    ; 150                                         ;
-; Total pins                         ; 37                                          ;
+; Total pins                         ; 77                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -188,7 +188,8 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-6         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -197,6 +198,7 @@ agreement for further details.
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; DecoderMaquete.v                 ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/DecoderMaquete.v           ;         ;
 ; RowEncoder.v                     ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/RowEncoder.v               ;         ;
 ; RowColEncoder.v                  ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/RowColEncoder.v            ;         ;
 ; RingCounter.v                    ; yes             ; User Verilog HDL File        ; C:/Users/welly/Documents/GitHub/LT39A/projeto01/RingCounter.v              ;         ;
@@ -244,30 +246,30 @@ agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 783         ;
+; Estimated Total logic elements              ; 788         ;
 ;                                             ;             ;
-; Total combinational functions               ; 752         ;
+; Total combinational functions               ; 757         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 221         ;
-;     -- 3 input functions                    ; 177         ;
-;     -- <=2 input functions                  ; 354         ;
+;     -- 4 input functions                    ; 215         ;
+;     -- 3 input functions                    ; 184         ;
+;     -- <=2 input functions                  ; 358         ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 538         ;
-;     -- arithmetic mode                      ; 214         ;
+;     -- normal mode                          ; 537         ;
+;     -- arithmetic mode                      ; 220         ;
 ;                                             ;             ;
 ; Total registers                             ; 150         ;
 ;     -- Dedicated logic registers            ; 150         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 37          ;
+; I/O pins                                    ; 77          ;
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
 ; Maximum fan-out                             ; 76          ;
-; Total fan-out                               ; 2485        ;
-; Average fan-out                             ; 2.55        ;
+; Total fan-out                               ; 2559        ;
+; Average fan-out                             ; 2.41        ;
 +---------------------------------------------+-------------+
 
 
@@ -276,7 +278,7 @@ agreement for further details.
 +---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                             ; Entity Name          ; Library Name ;
 +---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
-; |Arquitetura                                      ; 752 (0)             ; 150 (0)                   ; 0           ; 0            ; 0       ; 0         ; 37   ; 0            ; |Arquitetura                                                                                                                                                    ; Arquitetura          ; work         ;
+; |Arquitetura                                      ; 757 (0)             ; 150 (0)                   ; 0           ; 0            ; 0       ; 0         ; 77   ; 0            ; |Arquitetura                                                                                                                                                    ; Arquitetura          ; work         ;
 ;    |DecoderSsd_4bits_Dec:inst05|                  ; 18 (7)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|DecoderSsd_4bits_Dec:inst05                                                                                                                        ; DecoderSsd_4bits_Dec ; work         ;
 ;       |lpm_divide:Div0|                           ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|DecoderSsd_4bits_Dec:inst05|lpm_divide:Div0                                                                                                        ; lpm_divide           ; work         ;
 ;          |lpm_divide_fhm:auto_generated|          ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|DecoderSsd_4bits_Dec:inst05|lpm_divide:Div0|lpm_divide_fhm:auto_generated                                                                          ; lpm_divide_fhm       ; work         ;
@@ -286,16 +288,17 @@ agreement for further details.
 ;          |lpm_divide_i9m:auto_generated|          ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|DecoderSsd_4bits_Dec:inst05|lpm_divide:Mod0|lpm_divide_i9m:auto_generated                                                                          ; lpm_divide_i9m       ; work         ;
 ;             |sign_div_unsign_7kh:divider|         ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|DecoderSsd_4bits_Dec:inst05|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider                                              ; sign_div_unsign_7kh  ; work         ;
 ;                |alt_u_div_24f:divider|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|DecoderSsd_4bits_Dec:inst05|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider                        ; alt_u_div_24f        ; work         ;
-;    |Entrada:inst01|                               ; 119 (0)             ; 66 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01                                                                                                                                     ; Entrada              ; work         ;
+;    |Entrada:inst01|                               ; 118 (0)             ; 66 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01                                                                                                                                     ; Entrada              ; work         ;
 ;       |ClockDivider:inst01|                       ; 106 (106)           ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01|ClockDivider:inst01                                                                                                                 ; ClockDivider         ; work         ;
-;       |keypadEncoder:inst02|                      ; 13 (2)              ; 9 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01|keypadEncoder:inst02                                                                                                                ; keypadEncoder        ; work         ;
+;       |keypadEncoder:inst02|                      ; 12 (2)              ; 9 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01|keypadEncoder:inst02                                                                                                                ; keypadEncoder        ; work         ;
 ;          |ColEncoder:inst03|                      ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01|keypadEncoder:inst02|ColEncoder:inst03                                                                                              ; ColEncoder           ; work         ;
 ;          |RingCounter:inst01|                     ; 2 (2)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01|keypadEncoder:inst02|RingCounter:inst01                                                                                             ; RingCounter          ; work         ;
-;          |RowColEncoder:inst04|                   ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01|keypadEncoder:inst02|RowColEncoder:inst04                                                                                           ; RowColEncoder        ; work         ;
+;          |RowColEncoder:inst04|                   ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01|keypadEncoder:inst02|RowColEncoder:inst04                                                                                           ; RowColEncoder        ; work         ;
 ;          |RowEncoder:inst02|                      ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Entrada:inst01|keypadEncoder:inst02|RowEncoder:inst02                                                                                              ; RowEncoder           ; work         ;
-;    |Saida:inst03|                                 ; 535 (0)             ; 34 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:inst03                                                                                                                                       ; Saida                ; work         ;
+;    |Saida:inst03|                                 ; 538 (0)             ; 34 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:inst03                                                                                                                                       ; Saida                ; work         ;
+;       |DecoderMaquete:inst03|                     ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:inst03|DecoderMaquete:inst03                                                                                                                 ; DecoderMaquete       ; work         ;
 ;       |DisplayControlUnit:inst02|                 ; 51 (51)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:inst03|DisplayControlUnit:inst02                                                                                                             ; DisplayControlUnit   ; work         ;
-;       |PhraseBank:inst01|                         ; 484 (58)            ; 19 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:inst03|PhraseBank:inst01                                                                                                                     ; PhraseBank           ; work         ;
+;       |PhraseBank:inst01|                         ; 483 (58)            ; 19 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:inst03|PhraseBank:inst01                                                                                                                     ; PhraseBank           ; work         ;
 ;          |Deconcatener:inst00|                    ; 344 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00                                                                                                 ; Deconcatener         ; work         ;
 ;             |lpm_divide:Div0|                     ; 43 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div0                                                                                 ; lpm_divide           ; work         ;
 ;                |lpm_divide_ihm:auto_generated|    ; 43 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:inst03|PhraseBank:inst01|Deconcatener:inst00|lpm_divide:Div0|lpm_divide_ihm:auto_generated                                                   ; lpm_divide_ihm       ; work         ;
@@ -332,8 +335,8 @@ agreement for further details.
 ;          |RomDefinirAmarelo:inst04|               ; 16 (16)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:inst03|PhraseBank:inst01|RomDefinirAmarelo:inst04                                                                                            ; RomDefinirAmarelo    ; work         ;
 ;          |RomDefinirPrincipal:inst02|             ; 13 (13)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:inst03|PhraseBank:inst01|RomDefinirPrincipal:inst02                                                                                          ; RomDefinirPrincipal  ; work         ;
 ;          |RomDefinirSecundario:inst03|            ; 13 (13)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:inst03|PhraseBank:inst01|RomDefinirSecundario:inst03                                                                                         ; RomDefinirSecundario ; work         ;
-;          |RomPadrao:inst01|                       ; 40 (40)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:inst03|PhraseBank:inst01|RomPadrao:inst01                                                                                                    ; RomPadrao            ; work         ;
-;    |Sistema:inst02|                               ; 80 (0)              ; 50 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Sistema:inst02                                                                                                                                     ; Sistema              ; work         ;
+;          |RomPadrao:inst01|                       ; 39 (39)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Saida:inst03|PhraseBank:inst01|RomPadrao:inst01                                                                                                    ; RomPadrao            ; work         ;
+;    |Sistema:inst02|                               ; 83 (0)              ; 50 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Sistema:inst02                                                                                                                                     ; Sistema              ; work         ;
 ;       |ManualControlUnit:inst01|                  ; 5 (5)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Sistema:inst02|ManualControlUnit:inst01                                                                                                            ; ManualControlUnit    ; work         ;
 ;       |RegisterBank:regBank01|                    ; 37 (0)              ; 24 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Sistema:inst02|RegisterBank:regBank01                                                                                                              ; RegisterBank         ; work         ;
 ;          |Concatener:Concat_Ta|                   ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Sistema:inst02|RegisterBank:regBank01|Concatener:Concat_Ta                                                                                         ; Concatener           ; work         ;
@@ -346,7 +349,7 @@ agreement for further details.
 ;          |Register:reg_TempoSecundariaVerde_Ten|  ; 1 (1)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten                                                                        ; Register             ; work         ;
 ;          |Register:reg_TempoSecundariaVerde_Unit| ; 2 (2)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit                                                                       ; Register             ; work         ;
 ;       |SemaphoreControlUnit:SCU01|                ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Sistema:inst02|SemaphoreControlUnit:SCU01                                                                                                          ; SemaphoreControlUnit ; work         ;
-;       |Timer:Timer01|                             ; 19 (19)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Sistema:inst02|Timer:Timer01                                                                                                                       ; Timer                ; work         ;
+;       |Timer:Timer01|                             ; 22 (22)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Sistema:inst02|Timer:Timer01                                                                                                                       ; Timer                ; work         ;
 ;       |TimerMultiplexer:TimerMux01|               ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Arquitetura|Sistema:inst02|TimerMultiplexer:TimerMux01                                                                                                         ; TimerMultiplexer     ; work         ;
 +---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -913,26 +916,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 37                          ;
+; boundary_port         ; 77                          ;
 ; cycloneiii_ff         ; 150                         ;
 ;     CLR               ; 53                          ;
 ;     CLR SCLR          ; 7                           ;
 ;     ENA               ; 7                           ;
 ;     ENA CLR           ; 7                           ;
 ;     plain             ; 76                          ;
-; cycloneiii_lcell_comb ; 760                         ;
-;     arith             ; 214                         ;
+; cycloneiii_lcell_comb ; 770                         ;
+;     arith             ; 220                         ;
 ;         2 data inputs ; 98                          ;
-;         3 data inputs ; 116                         ;
-;     normal            ; 546                         ;
+;         3 data inputs ; 122                         ;
+;     normal            ; 550                         ;
 ;         0 data inputs ; 36                          ;
-;         1 data inputs ; 26                          ;
-;         2 data inputs ; 202                         ;
-;         3 data inputs ; 61                          ;
-;         4 data inputs ; 221                         ;
+;         1 data inputs ; 32                          ;
+;         2 data inputs ; 205                         ;
+;         3 data inputs ; 62                          ;
+;         4 data inputs ; 215                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 16.50                       ;
-; Average LUT depth     ; 9.63                        ;
+; Max LUT depth         ; 16.60                       ;
+; Average LUT depth     ; 9.96                        ;
 +-----------------------+-----------------------------+
 
 
@@ -951,9 +954,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Aug 16 15:33:16 2024
+    Info: Processing started: Tue Sep 03 20:00:38 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projeto01 -c projeto01
 Info (20032): Parallel compilation is enabled and will use up to 6 processors
+Info (12021): Found 1 design units, including 1 entities, in source file decodermaquete.v
+    Info (12023): Found entity 1: DecoderMaquete File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/DecoderMaquete.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file rowencoder.v
     Info (12023): Found entity 1: RowEncoder File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RowEncoder.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file rowcolencoder.v
@@ -1006,7 +1011,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file timer.v
     Info (12023): Found entity 1: Timer File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Timer.v Line: 1
 Warning (10236): Verilog HDL Implicit Net warning at Entrada.v(12): created implicit net for "clock20Hz" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Entrada.v Line: 12
 Info (12127): Elaborating entity "Arquitetura" for the top level hierarchy
-Info (12128): Elaborating entity "Entrada" for hierarchy "Entrada:inst01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 26
+Info (12128): Elaborating entity "Entrada" for hierarchy "Entrada:inst01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 28
 Info (12128): Elaborating entity "ClockDivider" for hierarchy "Entrada:inst01|ClockDivider:inst01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Entrada.v Line: 12
 Info (12128): Elaborating entity "keypadEncoder" for hierarchy "Entrada:inst01|keypadEncoder:inst02" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Entrada.v Line: 14
 Info (12128): Elaborating entity "RingCounter" for hierarchy "Entrada:inst01|keypadEncoder:inst02|RingCounter:inst01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/keypadEncoder.v Line: 15
@@ -1014,7 +1019,7 @@ Critical Warning (10237): Verilog HDL warning at RingCounter.v(22): can't infer 
 Info (12128): Elaborating entity "RowEncoder" for hierarchy "Entrada:inst01|keypadEncoder:inst02|RowEncoder:inst02" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/keypadEncoder.v Line: 16
 Info (12128): Elaborating entity "ColEncoder" for hierarchy "Entrada:inst01|keypadEncoder:inst02|ColEncoder:inst03" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/keypadEncoder.v Line: 17
 Info (12128): Elaborating entity "RowColEncoder" for hierarchy "Entrada:inst01|keypadEncoder:inst02|RowColEncoder:inst04" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/keypadEncoder.v Line: 18
-Info (12128): Elaborating entity "Sistema" for hierarchy "Sistema:inst02" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 38
+Info (12128): Elaborating entity "Sistema" for hierarchy "Sistema:inst02" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 40
 Info (12128): Elaborating entity "ManualControlUnit" for hierarchy "Sistema:inst02|ManualControlUnit:inst01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v Line: 21
 Info (12128): Elaborating entity "RegisterBank" for hierarchy "Sistema:inst02|RegisterBank:regBank01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v Line: 24
 Info (12128): Elaborating entity "Register" for hierarchy "Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoPrincipalVerde_Unit" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RegisterBank.v Line: 11
@@ -1025,8 +1030,8 @@ Info (12128): Elaborating entity "Register" for hierarchy "Sistema:inst02|Regist
 Info (12128): Elaborating entity "TimerMultiplexer" for hierarchy "Sistema:inst02|TimerMultiplexer:TimerMux01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v Line: 28
 Info (12128): Elaborating entity "Timer" for hierarchy "Sistema:inst02|Timer:Timer01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v Line: 32
 Info (12128): Elaborating entity "SemaphoreControlUnit" for hierarchy "Sistema:inst02|SemaphoreControlUnit:SCU01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Sistema.v Line: 36
-Info (12128): Elaborating entity "Saida" for hierarchy "Saida:inst03" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 42
-Info (12128): Elaborating entity "PhraseBank" for hierarchy "Saida:inst03|PhraseBank:inst01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Saida.v Line: 21
+Info (12128): Elaborating entity "Saida" for hierarchy "Saida:inst03" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 44
+Info (12128): Elaborating entity "PhraseBank" for hierarchy "Saida:inst03|PhraseBank:inst01" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Saida.v Line: 24
 Warning (10030): Net "Numbers.data_a" at PhraseBank.v(21) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/PhraseBank.v Line: 21
 Warning (10030): Net "Numbers.waddr_a" at PhraseBank.v(21) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/PhraseBank.v Line: 21
 Warning (10030): Net "Numbers.we_a" at PhraseBank.v(21) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/PhraseBank.v Line: 21
@@ -1058,8 +1063,9 @@ Info (12128): Elaborating entity "RomDefinirAmarelo" for hierarchy "Saida:inst03
 Warning (10030): Net "phrase.data_a" at RomDefinirAmarelo.v(8) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomDefinirAmarelo.v Line: 8
 Warning (10030): Net "phrase.waddr_a" at RomDefinirAmarelo.v(8) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomDefinirAmarelo.v Line: 8
 Warning (10030): Net "phrase.we_a" at RomDefinirAmarelo.v(8) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/RomDefinirAmarelo.v Line: 8
-Info (12128): Elaborating entity "DisplayControlUnit" for hierarchy "Saida:inst03|DisplayControlUnit:inst02" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Saida.v Line: 23
-Info (12128): Elaborating entity "DecoderSsd_4bits_Dec" for hierarchy "DecoderSsd_4bits_Dec:inst05" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 48
+Info (12128): Elaborating entity "DisplayControlUnit" for hierarchy "Saida:inst03|DisplayControlUnit:inst02" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Saida.v Line: 26
+Info (12128): Elaborating entity "DecoderMaquete" for hierarchy "Saida:inst03|DecoderMaquete:inst03" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Saida.v Line: 28
+Info (12128): Elaborating entity "DecoderSsd_4bits_Dec" for hierarchy "DecoderSsd_4bits_Dec:inst05" File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 50
 Warning (10230): Verilog HDL assignment warning at DecoderSsd_4bits_Dec.v(24): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/DecoderSsd_4bits_Dec.v Line: 24
 Warning (10230): Verilog HDL assignment warning at DecoderSsd_4bits_Dec.v(25): truncated value with size 32 to match size of target (4) File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/DecoderSsd_4bits_Dec.v Line: 25
 Warning (10030): Net "seven_seg.data_a" at DecoderSsd_4bits_Dec.v(3) has no driver or initial value, using a default initial value '0' File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/DecoderSsd_4bits_Dec.v Line: 3
@@ -1140,20 +1146,30 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "dataDezena[1]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 14
     Warning (13410): Pin "dataDezena[2]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 14
     Warning (13410): Pin "dataDezena[6]" is stuck at VCC File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 14
+    Warning (13410): Pin "Header40[6]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 18
+    Warning (13410): Pin "Header40[15]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 18
+    Warning (13410): Pin "Header40[26]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 18
+    Warning (13410): Pin "Header40[34]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 18
+    Warning (13410): Pin "Header40[35]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 18
+    Warning (13410): Pin "Header40[36]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 18
+    Warning (13410): Pin "Header40[37]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 18
+    Warning (13410): Pin "Header40[38]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 18
+    Warning (13410): Pin "Header40[39]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 18
+    Warning (13410): Pin "Header40[40]" is stuck at GND File: C:/Users/welly/Documents/GitHub/LT39A/projeto01/Arquitetura.v Line: 18
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 9 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/welly/Documents/GitHub/LT39A/projeto01/output_files/projeto01.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 824 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 868 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 787 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 43 warnings
-    Info: Peak virtual memory: 4800 megabytes
-    Info: Processing ended: Fri Aug 16 15:33:24 2024
+    Info (21059): Implemented 72 output pins
+    Info (21061): Implemented 791 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 53 warnings
+    Info: Peak virtual memory: 4827 megabytes
+    Info: Processing ended: Tue Sep 03 20:00:46 2024
     Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
 
 
 +------------------------------------------+

@@ -13,7 +13,7 @@ module Timer (
             counter = 7'd0;
             trigger = 1'd0;
         end else begin
-            if (counter == TimerRef) begin
+            if (counter >= TimerRef) begin
                 trigger <= 1'd1;  
                 counter <= 7'd0; 
             end else begin

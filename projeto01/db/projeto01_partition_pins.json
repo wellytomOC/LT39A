@@ -108,6 +108,126 @@
 					"strict" : false
 				},
 				{
+					"name" : "Header40[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[16]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[17]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[18]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[19]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[20]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[21]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[22]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[23]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[24]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[25]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[27]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[28]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[29]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[30]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[31]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[32]",
+					"strict" : false
+				},
+				{
+					"name" : "Header40[33]",
+					"strict" : false
+				},
+				{
 					"name" : "reset",
 					"strict" : false
 				},

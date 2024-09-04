@@ -3,91 +3,91 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'Entrada:inst01|ClockDivider:inst01|Clock1Hz'
-Slack : -6.204
-TNS   : -89.063
+Slack : -6.524
+TNS   : -89.190
 
 Type  : Slow 1200mV 85C Model Setup 'clock'
-Slack : -4.010
-TNS   : -144.089
+Slack : -4.155
+TNS   : -137.916
 
 Type  : Slow 1200mV 85C Model Setup 'Entrada:inst01|keypadEncoder:inst02|dav'
-Slack : -2.112
-TNS   : -11.885
+Slack : -1.906
+TNS   : -9.656
 
 Type  : Slow 1200mV 85C Model Setup 'Entrada:inst01|ClockDivider:inst01|clock500Hz'
-Slack : -1.561
-TNS   : -10.803
+Slack : -1.575
+TNS   : -11.740
 
 Type  : Slow 1200mV 85C Model Setup 'Entrada:inst01|ClockDivider:inst01|clock20Hz'
-Slack : -1.261
-TNS   : -4.893
-
-Type  : Slow 1200mV 85C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloTens'
-Slack : -1.224
-TNS   : -4.731
+Slack : -0.767
+TNS   : -2.745
 
 Type  : Slow 1200mV 85C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloUnit'
-Slack : -1.166
-TNS   : -4.225
-
-Type  : Slow 1200mV 85C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit'
-Slack : -1.110
-TNS   : -3.599
+Slack : -0.610
+TNS   : -1.899
 
 Type  : Slow 1200mV 85C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens'
-Slack : -0.905
-TNS   : -3.040
+Slack : -0.572
+TNS   : -0.622
 
 Type  : Slow 1200mV 85C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalTens'
-Slack : -0.720
-TNS   : -2.514
+Slack : -0.401
+TNS   : -1.057
+
+Type  : Slow 1200mV 85C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit'
+Slack : -0.206
+TNS   : -0.519
 
 Type  : Slow 1200mV 85C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalUnit'
-Slack : -0.405
-TNS   : -0.946
+Slack : -0.169
+TNS   : -0.169
 
-Type  : Slow 1200mV 85C Model Hold 'Entrada:inst01|ClockDivider:inst01|clock500Hz'
-Slack : 0.404
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'Entrada:inst01|keypadEncoder:inst02|dav'
-Slack : 0.404
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'clock'
-Slack : 0.408
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'Entrada:inst01|ClockDivider:inst01|Clock1Hz'
-Slack : 0.426
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'Entrada:inst01|ClockDivider:inst01|clock20Hz'
-Slack : 0.443
-TNS   : 0.000
+Type  : Slow 1200mV 85C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloTens'
+Slack : -0.165
+TNS   : -0.582
 
 Type  : Slow 1200mV 85C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalUnit'
-Slack : 0.461
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalTens'
-Slack : 0.946
+Slack : 0.246
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens'
-Slack : 1.104
+Slack : 0.271
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Entrada:inst01|ClockDivider:inst01|clock500Hz'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Entrada:inst01|keypadEncoder:inst02|dav'
+Slack : 0.405
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clock'
+Slack : 0.406
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Entrada:inst01|ClockDivider:inst01|Clock1Hz'
+Slack : 0.432
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit'
-Slack : 1.138
+Slack : 0.438
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloUnit'
-Slack : 1.273
+Type  : Slow 1200mV 85C Model Hold 'Entrada:inst01|ClockDivider:inst01|clock20Hz'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalTens'
+Slack : 0.487
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloTens'
-Slack : 1.559
+Slack : 0.491
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloUnit'
+Slack : 0.619
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock'
@@ -135,55 +135,63 @@ Slack : -1.285
 TNS   : -5.140
 
 Type  : Slow 1200mV 0C Model Setup 'Entrada:inst01|ClockDivider:inst01|Clock1Hz'
-Slack : -5.514
-TNS   : -78.908
+Slack : -5.839
+TNS   : -79.032
 
 Type  : Slow 1200mV 0C Model Setup 'clock'
-Slack : -3.621
-TNS   : -122.811
+Slack : -3.729
+TNS   : -116.769
 
 Type  : Slow 1200mV 0C Model Setup 'Entrada:inst01|keypadEncoder:inst02|dav'
-Slack : -1.806
-TNS   : -9.896
+Slack : -1.657
+TNS   : -8.297
 
 Type  : Slow 1200mV 0C Model Setup 'Entrada:inst01|ClockDivider:inst01|clock500Hz'
-Slack : -1.318
-TNS   : -8.534
-
-Type  : Slow 1200mV 0C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloTens'
-Slack : -1.083
-TNS   : -4.187
-
-Type  : Slow 1200mV 0C Model Setup 'Entrada:inst01|ClockDivider:inst01|clock20Hz'
-Slack : -1.028
-TNS   : -3.767
+Slack : -1.328
+TNS   : -9.603
 
 Type  : Slow 1200mV 0C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloUnit'
-Slack : -1.027
-TNS   : -3.714
+Slack : -0.610
+TNS   : -1.947
 
-Type  : Slow 1200mV 0C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit'
-Slack : -0.979
-TNS   : -3.193
+Type  : Slow 1200mV 0C Model Setup 'Entrada:inst01|ClockDivider:inst01|clock20Hz'
+Slack : -0.588
+TNS   : -1.972
 
 Type  : Slow 1200mV 0C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens'
-Slack : -0.785
-TNS   : -2.625
+Slack : -0.532
+TNS   : -0.572
 
 Type  : Slow 1200mV 0C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalTens'
-Slack : -0.635
-TNS   : -2.200
+Slack : -0.374
+TNS   : -0.958
+
+Type  : Slow 1200mV 0C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit'
+Slack : -0.203
+TNS   : -0.472
 
 Type  : Slow 1200mV 0C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalUnit'
-Slack : -0.339
-TNS   : -0.883
+Slack : -0.167
+TNS   : -0.167
 
-Type  : Slow 1200mV 0C Model Hold 'Entrada:inst01|keypadEncoder:inst02|dav'
-Slack : 0.354
+Type  : Slow 1200mV 0C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloTens'
+Slack : -0.150
+TNS   : -0.530
+
+Type  : Slow 1200mV 0C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalUnit'
+Slack : 0.324
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens'
+Slack : 0.349
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'Entrada:inst01|ClockDivider:inst01|clock500Hz'
 Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Entrada:inst01|keypadEncoder:inst02|dav'
+Slack : 0.356
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clock'
@@ -191,35 +199,27 @@ Slack : 0.364
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'Entrada:inst01|ClockDivider:inst01|Clock1Hz'
-Slack : 0.385
+Slack : 0.392
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'Entrada:inst01|ClockDivider:inst01|clock20Hz'
-Slack : 0.400
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalUnit'
-Slack : 0.489
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalTens'
-Slack : 0.926
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens'
-Slack : 1.088
+Slack : 0.402
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit'
-Slack : 1.113
+Slack : 0.488
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloUnit'
-Slack : 1.248
+Type  : Slow 1200mV 0C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalTens'
+Slack : 0.546
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloTens'
-Slack : 1.514
+Slack : 0.552
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloUnit'
+Slack : 0.650
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock'
@@ -267,96 +267,96 @@ Slack : -1.285
 TNS   : -5.140
 
 Type  : Fast 1200mV 0C Model Setup 'Entrada:inst01|ClockDivider:inst01|Clock1Hz'
-Slack : -2.978
-TNS   : -41.706
+Slack : -3.118
+TNS   : -41.282
 
 Type  : Fast 1200mV 0C Model Setup 'clock'
-Slack : -1.565
-TNS   : -32.803
+Slack : -1.614
+TNS   : -30.031
 
 Type  : Fast 1200mV 0C Model Setup 'Entrada:inst01|keypadEncoder:inst02|dav'
-Slack : -1.210
-TNS   : -5.806
-
-Type  : Fast 1200mV 0C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloTens'
-Slack : -0.312
-TNS   : -1.150
-
-Type  : Fast 1200mV 0C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloUnit'
-Slack : -0.276
-TNS   : -0.953
+Slack : -0.690
+TNS   : -3.737
 
 Type  : Fast 1200mV 0C Model Setup 'Entrada:inst01|ClockDivider:inst01|clock500Hz'
-Slack : -0.245
-TNS   : -1.261
+Slack : -0.246
+TNS   : -1.247
 
-Type  : Fast 1200mV 0C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit'
-Slack : -0.237
-TNS   : -0.562
+Type  : Fast 1200mV 0C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloUnit'
+Slack : 0.065
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens'
-Slack : -0.145
-TNS   : -0.297
+Slack : 0.116
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'Entrada:inst01|ClockDivider:inst01|clock20Hz'
-Slack : -0.134
-TNS   : -0.357
+Slack : 0.136
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalTens'
-Slack : -0.026
-TNS   : -0.041
+Slack : 0.155
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit'
+Slack : 0.259
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloTens'
+Slack : 0.262
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalUnit'
-Slack : 0.174
+Slack : 0.303
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalUnit'
-Slack : 0.174
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'Entrada:inst01|keypadEncoder:inst02|dav'
-Slack : 0.182
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'clock'
-Slack : 0.182
+Slack : 0.149
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'Entrada:inst01|ClockDivider:inst01|clock500Hz'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Entrada:inst01|keypadEncoder:inst02|dav'
 Slack : 0.183
 TNS   : 0.000
 
+Type  : Fast 1200mV 0C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens'
+Slack : 0.184
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clock'
+Slack : 0.188
+TNS   : 0.000
+
 Type  : Fast 1200mV 0C Model Hold 'Entrada:inst01|ClockDivider:inst01|Clock1Hz'
-Slack : 0.192
+Slack : 0.197
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'Entrada:inst01|ClockDivider:inst01|clock20Hz'
 Slack : 0.205
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalTens'
-Slack : 0.638
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens'
-Slack : 0.697
-TNS   : 0.000
-
 Type  : Fast 1200mV 0C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit'
-Slack : 0.721
+Slack : 0.255
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloUnit'
-Slack : 0.798
+Slack : 0.289
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalTens'
+Slack : 0.301
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloTens'
-Slack : 0.911
+Slack : 0.327
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock'
 Slack : -3.000
-TNS   : -83.697
+TNS   : -83.608
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Entrada:inst01|ClockDivider:inst01|Clock1Hz'
 Slack : -1.000

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Sep 03 21:26:29 2024
+Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+Revision Name : atv07
+Top-level Entity Name : Arquitetura
+Family : Cyclone IV E
+Total logic elements : 287
+    Total combinational functions : 287
+    Dedicated logic registers : 85
+Total registers : 85
+Total pins : 34
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 3
+Total PLLs : 0

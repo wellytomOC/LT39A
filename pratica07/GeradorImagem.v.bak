@@ -1,0 +1,54 @@
+module GeradorImagem (
+    input wire clk25,
+    input wire Hsync, Hactive,
+    input wire Vsync, Vactive,
+    input wire enable,
+
+    input wire[8:0] CircleRow,
+    input wire[9:0] CircleCol,
+
+    output reg[7:0] R,G,B
+);
+
+    wire[8:0] Row;
+    wire[9:0] Col;
+    ContadorLinha contLinha(Hsync, Vsync, Vactive, Row);
+    ContadorColuna contColuna(clk25, Hsync, Hactive, Col);
+
+    wire [8:0] RowInferior, RowSuperior;
+    wire [9:0] ColInferior, ColSuperior;
+
+    
+    assign RowInferior = CircleRow - 9'd10;
+    assign RowSuperior = CircleRow + 9'd10;
+    assign ColInferior = CircleCol - 9'd10;
+    assign ColSuperior = CircleCol + 9'd10;
+
+    always @(enable,CircleRow,CircleCol,Row,Col) begin
+        if( enable == 1'b1) begin
+
+            if(Row >= RowInferior && Row <= RowSuperior) begin
+                if(Col >= ColInferior && Col <= ColSuperior) begin
+                    R <= 8'h00;
+                    G <= 8'h00;
+                    B <= 8'hff;
+                end
+                else begin
+                    R <= 8'h00;
+                    G <= 8'h00;
+                    B <= 8'h00;
+                end
+            end
+            else begin
+                R <= 8'h00;
+                G <= 8'h00;
+                B <= 8'h00;
+            end
+        end
+        else begin
+            R <= 8'h00;
+            G <= 8'h00;
+            B <= 8'h00;
+        end
+    end  
+endmodule

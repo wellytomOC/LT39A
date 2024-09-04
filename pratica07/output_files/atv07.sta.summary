@@ -1,0 +1,149 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk50'
+Slack : -3.577
+TNS   : -38.494
+
+Type  : Slow 1200mV 85C Model Setup 'Sistema:inst02|ControleVGA:CVGA01|GeradorControle:gC|Counter:gF|clk25'
+Slack : -2.894
+TNS   : -29.732
+
+Type  : Slow 1200mV 85C Model Setup 'Sistema:inst02|CircleTracker:CT01|ClockDivider:CD|clk20Hz'
+Slack : -2.789
+TNS   : -47.876
+
+Type  : Slow 1200mV 85C Model Setup 'Sistema:inst02|ControleVGA:CVGA01|GeradorControle:gC|GeradorSync:gS|GeradorHorizontal:gH|Hsync'
+Slack : -1.730
+TNS   : -24.057
+
+Type  : Slow 1200mV 85C Model Hold 'Sistema:inst02|ControleVGA:CVGA01|GeradorControle:gC|Counter:gF|clk25'
+Slack : 0.387
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Sistema:inst02|CircleTracker:CT01|ClockDivider:CD|clk20Hz'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Sistema:inst02|ControleVGA:CVGA01|GeradorControle:gC|GeradorSync:gS|GeradorHorizontal:gH|Hsync'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk50'
+Slack : 0.407
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk50'
+Slack : -3.000
+TNS   : -32.555
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Sistema:inst02|ControleVGA:CVGA01|GeradorControle:gC|Counter:gF|clk25'
+Slack : -1.285
+TNS   : -28.270
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Sistema:inst02|ControleVGA:CVGA01|GeradorControle:gC|GeradorSync:gS|GeradorHorizontal:gH|Hsync'
+Slack : -1.285
+TNS   : -26.985
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Sistema:inst02|CircleTracker:CT01|ClockDivider:CD|clk20Hz'
+Slack : -1.285
+TNS   : -24.415
+
+Type  : Slow 1200mV 0C Model Setup 'clk50'
+Slack : -3.237
+TNS   : -32.640
+
+Type  : Slow 1200mV 0C Model Setup 'Sistema:inst02|ControleVGA:CVGA01|GeradorControle:gC|Counter:gF|clk25'
+Slack : -2.587
+TNS   : -25.003
+
+Type  : Slow 1200mV 0C Model Setup 'Sistema:inst02|CircleTracker:CT01|ClockDivider:CD|clk20Hz'
+Slack : -2.424
+TNS   : -41.778
+
+Type  : Slow 1200mV 0C Model Setup 'Sistema:inst02|ControleVGA:CVGA01|GeradorControle:gC|GeradorSync:gS|GeradorHorizontal:gH|Hsync'
+Slack : -1.459
+TNS   : -19.541
+
+Type  : Slow 1200mV 0C Model Hold 'Sistema:inst02|ControleVGA:CVGA01|GeradorControle:gC|Counter:gF|clk25'
+Slack : 0.340
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Sistema:inst02|CircleTracker:CT01|ClockDivider:CD|clk20Hz'
+Slack : 0.353
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Sistema:inst02|ControleVGA:CVGA01|GeradorControle:gC|GeradorSync:gS|GeradorHorizontal:gH|Hsync'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk50'
+Slack : 0.364
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk50'
+Slack : -3.000
+TNS   : -32.555
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Sistema:inst02|ControleVGA:CVGA01|GeradorControle:gC|Counter:gF|clk25'
+Slack : -1.285
+TNS   : -28.270
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Sistema:inst02|ControleVGA:CVGA01|GeradorControle:gC|GeradorSync:gS|GeradorHorizontal:gH|Hsync'
+Slack : -1.285
+TNS   : -26.985
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Sistema:inst02|CircleTracker:CT01|ClockDivider:CD|clk20Hz'
+Slack : -1.285
+TNS   : -24.415
+
+Type  : Fast 1200mV 0C Model Setup 'clk50'
+Slack : -1.344
+TNS   : -8.065
+
+Type  : Fast 1200mV 0C Model Setup 'Sistema:inst02|ControleVGA:CVGA01|GeradorControle:gC|Counter:gF|clk25'
+Slack : -0.917
+TNS   : -7.485
+
+Type  : Fast 1200mV 0C Model Setup 'Sistema:inst02|CircleTracker:CT01|ClockDivider:CD|clk20Hz'
+Slack : -0.835
+TNS   : -13.391
+
+Type  : Fast 1200mV 0C Model Setup 'Sistema:inst02|ControleVGA:CVGA01|GeradorControle:gC|GeradorSync:gS|GeradorHorizontal:gH|Hsync'
+Slack : -0.346
+TNS   : -1.947
+
+Type  : Fast 1200mV 0C Model Hold 'Sistema:inst02|ControleVGA:CVGA01|GeradorControle:gC|Counter:gF|clk25'
+Slack : 0.174
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Sistema:inst02|ControleVGA:CVGA01|GeradorControle:gC|GeradorSync:gS|GeradorHorizontal:gH|Hsync'
+Slack : 0.180
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Sistema:inst02|CircleTracker:CT01|ClockDivider:CD|clk20Hz'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk50'
+Slack : 0.188
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk50'
+Slack : -3.000
+TNS   : -27.457
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Sistema:inst02|ControleVGA:CVGA01|GeradorControle:gC|Counter:gF|clk25'
+Slack : -1.000
+TNS   : -22.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Sistema:inst02|ControleVGA:CVGA01|GeradorControle:gC|GeradorSync:gS|GeradorHorizontal:gH|Hsync'
+Slack : -1.000
+TNS   : -21.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Sistema:inst02|CircleTracker:CT01|ClockDivider:CD|clk20Hz'
+Slack : -1.000
+TNS   : -19.000
+
+------------------------------------------------------------

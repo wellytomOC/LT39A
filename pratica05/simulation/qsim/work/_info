@@ -9,37 +9,81 @@ z2
 cModel Technology
 Z0 dC:/Users/welly/Documents/GitHub/LT39A/pratica05/simulation/qsim
 vhard_block
-Z1 !s110 1724433740
+Z1 !s110 1724447277
 !i10b 1
-!s100 h;WBD5Pbk25RdERgLDVUT3
-I4dX215H[9ZB2V65IJg=DJ0
+!s100 M[KlA_AU3zU<19c4J8IQU1
+IC30DQcA[[@g<2UGV2VnkJ3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1724433739
+Z3 w1724447276
 Z4 8pratica05.vo
 Z5 Fpratica05.vo
-L0 3910
+L0 3119
 Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1724433740.000000
+Z7 !s108 1724447277.000000
 Z8 !s107 pratica05.vo|
 Z9 !s90 -work|work|pratica05.vo|
 !i113 1
 Z10 o-work work
 Z11 tCvgOpt 0
-vSistema
+vRamMemory
+Z12 !s110 1724447013
+!i10b 1
+!s100 oJNoJ`Rg4nLLWm5e<kbJ11
+IVd^hlk??=g@16MBM240;d0
+R2
+R0
+Z13 w1724447012
+R4
+R5
+Z14 L0 32
+R6
+r1
+!s85 0
+31
+Z15 !s108 1724447013.000000
+R8
+R9
+!i113 1
+R10
+R11
+n@ram@memory
+vRamMemory_vlg_vec_tst
+R12
+!i10b 1
+!s100 eL<R?PBb`6d>bR2__S2DN1
+I[l8P]TfTWLgkHheAgMoZn1
+R2
+R0
+R13
+8Waveform2.vwf.vt
+FWaveform2.vwf.vt
+Z16 L0 30
+R6
+r1
+!s85 0
+31
+R15
+!s107 Waveform2.vwf.vt|
+!s90 -work|work|Waveform2.vwf.vt|
+!i113 1
+R10
+R11
+n@ram@memory_vlg_vec_tst
+vSaida
 R1
 !i10b 1
-!s100 Ed>`Xo:cR_:A5:bP;GgV60
-Iz1BE[26?d][OmLIW2iHeM3
+!s100 3::4NLm0aC0ODzT<1=fJ13
+I`j01GW?<RdX;=m193oR4J2
 R2
 R0
 R3
 R4
 R5
-L0 32
+R14
 R6
 r1
 !s85 0
@@ -50,23 +94,67 @@ R9
 !i113 1
 R10
 R11
-n@sistema
-vSistema_vlg_vec_tst
+n@saida
+vSaida_vlg_vec_tst
 R1
 !i10b 1
-!s100 [QZ@SSJz]2TB1jM;f4M_i3
-Izl_8AH:e<RlTiT:9@LmNO3
+!s100 k;2DEL5G0V=dCOKHGCc4]3
+Im[66`[;MPbR1BkPPOXF7E2
 R2
 R0
 R3
-8Waveform1.vwf.vt
-FWaveform1.vwf.vt
-L0 30
+8Waveform3.vwf.vt
+FWaveform3.vwf.vt
+R16
 R6
 r1
 !s85 0
 31
 R7
+!s107 Waveform3.vwf.vt|
+!s90 -work|work|Waveform3.vwf.vt|
+!i113 1
+R10
+R11
+n@saida_vlg_vec_tst
+vSistema
+Z17 !s110 1724446680
+!i10b 1
+!s100 U:J;=@I0H<T^5z`o[=[1=1
+I2SIYh4jz:[gL`zeEM1nMN2
+R2
+R0
+w1724446680
+R4
+R5
+R14
+R6
+r1
+!s85 0
+31
+Z18 !s108 1724446680.000000
+R8
+R9
+!i113 1
+R10
+R11
+n@sistema
+vSistema_vlg_vec_tst
+R17
+!i10b 1
+!s100 68HOG]_AhDUW=Ac7Wi:NZ2
+IB2QnHzCL0jcn=LQ_2dVm;3
+R2
+R0
+w1724446679
+8Waveform1.vwf.vt
+FWaveform1.vwf.vt
+R16
+R6
+r1
+!s85 0
+31
+R18
 !s107 Waveform1.vwf.vt|
 !s90 -work|work|Waveform1.vwf.vt|
 !i113 1

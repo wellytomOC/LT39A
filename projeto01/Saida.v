@@ -13,7 +13,10 @@ module Saida (
 
     output wire RS,RW,
     output wire E,
-    output wire[7:0] DB
+    output wire[7:0] DB,
+
+
+    output wire[40:1] Header40
 );
 
 wire[4:0] addr;
@@ -21,5 +24,7 @@ wire[7:0] Phrase;
 PhraseBank inst01 (clock50MHz, addr, PhraseSel, Ta, Tpv, Tsv, timeRemaining, StateFlag, Phrase);
 
 DisplayControlUnit inst02 (clock500Hz, reset, Phrase, addr, RS, RW, E, DB);
+
+DecoderMaquete inst03(StateFlag, Header40);
     
 endmodule

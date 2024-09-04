@@ -11,7 +11,9 @@ module Arquitetura (
 	output wire LCD_Blon, LCD_On,
 	
     output wire davDEBUG,
-    output wire[6:0] dataDezena, dataUnidade
+    output wire[6:0] dataDezena, dataUnidade,
+
+    output wire[40:1] Header40
 
 );
     assign LCD_Blon = 1'b1;
@@ -39,7 +41,7 @@ module Arquitetura (
 
     //Saida
     Saida inst03 (clock50Mhz, clock500Hz, reset, PhraseSel, StateFlag, Tpv, Tsv, Ta, timeRemaining,
-                    Principal_Road, Secondary_Road, Principal_Pedestrian, Secondary_Pedestrian, RS, RW, E, DB);
+                    Principal_Road, Secondary_Road, Principal_Pedestrian, Secondary_Pedestrian, RS, RW, E, DB, Header40);
 
 
 

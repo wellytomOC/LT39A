@@ -36,6 +36,46 @@ dataUnidade[3] << DecoderSsd_4bits_Dec:inst05.port2
 dataUnidade[4] << DecoderSsd_4bits_Dec:inst05.port2
 dataUnidade[5] << DecoderSsd_4bits_Dec:inst05.port2
 dataUnidade[6] << DecoderSsd_4bits_Dec:inst05.port2
+Header40[1] << Saida:inst03.port17
+Header40[2] << Saida:inst03.port17
+Header40[3] << Saida:inst03.port17
+Header40[4] << Saida:inst03.port17
+Header40[5] << Saida:inst03.port17
+Header40[6] << Saida:inst03.port17
+Header40[7] << Saida:inst03.port17
+Header40[8] << Saida:inst03.port17
+Header40[9] << Saida:inst03.port17
+Header40[10] << Saida:inst03.port17
+Header40[11] << Saida:inst03.port17
+Header40[12] << Saida:inst03.port17
+Header40[13] << Saida:inst03.port17
+Header40[14] << Saida:inst03.port17
+Header40[15] << Saida:inst03.port17
+Header40[16] << Saida:inst03.port17
+Header40[17] << Saida:inst03.port17
+Header40[18] << Saida:inst03.port17
+Header40[19] << Saida:inst03.port17
+Header40[20] << Saida:inst03.port17
+Header40[21] << Saida:inst03.port17
+Header40[22] << Saida:inst03.port17
+Header40[23] << Saida:inst03.port17
+Header40[24] << Saida:inst03.port17
+Header40[25] << Saida:inst03.port17
+Header40[26] << Saida:inst03.port17
+Header40[27] << Saida:inst03.port17
+Header40[28] << Saida:inst03.port17
+Header40[29] << Saida:inst03.port17
+Header40[30] << Saida:inst03.port17
+Header40[31] << Saida:inst03.port17
+Header40[32] << Saida:inst03.port17
+Header40[33] << Saida:inst03.port17
+Header40[34] << Saida:inst03.port17
+Header40[35] << Saida:inst03.port17
+Header40[36] << Saida:inst03.port17
+Header40[37] << Saida:inst03.port17
+Header40[38] << Saida:inst03.port17
+Header40[39] << Saida:inst03.port17
+Header40[40] << Saida:inst03.port17
 
 
 |Arquitetura|Entrada:inst01
@@ -517,19 +557,19 @@ MuxOut[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Arquitetura|Sistema:inst02|Timer:Timer01
-TimerRef[0] => Equal0.IN6
+TimerRef[0] => LessThan0.IN7
 TimerRef[0] => Add1.IN14
-TimerRef[1] => Equal0.IN5
+TimerRef[1] => LessThan0.IN6
 TimerRef[1] => Add1.IN13
-TimerRef[2] => Equal0.IN4
+TimerRef[2] => LessThan0.IN5
 TimerRef[2] => Add1.IN12
-TimerRef[3] => Equal0.IN3
+TimerRef[3] => LessThan0.IN4
 TimerRef[3] => Add1.IN11
-TimerRef[4] => Equal0.IN2
+TimerRef[4] => LessThan0.IN3
 TimerRef[4] => Add1.IN10
-TimerRef[5] => Equal0.IN1
+TimerRef[5] => LessThan0.IN2
 TimerRef[5] => Add1.IN9
-TimerRef[6] => Equal0.IN0
+TimerRef[6] => LessThan0.IN1
 TimerRef[6] => Add1.IN8
 clock => timeRemaining[0]~reg0.CLK
 clock => timeRemaining[1]~reg0.CLK
@@ -554,13 +594,13 @@ reset => counter[3].ACLR
 reset => counter[4].ACLR
 reset => counter[5].ACLR
 reset => counter[6].ACLR
-reset => timeRemaining[0]~reg0.ENA
 reset => timeRemaining[6]~reg0.ENA
 reset => timeRemaining[5]~reg0.ENA
 reset => timeRemaining[4]~reg0.ENA
 reset => timeRemaining[3]~reg0.ENA
 reset => timeRemaining[2]~reg0.ENA
 reset => timeRemaining[1]~reg0.ENA
+reset => timeRemaining[0]~reg0.ENA
 trigger <= trigger~reg0.DB_MAX_OUTPUT_PORT_TYPE
 timeRemaining[0] <= timeRemaining[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 timeRemaining[1] <= timeRemaining[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -610,8 +650,8 @@ clock500Hz => clock500Hz.IN1
 reset => reset.IN1
 PhraseSel[0] => PhraseSel[0].IN1
 PhraseSel[1] => PhraseSel[1].IN1
-StateFlag[0] => StateFlag[0].IN1
-StateFlag[1] => StateFlag[1].IN1
+StateFlag[0] => StateFlag[0].IN2
+StateFlag[1] => StateFlag[1].IN2
 Tpv[0] => Tpv[0].IN1
 Tpv[1] => Tpv[1].IN1
 Tpv[2] => Tpv[2].IN1
@@ -661,6 +701,46 @@ DB[4] <= DisplayControlUnit:inst02.port7
 DB[5] <= DisplayControlUnit:inst02.port7
 DB[6] <= DisplayControlUnit:inst02.port7
 DB[7] <= DisplayControlUnit:inst02.port7
+Header40[1] <= DecoderMaquete:inst03.port1
+Header40[2] <= DecoderMaquete:inst03.port1
+Header40[3] <= DecoderMaquete:inst03.port1
+Header40[4] <= DecoderMaquete:inst03.port1
+Header40[5] <= DecoderMaquete:inst03.port1
+Header40[6] <= DecoderMaquete:inst03.port1
+Header40[7] <= DecoderMaquete:inst03.port1
+Header40[8] <= DecoderMaquete:inst03.port1
+Header40[9] <= DecoderMaquete:inst03.port1
+Header40[10] <= DecoderMaquete:inst03.port1
+Header40[11] <= DecoderMaquete:inst03.port1
+Header40[12] <= DecoderMaquete:inst03.port1
+Header40[13] <= DecoderMaquete:inst03.port1
+Header40[14] <= DecoderMaquete:inst03.port1
+Header40[15] <= DecoderMaquete:inst03.port1
+Header40[16] <= DecoderMaquete:inst03.port1
+Header40[17] <= DecoderMaquete:inst03.port1
+Header40[18] <= DecoderMaquete:inst03.port1
+Header40[19] <= DecoderMaquete:inst03.port1
+Header40[20] <= DecoderMaquete:inst03.port1
+Header40[21] <= DecoderMaquete:inst03.port1
+Header40[22] <= DecoderMaquete:inst03.port1
+Header40[23] <= DecoderMaquete:inst03.port1
+Header40[24] <= DecoderMaquete:inst03.port1
+Header40[25] <= DecoderMaquete:inst03.port1
+Header40[26] <= DecoderMaquete:inst03.port1
+Header40[27] <= DecoderMaquete:inst03.port1
+Header40[28] <= DecoderMaquete:inst03.port1
+Header40[29] <= DecoderMaquete:inst03.port1
+Header40[30] <= DecoderMaquete:inst03.port1
+Header40[31] <= DecoderMaquete:inst03.port1
+Header40[32] <= DecoderMaquete:inst03.port1
+Header40[33] <= DecoderMaquete:inst03.port1
+Header40[34] <= DecoderMaquete:inst03.port1
+Header40[35] <= DecoderMaquete:inst03.port1
+Header40[36] <= DecoderMaquete:inst03.port1
+Header40[37] <= DecoderMaquete:inst03.port1
+Header40[38] <= DecoderMaquete:inst03.port1
+Header40[39] <= DecoderMaquete:inst03.port1
+Header40[40] <= DecoderMaquete:inst03.port1
 
 
 |Arquitetura|Saida:inst03|PhraseBank:inst01
@@ -982,6 +1062,57 @@ DB[4] <= Selector3.DB_MAX_OUTPUT_PORT_TYPE
 DB[5] <= Selector2.DB_MAX_OUTPUT_PORT_TYPE
 DB[6] <= Selector1.DB_MAX_OUTPUT_PORT_TYPE
 DB[7] <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Arquitetura|Saida:inst03|DecoderMaquete:inst03
+StateFlag[0] => Decoder0.IN1
+StateFlag[1] => Decoder0.IN0
+StateFlag[1] => Header40[18].DATAIN
+StateFlag[1] => Header40[17].DATAIN
+StateFlag[1] => Header40[11].DATAIN
+StateFlag[1] => Header40[8].DATAIN
+StateFlag[1] => Header40[4].DATAIN
+StateFlag[1] => Header40[1].DATAIN
+Header40[1] <= StateFlag[1].DB_MAX_OUTPUT_PORT_TYPE
+Header40[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[4] <= StateFlag[1].DB_MAX_OUTPUT_PORT_TYPE
+Header40[5] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[6] <= <GND>
+Header40[7] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[8] <= StateFlag[1].DB_MAX_OUTPUT_PORT_TYPE
+Header40[9] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[10] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[11] <= StateFlag[1].DB_MAX_OUTPUT_PORT_TYPE
+Header40[12] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[13] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[14] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[15] <= <GND>
+Header40[16] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[17] <= StateFlag[1].DB_MAX_OUTPUT_PORT_TYPE
+Header40[18] <= StateFlag[1].DB_MAX_OUTPUT_PORT_TYPE
+Header40[19] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[20] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[21] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[22] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[23] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[24] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[25] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[26] <= <GND>
+Header40[27] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[28] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[29] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[30] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[31] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[32] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[33] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Header40[34] <= <GND>
+Header40[35] <= <GND>
+Header40[36] <= <GND>
+Header40[37] <= <GND>
+Header40[38] <= <GND>
+Header40[39] <= <GND>
+Header40[40] <= <GND>
 
 
 |Arquitetura|DecoderSsd_4bits_Dec:inst05

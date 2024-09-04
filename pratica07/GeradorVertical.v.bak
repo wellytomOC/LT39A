@@ -1,0 +1,22 @@
+module GeradorVertical (
+    input wire Hsync,
+    output reg Vsync, Vactive
+);
+
+    localparam  Vp = 2, Vbp = 33,
+                Vact = 472, Vfp = 10;
+    
+    reg[9:0] count;
+
+    always @(posedge Hsync) begin
+        count <= count + 10'd1;
+        if (cont == Vp) Vsync <= 1'b1;
+        else if(cont == Vp+Vbp) Vactive <= 1'b1;
+        else if(cont == Vp+Vbp+Vact) Vactive <= 1'b0;
+        else if(cont == Vp+Vbp+Vact+Vfp) begin
+            Vsync <= 1'b0;
+            cont <= 10'd0;
+        end
+    end
+    
+endmodule

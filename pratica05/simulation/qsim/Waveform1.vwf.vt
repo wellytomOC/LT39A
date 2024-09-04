@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "08/23/2024 14:22:18"
+// Generated on "08/23/2024 17:57:59"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          Sistema
 // 
@@ -38,7 +38,7 @@ reg dav;
 reg reset;
 // wires                                               
 wire [3:0] DataOut;
-wire [1:0] PresentStateDEBUG;
+wire [1:0] PresentStateFlag;
 
 // assign statements (if any)                          
 Sistema i1 (
@@ -46,7 +46,7 @@ Sistema i1 (
 	.AddressIn(AddressIn),
 	.DataOut(DataOut),
 	.KeypadData(KeypadData),
-	.PresentStateDEBUG(PresentStateDEBUG),
+	.PresentStateFlag(PresentStateFlag),
 	.clock1Hz(clock1Hz),
 	.clock50MHz(clock50MHz),
 	.dav(dav),

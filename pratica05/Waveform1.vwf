@@ -20,6 +20,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -38,6 +39,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
 </simulation_settings>*/
@@ -266,7 +268,7 @@ SIGNAL("reset")
 	PARENT = "";
 }
 
-SIGNAL("PresentStateDEBUG")
+SIGNAL("PresentStateFlag")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
@@ -276,24 +278,24 @@ SIGNAL("PresentStateDEBUG")
 	PARENT = "";
 }
 
-SIGNAL("PresentStateDEBUG[1]")
+SIGNAL("PresentStateFlag[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "PresentStateDEBUG";
+	PARENT = "PresentStateFlag";
 }
 
-SIGNAL("PresentStateDEBUG[0]")
+SIGNAL("PresentStateFlag[0]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "PresentStateDEBUG";
+	PARENT = "PresentStateFlag";
 }
 
 TRANSITION_LIST("AddressIn[3]")
@@ -490,7 +492,7 @@ TRANSITION_LIST("reset")
 	}
 }
 
-TRANSITION_LIST("PresentStateDEBUG[1]")
+TRANSITION_LIST("PresentStateFlag[1]")
 {
 	NODE
 	{
@@ -499,7 +501,7 @@ TRANSITION_LIST("PresentStateDEBUG[1]")
 	}
 }
 
-TRANSITION_LIST("PresentStateDEBUG[0]")
+TRANSITION_LIST("PresentStateFlag[0]")
 {
 	NODE
 	{
@@ -696,9 +698,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "PresentStateDEBUG";
+	CHANNEL = "PresentStateFlag";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 19;
 	TREE_LEVEL = 0;
 	CHILDREN = 20, 21;
@@ -706,9 +708,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "PresentStateDEBUG[1]";
+	CHANNEL = "PresentStateFlag[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 20;
 	TREE_LEVEL = 1;
 	PARENT = 19;
@@ -716,9 +718,9 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "PresentStateDEBUG[0]";
+	CHANNEL = "PresentStateFlag[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 21;
 	TREE_LEVEL = 1;
 	PARENT = 19;
