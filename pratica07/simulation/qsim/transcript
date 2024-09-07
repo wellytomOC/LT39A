@@ -1,0 +1,44 @@
+# do atv07.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:49:16 on Sep 07,2024
+# vlog -work work atv07.vo 
+# -- Compiling module ControleVGA
+# -- Compiling module hard_block
+# 
+# Top level modules:
+# 	ControleVGA
+# End time: 16:49:16 on Sep 07,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:49:16 on Sep 07,2024
+# vlog -work work Waveform2.vwf.vt 
+# -- Compiling module ControleVGA_vlg_vec_tst
+# 
+# Top level modules:
+# 	ControleVGA_vlg_vec_tst
+# End time: 16:49:16 on Sep 07,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.ControleVGA_vlg_vec_tst 
+# Start time: 16:49:16 on Sep 07,2024
+# Loading work.ControleVGA_vlg_vec_tst
+# Loading work.ControleVGA
+# Loading work.hard_block
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_mac_mult
+# Loading cycloneive_ver.cycloneive_mac_data_reg
+# Loading cycloneive_ver.cycloneive_mac_sign_reg
+# Loading cycloneive_ver.cycloneive_mac_mult_internal
+# Loading cycloneive_ver.cycloneive_mac_out
+# Loading altera_ver.PRIM_GDFF_LOW
+# after#26
+# ** Note: $finish    : Waveform2.vwf.vt(63)
+#    Time: 1 us  Iteration: 0  Instance: /ControleVGA_vlg_vec_tst
+# End time: 16:49:16 on Sep 07,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
