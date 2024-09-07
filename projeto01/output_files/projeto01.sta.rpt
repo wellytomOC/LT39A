@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for projeto01
-Tue Sep 03 20:01:05 2024
+Fri Sep 06 14:51:45 2024
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -159,13 +159,12 @@ agreement for further details.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
-; Average used               ; 1.03        ;
+; Average used               ; 1.04        ;
 ; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.5%      ;
-;     Processors 3-6         ;   0.5%      ;
+;     Processors 2-6         ;   0.9%      ;
 +----------------------------+-------------+
 
 
@@ -219,7 +218,7 @@ HTML report is unavailable in plain text report export.
 ; Entrada:inst01|ClockDivider:inst01|clock500Hz                              ; -1.575 ; -11.740       ;
 ; Entrada:inst01|ClockDivider:inst01|clock20Hz                               ; -0.767 ; -2.745        ;
 ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloUnit    ; -0.610 ; -1.899        ;
-; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.572 ; -0.622        ;
+; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.572 ; -0.619        ;
 ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalTens  ; -0.401 ; -1.057        ;
 ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.206 ; -0.519        ;
 ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalUnit  ; -0.169 ; -0.169        ;
@@ -629,7 +628,7 @@ No paths to report.
 ; Slack  ; From Node                                ; To Node                                                                             ; Launch Clock                                 ; Latch Clock                                                                ; Relationship ; Clock Skew ; Data Delay ;
 +--------+------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 ; -0.572 ; Entrada:inst01|keypadEncoder:inst02|d[0] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[0] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; 0.500        ; 1.000      ; 2.070      ;
-; -0.050 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; 0.500        ; 1.000      ; 1.548      ;
+; -0.047 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; 0.500        ; 1.000      ; 1.545      ;
 ; 0.085  ; Entrada:inst01|keypadEncoder:inst02|d[1] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[1] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; 0.500        ; 0.999      ; 1.412      ;
 ; 0.120  ; Entrada:inst01|keypadEncoder:inst02|d[2] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[2] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; 0.500        ; 1.000      ; 1.378      ;
 +--------+------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
@@ -653,8 +652,8 @@ No paths to report.
 ; Slack  ; From Node                                ; To Node                                                                              ; Launch Clock                                 ; Latch Clock                                                                ; Relationship ; Clock Skew ; Data Delay ;
 +--------+------------------------------------------+--------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 ; -0.206 ; Entrada:inst01|keypadEncoder:inst02|d[0] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[0] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; 0.500        ; 0.869      ; 1.573      ;
-; -0.180 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; 0.500        ; 0.872      ; 1.550      ;
-; -0.097 ; Entrada:inst01|keypadEncoder:inst02|d[2] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[2] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; 0.500        ; 0.872      ; 1.467      ;
+; -0.177 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; 0.500        ; 0.872      ; 1.547      ;
+; -0.100 ; Entrada:inst01|keypadEncoder:inst02|d[2] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[2] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; 0.500        ; 0.872      ; 1.470      ;
 ; -0.036 ; Entrada:inst01|keypadEncoder:inst02|d[1] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[1] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; 0.500        ; 0.871      ; 1.405      ;
 +--------+------------------------------------------+--------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 
@@ -702,7 +701,7 @@ No paths to report.
 +-------+------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 ; 0.271 ; Entrada:inst01|keypadEncoder:inst02|d[2] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[2] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.500       ; 1.335      ; 1.312      ;
 ; 0.309 ; Entrada:inst01|keypadEncoder:inst02|d[1] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[1] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.500       ; 1.335      ; 1.350      ;
-; 0.402 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.500       ; 1.335      ; 1.443      ;
+; 0.400 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.500       ; 1.335      ; 1.441      ;
 ; 0.901 ; Entrada:inst01|keypadEncoder:inst02|d[0] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[0] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.500       ; 1.335      ; 1.942      ;
 +-------+------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 
@@ -1023,9 +1022,9 @@ No paths to report.
 ; Slack ; From Node                                ; To Node                                                                              ; Launch Clock                                 ; Latch Clock                                                                ; Relationship ; Clock Skew ; Data Delay ;
 +-------+------------------------------------------+--------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 ; 0.438 ; Entrada:inst01|keypadEncoder:inst02|d[1] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[1] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.500       ; 1.201      ; 1.345      ;
-; 0.456 ; Entrada:inst01|keypadEncoder:inst02|d[2] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[2] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.500       ; 1.200      ; 1.362      ;
+; 0.459 ; Entrada:inst01|keypadEncoder:inst02|d[2] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[2] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.500       ; 1.200      ; 1.365      ;
 ; 0.503 ; Entrada:inst01|keypadEncoder:inst02|d[0] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[0] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.500       ; 1.198      ; 1.407      ;
-; 0.538 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.500       ; 1.201      ; 1.445      ;
+; 0.536 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.500       ; 1.201      ; 1.443      ;
 +-------+------------------------------------------+--------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 
 
@@ -1120,7 +1119,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Entrada:inst01|ClockDivider:inst01|clock500Hz                              ; -1.328 ; -9.603        ;
 ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloUnit    ; -0.610 ; -1.947        ;
 ; Entrada:inst01|ClockDivider:inst01|clock20Hz                               ; -0.588 ; -1.972        ;
-; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.532 ; -0.572        ;
+; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.532 ; -0.569        ;
 ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalTens  ; -0.374 ; -0.958        ;
 ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.203 ; -0.472        ;
 ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalUnit  ; -0.167 ; -0.167        ;
@@ -1530,7 +1529,7 @@ No paths to report.
 ; Slack  ; From Node                                ; To Node                                                                             ; Launch Clock                                 ; Latch Clock                                                                ; Relationship ; Clock Skew ; Data Delay ;
 +--------+------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 ; -0.532 ; Entrada:inst01|keypadEncoder:inst02|d[0] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[0] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; 0.500        ; 0.860      ; 1.891      ;
-; -0.040 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; 0.500        ; 0.860      ; 1.399      ;
+; -0.037 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; 0.500        ; 0.860      ; 1.396      ;
 ; 0.064  ; Entrada:inst01|keypadEncoder:inst02|d[1] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[1] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; 0.500        ; 0.859      ; 1.294      ;
 ; 0.096  ; Entrada:inst01|keypadEncoder:inst02|d[2] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[2] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; 0.500        ; 0.860      ; 1.263      ;
 +--------+------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
@@ -1554,8 +1553,8 @@ No paths to report.
 ; Slack  ; From Node                                ; To Node                                                                              ; Launch Clock                                 ; Latch Clock                                                                ; Relationship ; Clock Skew ; Data Delay ;
 +--------+------------------------------------------+--------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 ; -0.203 ; Entrada:inst01|keypadEncoder:inst02|d[0] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[0] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; 0.500        ; 0.746      ; 1.448      ;
-; -0.152 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; 0.500        ; 0.750      ; 1.401      ;
-; -0.076 ; Entrada:inst01|keypadEncoder:inst02|d[2] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[2] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; 0.500        ; 0.749      ; 1.324      ;
+; -0.149 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; 0.500        ; 0.750      ; 1.398      ;
+; -0.079 ; Entrada:inst01|keypadEncoder:inst02|d[2] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[2] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; 0.500        ; 0.749      ; 1.327      ;
 ; -0.041 ; Entrada:inst01|keypadEncoder:inst02|d[1] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[1] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; 0.500        ; 0.749      ; 1.289      ;
 +--------+------------------------------------------+--------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 
@@ -1603,7 +1602,7 @@ No paths to report.
 +-------+------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 ; 0.349 ; Entrada:inst01|keypadEncoder:inst02|d[2] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[2] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.500       ; 1.161      ; 1.201      ;
 ; 0.380 ; Entrada:inst01|keypadEncoder:inst02|d[1] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[1] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.500       ; 1.160      ; 1.231      ;
-; 0.481 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.500       ; 1.161      ; 1.333      ;
+; 0.479 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.500       ; 1.161      ; 1.331      ;
 ; 0.927 ; Entrada:inst01|keypadEncoder:inst02|d[0] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[0] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.500       ; 1.161      ; 1.779      ;
 +-------+------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 
@@ -1948,9 +1947,9 @@ No paths to report.
 ; Slack ; From Node                                ; To Node                                                                              ; Launch Clock                                 ; Latch Clock                                                                ; Relationship ; Clock Skew ; Data Delay ;
 +-------+------------------------------------------+--------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 ; 0.488 ; Entrada:inst01|keypadEncoder:inst02|d[1] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[1] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.500       ; 1.046      ; 1.225      ;
-; 0.517 ; Entrada:inst01|keypadEncoder:inst02|d[2] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[2] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.500       ; 1.046      ; 1.254      ;
+; 0.520 ; Entrada:inst01|keypadEncoder:inst02|d[2] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[2] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.500       ; 1.046      ; 1.257      ;
 ; 0.542 ; Entrada:inst01|keypadEncoder:inst02|d[0] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[0] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.500       ; 1.043      ; 1.276      ;
-; 0.596 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.500       ; 1.047      ; 1.334      ;
+; 0.594 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.500       ; 1.047      ; 1.332      ;
 +-------+------------------------------------------+--------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 
 
@@ -2393,7 +2392,7 @@ No paths to report.
 ; Slack ; From Node                                ; To Node                                                                             ; Launch Clock                                 ; Latch Clock                                                                ; Relationship ; Clock Skew ; Data Delay ;
 +-------+------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 ; 0.116 ; Entrada:inst01|keypadEncoder:inst02|d[0] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[0] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; 0.500        ; 0.613      ; 0.984      ;
-; 0.341 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; 0.500        ; 0.613      ; 0.759      ;
+; 0.342 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; 0.500        ; 0.613      ; 0.758      ;
 ; 0.422 ; Entrada:inst01|keypadEncoder:inst02|d[1] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[1] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; 0.500        ; 0.613      ; 0.678      ;
 ; 0.442 ; Entrada:inst01|keypadEncoder:inst02|d[2] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[2] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; 0.500        ; 0.613      ; 0.658      ;
 +-------+------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
@@ -2441,8 +2440,8 @@ No paths to report.
 ; Slack ; From Node                                ; To Node                                                                              ; Launch Clock                                 ; Latch Clock                                                                ; Relationship ; Clock Skew ; Data Delay ;
 +-------+------------------------------------------+--------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 ; 0.259 ; Entrada:inst01|keypadEncoder:inst02|d[0] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[0] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; 0.500        ; 0.550      ; 0.778      ;
-; 0.280 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; 0.500        ; 0.554      ; 0.761      ;
-; 0.314 ; Entrada:inst01|keypadEncoder:inst02|d[2] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[2] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; 0.500        ; 0.554      ; 0.727      ;
+; 0.281 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; 0.500        ; 0.554      ; 0.760      ;
+; 0.313 ; Entrada:inst01|keypadEncoder:inst02|d[2] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[2] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; 0.500        ; 0.554      ; 0.728      ;
 ; 0.369 ; Entrada:inst01|keypadEncoder:inst02|d[1] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[1] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; 0.500        ; 0.554      ; 0.672      ;
 +-------+------------------------------------------+--------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 
@@ -2584,7 +2583,7 @@ No paths to report.
 +-------+------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 ; 0.184 ; Entrada:inst01|keypadEncoder:inst02|d[2] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[2] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.500       ; 0.794      ; 0.582      ;
 ; 0.199 ; Entrada:inst01|keypadEncoder:inst02|d[1] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[1] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.500       ; 0.793      ; 0.596      ;
-; 0.254 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.500       ; 0.794      ; 0.652      ;
+; 0.252 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.500       ; 0.794      ; 0.650      ;
 ; 0.505 ; Entrada:inst01|keypadEncoder:inst02|d[0] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Ten|dout[0] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.500       ; 0.794      ; 0.903      ;
 +-------+------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 
@@ -2835,9 +2834,9 @@ No paths to report.
 ; Slack ; From Node                                ; To Node                                                                              ; Launch Clock                                 ; Latch Clock                                                                ; Relationship ; Clock Skew ; Data Delay ;
 +-------+------------------------------------------+--------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 ; 0.255 ; Entrada:inst01|keypadEncoder:inst02|d[1] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[1] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.500       ; 0.732      ; 0.591      ;
-; 0.288 ; Entrada:inst01|keypadEncoder:inst02|d[2] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[2] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.500       ; 0.732      ; 0.624      ;
+; 0.290 ; Entrada:inst01|keypadEncoder:inst02|d[2] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[2] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.500       ; 0.732      ; 0.626      ;
 ; 0.300 ; Entrada:inst01|keypadEncoder:inst02|d[0] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[0] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.500       ; 0.729      ; 0.633      ;
-; 0.316 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.500       ; 0.733      ; 0.653      ;
+; 0.315 ; Entrada:inst01|keypadEncoder:inst02|d[3] ; Sistema:inst02|RegisterBank:regBank01|Register:reg_TempoSecundariaVerde_Unit|dout[3] ; Entrada:inst01|ClockDivider:inst01|clock20Hz ; Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.500       ; 0.733      ; 0.652      ;
 +-------+------------------------------------------+--------------------------------------------------------------------------------------+----------------------------------------------+----------------------------------------------------------------------------+--------------+------------+------------+
 
 
@@ -2900,7 +2899,7 @@ No synchronizer chains to report.
 ;  Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.572   ; 0.184 ; N/A      ; N/A     ; -1.285              ;
 ;  Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.206   ; 0.255 ; N/A      ; N/A     ; -1.285              ;
 ;  clock                                                                      ; -4.155   ; 0.188 ; N/A      ; N/A     ; -3.000              ;
-; Design-wide TNS                                                             ; -256.095 ; 0.0   ; 0.0      ; 0.0     ; -195.75             ;
+; Design-wide TNS                                                             ; -256.092 ; 0.0   ; 0.0      ; 0.0     ; -195.75             ;
 ;  Entrada:inst01|ClockDivider:inst01|Clock1Hz                                ; -89.190  ; 0.000 ; N/A      ; N/A     ; -24.415             ;
 ;  Entrada:inst01|ClockDivider:inst01|clock20Hz                               ; -2.745   ; 0.000 ; N/A      ; N/A     ; -11.565             ;
 ;  Entrada:inst01|ClockDivider:inst01|clock500Hz                              ; -11.740  ; 0.000 ; N/A      ; N/A     ; -19.275             ;
@@ -2909,7 +2908,7 @@ No synchronizer chains to report.
 ;  Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloUnit    ; -1.947   ; 0.000 ; N/A      ; N/A     ; -5.140              ;
 ;  Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalTens  ; -1.057   ; 0.000 ; N/A      ; N/A     ; -5.140              ;
 ;  Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalUnit  ; -0.169   ; 0.000 ; N/A      ; N/A     ; -5.140              ;
-;  Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.622   ; 0.000 ; N/A      ; N/A     ; -5.140              ;
+;  Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens ; -0.619   ; 0.000 ; N/A      ; N/A     ; -5.140              ;
 ;  Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit ; -0.519   ; 0.000 ; N/A      ; N/A     ; -5.140              ;
 ;  clock                                                                      ; -137.916 ; 0.000 ; N/A      ; N/A     ; -100.660            ;
 +-----------------------------------------------------------------------------+----------+-------+----------+---------+---------------------+
@@ -3534,7 +3533,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Sep 03 20:01:02 2024
+    Info: Processing started: Fri Sep 06 14:51:42 2024
 Info: Command: quartus_sta projeto01 -c projeto01
 Info: qsta_default_script.tcl version: #1
 Info (20032): Parallel compilation is enabled and will use up to 6 processors
@@ -3569,7 +3568,7 @@ Info (332146): Worst-case setup slack is -6.524
     Info (332119):    -1.575             -11.740 Entrada:inst01|ClockDivider:inst01|clock500Hz 
     Info (332119):    -0.767              -2.745 Entrada:inst01|ClockDivider:inst01|clock20Hz 
     Info (332119):    -0.610              -1.899 Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloUnit 
-    Info (332119):    -0.572              -0.622 Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens 
+    Info (332119):    -0.572              -0.619 Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens 
     Info (332119):    -0.401              -1.057 Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalTens 
     Info (332119):    -0.206              -0.519 Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit 
     Info (332119):    -0.169              -0.169 Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalUnit 
@@ -3619,7 +3618,7 @@ Info (332146): Worst-case setup slack is -5.839
     Info (332119):    -1.328              -9.603 Entrada:inst01|ClockDivider:inst01|clock500Hz 
     Info (332119):    -0.610              -1.947 Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirAmareloUnit 
     Info (332119):    -0.588              -1.972 Entrada:inst01|ClockDivider:inst01|clock20Hz 
-    Info (332119):    -0.532              -0.572 Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens 
+    Info (332119):    -0.532              -0.569 Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens 
     Info (332119):    -0.374              -0.958 Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalTens 
     Info (332119):    -0.203              -0.472 Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioUnit 
     Info (332119):    -0.167              -0.167 Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalUnit 
@@ -3706,8 +3705,8 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 4872 megabytes
-    Info: Processing ended: Tue Sep 03 20:01:05 2024
+    Info: Processing ended: Fri Sep 06 14:51:45 2024
     Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 

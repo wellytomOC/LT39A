@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition"
 
-// DATE "09/03/2024 20:01:06"
+// DATE "09/06/2024 14:51:46"
 
 // 
 // Device: Altera EP4CE115F29C7 Package FBGA780
@@ -1827,7 +1827,7 @@ defparam \Header40[13]~output .open_drain_output = "false";
 
 // Location: IOOBUF_X91_Y0_N16
 cycloneive_io_obuf \Header40[14]~output (
-	.i(!\inst03|inst03|Decoder0~3_combout ),
+	.i(\inst02|SCU01|Secondary_Road [2]),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -1866,7 +1866,7 @@ defparam \Header40[16]~output .open_drain_output = "false";
 
 // Location: IOOBUF_X79_Y0_N2
 cycloneive_io_obuf \Header40[17]~output (
-	.i(\inst02|SCU01|Secondary_Road [2]),
+	.i(!\inst03|inst03|Decoder0~3_combout ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -5429,7 +5429,7 @@ defparam \inst03|inst01|inst01|Equal0~0 .lut_mask = 16'h000F;
 defparam \inst03|inst01|inst01|Equal0~0 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X62_Y44_N22
+// Location: LCCOMB_X62_Y44_N10
 cycloneive_lcell_comb \inst03|inst01|inst01|Mux4~2 (
 // Equation(s):
 // \inst03|inst01|inst01|Mux4~2_combout  = (\inst03|inst01|inst01|Equal0~0_combout  & (\inst03|inst02|char_index [3] & (\inst03|inst02|char_index [1] & !\inst03|inst02|char_index [2])))
@@ -10957,7 +10957,7 @@ defparam \inst03|inst01|inst01|Mux4~1 .lut_mask = 16'hC480;
 defparam \inst03|inst01|inst01|Mux4~1 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X62_Y44_N28
+// Location: LCCOMB_X62_Y44_N24
 cycloneive_lcell_comb \inst02|SCU01|Secondary_Road[2] (
 // Equation(s):
 // \inst02|SCU01|Secondary_Road [2] = (\inst02|SCU01|PresentState.PrincipalYellow~q ) # (!\inst02|SCU01|PresentState.PrincipalGreen~q )

@@ -28,7 +28,7 @@ TNS   : -1.899
 
 Type  : Slow 1200mV 85C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens'
 Slack : -0.572
-TNS   : -0.622
+TNS   : -0.619
 
 Type  : Slow 1200mV 85C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalTens'
 Slack : -0.401
@@ -160,7 +160,7 @@ TNS   : -1.972
 
 Type  : Slow 1200mV 0C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirSecundarioTens'
 Slack : -0.532
-TNS   : -0.572
+TNS   : -0.569
 
 Type  : Slow 1200mV 0C Model Setup 'Sistema:inst02|ManualControlUnit:inst01|PresentState.DefinirPrincipalTens'
 Slack : -0.374
